@@ -16,7 +16,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="headerMain">
+          <div className="logoMyContainer">
+            <img src="" alt="logo" />
+            <div>🎃</div>
+          </div>
+          <ul className="navContainer">
+            <li>StudyNow</li>
+            <li>퀴즈</li>
+            <li>스터디</li>
+            <li>채용정보</li>
+          </ul>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
