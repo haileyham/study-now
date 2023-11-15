@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,12 +20,16 @@ export default function RootLayout({
       <body className={inter.className}>
         <header className="headerMain">
           <div className="logoMyContainer">
-            <img src="" alt="logo" />
+            <Link href="/">
+              <img src="" alt="logo" />
+            </Link>
             <div>🎃</div>
           </div>
           <ul className="navContainer">
             <li>퀴즈</li>
-            <li>스터디</li>
+            <li>
+              <Link href="/study-post">스터디</Link>
+            </li>
             <li>채용정보</li>
             <li>MyPage</li>
           </ul>
