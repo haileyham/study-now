@@ -22,7 +22,7 @@
 .studyList {
   margin-top: 1rem;
   padding: 1rem;
-  box-shadow: 0 0 5px rgba(164, 164, 164, 0.898);
+  box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
   border-radius: var(--border-radius-m);
   position: relative;
   .date {
@@ -30,14 +30,19 @@
     right: 13px;
     top: 15px;
     font-size: var(--font-size-ss);
+    color: var(--color-content-s);
   }
   .status {
-    display: block;
-    margin-bottom: 10px;
     font-size: var(--font-size-ss);
+    font-weight: 900;
+    background: rgb(131, 210, 255);
+    color: white;
+    padding: 2px 5px;
+    border-radius: var(--border-radius-m);
   }
   h2 {
     font-size: var(--font-header-m);
+    margin-top: 10px;
     margin-bottom: 0.7rem;
   }
   p {
@@ -47,7 +52,7 @@
   .postInfo {
     font-size: var(--font-size-s);
     color: var(--color-content-s);
-    margin-top: 1rem;
+    margin-top: 0.7rem;
     display: flex;
     justify-content: space-between;
     gap: 8px;
@@ -63,6 +68,19 @@
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
-  body {
+  .studyList {
+    padding: 1rem 2rem;
+    .status {
+      position: absolute;
+      top: 22px;
+      padding: 4px 7px;
+    }
+    .date {
+      top: 20px;
+      right: 25px;
+    }
+    h2 {
+      margin: 5px 0 0.8rem 3.8rem;
+    }
   }
 }
