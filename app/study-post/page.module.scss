@@ -1,0 +1,86 @@
+.studyMain {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-s);
+}
+
+.studyHeader {
+  h1 {
+    font-size: var(--font-header-l);
+  }
+  p {
+    font-size: var(--font-size-s);
+  }
+}
+
+.studySection {
+  margin-top: 2rem;
+}
+
+.studyList {
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+  border-radius: var(--border-radius-m);
+  position: relative;
+  .date {
+    position: absolute;
+    right: 13px;
+    top: 15px;
+    font-size: var(--font-size-ss);
+    color: var(--color-content-s);
+  }
+  .status {
+    font-size: var(--font-size-ss);
+    font-weight: 900;
+    background: rgb(131, 210, 255);
+    color: white;
+    padding: 2px 5px;
+    border-radius: var(--border-radius-m);
+  }
+  h2 {
+    font-size: var(--font-header-m);
+    margin-top: 10px;
+    margin-bottom: 0.7rem;
+  }
+  p {
+    font-size: var(--font-size-m);
+    color: var(--color-content-m);
+  }
+  .postInfo {
+    font-size: var(--font-size-s);
+    color: var(--color-content-s);
+    margin-top: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    & > span:nth-child(1) {
+      flex: 1;
+    }
+  }
+}
+
+/* 태블릿 화면 스타일 */
+@media (min-width: 768px) {
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 1024px) {
+  .studyList {
+    padding: 1rem 2rem;
+    .status {
+      position: absolute;
+      top: 22px;
+      padding: 4px 7px;
+    }
+    .date {
+      top: 20px;
+      right: 25px;
+    }
+    h2 {
+      margin: 5px 0 0.8rem 3.8rem;
+    }
+  }
+}
