@@ -8,6 +8,19 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --max-width: 1280px;
+  --box-shadow: 0 0 10px gray;
+  --border-radius-s: 5px;
+  --border-radius-m: 10px;
+  --border-radius-l: 15px;
+  --color-content-m: rgb(136, 136, 136);
+  --color-content-s: rgb(185, 185, 185);
+  --font-header-l: 20px;
+  --font-header-m: 15px;
+  --font-size-l: 16px;
+  --font-size-m: 14px;
+  --font-size-s: 12px;
+  --font-size-ss: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
