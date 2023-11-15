@@ -1,13 +1,19 @@
 import React from 'react';
 import styles from './page.module.scss';
+import Link from 'next/link';
 
 export default function StudyPost() {
   return (
     <>
       <main className={styles.studyMain}>
         <header className={styles.studyHeader}>
-          <h1>StudyList</h1>
-          <p>스터디 멤버를 구하세요!</p>
+          <div>
+            <h1>StudyList</h1>
+            <p>스터디 멤버를 구하세요!</p>
+          </div>
+          <Link href="/study-post/write">
+            <span>글쓰기</span>
+          </Link>
         </header>
         <section className={styles.studySection}>
           <div className={styles.studyList}>
