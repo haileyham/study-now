@@ -23,10 +23,10 @@ export default function RootLayout({
             <div>🎃</div>
           </div>
           <ul className="navContainer">
-            <li>StudyNow</li>
             <li>퀴즈</li>
             <li>스터디</li>
             <li>채용정보</li>
+            <li>MyPage</li>
           </ul>
         </header>
         {children}
