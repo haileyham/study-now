@@ -17,6 +17,7 @@
   --color-content-s: rgb(185, 185, 185);
   --font-header-l: 20px;
   --font-header-m: 15px;
+  --font-header-s: 13px;
   --font-size-l: 16px;
   --font-size-m: 14px;
   --font-size-s: 12px;
@@ -34,6 +35,7 @@
   :root {
     --font-header-l: 25px;
     --font-header-m: 17px;
+    --font-header-s: 15px;
     --font-size-l: 16px;
     --font-size-m: 14px;
     --font-size-s: 13px;
@@ -64,9 +66,70 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
+//셋팅
+h1 {
+  font-size: var(--font-header-l);
+}
+
+h2 {
+  font-size: var(--font-header-m);
+}
+
+p {
+  font-size: var(--font-size-s);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto 80px; //모바일버전 nav부분
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+//컴포넌트
+//btn
+.btn-s {
+  margin-right: 5px;
+  padding: 0.3rem 0.5rem;
+  font-size: var(--font-size-s);
+  background-color: rgb(175, 164, 255);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius-m);
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(139, 124, 254);
+    font-weight: bold;
+  }
+}
+//input,textarea
+input,
+textarea {
+  border: 1px solid rgb(240, 225, 249);
+  border-radius: var(--border-radius-s);
+  font-family: inherit;
+  resize: none; /*크키조정못하도록*/
+  &:focus {
+    outline: 1px solid rgb(229, 199, 246);
+  }
+}
+
 //main
 main {
-  box-shadow: 0 0 10px gray;
+  // box-shadow: 0 0 10px gray;
 }
 
 .headerMain {
@@ -119,6 +182,7 @@ main {
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
-  body {
+  .container {
+    margin: auto;
   }
 }
