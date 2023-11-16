@@ -5,6 +5,7 @@
   section:last-of-type {
     background-color: rgba(197, 195, 195, 0.157);
     border-radius: var(--border-radius-s);
+    padding-bottom: 10px;
     h3 {
       padding: 10px;
       color: var(--color-content-s);
@@ -17,6 +18,14 @@
 .mainHeader {
   p {
     color: var(--color-content-s);
+  }
+  h2 {
+    flex: 1;
+    max-height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 표시할 최대 라인 수 */
+    -webkit-box-orient: vertical;
   }
   div {
     display: flex;
@@ -96,6 +105,7 @@
 .commentInput {
   display: flex;
   gap: 10px;
+  padding: 5px;
   input {
     flex: 1;
     padding: 3px;
@@ -105,6 +115,26 @@
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 768px) {
+  .container {
+    margin-bottom: 100px;
+  }
+  .main {
+    max-width: 800px;
+    margin: auto;
+    h2 {
+      //글자수 제한 하고 수정하기
+      display: inline-block;
+      font-size: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .mainContent {
+    p {
+      min-height: 8rem;
+    }
+  }
 }
 
 /* 데스크탑 화면 스타일 */
