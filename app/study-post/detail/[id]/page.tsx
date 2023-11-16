@@ -7,13 +7,17 @@ export default function StudyDetail() {
       <div className="container">
         <header>
           <h1>스터디 모집 상세 페이지</h1>
-          <button className="btn-s">글수정</button>
-          <button className="btn-s">글삭제</button>
         </header>
         <main className={styles.main}>
           <section>
             <header className={styles.mainHeader}>
-              <h2>ㅇㅇ스터디 구해요!</h2>
+              <div>
+                <h2>ㅇㅇ스터디 구해요!</h2>
+                <div className={styles.detailEditDel}>
+                  <button className="btn-s">글수정</button>
+                  <button className="btn-s">글삭제</button>
+                </div>
+              </div>
               <div>
                 <img src="" alt="profile" />
                 <p>author</p>

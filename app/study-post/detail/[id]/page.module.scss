@@ -22,7 +22,7 @@
     display: flex;
     margin: 5px 0px;
     padding: 5px;
-    height: 50px;
+    height: 40px;
     justify-content: space-between;
     align-items: center;
     gap: 5px;
@@ -32,6 +32,20 @@
     }
     img {
       border-radius: 50px;
+    }
+  }
+  .detailEditDel {
+    margin: 0;
+    padding: 0;
+    height: 0;
+    display: flex;
+    justify-content: end;
+    button {
+      margin: 0;
+      padding: 2px 5px;
+      color: var(--color-content-s);
+      background-color: #fff;
+      font-size: var(--font-size-ss);
     }
   }
 }
@@ -87,4 +101,12 @@
     padding: 3px;
     font-size: var(--font-size-s);
   }
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 768px) {
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 1024px) {
 }
