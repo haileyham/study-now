@@ -1,10 +1,10 @@
 .container {
-  max-width: var(--max-width);
-  margin: auto;
+  max-width: 800px;
   header {
     margin-bottom: 1rem;
     text-align: center;
     h1 {
+      text-align: center;
       font-size: var(--font-header-l);
     }
   }
@@ -48,25 +48,53 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  border-radius: var(--border-radius-s);
+  background-color: rgb(248, 246, 255);
   div {
-    padding: 0.5rem;
-    // border: 1px solid rgb(221, 221, 221);
-    background-color: rgb(243, 237, 255);
+    position: relative;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
     border-radius: var(--border-radius-s);
     flex-grow: 1;
     text-align: center;
+    background-color: #fff;
     input {
       margin: 0 5px;
+      &[type='checkbox'] {
+        position: absolute;
+        visibility: hidden;
+      }
     }
     label {
-      background-color: rgb(226, 215, 248);
-      border: 1px solid rgb(207, 207, 207);
+      font-size: var(--font-size-m);
+      margin: 0 2px;
+      padding: 3px 10px;
+      background-color: #fff;
       border-radius: var(--border-radius-s);
+      box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    }
+    .hello {
+      font-weight: bolder;
+      color: rgb(50, 39, 255);
+      border: 1.5px solid rgb(50, 39, 255);
+      background-color: rgba(166, 161, 255, 0.449);
+      box-shadow: none;
+    }
+    .bye {
+      color: rgba(128, 128, 128, 0.548);
+      border: 1.5px solid rgba(219, 219, 219, 0.968);
+      background-color: rgba(226, 226, 226, 0.485);
+      box-shadow: none;
     }
   }
-}
-
-.studyStatus {
+  span {
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    padding: 0 0.5rem;
+    font-size: var(--font-size-s);
+    background-color: rgb(230, 224, 253);
+    border-radius: var(--border-radius-l);
+  }
 }
 
 // 테블릿
