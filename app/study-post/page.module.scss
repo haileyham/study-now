@@ -1,6 +1,6 @@
 .studyMain {
-  max-width: 800px;
   margin: auto;
+  max-width: 800px;
   padding: 2rem;
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius-s);
@@ -84,9 +84,6 @@
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
-  .studyMain {
-    max-width: var(--max-width);
-  }
   .studyList {
     padding: 1rem 2rem;
     .status {
