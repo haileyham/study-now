@@ -22,6 +22,7 @@ export default function StudyWrite() {
               </label>
             </div>
             <div className={styles.studyMode}>
+              <span>Mode</span>
               <label>
                 <input type="checkbox" value="online" />
                 Online
@@ -32,22 +33,16 @@ export default function StudyWrite() {
               </label>
             </div>
             <div className={styles.studyLocation}>
-              <label>
-                location
-                <input type="text" name="location" />
-              </label>
+              <span>Location</span>
+              <input type="text" name="location" placeholder="강남" />
             </div>
             <div className={styles.studyTime}>
-              <label>
-                Time
-                <input type="time" />
-              </label>
+              <span>Time</span>
+              <input type="time" />
             </div>
             <div className={styles.studyType}>
-              <label>
-                스터디 종류
-                <input type="text" placeholder="프론트엔드 면접" />
-              </label>
+              <span>Type</span>
+              <input type="text" placeholder="프론트엔드 면접" />
             </div>
           </section>
           <section className={styles.writeInput}>
