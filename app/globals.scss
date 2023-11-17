@@ -85,7 +85,7 @@ p {
 
 .container {
   max-width: var(--max-width);
-  margin: 0 auto 80px; //모바일버전 nav부분
+  margin: 0 auto 80px; //모바일버전 nav부분 / pc버전 밑에서
 }
 
 .a11y-hidden {
@@ -101,7 +101,8 @@ p {
 
 //컴포넌트
 //btn
-.btn-s {
+.btn-s,
+.btn-m {
   margin-right: 5px;
   padding: 0.3rem 0.5rem;
   font-size: var(--font-size-s);
@@ -115,6 +116,7 @@ p {
     font-weight: bold;
   }
 }
+
 //input,textarea
 input,
 textarea {
@@ -183,6 +185,6 @@ main {
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
   .container {
-    margin: auto;
+    margin: 0 auto 150px;
   }
 }
