@@ -4,18 +4,19 @@ import styles from './page.module.scss';
 export default function StudyWrite() {
   return (
     <>
-      <div className={styles.container}>
+      <div className={`container ${styles.container} `}>
         <header>
           <h1>스터디 모집</h1>
         </header>
         <main>
           <section className={styles.writeCheck}>
             <div className={styles.studyStatus}>
-              <label>
+              <span>Status</span>
+              <label className={styles.hello}>
                 <input type="checkbox" value="online" />
                 모집중
               </label>
-              <label>
+              <label className={styles.bye}>
                 <input type="checkbox" value="done" />
                 모집완료
               </label>
@@ -30,7 +31,7 @@ export default function StudyWrite() {
                 Offline
               </label>
             </div>
-            <div className={styles.studyStatus}>
+            <div className={styles.studyLocation}>
               <label>
                 location
                 <input type="text" name="location" />
