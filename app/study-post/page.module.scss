@@ -16,19 +16,6 @@
   p {
     font-size: var(--font-size-s);
   }
-  a > span {
-    flex: 1;
-    font-size: var(--font-size-s);
-    background-color: rgb(175, 164, 255);
-    padding: 0.3rem 0.5rem;
-    border-radius: var(--border-radius-m);
-    color: #fff;
-    margin-right: 5px;
-    &:hover {
-      background-color: rgb(139, 124, 254);
-      font-weight: bold;
-    }
-  }
 }
 
 .studySection {
@@ -102,8 +89,7 @@
 
   .studyHeader {
     a > span {
-      font-size: var(--font-size-l);
-      padding: 0.5rem 1rem;
+      padding: 0.3rem 0.7rem;
     }
   }
 }
