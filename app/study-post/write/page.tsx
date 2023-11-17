@@ -4,23 +4,25 @@ import styles from './page.module.scss';
 export default function StudyWrite() {
   return (
     <>
-      <div className={styles.container}>
+      <div className={`container ${styles.container} `}>
         <header>
           <h1>스터디 모집</h1>
         </header>
         <main>
           <section className={styles.writeCheck}>
             <div className={styles.studyStatus}>
-              <label>
+              <span>Status</span>
+              <label className={styles.hello}>
                 <input type="checkbox" value="online" />
                 모집중
               </label>
-              <label>
+              <label className={styles.bye}>
                 <input type="checkbox" value="done" />
                 모집완료
               </label>
             </div>
             <div className={styles.studyMode}>
+              <span>Mode</span>
               <label>
                 <input type="checkbox" value="online" />
                 Online
@@ -30,23 +32,17 @@ export default function StudyWrite() {
                 Offline
               </label>
             </div>
-            <div className={styles.studyStatus}>
-              <label>
-                location
-                <input type="text" name="location" />
-              </label>
+            <div className={styles.studyLocation}>
+              <span>Location</span>
+              <input type="text" name="location" placeholder="강남" />
             </div>
             <div className={styles.studyTime}>
-              <label>
-                Time
-                <input type="time" />
-              </label>
+              <span>Time</span>
+              <input type="time" />
             </div>
             <div className={styles.studyType}>
-              <label>
-                스터디 종류
-                <input type="text" placeholder="프론트엔드 면접" />
-              </label>
+              <span>Type</span>
+              <input type="text" placeholder="프론트엔드 면접" />
             </div>
           </section>
           <section className={styles.writeInput}>
