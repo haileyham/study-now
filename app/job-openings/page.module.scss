@@ -1,0 +1,35 @@
+.main {
+  margin: 1rem;
+}
+
+.searchbox {
+  position: relative;
+  padding: 0.5rem;
+  span {
+    position: absolute;
+    top: 0.9rem;
+    left: 1rem;
+    font-weight: bolder;
+    color: rgb(157, 157, 254);
+  }
+  .searchClose {
+    left: auto; //위에서 left 준 것 풀기
+    right: 1rem;
+    font-weight: 500;
+    color: rgba(128, 128, 128, 0.398);
+    cursor: pointer;
+    &:hover {
+      color: rgba(128, 128, 128, 0.839);
+      font-weight: bolder;
+    }
+  }
+  input {
+    width: 100%;
+    padding: 0.5rem 2rem;
+    border: 1.5px solid rgb(222, 193, 255);
+    border-radius: var(--border-radius-l);
+    &:focus {
+      outline: 1px solid rgb(222, 193, 255);
+    }
+  }
+}
