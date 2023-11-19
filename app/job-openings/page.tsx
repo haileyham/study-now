@@ -14,10 +14,42 @@ export default function JobOpenings() {
               <span className={styles.searchClose}>Ⅹ</span>
             </div>
             <div>
-              <button></button>
+              <button>무엇을</button>
             </div>
           </section>
-          <section className={styles.jobListSection}></section>
+          <section className={styles.jobListSection}>
+            <ul>
+              <li>
+                <img
+                  src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
+                  alt="채용회사이미지"
+                />
+                <p>제목이다</p>
+                <p>내용이다</p>
+                <p>기한이다</p>
+              </li>
+              <li>
+                <p>제목이다</p>
+                <p>내용이다</p>
+              </li>
+              <li>
+                <p>제목이다</p>
+                <p>내용이다</p>
+              </li>
+              <li>
+                <p>제목이다</p>
+                <p>내용이다</p>
+              </li>
+              <li>
+                <p>제목이다</p>
+                <p>내용이다</p>
+              </li>
+              <li>
+                <p>제목이다</p>
+                <p>내용이다</p>
+              </li>
+            </ul>
+          </section>
         </main>
       </div>
     </>
