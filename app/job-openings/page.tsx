@@ -20,33 +20,59 @@ export default function JobOpenings() {
           <section className={styles.jobListSection}>
             <ul>
               <li>
-                <img
-                  src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
-                  alt="채용회사이미지"
-                />
+                <div className={styles.imgBox}>
+                  <img
+                    src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
+                    alt="채용회사이미지"
+                  />
+                </div>
                 <p>제목이다</p>
                 <p>내용이다</p>
                 <p>기한이다</p>
               </li>
               <li>
+                <div className={styles.imgBox}>
+                  <img
+                    src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
+                    alt="채용회사이미지"
+                  />
+                </div>
                 <p>제목이다</p>
                 <p>내용이다</p>
+                <p>기한이다</p>
               </li>
               <li>
+                <div className={styles.imgBox}>
+                  <img
+                    src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
+                    alt="채용회사이미지"
+                  />
+                </div>
                 <p>제목이다</p>
                 <p>내용이다</p>
+                <p>기한이다</p>
               </li>
               <li>
+                <div className={styles.imgBox}>
+                  <img
+                    src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
+                    alt="채용회사이미지"
+                  />
+                </div>
                 <p>제목이다</p>
                 <p>내용이다</p>
+                <p>기한이다</p>
               </li>
               <li>
+                <div className={styles.imgBox}>
+                  <img
+                    src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
+                    alt="채용회사이미지"
+                  />
+                </div>
                 <p>제목이다</p>
                 <p>내용이다</p>
-              </li>
-              <li>
-                <p>제목이다</p>
-                <p>내용이다</p>
+                <p>기한이다</p>
               </li>
             </ul>
           </section>
