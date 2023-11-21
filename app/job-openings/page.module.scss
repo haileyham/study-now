@@ -76,24 +76,13 @@
   .main {
     margin: auto 4rem;
   }
-  .jobListSection {
-    // background-color: red;
-    ul {
-    }
-    li {
-    }
-  }
 }
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
   .jobListSection {
-    background-color: blue;
-    ul {
-      // width: 1080px;
-    }
     li {
-      max-width: 179px;
+      max-width: calc(25% - 10px);
       flex: 1 1 20%;
     }
   }
