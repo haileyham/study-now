@@ -35,6 +35,19 @@
       outline: 1px solid rgb(222, 193, 255);
     }
   }
+  ul {
+    background-color: #fff;
+    position: absolute;
+    border-radius: var(--border-radius-l);
+    width: calc(100% - 1.3rem);
+    top: 50px;
+    left: 10px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+  }
+  li {
+    margin: 5px auto;
+  }
 }
 
 .jobListSection {
