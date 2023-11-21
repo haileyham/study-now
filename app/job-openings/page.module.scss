@@ -45,14 +45,15 @@
     flex-wrap: wrap;
     text-align: center;
     justify-content: flex-start;
-    gap: 10px;
+    // gap: 10px;
   }
   .imgBox {
     width: 100%;
     overflow: hidden;
   }
   li {
-    max-width: calc(50% - 10px); // gap만큼 뺌
+    max-width: calc(50% - 10px); // gap만큼 뺌 / gap말고 margin으로 변경
+    margin: 5px;
     flex: 1 1 40%;
     padding: 0.5rem;
     box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
