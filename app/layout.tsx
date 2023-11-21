@@ -30,7 +30,9 @@ export default function RootLayout({
             <li>
               <Link href="/study-post">스터디</Link>
             </li>
-            <li>채용정보</li>
+            <li>
+              <Link href="/job-openings">채용정보</Link>
+            </li>
             <li>MyPage</li>
           </ul>
         </header>
