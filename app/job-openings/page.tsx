@@ -12,7 +12,19 @@ export default function JobOpenings() {
               <span>◎</span>
               <input type="text" />
               <span className={styles.searchClose}>Ⅹ</span>
+              <ul>
+                <li>
+                  <p>이이</p>
+                </li>
+                <li>
+                  <p>이이이</p>
+                </li>
+                <li>
+                  <p>이이이이</p>
+                </li>
+              </ul>
             </div>
+
             <div>{/* <button>무엇을</button> */}</div>
           </section>
           <section className={styles.jobListSection}>
