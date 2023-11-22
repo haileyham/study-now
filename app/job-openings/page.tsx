@@ -13,7 +13,7 @@ export default function JobOpenings() {
               <input type="text" />
               <span className={styles.searchClose}>Ⅹ</span>
               <ul>
-                <li>
+                <li className={styles.searchSelected}>
                   <p>이이</p>
                 </li>
                 <li>

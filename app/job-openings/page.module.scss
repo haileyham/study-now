@@ -47,6 +47,13 @@
   }
   li {
     margin: 5px auto;
+    border-radius: var(--border-radius-s);
+    padding: 0 0.5rem;
+  }
+  li:hover,
+  .searchSelected {
+    background-color: rgba(231, 202, 255, 0.56);
+    cursor: pointer;
   }
 }
 
