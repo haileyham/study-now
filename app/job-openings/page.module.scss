@@ -44,6 +44,7 @@
     left: 10px;
     padding: 0.5rem 1rem;
     box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    z-index: 2;
   }
   li {
     margin: 5px auto;
@@ -83,6 +84,7 @@
       overflow: clip;
       transition: all 0.3s;
       border-radius: var(--border-radius-s);
+      z-index: 1;
     }
     &:hover img {
       transform: scale(1.2);
