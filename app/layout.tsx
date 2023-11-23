@@ -19,13 +19,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <header className="headerMain">
-          <div className="logoMyContainer">
-            <Link href="/">
-              <img src="" alt="logo" />
-            </Link>
+          <div className="myContainer">
+            <div>🌛</div>
             <div>🎃</div>
           </div>
           <ul className="navContainer">
+            <Link href="/">
+              <img src="" alt="logo" />
+            </Link>
             <li>퀴즈</li>
             <li>
               <Link href="/study-post">스터디</Link>

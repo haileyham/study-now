@@ -1,6 +1,6 @@
 //home
 .section {
-  max-width: 1280px;
+  max-width: var(--max-width);
   margin: auto;
   height: 400px;
   box-shadow: 0 0 10px pink;
