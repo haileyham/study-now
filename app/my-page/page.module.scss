@@ -86,3 +86,27 @@
     }
   }
 }
+
+/* 테블릿 화면 스타일 */
+@media (min-width: 768px) {
+}
+
+/* 데스크탑 화면 스타일 */
+// flex에서 grid로 변경
+@media (min-width: 1024px) {
+  .main {
+    display: grid;
+    grid-template-areas:
+      'header main1'
+      'header main2';
+    .profile {
+      grid-area: header;
+    }
+    .myActive {
+      grid-area: main1;
+    }
+    .myQuiz {
+      grid-area: main2;
+    }
+  }
+}
