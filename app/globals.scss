@@ -138,10 +138,6 @@ main {
 .headerMain {
   width: 100%;
   margin: auto;
-  height: 13rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .myContainer {
@@ -172,7 +168,11 @@ main {
   }
   .headerMain {
     max-width: var(--max-width);
+    height: 13rem;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .myContainer {
