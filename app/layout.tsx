@@ -34,7 +34,9 @@ export default function RootLayout({
             <li>
               <Link href="/job-openings">채용정보</Link>
             </li>
-            <li>MyPage</li>
+            <li>
+              <Link href="/my-page">MyPage</Link>
+            </li>
           </ul>
         </header>
         {children}
