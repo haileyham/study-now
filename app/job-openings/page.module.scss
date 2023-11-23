@@ -97,16 +97,18 @@
 }
 
 .jobOpeningLogo {
-  // height: 10rem;
-  // background-color: rgb(212, 198, 254);
-  .logoContainer {
+  display: flex;
+  overflow: hidden;
+  .logoContainer1,
+  .logoContainer2 {
     display: flex;
-    gap: 10px;
     background-color: rgb(44, 34, 74);
+    animation: scrollAnimation 5s linear infinite;
   }
   .imgBox {
     width: 150px;
     height: 100px;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     border: 1px solid rgb(188, 167, 250);
@@ -116,6 +118,15 @@
   img {
     width: 100%;
     object-fit: contain;
+  }
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
