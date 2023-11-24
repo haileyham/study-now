@@ -1,5 +1,8 @@
 .main {
   margin: 1rem;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
   section {
     padding: 0.5rem;
   }
@@ -97,9 +100,10 @@
 }
 
 .jobOpeningLogo {
+  position: relative;
   margin: 10px;
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
   .logoContainer1,
   .logoContainer2,
   .logoContainer3 {
@@ -108,17 +112,18 @@
     animation: scrollAnimation 8s linear infinite;
   }
   .imgBox {
-    width: 150px;
-    height: 100px;
-    margin-left: 10px;
+    width: 100px;
+    height: 50px;
+    margin-left: 5px;
     display: flex;
     align-items: center;
     border: 1px solid rgb(188, 167, 250);
     border-radius: var(--border-radius-l);
-    padding: 20px;
+    padding: 10px;
   }
   img {
     width: 100%;
+    border-radius: var(--border-radius-m);
     object-fit: contain;
   }
 }
@@ -135,7 +140,7 @@
 /* 태블릿 화면 스타일 */
 @media (min-width: 768px) {
   .main {
-    margin: auto 4rem;
+    margin: 7rem 4rem;
   }
 
   .searchbox {
@@ -143,6 +148,20 @@
     margin: auto;
     span {
       top: 0.8rem;
+    }
+  }
+
+  .jobOpeningLogo {
+    position: fixed;
+    top: 11rem;
+    margin: 10px;
+    display: flex;
+    // overflow: hidden;
+    z-index: 0;
+    .imgBox {
+      width: 150px;
+      height: 100px;
+      margin-left: 10px;
     }
   }
 }
