@@ -108,9 +108,9 @@
 
 .jobOpeningLogo {
   position: relative;
-  margin: 10px;
+  // margin: 10px;
   display: flex;
-  // overflow: hidden;
+  overflow: hidden;
   .logoContainer1,
   .logoContainer2,
   .logoContainer3 {
@@ -160,8 +160,8 @@
 
   .jobOpeningLogo {
     position: fixed;
-    top: 11rem;
-    margin: 10px;
+    top: 12rem;
+    // margin: 10px;
     display: flex;
     // overflow: hidden;
     z-index: 0;

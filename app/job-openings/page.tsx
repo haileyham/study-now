@@ -5,8 +5,8 @@ import SiteLogo from './logo';
 export default function JobOpenings() {
   return (
     <>
+      <SiteLogo></SiteLogo>
       <div className="container">
-        <SiteLogo></SiteLogo>
         <main className={styles.main}>
           <section className={styles.jobSearchSection}>
             <h2 className="a11y-hidden">채용정보</h2>
