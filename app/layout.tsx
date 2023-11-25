@@ -27,7 +27,9 @@ export default function RootLayout({
             <Link href="/">
               <img src="" alt="logo" />
             </Link>
-            <li>퀴즈</li>
+            <li>
+              <Link href="/quiz">퀴즈</Link>
+            </li>
             <li>
               <Link href="/study-post">스터디</Link>
             </li>
