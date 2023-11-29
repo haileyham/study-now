@@ -118,6 +118,17 @@ p {
   }
 }
 
+.btn-login {
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--border-radius-m);
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    background-color: rgb(181, 181, 181);
+  }
+}
+
 //input,textarea
 input,
 textarea {

@@ -9,6 +9,7 @@ function LoginBtn() {
       onClick={() => {
         signIn();
       }}
+      className="btn-login"
     >
       Login
     </button>
@@ -20,6 +21,7 @@ function LogoutBtn() {
       onClick={() => {
         signOut();
       }}
+      className="btn-login"
     >
       Logout
     </button>

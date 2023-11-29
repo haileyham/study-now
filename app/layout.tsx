@@ -33,16 +33,22 @@ export default async function RootLayout({
       <body className={inter.className}>
         <header className="headerMain">
           <div className="myContainer">
-            <div>🌛</div>
-            <div>🎃</div>
             {session ? (
               <>
-                <div>{session?.user?.name}</div>
-                <LogoutBtn></LogoutBtn>
+                <div>
+                  <span>{session?.user?.name}</span>
+                  <LogoutBtn></LogoutBtn>
+                </div>
               </>
             ) : (
-              <LoginBtn></LoginBtn>
+              <>
+                <div>
+                  <span>로그인하세요!</span>
+                  <LoginBtn></LoginBtn>
+                </div>
+              </>
             )}
+            <div>🌛</div>
           </div>
           <ul className="navContainer">
             <Link href="/">
