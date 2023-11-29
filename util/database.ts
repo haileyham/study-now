@@ -1,7 +1,5 @@
 const { MongoClient } = require('mongodb');
-import config from '@/util/config.json';
-
-const url = config.mongodb_url;
+const url = process.env.MONGO_DB_URL;
 const options = { useNewUrlParser: true };
 let connectDB;
 
