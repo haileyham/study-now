@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 const url = process.env.MONGO_DB_URL;
 const options = { useNewUrlParser: true };
-let connectDB;
+let connectDB: any;
 
 if (!url) {
   throw new Error('The MONGODB_URL environment variable is not defined');
