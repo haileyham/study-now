@@ -53,7 +53,11 @@ export default function StudyWrite() {
           <section className={styles.writeCheck}>
             <div className={styles.studyStatus}>
               <span>Status</span>
-              <label className={styles.hello}>
+              <label
+                className={
+                  studyWrite.status == 'recruiting' ? styles.hello : styles.bye
+                }
+              >
                 <input
                   type="checkbox"
                   name="status"
@@ -62,7 +66,11 @@ export default function StudyWrite() {
                 />
                 모집중
               </label>
-              <label className={styles.bye}>
+              <label
+                className={
+                  studyWrite.status == 'done' ? styles.hello : styles.bye
+                }
+              >
                 <input
                   type="checkbox"
                   name="status"
@@ -74,7 +82,11 @@ export default function StudyWrite() {
             </div>
             <div className={styles.studyMode}>
               <span>Mode</span>
-              <label>
+              <label
+                className={
+                  studyWrite.mode == 'online' ? styles.hello : styles.bye
+                }
+              >
                 <input
                   type="checkbox"
                   value="online"
@@ -83,7 +95,11 @@ export default function StudyWrite() {
                 />
                 Online
               </label>
-              <label>
+              <label
+                className={
+                  studyWrite.mode == 'offline' ? styles.hello : styles.bye
+                }
+              >
                 <input
                   type="checkbox"
                   value="offline"
