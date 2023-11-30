@@ -17,6 +17,26 @@ export default function StudyWrite() {
   };
   console.log(studyWrite);
 
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/api/post/new', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ study: studyWrite }),
+      });
+      if (response.ok) {
+        console.log('글이 성공적으로 등록되었습니다.');
+      } else {
+        const errorRes = await response.json();
+        console.error('Error:', errorRes);
+      }
+    } catch (error) {
+      console.error('Error', error);
+    }
+  };
+
   return (
     <>
       <div className={`container ${styles.container} `}>
@@ -72,7 +92,7 @@ export default function StudyWrite() {
               placeholder="글내용"
               onChange={handleChange}
             />
-            <button>등록</button>
+            <button onClick={handleSubmit}>등록</button>
           </section>
         </main>
       </div>
