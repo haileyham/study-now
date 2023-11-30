@@ -48,6 +48,9 @@ export default async function RootLayout({
                 </div>
               </>
             )} */}
+            {/* 임시 */}
+            <LoginBtn></LoginBtn>
+            <LogoutBtn></LogoutBtn>
             <div>🌛</div>
           </div>
           <ul className="navContainer">
