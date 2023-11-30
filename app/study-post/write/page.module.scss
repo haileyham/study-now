@@ -66,6 +66,8 @@
       font-size: var(--font-size-s);
       &[type='checkbox'] {
         position: absolute;
+        left: 0;
+        top: -5px;
         visibility: hidden;
       }
     }
@@ -74,8 +76,10 @@
       margin: 0 2px;
       padding: 3px 5px;
       background-color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, 0.968);
       border-radius: var(--border-radius-s);
       box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+      cursor: pointer;
     }
     .hello {
       font-weight: bolder;

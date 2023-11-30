@@ -55,7 +55,11 @@ export default function StudyWrite() {
               <span>Status</span>
               <label
                 className={
-                  studyWrite.status == 'recruiting' ? styles.hello : styles.bye
+                  studyWrite.status == ''
+                    ? ''
+                    : studyWrite.status == 'recruiting'
+                    ? styles.hello
+                    : styles.bye
                 }
               >
                 <input
@@ -68,7 +72,11 @@ export default function StudyWrite() {
               </label>
               <label
                 className={
-                  studyWrite.status == 'done' ? styles.hello : styles.bye
+                  studyWrite.status == ''
+                    ? ''
+                    : studyWrite.status == 'done'
+                    ? styles.hello
+                    : styles.bye
                 }
               >
                 <input
@@ -84,7 +92,11 @@ export default function StudyWrite() {
               <span>Mode</span>
               <label
                 className={
-                  studyWrite.mode == 'online' ? styles.hello : styles.bye
+                  studyWrite.mode == ''
+                    ? ''
+                    : studyWrite.mode == 'online'
+                    ? styles.hello
+                    : styles.bye
                 }
               >
                 <input
@@ -97,7 +109,11 @@ export default function StudyWrite() {
               </label>
               <label
                 className={
-                  studyWrite.mode == 'offline' ? styles.hello : styles.bye
+                  studyWrite.mode == ''
+                    ? ''
+                    : studyWrite.mode == 'offline'
+                    ? styles.hello
+                    : styles.bye
                 }
               >
                 <input
