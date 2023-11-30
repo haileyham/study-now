@@ -1,7 +1,22 @@
-import React from 'react';
+'use client';
+
+import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 
 export default function StudyWrite() {
+  const [studyWrite, setStudyWrite] = useState({
+    title: '',
+    content: '',
+  });
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setStudyWrite({ ...studyWrite, [name]: value });
+  };
+  console.log(studyWrite);
+
   return (
     <>
       <div className={`container ${styles.container} `}>
@@ -46,8 +61,17 @@ export default function StudyWrite() {
             </div>
           </section>
           <section className={styles.writeInput}>
-            <input type="text" name="title" placeholder="글제목" />
-            <textarea name="content" placeholder="글내용" />
+            <input
+              type="text"
+              name="title"
+              placeholder="글제목"
+              onChange={handleChange}
+            />
+            <textarea
+              name="content"
+              placeholder="글내용"
+              onChange={handleChange}
+            />
             <button>등록</button>
           </section>
         </main>
