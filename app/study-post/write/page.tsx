@@ -4,9 +4,15 @@ import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 
 export default function StudyWrite() {
-  const [studyWrite, setStudyWrite] = useState({
+  const [studyWrite, setStudyWrite] = useState<StudyWriteState>({
+    status: '',
+    mode: '',
+    location: '',
+    time: '',
+    type: '',
     title: '',
     content: '',
+    day: '',
   });
 
   const handleChange = (
@@ -48,36 +54,66 @@ export default function StudyWrite() {
             <div className={styles.studyStatus}>
               <span>Status</span>
               <label className={styles.hello}>
-                <input type="checkbox" value="online" />
+                <input
+                  type="checkbox"
+                  name="status"
+                  value="recruiting"
+                  onChange={handleChange}
+                />
                 모집중
               </label>
               <label className={styles.bye}>
-                <input type="checkbox" value="done" />
+                <input
+                  type="checkbox"
+                  name="status"
+                  value="done"
+                  onChange={handleChange}
+                />
                 모집완료
               </label>
             </div>
             <div className={styles.studyMode}>
               <span>Mode</span>
               <label>
-                <input type="checkbox" value="online" />
+                <input
+                  type="checkbox"
+                  value="online"
+                  name="mode"
+                  onChange={handleChange}
+                />
                 Online
               </label>
               <label>
-                <input type="checkbox" value="offline" />
+                <input
+                  type="checkbox"
+                  value="offline"
+                  name="mode"
+                  onChange={handleChange}
+                />
                 Offline
               </label>
             </div>
             <div className={styles.studyLocation}>
               <span>Location</span>
-              <input type="text" name="location" placeholder="강남" />
+              <input
+                type="text"
+                name="location"
+                placeholder="강남"
+                onChange={handleChange}
+              />
             </div>
             <div className={styles.studyTime}>
               <span>Time</span>
-              <input type="time" />
+              <input type="time" name="time" onChange={handleChange} />
             </div>
             <div className={styles.studyType}>
               <span>Type</span>
-              <input type="text" placeholder="프론트엔드 면접" />
+              <input
+                type="text"
+                placeholder="프론트엔드 면접"
+                name="type"
+                onChange={handleChange}
+              />
             </div>
           </section>
           <section className={styles.writeInput}>
