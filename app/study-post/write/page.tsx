@@ -5,6 +5,7 @@ import styles from './page.module.scss';
 
 export default function StudyWrite() {
   const [studyWrite, setStudyWrite] = useState<StudyWriteState>({
+    author: '',
     status: '',
     mode: '',
     location: '',
