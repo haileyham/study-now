@@ -26,14 +26,14 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  let session = (await getServerSession(authOptions)) as Session;
-  console.log(session);
+  // let session = (await getServerSession(authOptions)) as Session;
+  // console.log(session);
   return (
     <html lang="en">
       <body className={inter.className}>
         <header className="headerMain">
           <div className="myContainer">
-            {session ? (
+            {/* {session ? (
               <>
                 <div>
                   <span>{session?.user?.name}</span>
@@ -47,7 +47,7 @@ export default async function RootLayout({
                   <LoginBtn></LoginBtn>
                 </div>
               </>
-            )}
+            )} */}
             <div>🌛</div>
           </div>
           <ul className="navContainer">
