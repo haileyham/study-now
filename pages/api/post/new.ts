@@ -7,7 +7,7 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     if (
-      req.body.study.author == '' ||
+      // req.body.study.author == '' || //임시 주석처리
       req.body.study.title == '' ||
       req.body.study.content == '' ||
       req.body.study.status == ''
