@@ -52,10 +52,17 @@ export default function StudyWrite() {
   return (
     <>
       <div className={`container ${styles.container} `}>
-        <header>
-          <h1>스터디 모집</h1>
-        </header>
         <main>
+          <section className={styles.writeHeader}>
+            <button
+              onClick={() => {
+                router.back();
+              }}
+            >
+              ◀
+            </button>
+            <h1>스터디 모집</h1>
+          </section>
           <section className={styles.writeCheck}>
             <div className={styles.studyStatus}>
               <span>Status</span>
