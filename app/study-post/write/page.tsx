@@ -2,8 +2,10 @@
 
 import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
+import { useRouter } from 'next/navigation';
 
 export default function StudyWrite() {
+  let router = useRouter();
   const [studyWrite, setStudyWrite] = useState<StudyWriteState>({
     author: '',
     status: '',
@@ -22,7 +24,7 @@ export default function StudyWrite() {
     const { name, value } = e.target;
     setStudyWrite({ ...studyWrite, [name]: value });
   };
-  console.log(studyWrite);
+  // console.log(studyWrite);
 
   const handleSubmit = async () => {
     try {
@@ -35,6 +37,9 @@ export default function StudyWrite() {
       });
       if (response.ok) {
         console.log('글이 성공적으로 등록되었습니다.');
+        {
+          router.push('/study-post');
+        }
       } else {
         const errorRes = await response.json();
         console.error('Error:', errorRes);
