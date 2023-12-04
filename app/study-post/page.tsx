@@ -3,6 +3,9 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 import { connectDB } from '@/util/database';
 
+// export const revalidate = 60;
+export const dynamic = 'force-dynamic';
+
 export default async function StudyPost() {
   const db = (await connectDB).db('study_platform');
   let result: Post[] = await db.collection('study_posts').find().toArray();
@@ -24,9 +27,22 @@ export default async function StudyPost() {
             {result.map((post: Post, i: number) => {
               return (
                 <div key={i}>
-                  <Link href="/study-post/detail/abc">
+                  <Link href={`/study-post/detail/${post._id}`}>
                     <div className={styles.studyList}>
-                      <span className={styles.status}>
+                      {/* <span
+                        className={
+                          post.status == 'recruiting'
+                            ? styles.statusRR
+                            : styles.statusDD
+                        }
+                      ></span> */}
+                      <span
+                        className={
+                          post.status == 'recruiting'
+                            ? styles.statusR
+                            : styles.statusD
+                        }
+                      >
                         {post.status == 'recruiting' ? '모집중' : '모집완료'}
                       </span>
                       <span className={styles.date}>1일전</span>
