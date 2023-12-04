@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './page.module.scss';
+import { connectDB } from '@/util/database';
+import { ObjectId } from 'mongodb';
 
-export default function StudyDetail() {
+export default async function StudyDetail(props: StudyDetailProps) {
+  let db = (await connectDB).db('study_platform');
+  let result = await db
+    .collection('study_posts')
+    .findOne({ _id: new ObjectId(props.params.id) });
+
   return (
     <>
       <div className={`container ${styles.container}`}>
@@ -12,12 +19,7 @@ export default function StudyDetail() {
           <section>
             <header className={styles.mainHeader}>
               <div>
-                <h2>
-                  ㅇㅇ스터디 구해요!ㅇㅇ터디 구해요!ㅇㅇ터디 구해요!ㅇㅇ터디
-                  구해요!ㅇㅇ터디 구해요!ㅇㅇ터디 구해요!ㅇㅇ터디
-                  구해요!ㅇㅇ터디 구해요!ㅇㅇ터디
-                  구해요!ㅇㅇ요!ㅇㅇ터요!ㅇㅇ터요!ㅇㅇ터요!ㅇㅇ터
-                </h2>
+                <h2>{result.title}</h2>
                 <div className={styles.detailEditDel}>
                   <button className="btn-s">글수정</button>
                   <button className="btn-s">글삭제</button>
@@ -30,15 +32,7 @@ export default function StudyDetail() {
               </div>
             </header>
             <div className={styles.mainContent}>
-              <p>
-                이렇게 저렇게 해서 요렇궁 저렇궁 이렇게 저렇게 해서 요렇궁
-                저렇궁이렇게 저렇게 해서 요렇궁 저렇궁이렇게 저렇게 해서 요렇궁
-                저렇궁이렇게 저렇게 해서 요렇궁 저렇궁 이렇게 저렇게 해서 요렇궁
-                저렇궁이렇게 저렇게 해서 요렇궁 저렇궁이렇게 저렇게 해서 요렇궁
-                저렇궁이렇게 저렇게 해서 요렇궁 저렇궁 이렇게 저렇게 해서 요렇궁
-                저렇궁이렇게 저렇게 해서 요렇궁 저렇궁이렇게 저렇게 해서 요렇궁
-                저렇궁이렇게 저렇게 해서 요렇궁 저렇궁
-              </p>
+              <p>{result.content}</p>
             </div>
           </section>
           <section>
