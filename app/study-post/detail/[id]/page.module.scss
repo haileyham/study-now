@@ -1,14 +1,17 @@
+$h3-Color: rgb(158, 158, 158);
+$mainContent: 14px;
+
 .main {
   section {
     margin-top: 5px;
   }
   section:last-of-type {
-    background-color: rgba(197, 195, 195, 0.157);
+    background-color: rgba(215, 196, 255, 0.179);
     border-radius: var(--border-radius-s);
     padding-bottom: 10px;
     h3 {
       padding: 10px;
-      color: var(--color-content-s);
+      color: $h3-Color;
       font-size: var(--font-header-s);
       border-bottom: 1px solid rgb(191, 191, 191);
     }
@@ -63,6 +66,7 @@
     margin: 5px 0px 20px 0;
     padding: 10px;
     color: var(--color-content-m);
+    font-size: $mainContent;
   }
   &::before {
     content: '';
@@ -85,7 +89,7 @@
     padding: 1rem 0.5rem 0.5rem 0.5rem;
     border-radius: var(--border-radius-s);
     flex-grow: 1;
-    flex-basis: 100px;
+    flex-basis: 50px;
     text-align: center;
     background-color: #fff;
   }
