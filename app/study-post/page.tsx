@@ -1,8 +1,15 @@
 import React from 'react';
 import styles from './page.module.scss';
 import Link from 'next/link';
+import { connectDB } from '@/util/database';
 
-export default function StudyPost() {
+// export const revalidate = 60;
+export const dynamic = 'force-dynamic';
+
+export default async function StudyPost() {
+  const db = (await connectDB).db('study_platform');
+  let result: Post[] = await db.collection('study_posts').find().toArray();
+
   return (
     <>
       <div className="container">
@@ -17,71 +24,53 @@ export default function StudyPost() {
             </Link>
           </header>
           <section className={styles.studySection}>
-            <Link href="/study-post/detail/abc">
-              <div className={styles.studyList}>
-                <span className={styles.status}>모집중</span>
-                <span className={styles.date}>1일전</span>
-                <h2>스터디 모집해용</h2>
-                <p>우리 지금 해야하는 스터디는 이런 것입니다.</p>
-                <div className={styles.postInfo}>
-                  <span>hailey</span>
-                  <span>♡ 1</span>
-                  <span>♧ 2</span>
+            {result.map((post: Post, i: number) => {
+              return (
+                <div key={i}>
+                  <Link href={`/study-post/detail/${post._id}`}>
+                    <div className={styles.studyList}>
+                      {/* <span
+                        className={
+                          post.status == 'recruiting'
+                            ? styles.statusRR
+                            : styles.statusDD
+                        }
+                      ></span> */}
+                      <span
+                        className={
+                          post.status == 'recruiting'
+                            ? styles.statusR
+                            : styles.statusD
+                        }
+                      >
+                        {post.status == 'recruiting' ? '모집중' : '모집완료'}
+                      </span>
+                      <span className={styles.date}>1일전</span>
+                      <h2>{post.title}</h2>
+                      <p>{post.content}</p>
+                      <div className={styles.postInfo}>
+                        {post.mode && (
+                          <span className={styles.info1}>{post.mode}</span>
+                        )}
+                        {post.location && (
+                          <span className={styles.info2}>{post.location}</span>
+                        )}
+                        {post.time && (
+                          <span className={styles.info3}>{post.time}</span>
+                        )}
+                        {post.type && (
+                          <span className={styles.info4}>{post.type}</span>
+                        )}
+
+                        <span>작성자 : Zoe</span>
+                        {/* <span>♡ 1</span> */}
+                        {/* <span>♧ 2</span> */}
+                      </div>
+                    </div>
+                  </Link>
                 </div>
-              </div>
-            </Link>
-            <Link href="/study-post/detail/abc">
-              <div className={styles.studyList}>
-                <span className={styles.status}>모집중</span>
-                <span className={styles.date}>1일전</span>
-                <h2>스터디 모집해용</h2>
-                <p>우리 지금 해야하는 스터디는 이런 것입니다.</p>
-                <div className={styles.postInfo}>
-                  <span>hailey</span>
-                  <span>♡ 1</span>
-                  <span>♧ 2</span>
-                </div>
-              </div>
-            </Link>
-            <Link href="/study-post/detail/abc">
-              <div className={styles.studyList}>
-                <span className={styles.status}>모집중</span>
-                <span className={styles.date}>1일전</span>
-                <h2>스터디 모집해용</h2>
-                <p>우리 지금 해야하는 스터디는 이런 것입니다.</p>
-                <div className={styles.postInfo}>
-                  <span>hailey</span>
-                  <span>♡ 1</span>
-                  <span>♧ 2</span>
-                </div>
-              </div>
-            </Link>
-            <Link href="/study-post/detail/abc">
-              <div className={styles.studyList}>
-                <span className={styles.status}>모집중</span>
-                <span className={styles.date}>1일전</span>
-                <h2>스터디 모집해용</h2>
-                <p>우리 지금 해야하는 스터디는 이런 것입니다.</p>
-                <div className={styles.postInfo}>
-                  <span>hailey</span>
-                  <span>♡ 1</span>
-                  <span>♧ 2</span>
-                </div>
-              </div>
-            </Link>
-            <Link href="/study-post/detail/abc">
-              <div className={styles.studyList}>
-                <span className={styles.status}>모집중</span>
-                <span className={styles.date}>1일전</span>
-                <h2>스터디 모집해용</h2>
-                <p>우리 지금 해야하는 스터디는 이런 것입니다.</p>
-                <div className={styles.postInfo}>
-                  <span>hailey</span>
-                  <span>♡ 1</span>
-                  <span>♧ 2</span>
-                </div>
-              </div>
-            </Link>
+              );
+            })}
           </section>
         </main>
       </div>
