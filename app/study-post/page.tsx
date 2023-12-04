@@ -26,7 +26,9 @@ export default async function StudyPost() {
                 <div key={i}>
                   <Link href="/study-post/detail/abc">
                     <div className={styles.studyList}>
-                      <span className={styles.status}>{post.status}</span>
+                      <span className={styles.status}>
+                        {post.status == 'recruiting' ? '모집중' : '모집완료'}
+                      </span>
                       <span className={styles.date}>1일전</span>
                       <h2>{post.title}</h2>
                       <p>{post.content}</p>
