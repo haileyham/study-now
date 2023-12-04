@@ -33,9 +33,13 @@ export default async function StudyPost() {
                       <h2>{post.title}</h2>
                       <p>{post.content}</p>
                       <div className={styles.postInfo}>
-                        <span>Zoe</span>
-                        <span>♡ 1</span>
-                        <span>♧ 2</span>
+                        <span className={styles.info1}>{post.mode}</span>
+                        <span className={styles.info2}>{post.location}</span>
+                        <span className={styles.info3}>{post.time}</span>
+                        <span className={styles.info4}>{post.type}</span>
+                        <span>작성자 : Zoe</span>
+                        {/* <span>♡ 1</span> */}
+                        {/* <span>♧ 2</span> */}
                       </div>
                     </div>
                   </Link>
