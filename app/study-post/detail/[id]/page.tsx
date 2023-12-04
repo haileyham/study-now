@@ -28,10 +28,28 @@ export default async function StudyDetail(props: StudyDetailProps) {
               <div>
                 <img src="" alt="profile" />
                 <p>author</p>
-                <p>1일전</p>
+                <p className={styles.date}>1일전</p>
               </div>
             </header>
             <div className={styles.mainContent}>
+              <div className={styles.postInfo}>
+                <div>
+                  <span>status</span>
+                  <p>{result.status == 'recruiting' ? '모집중' : '모집완료'}</p>
+                </div>
+                <div>
+                  <span>mode</span>
+                  <p>{result.mode}</p>
+                </div>
+                <div>
+                  <span>Location</span>
+                  <p>{result.location}</p>
+                </div>
+                <div>
+                  <span>Type</span>
+                  <p>{result.type}</p>
+                </div>
+              </div>
               <p>{result.content}</p>
             </div>
           </section>
@@ -43,11 +61,11 @@ export default async function StudyDetail(props: StudyDetailProps) {
                   <img src="" alt="profile" />
                   <p>author</p>
                 </div>
-                <p>
+                <p className={styles.comment}>
                   댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다l
                   댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다l
                 </p>
-                <p>1일전</p>
+                <p className={styles.commentDate}>1일전</p>
               </li>
             </ul>
             <div className={styles.commentInput}>

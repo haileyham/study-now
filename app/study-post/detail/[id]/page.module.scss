@@ -48,7 +48,6 @@
     padding: 0;
     height: 0;
     display: flex;
-    justify-content: end;
     button {
       margin: 0;
       padding: 2px 5px;
@@ -72,6 +71,42 @@
     height: 0.5px;
     border-radius: var(--border-radius-s);
     background-color: rgb(212, 212, 212);
+  }
+}
+
+.postInfo {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid pink;
+  border-radius: var(--border-radius-s);
+  background-color: #fff;
+  div {
+    position: relative;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    border-radius: var(--border-radius-s);
+    flex-grow: 1;
+    flex-basis: 100px;
+    text-align: center;
+    background-color: #fff;
+  }
+  p {
+    font-size: var(--font-size-s);
+    margin: 0 2px;
+    padding: 3px 5px;
+    background-color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.968);
+    border-radius: var(--border-radius-s);
+    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    display: inline;
+  }
+  span {
+    position: absolute;
+    top: -0.4rem;
+    left: 1rem;
+    padding: 0 0.5rem;
+    font-size: var(--font-size-s);
+    background-color: rgb(230, 224, 253);
+    border-radius: var(--border-radius-l);
   }
 }
 
