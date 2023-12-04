@@ -101,6 +101,9 @@
   p {
     font-size: var(--font-size-m);
     color: var(--color-content-m);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .postInfo {
     font-size: var(--font-size-s);
