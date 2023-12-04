@@ -39,13 +39,36 @@
     font-size: var(--font-size-ss);
     color: var(--color-content-s);
   }
-  .status {
+  %common-style {
     font-size: var(--font-size-ss);
     font-weight: 900;
-    background: rgb(131, 210, 255);
     color: white;
     padding: 2px 5px;
     border-radius: var(--border-radius-m);
+  }
+  .status {
+    @extend %common-style;
+    background: rgb(131, 210, 255);
+  }
+  .info1 {
+    @extend %common-style;
+    background: rgb(213, 204, 253);
+    color: rgb(123, 94, 255);
+  }
+  .info2 {
+    @extend %common-style;
+    background: rgb(161, 254, 178);
+    color: rgb(20, 97, 34);
+  }
+  .info3 {
+    @extend %common-style;
+    background: rgb(210, 254, 106);
+    color: rgb(93, 97, 20);
+  }
+  .info4 {
+    @extend %common-style;
+    background: rgb(254, 161, 198);
+    color: rgb(97, 20, 78);
   }
   h2 {
     font-size: var(--font-header-m);
@@ -63,8 +86,9 @@
     display: flex;
     justify-content: space-between;
     gap: 8px;
-    & > span:nth-child(1) {
+    & > span:last-of-type {
       flex: 1;
+      text-align: right;
     }
   }
 }
