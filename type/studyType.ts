@@ -16,3 +16,7 @@ interface Post {
   time: string;
   type: string;
 }
+
+interface PostListProps {
+  result: Post[];
+}
