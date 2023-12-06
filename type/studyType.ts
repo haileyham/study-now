@@ -20,3 +20,9 @@ interface Post {
 interface PostListProps {
   result: Post[];
 }
+
+interface StudyDetailProps {
+  params: {
+    id: string;
+  };
+}
