@@ -23,7 +23,7 @@ export default async function StudyDetail(props: StudyDetailProps) {
                 <h2>{result.title}</h2>
                 <div className={styles.detailEditDel}>
                   <button className="btn-s">글수정</button>
-                  <button className="btn-s">글삭제</button>
+                  {/* <button className="btn-s">글삭제</button> */}
                   <DeleteBtn postId={result._id}></DeleteBtn>
                 </div>
               </div>
