@@ -33,7 +33,6 @@ export default async function StudyDetail(props: StudyDetailProps) {
                   <div className={styles.detailEditDel}>
                     <button className={styles.editBtn}>글수정</button>
                     {/* <button className="btn-s">글삭제</button> */}
-                    <Modal></Modal>
                     <DeleteBtn postId={id}></DeleteBtn>
                   </div>
                 </div>

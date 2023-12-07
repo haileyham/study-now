@@ -51,6 +51,7 @@ $mainContent: 14px;
     padding: 0;
     height: 0;
     display: flex;
+    align-items: center;
     .editBtn {
       margin: 0;
       padding: 2px 5px;
@@ -58,6 +59,7 @@ $mainContent: 14px;
       background-color: #fff;
       font-size: var(--font-size-ss);
       border: none;
+      cursor: pointer;
     }
   }
 }
