@@ -3,6 +3,7 @@ import styles from './page.module.scss';
 import { connectDB } from '@/util/database';
 import { ObjectId } from 'mongodb';
 import { DeleteBtn } from '@/components/detail/delete';
+import Modal from '@/components/modal/Modal';
 
 export default async function StudyDetail(props: StudyDetailProps) {
   let db = (await connectDB).db('study_platform');
@@ -27,15 +28,16 @@ export default async function StudyDetail(props: StudyDetailProps) {
           <main className={styles.main}>
             <section>
               <header className={styles.mainHeader}>
-                <div>
+                <div className={styles.divMainHeader}>
                   <h2>{result.title}</h2>
                   <div className={styles.detailEditDel}>
-                    <button className="btn-s">글수정</button>
+                    <button className={styles.editBtn}>글수정</button>
                     {/* <button className="btn-s">글삭제</button> */}
+                    <Modal></Modal>
                     <DeleteBtn postId={id}></DeleteBtn>
                   </div>
                 </div>
-                <div>
+                <div className={styles.divMainHeader}>
                   <img src="" alt="profile" />
                   <p>author</p>
                   <p className={styles.date}>1일전</p>
