@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './page.module.scss';
 import { connectDB } from '@/util/database';
 import { ObjectId } from 'mongodb';
+import { DeleteBtn } from '@/components/detail/delete';
 
 export default async function StudyDetail(props: StudyDetailProps) {
   let db = (await connectDB).db('study_platform');
@@ -23,6 +24,7 @@ export default async function StudyDetail(props: StudyDetailProps) {
                 <div className={styles.detailEditDel}>
                   <button className="btn-s">글수정</button>
                   <button className="btn-s">글삭제</button>
+                  <DeleteBtn postId={result._id}></DeleteBtn>
                 </div>
               </div>
               <div>
