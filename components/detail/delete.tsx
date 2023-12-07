@@ -13,6 +13,7 @@ const DeleteBtn: React.FC<DeleteBtnProps> = ({ postId }) => {
       if (response.ok) {
         console.log('삭제완룡');
         {
+          router.refresh();
           router.push('/study-post');
         }
       } else {
