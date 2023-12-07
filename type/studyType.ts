@@ -26,3 +26,7 @@ interface StudyDetailProps {
     id: string;
   };
 }
+
+type DeleteBtnProps = {
+  postId: Object;
+};
