@@ -26,3 +26,14 @@ interface StudyDetailProps {
     id: string;
   };
 }
+
+type DeleteBtnProps = {
+  postId: Object | string;
+};
+
+type ModalProps = {
+  modalBtn: string;
+  modalBtnStyle: string;
+  message: string;
+  onFunction: () => void;
+};
