@@ -14,6 +14,7 @@ interface Post {
   mode: string;
   location: string;
   time: string;
+  date: string;
   type: string;
 }
 

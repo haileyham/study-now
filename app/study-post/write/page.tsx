@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 
 export default function StudyWrite() {
   let router = useRouter();
+  const time = new Date().toString();
+
   const [studyWrite, setStudyWrite] = useState<StudyWriteState>({
     author: '',
     status: '',
@@ -16,6 +18,7 @@ export default function StudyWrite() {
     title: '',
     content: '',
     day: '',
+    date: time,
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,6 +43,7 @@ export default function StudyWrite() {
       if (response.ok) {
         console.log('글이 성공적으로 등록되었습니다.');
         {
+          router.refresh();
           router.push('/study-post');
         }
       } else {

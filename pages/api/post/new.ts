@@ -23,6 +23,7 @@ export default async function handler(
         mode: req.body.study.mode,
         location: req.body.study.location,
         time: req.body.study.time,
+        date: req.body.study.date,
         type: req.body.study.type,
       };
       const db = (await connectDB).db('study_platform');
