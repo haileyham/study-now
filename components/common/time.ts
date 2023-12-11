@@ -22,10 +22,16 @@ export default function getTimesAgo(postDate: string) {
     return `${daysAgo}일 전`;
   }
 
+  return getDate(postDateTime);
+}
+
+export function getDate(postDateTime: Date): string {
+  const postDate = new Date(postDateTime);
+
   const options: DateTimeFormatOptions = {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   };
-  return postDateTime.toLocaleDateString(undefined, options);
+  return postDate.toLocaleDateString(undefined, options);
 }
