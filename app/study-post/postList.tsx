@@ -22,7 +22,16 @@ const PostList: React.FC<PostListProps> = ({ result }) => {
     if (hoursAgo < 24) {
       return `${hoursAgo}시간 전`;
     }
-    return `${daysAgo}일 전`;
+    if (daysAgo <= 30) {
+      return `${daysAgo}일 전`;
+    }
+
+    const options: DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    return postDateTime.toLocaleDateString(undefined, options);
   };
 
   return (
