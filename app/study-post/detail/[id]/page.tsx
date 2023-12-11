@@ -4,6 +4,7 @@ import { connectDB } from '@/util/database';
 import { ObjectId } from 'mongodb';
 import { DeleteBtn } from '@/components/detail/delete';
 import Modal from '@/components/modal/Modal';
+import { getDate } from '@/components/common/time';
 
 export default async function StudyDetail(props: StudyDetailProps) {
   let db = (await connectDB).db('study_platform');
@@ -39,7 +40,7 @@ export default async function StudyDetail(props: StudyDetailProps) {
                 <div className={styles.divMainHeader}>
                   <img src="" alt="profile" />
                   <p>author</p>
-                  <p className={styles.date}>1일전</p>
+                  <p className={styles.date}>{getDate(result.date)}</p>
                 </div>
               </header>
               <div className={styles.mainContent}>
