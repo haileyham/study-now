@@ -27,14 +27,7 @@ export default function StudyWrite() {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-
-    const processNewline = (text: string) => {
-      return text.replace(/\n/g, '<br/>');
-    };
-    const processedValue = name === 'content' ? processNewline(value) : value;
-
-    setStudyWrite({ ...studyWrite, [name]: processedValue });
-    // setStudyWrite({ ...studyWrite, [name]: value });
+    setStudyWrite({ ...studyWrite, [name]: value });
   };
   // console.log(studyWrite);
 
