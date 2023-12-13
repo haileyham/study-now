@@ -1,12 +1,13 @@
 $h3-Color: rgb(158, 158, 158);
 $mainContent: 14px;
+$backColor: rgba(215, 196, 255, 0.179);
 
 .main {
   section {
     margin-top: 5px;
   }
   section:last-of-type {
-    background-color: rgba(215, 196, 255, 0.179);
+    background-color: $backColor;
     border-radius: var(--border-radius-s);
     padding-bottom: 10px;
     h3 {
@@ -32,18 +33,22 @@ $mainContent: 14px;
   }
   .divMainHeader {
     display: flex;
-    margin: 5px 0px;
+    margin: 5px;
     padding: 5px;
-    height: 40px;
+    height: 30px;
     justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     // :nth-child(3) {
     //   flex: 1;
     //   text-align: right;
     // }
     img {
       border-radius: 50px;
+    }
+    .date {
+      flex: 1;
+      text-align: right;
     }
   }
   .detailEditDel {
@@ -60,16 +65,21 @@ $mainContent: 14px;
       font-size: var(--font-size-ss);
       border: none;
       cursor: pointer;
+      &:hover {
+        font-weight: bolder;
+      }
     }
   }
 }
 
 .mainContent {
-  p {
-    margin: 5px 0px 20px 0;
+  .content {
+    margin: 10px 0px 20px 0;
     padding: 10px;
     color: var(--color-content-m);
     font-size: $mainContent;
+    min-height: 8rem;
+    white-space: pre;
   }
   &::before {
     content: '';
@@ -83,37 +93,43 @@ $mainContent: 14px;
 
 .postInfo {
   display: flex;
+  margin-bottom: 12px;
   flex-wrap: wrap;
-  border: 1px solid pink;
+  // border: 1px solid rgb(191, 191, 191);
   border-radius: var(--border-radius-s);
-  background-color: #fff;
+  // padding: 2px;
+  background-color: $backColor;
   div {
     position: relative;
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    margin: 5px;
+    padding: 0.8rem 0.3rem 0rem 0.3rem;
     border-radius: var(--border-radius-s);
     flex-grow: 1;
-    flex-basis: 50px;
+    // flex-basis: 100px;
     text-align: center;
+    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
     background-color: #fff;
   }
   p {
     font-size: var(--font-size-s);
-    margin: 0 2px;
-    padding: 3px 5px;
+    margin: 0;
+    padding: 7px 5px 3px 5px;
     background-color: #fff;
     border: 1.5px solid rgba(255, 255, 255, 0.968);
     border-radius: var(--border-radius-s);
-    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
-    display: inline;
+    color: rgb(53, 53, 53);
   }
   span {
     position: absolute;
-    top: -0.4rem;
-    left: 1rem;
+    width: 100%;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0 0.5rem;
     font-size: var(--font-size-s);
-    background-color: rgb(230, 224, 253);
-    border-radius: var(--border-radius-l);
+    border-radius: var(--border-radius-s);
+    background-color: rgb(244, 240, 252);
+    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
   }
 }
 
@@ -173,7 +189,7 @@ $mainContent: 14px;
     }
   }
   .mainContent {
-    p {
+    .content {
       min-height: 8rem;
     }
   }

@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 import { connectDB } from '@/util/database';
 import { ObjectId } from 'mongodb';
 import { DeleteBtn } from '@/components/detail/delete';
-import Modal from '@/components/modal/Modal';
+import { getDate } from '@/components/common/time';
 
 export default async function StudyDetail(props: StudyDetailProps) {
   let db = (await connectDB).db('study_platform');
@@ -28,6 +28,26 @@ export default async function StudyDetail(props: StudyDetailProps) {
           <main className={styles.main}>
             <section>
               <header className={styles.mainHeader}>
+                <div className={styles.postInfo}>
+                  <div>
+                    <span>모집상태</span>
+                    <p>
+                      {result.status == 'recruiting' ? '모집중' : '모집완료'}
+                    </p>
+                  </div>
+                  <div>
+                    <span>온오프</span>
+                    <p>{result.mode ? result.mode : '-'}</p>
+                  </div>
+                  <div>
+                    <span>장소</span>
+                    <p>{result.location ? result.location : '-'}</p>
+                  </div>
+                  <div>
+                    <span>종류</span>
+                    <p>{result.type ? result.type : '-'}</p>
+                  </div>
+                </div>
                 <div className={styles.divMainHeader}>
                   <h2>{result.title}</h2>
                   <div className={styles.detailEditDel}>
@@ -39,31 +59,11 @@ export default async function StudyDetail(props: StudyDetailProps) {
                 <div className={styles.divMainHeader}>
                   <img src="" alt="profile" />
                   <p>author</p>
-                  <p className={styles.date}>1일전</p>
+                  <p className={styles.date}>{getDate(result.date)}</p>
                 </div>
               </header>
               <div className={styles.mainContent}>
-                <div className={styles.postInfo}>
-                  <div>
-                    <span>status</span>
-                    <p>
-                      {result.status == 'recruiting' ? '모집중' : '모집완료'}
-                    </p>
-                  </div>
-                  <div>
-                    <span>mode</span>
-                    <p>{result.mode}</p>
-                  </div>
-                  <div>
-                    <span>Location</span>
-                    <p>{result.location}</p>
-                  </div>
-                  <div>
-                    <span>Type</span>
-                    <p>{result.type}</p>
-                  </div>
-                </div>
-                <p>{result.content}</p>
+                <p className={styles.content}>{result.content}</p>
               </div>
             </section>
             <section>
