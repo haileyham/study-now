@@ -1,3 +1,4 @@
+import WritingEditor from '@/components/writing/WritingEditor';
 import { connectDB } from '@/util/database';
 import { ObjectId } from 'mongodb';
 import React from 'react';
@@ -7,5 +8,11 @@ export default async function StudyEdit(props: StudyDetailProps) {
   const result = await db
     .collection('study_posts')
     .findOne({ _id: new ObjectId(props.params.id) });
-  return <div>{result.title}</div>;
+  console.log(result);
+
+  return (
+    <>
+      <WritingEditor result={result}></WritingEditor>
+    </>
+  );
 }
