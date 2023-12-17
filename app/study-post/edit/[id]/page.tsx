@@ -8,6 +8,7 @@ export default async function StudyEdit(props: StudyDetailProps) {
   const result = await db
     .collection('study_posts')
     .findOne({ _id: new ObjectId(props.params.id) });
+  result._id = result._id.toString();
   console.log(result);
 
   return (
