@@ -56,6 +56,19 @@ interface DateTimeFormatOptions {
   timeZone?: string;
 }
 
+interface WritingEditor {
+  _id: string;
+  author: string;
+  title: string;
+  content: string;
+  status: string;
+  mode: string;
+  location: string;
+  time: string;
+  date: string;
+  type: string;
+}
+
 type WritingEditorProps = {
   result: {
     _id: string;
