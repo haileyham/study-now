@@ -5,7 +5,7 @@ import React from 'react';
 
 export default async function StudyEdit(props: StudyDetailProps) {
   const db = (await connectDB).db('study_platform');
-  const result: Post = await db
+  const result: WritingEditor = await db
     .collection('study_posts')
     .findOne({ _id: new ObjectId(props.params.id) });
   result._id = result._id.toString();
