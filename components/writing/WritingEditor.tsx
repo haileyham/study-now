@@ -3,23 +3,21 @@ import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 
-// export default function WritingEditor({ result }) {
 const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
   let router = useRouter();
   const time = new Date().toString();
-  // console.log(result);
 
   const [studyWrite, setStudyWrite] = useState<StudyWriteState>({
-    author: '',
-    status: '',
-    mode: '',
-    location: '',
-    time: '',
-    type: '',
-    title: '',
-    content: '',
-    day: '',
-    date: time,
+    author: `${result.author}`,
+    status: `${result.status}`,
+    mode: `${result.mode}`,
+    location: `${result.location}`,
+    time: `${result.time}`,
+    type: `${result.type}`,
+    title: `${result.title}`,
+    content: `${result.content}`,
+    day: time,
+    date: `${result.date}`,
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,6 +28,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
     const { name, value } = e.target;
     setStudyWrite({ ...studyWrite, [name]: value });
   };
+  // console.log(studyWrite);
 
   // const handleSubmit = async () => {
   //   try {
@@ -174,9 +173,8 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
               <input
                 type="text"
                 name="location"
-                // placeholder="강남"
+                placeholder="ex) 강남"
                 onChange={handleChange}
-                defaultValue={result.location}
               />
             </div>
             <div className={styles.studyTime}>
@@ -187,10 +185,9 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
               <span>Type</span>
               <input
                 type="text"
-                // placeholder="프론트엔드 면접"
+                placeholder="ex) 프론트엔드 면접"
                 name="type"
                 onChange={handleChange}
-                defaultValue={result.type}
               />
             </div>
           </section>
