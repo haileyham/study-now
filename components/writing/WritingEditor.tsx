@@ -3,7 +3,8 @@ import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 
-export default function WritingEditor({ result }) {
+// export default function WritingEditor({ result }) {
+const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
   let router = useRouter();
   const time = new Date().toString();
   // console.log(result);
@@ -214,4 +215,6 @@ export default function WritingEditor({ result }) {
       </div>
     </>
   );
-}
+};
+
+export default WritingEditor;
