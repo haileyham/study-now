@@ -2,6 +2,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
+import Modal from '../modal/Modal';
 
 const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
   let router = useRouter();
@@ -19,8 +20,6 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
     day: time,
     date: `${result.date}`,
   });
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -54,19 +53,8 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
   //   }
   // };
 
-  const openModal = async () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = async () => {
-    setIsModalOpen(false);
-  };
-
   const handleConfirm = () => {
     router.back();
-  };
-  const closeOnClick = (e: any) => {
-    e.stopPropagation(); // 이벤트 버블링 중지
   };
 
   return (
@@ -74,23 +62,12 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
       <div className={`container ${styles.container} `}>
         <main>
           <section className={styles.writeHeader}>
-            <div className={styles.modalContainer}>
-              <button className={styles.backBtn} onClick={openModal}>
-                ◀
-              </button>
-              {isModalOpen && (
-                <div className={styles.modal} onClick={openModal}>
-                  <div className={styles.modalContent} onClick={closeOnClick}>
-                    <div className={styles.closeBtn} onClick={closeModal}>
-                      &times;
-                    </div>
-                    <p>정말 나가겠습니까?</p>
-                    <button onClick={handleConfirm}>확인</button>
-                    <button onClick={closeModal}>닫기</button>
-                  </div>
-                </div>
-              )}
-            </div>
+            <Modal
+              modalBtn={'◀'}
+              modalBtnStyle={styles.backBtn}
+              message={'정말 나가겠습니까?'}
+              onFunction={handleConfirm}
+            ></Modal>
             <h1>스터디 모집</h1>
           </section>
           <section className={styles.writeCheck}>
