@@ -4,7 +4,10 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
 
-const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
+const WritingEditor: React.FC<WritingEditorProps> = ({
+  result,
+  writingEdit,
+}) => {
   let router = useRouter();
   const time = new Date().toString();
 
@@ -19,6 +22,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
     content: `${result.content}`,
     day: time,
     date: `${result.date}`,
+    _id: `${result._id}`,
   });
 
   const handleChange = (
@@ -28,30 +32,31 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
     setStudyWrite({ ...studyWrite, [name]: value });
   };
   // console.log(studyWrite);
+  // console.log(result);
 
-  // const handleSubmit = async () => {
-  //   try {
-  //     const response = await fetch('/api/post/new', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ study: studyWrite }),
-  //     });
-  //     if (response.ok) {
-  //       console.log('글이 성공적으로 등록되었습니다.');
-  //       {
-  //         router.refresh();
-  //         router.push('/study-post');
-  //       }
-  //     } else {
-  //       const errorRes = await response.json();
-  //       console.error('Error:', errorRes);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error', error);
-  //   }
-  // };
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch(`${writingEdit.api}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ study: studyWrite }),
+      });
+      if (response.ok) {
+        console.log('글이 성공적으로 등록되었습니다.');
+        {
+          router.refresh();
+          router.push('/study-post');
+        }
+      } else {
+        const errorRes = await response.json();
+        console.error('Error:', errorRes);
+      }
+    } catch (error) {
+      console.error('Error', error);
+    }
+  };
 
   const handleConfirm = () => {
     router.back();
@@ -182,8 +187,12 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
               onChange={handleChange}
               defaultValue={result.content}
             />
-            {/* <button onClick={handleSubmit}>등록</button> */}
-            <button>등록</button>
+            <Modal
+              modalBtn={`${writingEdit.modalBtnText}`}
+              modalBtnStyle={styles.writeEditBtn}
+              message={`${writingEdit.modalMessage}`}
+              onFunction={handleSubmit}
+            ></Modal>
           </section>
         </main>
       </div>
