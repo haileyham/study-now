@@ -71,4 +71,5 @@ interface WritingEditor {
 
 type WritingEditorProps = {
   result: WritingEditor;
+  text: { [key: string]: string };
 };
