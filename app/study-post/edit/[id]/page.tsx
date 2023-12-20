@@ -11,13 +11,14 @@ export default async function StudyEdit(props: StudyDetailProps) {
   result._id = result._id.toString();
   // console.log(result);
   const editText = {
+    api: '/api/post/edit',
     modalBtnText: '수정',
     modalMessage: '수정사항을 저장하시겠습니까?',
   };
 
   return (
     <>
-      <WritingEditor result={result} text={editText}></WritingEditor>
+      <WritingEditor result={result} writingEdit={editText}></WritingEditor>
     </>
   );
 }

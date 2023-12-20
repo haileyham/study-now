@@ -4,7 +4,10 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
 
-const WritingEditor: React.FC<WritingEditorProps> = ({ result, text }) => {
+const WritingEditor: React.FC<WritingEditorProps> = ({
+  result,
+  writingEdit,
+}) => {
   let router = useRouter();
   const time = new Date().toString();
 
@@ -33,7 +36,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result, text }) => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/api/post/edit', {
+      const response = await fetch(`${writingEdit.api}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -185,9 +188,9 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result, text }) => {
               defaultValue={result.content}
             />
             <Modal
-              modalBtn={`${text.modalBtnText}`}
+              modalBtn={`${writingEdit.modalBtnText}`}
               modalBtnStyle={styles.writeEditBtn}
-              message={`${text.modalMessage}`}
+              message={`${writingEdit.modalMessage}`}
               onFunction={handleSubmit}
             ></Modal>
           </section>
