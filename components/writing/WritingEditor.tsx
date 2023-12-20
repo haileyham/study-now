@@ -4,7 +4,7 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
 
-const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
+const WritingEditor: React.FC<WritingEditorProps> = ({ result, text }) => {
   let router = useRouter();
   const time = new Date().toString();
 
@@ -184,7 +184,12 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
               onChange={handleChange}
               defaultValue={result.content}
             />
-            <button onClick={handleSubmit}>등록</button>
+            <Modal
+              modalBtn={`${text.modalBtnText}`}
+              modalBtnStyle={styles.writeEditBtn}
+              message={`${text.modalMessage}`}
+              onFunction={handleSubmit}
+            ></Modal>
           </section>
         </main>
       </div>
