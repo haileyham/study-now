@@ -31,29 +31,29 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
   // console.log(studyWrite);
   // console.log(result);
 
-  // const handleSubmit = async () => {
-  //   try {
-  //     const response = await fetch('/api/post/new', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ study: studyWrite }),
-  //     });
-  //     if (response.ok) {
-  //       console.log('글이 성공적으로 등록되었습니다.');
-  //       {
-  //         router.refresh();
-  //         router.push('/study-post');
-  //       }
-  //     } else {
-  //       const errorRes = await response.json();
-  //       console.error('Error:', errorRes);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error', error);
-  //   }
-  // };
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/api/post/new', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ study: studyWrite }),
+      });
+      if (response.ok) {
+        console.log('글이 성공적으로 등록되었습니다.');
+        {
+          router.refresh();
+          router.push('/study-post');
+        }
+      } else {
+        const errorRes = await response.json();
+        console.error('Error:', errorRes);
+      }
+    } catch (error) {
+      console.error('Error', error);
+    }
+  };
 
   const handleConfirm = () => {
     router.back();
@@ -184,8 +184,8 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
               onChange={handleChange}
               defaultValue={result.content}
             />
-            {/* <button onClick={handleSubmit}>등록</button> */}
-            <button>등록</button>
+            <button onClick={handleSubmit}>등록</button>
+            {/* <button>등록</button> */}
           </section>
         </main>
       </div>
