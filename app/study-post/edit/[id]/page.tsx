@@ -9,7 +9,7 @@ export default async function StudyEdit(props: StudyDetailProps) {
     .collection('study_posts')
     .findOne({ _id: new ObjectId(props.params.id) });
   result._id = result._id.toString();
-  console.log(result);
+  // console.log(result);
 
   return (
     <>
