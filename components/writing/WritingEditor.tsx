@@ -33,7 +33,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/api/post/new', {
+      const response = await fetch('/api/post/edit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -185,7 +185,6 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
               defaultValue={result.content}
             />
             <button onClick={handleSubmit}>등록</button>
-            {/* <button>등록</button> */}
           </section>
         </main>
       </div>
