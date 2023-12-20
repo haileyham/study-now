@@ -19,6 +19,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
     content: `${result.content}`,
     day: time,
     date: `${result.date}`,
+    _id: `${result._id}`,
   });
 
   const handleChange = (
@@ -28,6 +29,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({ result }) => {
     setStudyWrite({ ...studyWrite, [name]: value });
   };
   // console.log(studyWrite);
+  // console.log(result);
 
   // const handleSubmit = async () => {
   //   try {
