@@ -4,12 +4,14 @@ import Link from 'next/link';
 import getTimesAgo from '@/components/common/time';
 
 const PostList: React.FC<PostListProps> = ({ result }) => {
-  const reversedResult = result.slice().reverse();
-  console.log(reversedResult);
+  const sortedResult = result
+    .slice()
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+  // console.log(sortedResult);
   // console.log(result);
   return (
     <div>
-      {reversedResult.map((post: Post, i: number) => {
+      {sortedResult.map((post: Post, i: number) => {
         // console.log(post);
         return (
           <div key={i}>
