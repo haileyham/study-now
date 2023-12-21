@@ -4,10 +4,18 @@ import Link from 'next/link';
 import getTimesAgo from '@/components/common/time';
 
 const PostList: React.FC<PostListProps> = ({ result }) => {
+  function parseDate(dateString: string): number {
+    return new Date(dateString).getTime();
+  }
+
+  const sortedResult = result
+    .slice()
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
   return (
     <div>
-      {result.map((post: Post, i: number) => {
-        console.log(post);
+      {sortedResult.map((post: Post, i: number) => {
+        // console.log(post);
         return (
           <div key={i}>
             <Link href={`/study-post/detail/${post._id}`}>
