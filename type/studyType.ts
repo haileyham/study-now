@@ -28,7 +28,7 @@ interface StudyDetailProps {
   };
 }
 
-type DeleteBtnProps = {
+type DeleteEditBtnProps = {
   postId: Object | string;
 };
 
