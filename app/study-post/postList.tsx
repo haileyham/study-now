@@ -4,10 +4,13 @@ import Link from 'next/link';
 import getTimesAgo from '@/components/common/time';
 
 const PostList: React.FC<PostListProps> = ({ result }) => {
+  const reversedResult = result.slice().reverse();
+  console.log(reversedResult);
+  // console.log(result);
   return (
     <div>
-      {result.map((post: Post, i: number) => {
-        console.log(post);
+      {reversedResult.map((post: Post, i: number) => {
+        // console.log(post);
         return (
           <div key={i}>
             <Link href={`/study-post/detail/${post._id}`}>
