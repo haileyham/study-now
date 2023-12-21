@@ -4,7 +4,8 @@ import { connectDB } from '@/util/database';
 import { ObjectId } from 'mongodb';
 import { DeleteBtn } from '@/components/detail/delete';
 import { getDate } from '@/components/common/time';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { EditBtn } from '@/components/detail/Edit';
 
 export default async function StudyDetail(props: StudyDetailProps) {
   let db = (await connectDB).db('study_platform');
@@ -52,9 +53,10 @@ export default async function StudyDetail(props: StudyDetailProps) {
                 <div className={styles.divMainHeader}>
                   <h2>{result.title}</h2>
                   <div className={styles.detailEditDel}>
-                    <Link href={`/study-post/edit/${id}`}>
+                    {/* <Link href={`/study-post/edit/${id}`}>
                       <button className={styles.editBtn}>글수정</button>
-                    </Link>
+                    </Link> */}
+                    <EditBtn postId={id}></EditBtn>
                     {/* <button className="btn-s">글삭제</button> */}
                     <DeleteBtn postId={id}></DeleteBtn>
                   </div>
