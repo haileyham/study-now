@@ -1,7 +1,12 @@
 /* modal */
-.modalContainer {
+.modalContainerFirst {
   position: relative;
   z-index: 99;
+}
+
+.modalContainer {
+  position: relative;
+  z-index: 98;
 }
 
 .modal {
