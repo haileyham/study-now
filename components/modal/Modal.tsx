@@ -10,9 +10,17 @@ const Modal: React.FC<ModalProps> = ({
   onFunction,
 }) => {
   const [modal, setModal] = useState(false);
+  const [active, setActive] = useState(false);
 
   const openModal = () => {
-    setModal(!modal);
+    setModal(true);
+  };
+
+  const closeModal = (e: React.MouseEvent) => {
+    // console.log('closeModal called');
+    setActive(false);
+    setModal(false);
+    e.stopPropagation();
   };
 
   const closeOnClick = (e: React.MouseEvent) => {
@@ -21,20 +29,31 @@ const Modal: React.FC<ModalProps> = ({
 
   const handleConfirm = () => {
     onFunction();
+    setActive(false);
+  };
+
+  const modalOrder = () => {
+    // console.log('오픈Modal called');
+    setActive(true);
   };
 
   return (
     <>
-      <div className={styles.modalContainer}>
+      <div
+        onClick={modalOrder}
+        className={
+          active === true ? styles.modalContainerFirst : styles.modalContainer
+        }
+      >
         <button className={modalBtnStyle} onClick={openModal}>
           {modalBtn}
         </button>
         {modal ? (
-          <div className={styles.modal} onClick={openModal}>
+          <div className={styles.modal} onClick={closeModal}>
             <div className={styles.modalContent} onClick={closeOnClick}>
               <p>{message}</p>
               <button onClick={handleConfirm}>확인</button>
-              <button onClick={openModal}>닫기</button>
+              <button onClick={closeModal}>닫기</button>
             </div>
           </div>
         ) : null}

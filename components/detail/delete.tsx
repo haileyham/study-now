@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import Modal from '@/components/modal/Modal';
 import styles from './page.module.scss';
 
-const DeleteBtn: React.FC<DeleteBtnProps> = ({ postId }) => {
+const DeleteBtn: React.FC<DeleteEditBtnProps> = ({ postId }) => {
   let router = useRouter();
 
   const handleDelete = async () => {
@@ -30,7 +30,7 @@ const DeleteBtn: React.FC<DeleteBtnProps> = ({ postId }) => {
     <>
       <Modal
         modalBtn={`글삭제`}
-        modalBtnStyle={styles.deleteBtn}
+        modalBtnStyle={styles.deleteEditBtn}
         message={`정말 삭제하시겠습니까?`}
         onFunction={handleDelete}
       ></Modal>
