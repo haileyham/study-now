@@ -16,9 +16,11 @@ const Modal: React.FC<ModalProps> = ({
     setModal(true);
   };
 
-  const closeModal = () => {
+  const closeModal = (e: React.MouseEvent) => {
+    console.log('closeModal called');
     setActive(false);
     setModal(false);
+    e.stopPropagation();
   };
 
   const closeOnClick = (e: React.MouseEvent) => {
@@ -31,6 +33,7 @@ const Modal: React.FC<ModalProps> = ({
   };
 
   const modalOrder = () => {
+    console.log('오픈Modal called');
     setActive(true);
   };
 
