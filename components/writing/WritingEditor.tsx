@@ -21,7 +21,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     title: result?.title || '',
     content: result?.content || '',
     day: time,
-    date: result?.date || '',
+    date: result?.date || time,
     _id: result?._id || '',
   });
 
