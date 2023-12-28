@@ -48,11 +48,12 @@
   textarea {
     height: 40vh;
   }
-  button {
+  .writeEditBtn {
     padding: 1rem;
     border: none;
     border-radius: var(--border-radius-s);
     background-color: rgb(243, 237, 255);
+    width: 100%;
     cursor: pointer;
     &:hover {
       background-color: rgb(231, 216, 255);
@@ -122,55 +123,6 @@
     background-color: rgb(230, 224, 253);
     border-radius: var(--border-radius-l);
   }
-}
-
-/* modal */
-.modalContainer {
-  position: relative;
-  z-index: 99;
-}
-
-.modal {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  height: 100vh;
-  /*스크롤이 되도 모달창이 고정 되도록 position:fixed*/
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* 자식 컴포넌트인 모달창을 가운데 오게 하기 위해 flex설정*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modalContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  width: 200px;
-  height: 100px;
-  padding-top: 2.3rem;
-  border-radius: 1rem;
-  background-color: white;
-  gap: 10px;
-  button {
-    padding: 3px 0.5rem;
-  }
-  p {
-    position: absolute;
-    top: 30px;
-  }
-}
-
-.modalContent .closeBtn {
-  /* // X 버튼을 화면 정중앙으로 정렬 */
-  position: absolute;
-  /* // 중앙에서 위로 10px 이동 */
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
 }
 
 // 임시
