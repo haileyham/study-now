@@ -12,17 +12,17 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
   const time = new Date().toString();
 
   const [studyWrite, setStudyWrite] = useState<StudyWriteState>({
-    author: `${result.author}`,
-    status: `${result.status}`,
-    mode: `${result.mode}`,
-    location: `${result.location}`,
-    time: `${result.time}`,
-    type: `${result.type}`,
-    title: `${result.title}`,
-    content: `${result.content}`,
+    author: result?.author || '',
+    status: result?.status || '',
+    mode: result?.mode || '',
+    location: result?.location || '',
+    time: result?.time || '',
+    type: result?.type || '',
+    title: result?.title || '',
+    content: result?.content || '',
     day: time,
-    date: `${result.date}`,
-    _id: `${result._id}`,
+    date: result?.date || '',
+    _id: result?._id || '',
   });
 
   const handleChange = (
@@ -179,13 +179,13 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
               name="title"
               placeholder="글제목"
               onChange={handleChange}
-              defaultValue={result.title}
+              defaultValue={result?.title}
             />
             <textarea
               name="content"
               placeholder="글내용"
               onChange={handleChange}
-              defaultValue={result.content}
+              defaultValue={result?.content}
             />
             <Modal
               modalBtn={`${writingEdit.modalBtnText}`}
