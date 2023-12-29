@@ -1,3 +1,4 @@
+//delete / edit
 .deleteEditBtn {
   margin: 0;
   padding: 7px 5px;
@@ -9,4 +10,194 @@
   &:hover {
     font-weight: bolder;
   }
+}
+
+//detail page
+$h3-Color: rgb(158, 158, 158);
+$mainContent: 14px;
+$backColor: rgba(215, 196, 255, 0.179);
+
+.main {
+  section {
+    margin-top: 5px;
+  }
+  section:last-of-type {
+    background-color: $backColor;
+    border-radius: var(--border-radius-s);
+    padding-bottom: 10px;
+    h3 {
+      padding: 10px;
+      color: $h3-Color;
+      font-size: var(--font-header-s);
+      border-bottom: 1px solid rgb(191, 191, 191);
+    }
+  }
+}
+
+.mainHeader {
+  p {
+    color: var(--color-content-s);
+  }
+  h2 {
+    flex: 1;
+    max-height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 표시할 최대 라인 수 */
+    -webkit-box-orient: vertical;
+  }
+  .divMainHeader {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    // :nth-child(3) {
+    //   flex: 1;
+    //   text-align: right;
+    // }
+    img {
+      border-radius: 50px;
+    }
+    .date {
+      flex: 1;
+      text-align: right;
+    }
+  }
+  .detailEditDel {
+    margin: 0;
+    padding: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mainContent {
+  .content {
+    margin: 10px 0px 20px 0;
+    padding: 10px;
+    color: var(--color-content-m);
+    font-size: $mainContent;
+    min-height: 8rem;
+    white-space: pre-wrap;
+  }
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    border-radius: var(--border-radius-s);
+    background-color: rgb(212, 212, 212);
+  }
+}
+
+.postInfo {
+  display: flex;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  // border: 1px solid rgb(191, 191, 191);
+  border-radius: var(--border-radius-s);
+  // padding: 2px;
+  background-color: $backColor;
+  div {
+    position: relative;
+    margin: 5px;
+    padding: 0.8rem 0.3rem 0rem 0.3rem;
+    border-radius: var(--border-radius-s);
+    flex-grow: 1;
+    // flex-basis: 100px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    background-color: #fff;
+  }
+  p {
+    font-size: var(--font-size-s);
+    margin: 0;
+    padding: 7px 5px 3px 5px;
+    background-color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.968);
+    border-radius: var(--border-radius-s);
+    color: rgb(53, 53, 53);
+  }
+  span {
+    position: absolute;
+    width: 100%;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 0.5rem;
+    font-size: var(--font-size-s);
+    border-radius: var(--border-radius-s);
+    background-color: rgb(244, 240, 252);
+    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+  }
+}
+
+//comment
+.commentWrapper {
+  margin: 5px 0px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(237, 237, 237);
+  li > p:nth-child(2) {
+    //comment
+    margin: 5px 0;
+    color: var(--color-content-m);
+  }
+  li > p:nth-child(3) {
+    //commentDate
+    margin: 10px 0;
+    color: var(--color-content-s);
+  }
+}
+
+.commnetInfo {
+  padding: 5px 0px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  p {
+    color: var(--color-content-s);
+  }
+}
+
+.commentInput {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  input {
+    flex: 1;
+    padding: 3px;
+    font-size: var(--font-size-s);
+  }
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 768px) {
+  .container {
+    margin-bottom: 100px;
+  }
+  .main {
+    max-width: 800px;
+    margin: auto;
+    h2 {
+      //글자수 제한 하고 수정하기
+      display: inline-block;
+      font-size: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .mainContent {
+    .content {
+      min-height: 8rem;
+    }
+  }
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 1024px) {
 }
