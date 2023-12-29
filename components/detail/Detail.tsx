@@ -5,13 +5,11 @@ import { DeleteBtn } from '@/components/detail/delete';
 import { getDate } from '@/components/common/time';
 
 export default function Detail({ result }) {
-  // console.log(result);
   let id;
   if (result) {
     id = result._id.toString();
   } else {
     console.error('Study post not found');
-    // 또는 에러 처리 로직을 추가할 수 있습니다.
   }
 
   if (result) {
@@ -50,9 +48,9 @@ export default function Detail({ result }) {
                     {/* <Link href={`/study-post/edit/${id}`}>
                       <button className={styles.editBtn}>글수정</button>
                     </Link> */}
-                    <EditBtn postId={result._id}></EditBtn>
+                    <EditBtn postId={id}></EditBtn>
                     {/* <button className="btn-s">글삭제</button> */}
-                    <DeleteBtn postId={result._id}></DeleteBtn>
+                    <DeleteBtn postId={id}></DeleteBtn>
                   </div>
                 </div>
                 <div className={styles.divMainHeader}>
