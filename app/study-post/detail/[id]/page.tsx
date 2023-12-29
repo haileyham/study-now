@@ -1,7 +1,7 @@
 import React from 'react';
 import { connectDB } from '@/util/database';
 import { ObjectId } from 'mongodb';
-import Detail from '@/components/detail/Detail';
+import { Detail } from '@/components/detail/Detail';
 
 export default async function StudyDetail(props: StudyDetailProps) {
   let db = (await connectDB).db('study_platform');

@@ -28,8 +28,23 @@ interface StudyDetailProps {
   };
 }
 
+interface StudyDetailComponent {
+  result: {
+    _id: string | Object;
+    author: string;
+    title: string;
+    content: string;
+    status: string;
+    mode: string;
+    location: string;
+    time: string;
+    date: Date;
+    type: string;
+  };
+}
+
 type DeleteEditBtnProps = {
-  postId: Object | string;
+  postId?: Object | string;
 };
 
 type ModalProps = {

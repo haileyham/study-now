@@ -4,7 +4,7 @@ import { EditBtn } from '@/components/detail/Edit';
 import { DeleteBtn } from '@/components/detail/delete';
 import { getDate } from '@/components/common/time';
 
-export default function Detail({ result }) {
+const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
   let id;
   if (result) {
     id = result._id.toString();
@@ -90,4 +90,6 @@ export default function Detail({ result }) {
   } else {
     return <></>;
   }
-}
+};
+
+export { Detail };
