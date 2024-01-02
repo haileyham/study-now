@@ -1,5 +1,7 @@
 .main {
   margin: auto;
+  border: 10px solid rgb(240, 225, 249);
+  border-radius: var(--border-radius-s);
   section {
     // background-color: yellow;
   }
@@ -32,6 +34,21 @@
     font-weight: bolder;
     padding: 4rem 0rem;
   }
+  .answer {
+    display: inline-block;
+    width: 90%;
+    min-height: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 3px 10px;
+    background-color: rgb(240, 225, 249);
+    text-align: start;
+    border-radius: var(--border-radius-s);
+    font-size: var(--font-size-m);
+    &::before {
+      content: 'A.  ';
+      font-weight: bolder;
+    }
+  }
   input {
     width: 90%;
     margin-right: 10px;
@@ -40,6 +57,16 @@
     border: 2px solid rgb(240, 225, 249);
     border-radius: var(--border-radius-s);
     outline: none;
+  }
+  .nextBtn {
+    width: 150px;
+    margin: 2rem 0rem 1rem;
+    padding: 1rem 2rem;
+    background-color: rgb(240, 225, 249);
+    &:hover {
+      font-weight: 500;
+      background-color: rgb(230, 200, 247);
+    }
   }
 }
 
