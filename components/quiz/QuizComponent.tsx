@@ -1,7 +1,19 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import styles from './page.module.scss';
 
 export default function QuizComponent() {
+  const [input, setInput] = useState('');
+  const [answer, setAnswer] = useState('');
+
+  const handleInputChange = (e: any) => {
+    setInput(e.target.value);
+  };
+
+  const handleButtonClick = () => {
+    setAnswer(input);
+  };
+
   return (
     <>
       <div className="container">
@@ -25,9 +37,12 @@ export default function QuizComponent() {
               블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q.
               블라블라Q. 블라블라Q. 블라블라Q. 블라블라
             </p>
-            <span className={styles.answer}></span>
-            <input type="text" />
-            <button className="btn-s">제출</button>
+            <span className={styles.answer}>{answer}</span>
+            <input type="text" onChange={handleInputChange} />
+            <button className="btn-s" onClick={handleButtonClick}>
+              제출
+            </button>
+            <button className={`btn-s ${styles.nextBtn}`}>Next ▶</button>
           </section>
         </main>
       </div>
