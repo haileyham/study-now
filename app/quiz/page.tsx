@@ -1,5 +1,5 @@
 import React from 'react';
-import QuizComponent from '@/components/quiz/Quiz';
+import QuizComponent from '@/components/quiz/QuizComponent';
 
 export default function Quiz() {
   return (
