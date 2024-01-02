@@ -42,7 +42,15 @@ export default function QuizComponent() {
             <button className="btn-s" onClick={handleButtonClick}>
               제출
             </button>
-            <button className={`btn-s ${styles.nextBtn}`}>Next ▶</button>
+            <button
+              className={
+                answer
+                  ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
+                  : `btn-s ${styles.nextBtn}`
+              }
+            >
+              Next ▶
+            </button>
           </section>
         </main>
       </div>
