@@ -14,6 +14,10 @@ export default function QuizComponent() {
     setAnswer(input);
   };
 
+  const handleNextButtonClick = () => {
+    localStorage.setItem('answer', answer);
+  };
+
   return (
     <>
       <div className="container">
@@ -48,6 +52,7 @@ export default function QuizComponent() {
                   ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
                   : `btn-s ${styles.nextBtn}`
               }
+              onClick={handleNextButtonClick}
             >
               Next ▶
             </button>
