@@ -76,7 +76,11 @@ export default function QuizComponent() {
             <span className={styles.answer}>
               {userAnswers[currentQuestion]}
             </span>
-            <input type="text" onChange={handleInputChange} />
+            <input
+              type="text"
+              value={userAnswers[currentQuestion]}
+              onChange={handleInputChange}
+            />
             {/* <button className="btn-s" onClick={handleButtonClick}>
               제출
             </button> */}
