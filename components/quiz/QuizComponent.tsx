@@ -1,8 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './page.module.scss';
+import { useRouter } from 'next/navigation';
 
 export default function QuizComponent() {
+  let router = useRouter();
+
   const quizData = [
     {
       id: 1,
@@ -45,8 +48,10 @@ export default function QuizComponent() {
     if (currentQuestion < quizData.length - 1) {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
+      localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
     } else {
       localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+      router.push('/quiz/results');
     }
   };
 
@@ -100,6 +105,7 @@ export default function QuizComponent() {
               }
               onClick={handleNextButtonClick}
             >
+              {/* 추후예정) 갯수에 따라서 Results 로 바꾸기 */}
               Next ▶
             </button>
           </section>
