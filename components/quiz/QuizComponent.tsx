@@ -29,6 +29,7 @@ export default function QuizComponent() {
 
   const handleInputChange = (e: any) => {
     // setInput(e.target.value);
+    // 추후예정) 데이터에 문제별 num 부여하고 그에따라 저장? 혹은 마지막페이지에서..고민중
     const updatedUserAnswers = [...userAnswers];
     updatedUserAnswers[currentQuestion] = e.target.value;
     setUserAnswers(updatedUserAnswers);
@@ -40,6 +41,7 @@ export default function QuizComponent() {
 
   const handleNextButtonClick = () => {
     // localStorage.setItem('answer', answer);
+    // 추후 문제 갯수에 따라서 조정예정
     if (currentQuestion < quizData.length - 1) {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
@@ -85,11 +87,11 @@ export default function QuizComponent() {
               제출
             </button> */}
             <button
-              // className={
-              //   answer
-              //     ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
-              //     : `btn-s ${styles.nextBtn}`
-              // }
+              className={
+                userAnswers[currentQuestion]
+                  ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
+                  : `btn-s ${styles.nextBtn}`
+              }
               onClick={handleNextButtonClick}
             >
               Next ▶
