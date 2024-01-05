@@ -1,10 +1,11 @@
 .main {
-  margin: auto;
+  margin: 0 auto;
   border: 10px solid rgb(240, 225, 249);
   border-radius: var(--border-radius-s);
   section {
     // background-color: yellow;
   }
+  height: calc(100vh - 8rem);
 }
 
 .quizInfo {
