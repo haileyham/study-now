@@ -75,7 +75,13 @@ export default function QuizComponent() {
             </p> */}
             <p>{quizData[currentQuestion].question}</p>
             {/* <span className={styles.answer}>{answer}</span> */}
-            <span className={styles.answer}>
+            <span
+              className={
+                userAnswers[currentQuestion]
+                  ? `btn-s ${styles.answerEmpty} ${styles.answer}`
+                  : styles.answerEmpty
+              }
+            >
               {userAnswers[currentQuestion]}
             </span>
             <input

@@ -34,13 +34,12 @@
     font-weight: bolder;
     padding: 4rem 0rem;
   }
-  .answer {
+  .answerEmpty {
     display: inline-block;
     width: 90%;
-    min-height: 1.5rem;
+    min-height: 1.7rem;
     margin-bottom: 2rem;
     padding: 3px 10px;
-    background-color: rgb(240, 225, 249);
     text-align: start;
     border-radius: var(--border-radius-s);
     font-size: var(--font-size-m);
@@ -49,6 +48,11 @@
       font-weight: bolder;
     }
   }
+  .answer {
+    background-color: rgb(240, 225, 249);
+    color: black;
+  }
+
   input {
     width: 90%;
     margin-right: 10px;
