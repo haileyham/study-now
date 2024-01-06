@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 
@@ -55,6 +55,23 @@ export default function QuizComponent() {
     }
   };
 
+  // 타이머 로직
+  const [resetTime, setResetTime] = useState(10);
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      setResetTime((prevTime) => prevTime - 1);
+
+      if (resetTime <= 0) {
+        clearInterval(timerInterval);
+        setResetTime(0);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(timerInterval);
+    };
+  }, [resetTime]);
+
   return (
     <>
       <div className="container">
@@ -63,6 +80,7 @@ export default function QuizComponent() {
             <div className={styles.time}>
               <span>⏰</span>
               <span>Time</span>
+              <span>{resetTime}</span>
             </div>
             <div className={styles.check}>
               <label htmlFor="save">
