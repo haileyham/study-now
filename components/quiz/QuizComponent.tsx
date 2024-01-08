@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
+import Timer from './Timer';
 
 export default function QuizComponent() {
   let router = useRouter();
@@ -55,23 +56,6 @@ export default function QuizComponent() {
     }
   };
 
-  // 타이머 로직
-  const [resetTime, setResetTime] = useState(10);
-  useEffect(() => {
-    const timerInterval = setInterval(() => {
-      setResetTime((prevTime) => prevTime - 1);
-
-      if (resetTime <= 0) {
-        clearInterval(timerInterval);
-        setResetTime(0);
-      }
-    }, 1000);
-
-    return () => {
-      clearInterval(timerInterval);
-    };
-  }, [resetTime]);
-
   return (
     <>
       <div className="container">
@@ -80,7 +64,7 @@ export default function QuizComponent() {
             <div className={styles.time}>
               <span>⏰</span>
               <span>Time</span>
-              <span>{resetTime}</span>
+              <Timer></Timer>
             </div>
             <div className={styles.check}>
               <label htmlFor="save">
