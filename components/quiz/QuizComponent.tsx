@@ -39,10 +39,6 @@ export default function QuizComponent() {
     setUserAnswers(updatedUserAnswers);
   };
 
-  // const handleButtonClick = () => {
-  //   setAnswer(input);
-  // };
-
   const handleNextButtonClick = () => {
     // localStorage.setItem('answer', answer);
     // 추후 문제 갯수에 따라서 조정예정
@@ -74,14 +70,7 @@ export default function QuizComponent() {
             </div>
           </section>
           <section className={styles.quiz}>
-            {/* <p>
-              Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q.
-              블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q.
-              블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q.
-              블라블라Q. 블라블라Q. 블라블라Q. 블라블라
-            </p> */}
             <p>{quizData[currentQuestion].question}</p>
-            {/* <span className={styles.answer}>{answer}</span> */}
             <span
               className={
                 userAnswers[currentQuestion]
@@ -96,9 +85,6 @@ export default function QuizComponent() {
               value={userAnswers[currentQuestion]}
               onChange={handleInputChange}
             />
-            {/* <button className="btn-s" onClick={handleButtonClick}>
-              제출
-            </button> */}
             <button
               className={
                 userAnswers[currentQuestion]
