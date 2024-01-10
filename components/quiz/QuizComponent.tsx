@@ -89,7 +89,11 @@ export default function QuizComponent() {
             </span>
             <input
               type="text"
-              value={userAnswers[currentQuestion]}
+              value={
+                resetTime == 0
+                  ? '시간 경과 : 추가 답변 입력 불가'
+                  : userAnswers[currentQuestion]
+              }
               onChange={handleInputChange}
               disabled={resetTime <= 0}
             />
