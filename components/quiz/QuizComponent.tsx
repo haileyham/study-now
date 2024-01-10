@@ -30,13 +30,16 @@ export default function QuizComponent() {
   const [userAnswers, setUserAnswers] = useState(
     Array(quizData.length).fill(''),
   );
+  const [resetTime, setResetTime] = useState(10);
 
   const handleInputChange = (e: any) => {
     // setInput(e.target.value);
     // 추후예정) 데이터에 문제별 num 부여하고 그에따라 저장? 혹은 마지막페이지에서..고민중
-    const updatedUserAnswers = [...userAnswers];
-    updatedUserAnswers[currentQuestion] = e.target.value;
-    setUserAnswers(updatedUserAnswers);
+    if (resetTime > 0) {
+      const updatedUserAnswers = [...userAnswers];
+      updatedUserAnswers[currentQuestion] = e.target.value;
+      setUserAnswers(updatedUserAnswers);
+    }
   };
 
   const handleNextButtonClick = () => {
@@ -46,6 +49,7 @@ export default function QuizComponent() {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
       localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+      setResetTime(10);
     } else {
       localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
       router.push('/quiz/results');
@@ -60,7 +64,10 @@ export default function QuizComponent() {
             <div className={styles.time}>
               <span>⏰</span>
               <span>Time</span>
-              <Timer></Timer>
+              <Timer
+                resetTime={resetTime}
+                onReset={() => setResetTime((prevTime) => prevTime - 1)}
+              ></Timer>
             </div>
             <div className={styles.check}>
               <label htmlFor="save">
