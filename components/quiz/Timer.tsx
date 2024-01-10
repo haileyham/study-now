@@ -1,23 +1,30 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 
-export default function Timer() {
+interface TimerProps {
+  resetTime: number;
+  onReset: () => void;
+}
+
+const Timer: React.FC<TimerProps> = ({ resetTime, onReset }) => {
   // 타이머 로직
-  const [resetTime, setResetTime] = useState(10);
+
   useEffect(() => {
     const timerInterval = setInterval(() => {
-      setResetTime((prevTime) => prevTime - 1);
+      onReset();
 
-      if (resetTime <= 0) {
-        clearInterval(timerInterval);
-        setResetTime(0);
-      }
+      // if (resetTime <= 0) {
+      //   clearInterval(timerInterval);
+      //   setResetTime(0);
+      // }
     }, 1000);
 
     return () => {
       clearInterval(timerInterval);
     };
-  }, [resetTime]);
+  }, [onReset]);
 
   return <span>{resetTime}</span>;
-}
+};
+
+export default Timer;
