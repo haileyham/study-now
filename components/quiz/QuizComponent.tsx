@@ -91,10 +91,11 @@ export default function QuizComponent() {
               type="text"
               value={userAnswers[currentQuestion]}
               onChange={handleInputChange}
+              disabled={resetTime <= 0}
             />
             <button
               className={
-                userAnswers[currentQuestion]
+                userAnswers[currentQuestion] || resetTime == 0
                   ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
                   : `btn-s ${styles.nextBtn}`
               }
