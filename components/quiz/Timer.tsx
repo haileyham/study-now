@@ -11,7 +11,9 @@ const Timer: React.FC<TimerProps> = ({ resetTime, onReset }) => {
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
-      onReset();
+      if (resetTime > 0) {
+        onReset();
+      }
 
       // if (resetTime <= 0) {
       //   clearInterval(timerInterval);
@@ -22,9 +24,9 @@ const Timer: React.FC<TimerProps> = ({ resetTime, onReset }) => {
     return () => {
       clearInterval(timerInterval);
     };
-  }, [onReset]);
+  }, [onReset, resetTime]);
 
-  return <span>{resetTime}</span>;
+  return <span>{resetTime > 0 ? resetTime : '시간 종료'}</span>;
 };
 
 export default Timer;
