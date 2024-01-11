@@ -19,9 +19,7 @@ export default function QuizSetting() {
   };
 
   const handleMoveQuiz = () => {
-    router.push(
-      `/quiz/play?questionNum=${questionNum}&timerDuration=${timerDuration}`,
-    );
+    router.push(`/quiz/play?q=${questionNum}&t=${timerDuration}`);
   };
 
   return (

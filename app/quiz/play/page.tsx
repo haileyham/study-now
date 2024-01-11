@@ -3,8 +3,8 @@ import React from 'react';
 
 interface QuizPlayProps {
   searchParams: {
-    questionNum: number;
-    timerDuration: number;
+    q: number; //questionNum
+    t: number; //timerDuration
   };
 }
 
@@ -12,8 +12,8 @@ export default function page(props: QuizPlayProps) {
   return (
     <>
       <QuizComponent
-        questionNum={props.searchParams.questionNum}
-        timerDuration={props.searchParams.timerDuration}
+        questionNum={props.searchParams.q}
+        timerDuration={props.searchParams.t}
       ></QuizComponent>
     </>
   );
