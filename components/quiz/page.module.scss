@@ -83,6 +83,13 @@
   }
 }
 
+/* 태블릿 화면 스타일 */
+@media (min-width: 768px) {
+  .quizInfo {
+    padding: 2rem;
+  }
+}
+
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
   .main {
