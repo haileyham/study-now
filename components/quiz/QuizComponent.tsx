@@ -4,7 +4,12 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Timer from './Timer';
 
-export default function QuizComponent() {
+interface QuizProps {
+  questionNum: number;
+  timerDuration: number;
+}
+
+const QuizComponent: React.FC<QuizProps> = ({ questionNum, timerDuration }) => {
   let router = useRouter();
 
   const quizData = [
@@ -113,4 +118,6 @@ export default function QuizComponent() {
       </div>
     </>
   );
-}
+};
+
+export default QuizComponent;
