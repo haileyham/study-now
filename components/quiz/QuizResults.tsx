@@ -1,12 +1,17 @@
 'use client';
+
+import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
-import React from 'react';
 
 export default function QuizResults() {
-  const userAnswersLocal = localStorage.getItem('userAnswers');
-  const userAnswers: string[] | null = userAnswersLocal
-    ? JSON.parse(userAnswersLocal)
-    : null;
+  const [userAnswers, setUserAnswers] = useState<string[] | null>(null);
+
+  useEffect(() => {
+    const userAnswersLocal = localStorage.getItem('userAnswers');
+    if (userAnswersLocal) {
+      setUserAnswers(JSON.parse(userAnswersLocal));
+    }
+  }, []);
 
   return (
     <div className="container">
