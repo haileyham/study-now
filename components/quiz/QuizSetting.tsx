@@ -1,6 +1,7 @@
 'use client';
 
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
+import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 
 export default function QuizSetting() {
@@ -8,16 +9,16 @@ export default function QuizSetting() {
   const [timerDuration, setTimerDuration] = useState(10);
   const router = useRouter();
 
-  const handleSettingQuiz = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
+  const handleIncrease = (name: string) => {
     if (name === 'questionNum') {
-      setQuestionNum(parseInt(value));
+      setQuestionNum((prev) => prev + 5);
     } else if (name === 'timerDuration') {
-      setTimerDuration(parseInt(value));
+      setTimerDuration((prev) => prev + 5);
     }
   };
+
+  console.log(questionNum);
+  console.log(timerDuration);
 
   const handleMoveQuiz = () => {
     router.push(`/quiz/play?q=${questionNum}&t=${timerDuration}`);
@@ -25,19 +26,23 @@ export default function QuizSetting() {
 
   return (
     <>
-      <input
-        type="number"
-        name="questionNum"
-        defaultValue="10"
-        onChange={handleSettingQuiz}
-      />
-      <input
-        type="number"
-        name="timerDuration"
-        defaultValue="10"
-        onChange={handleSettingQuiz}
-      />
-      <button onClick={handleMoveQuiz}>퀴즈 풀기</button>
+      <main className={styles.main}>
+        <button
+          onClick={() => {
+            handleIncrease('questionNum');
+          }}
+        >
+          +
+        </button>
+        <button
+          onClick={() => {
+            handleIncrease('timerDuration');
+          }}
+        >
+          +
+        </button>
+        <button onClick={handleMoveQuiz}>퀴즈 풀기</button>
+      </main>
     </>
   );
 }
