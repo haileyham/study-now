@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import QuizComponent from './QuizComponent';
 import { useRouter } from 'next/navigation';
 
 export default function QuizSetting() {
@@ -10,11 +9,11 @@ export default function QuizSetting() {
   const router = useRouter();
 
   const handleSettingQuiz = (e: any) => {
-    const { name, value } = e.target; // Get input name and value
+    const { name, value } = e.target;
     if (name === 'questionNum') {
-      setQuestionNum(parseInt(value)); // Parse value to number for questionNum
+      setQuestionNum(parseInt(value));
     } else if (name === 'timerDuration') {
-      setTimerDuration(parseInt(value)); // Parse value to number for timerDuration
+      setTimerDuration(parseInt(value));
     }
   };
 
