@@ -17,8 +17,13 @@ export default function QuizSetting() {
     }
   };
 
-  console.log(questionNum);
-  console.log(timerDuration);
+  const handleDecrease = (name: string) => {
+    if (name === 'questionNum') {
+      setQuestionNum((prev) => prev - 5);
+    } else if (name === 'timerDuration') {
+      setTimerDuration((prev) => prev - 5);
+    }
+  };
 
   const handleMoveQuiz = () => {
     router.push(`/quiz/play?q=${questionNum}&t=${timerDuration}`);
@@ -29,11 +34,27 @@ export default function QuizSetting() {
       <main className={styles.main}>
         <button
           onClick={() => {
+            handleDecrease('questionNum');
+          }}
+        >
+          -
+        </button>
+        <span>{questionNum}</span>
+        <button
+          onClick={() => {
             handleIncrease('questionNum');
           }}
         >
           +
         </button>
+        <button
+          onClick={() => {
+            handleDecrease('timerDuration');
+          }}
+        >
+          -
+        </button>
+        <span>{timerDuration}</span>
         <button
           onClick={() => {
             handleIncrease('timerDuration');
