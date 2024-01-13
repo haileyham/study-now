@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Timer from './Timer';
@@ -37,7 +37,9 @@ const QuizComponent: React.FC<QuizProps> = ({ questionNum, timerDuration }) => {
   );
   const [resetTime, setResetTime] = useState(10);
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     // setInput(e.target.value);
     // 추후예정) 데이터에 문제별 num 부여하고 그에따라 저장? 혹은 마지막페이지에서..고민중
     if (resetTime > 0) {

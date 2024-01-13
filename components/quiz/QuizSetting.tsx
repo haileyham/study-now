@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function QuizSetting() {
@@ -8,7 +8,9 @@ export default function QuizSetting() {
   const [timerDuration, setTimerDuration] = useState(10);
   const router = useRouter();
 
-  const handleSettingQuiz = (e: any) => {
+  const handleSettingQuiz = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     if (name === 'questionNum') {
       setQuestionNum(parseInt(value));
