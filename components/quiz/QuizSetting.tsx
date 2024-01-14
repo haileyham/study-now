@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
+import QuizTypeSelect from './QuizTypeSelect';
 
 export default function QuizSetting() {
   const [questionNum, setQuestionNum] = useState(10);
@@ -37,13 +38,7 @@ export default function QuizSetting() {
   return (
     <>
       <main className={styles.main}>
-        <div className={styles.quizType}>
-          <label htmlFor="quizType">문제유형</label>
-          <select name="문제유형" id="quizType" onChange={handleQuizTypeChange}>
-            <option value="프론트엔드">프론트엔드</option>
-            <option value="CS">CS</option>
-          </select>
-        </div>
+        <QuizTypeSelect onChange={handleQuizTypeChange}></QuizTypeSelect>
         <div className={styles.questionNum}>
           <button
             onClick={() => {
