@@ -28,7 +28,9 @@ export default function QuizSetting() {
   };
 
   const handleMoveQuiz = () => {
-    router.push(`/quiz/play?q=${questionNum}&t=${timerDuration}`);
+    router.push(
+      `/quiz/play?ty=${quizType}&q=${questionNum}&t=${timerDuration}`,
+    );
   };
 
   const handleQuizTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
