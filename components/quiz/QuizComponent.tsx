@@ -7,11 +7,15 @@ import Timer from './Timer';
 interface QuizProps {
   questionNum: number;
   timerDuration: number;
+  quizType: string;
 }
 
-const QuizComponent: React.FC<QuizProps> = ({ questionNum, timerDuration }) => {
+const QuizComponent: React.FC<QuizProps> = ({
+  questionNum,
+  timerDuration,
+  quizType,
+}) => {
   let router = useRouter();
-
   const quizData = [
     {
       id: 1,
