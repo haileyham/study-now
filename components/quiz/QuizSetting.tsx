@@ -43,41 +43,49 @@ export default function QuizSetting() {
         <main className={styles.main}>
           <section className={styles.quizSetting}>
             <QuizTypeSelect onChange={handleQuizTypeChange}></QuizTypeSelect>
-            <div className={styles.questionNum}>
-              <button
-                onClick={() => {
-                  handleDecrease('questionNum');
-                }}
-              >
-                -
-              </button>
-              <span>{questionNum}</span>
-              <button
-                onClick={() => {
-                  handleIncrease('questionNum');
-                }}
-              >
-                +
-              </button>
+            <div className={styles.quizSettingNum}>
+              <span>문제수</span>
+              <div>
+                <button
+                  onClick={() => {
+                    handleDecrease('questionNum');
+                  }}
+                >
+                  -
+                </button>
+                <span>{questionNum}개</span>
+                <button
+                  onClick={() => {
+                    handleIncrease('questionNum');
+                  }}
+                >
+                  +
+                </button>
+              </div>
             </div>
-            <div className={styles.timerDuration}>
-              <button
-                onClick={() => {
-                  handleDecrease('timerDuration');
-                }}
-              >
-                -
-              </button>
-              <span>{timerDuration}</span>
-              <button
-                onClick={() => {
-                  handleIncrease('timerDuration');
-                }}
-              >
-                +
-              </button>
+            <div className={styles.quizSettingNum}>
+              <span>시간제한</span>
+              <div>
+                <button
+                  onClick={() => {
+                    handleDecrease('timerDuration');
+                  }}
+                >
+                  -
+                </button>
+                <span>{timerDuration}초</span>
+                <button
+                  onClick={() => {
+                    handleIncrease('timerDuration');
+                  }}
+                >
+                  +
+                </button>
+              </div>
             </div>
-            <button onClick={handleMoveQuiz}>퀴즈 풀기</button>
+            <button className="btn-m" onClick={handleMoveQuiz}>
+              퀴즈 풀기
+            </button>
           </section>
           <section></section>
         </main>
