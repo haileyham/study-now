@@ -44,7 +44,7 @@ export default function QuizSetting() {
           <section className={styles.quizSetting}>
             <QuizTypeSelect onChange={handleQuizTypeChange}></QuizTypeSelect>
             <div className={styles.quizSettingNum}>
-              <span>문제수</span>
+              <span className={styles.settingName}>문제수</span>
               <div>
                 <button
                   onClick={() => {
@@ -64,7 +64,7 @@ export default function QuizSetting() {
               </div>
             </div>
             <div className={styles.quizSettingNum}>
-              <span>시간제한</span>
+              <span className={styles.settingName}>시간제한</span>
               <div>
                 <button
                   onClick={() => {
