@@ -94,13 +94,12 @@
 
   .quizSettingNum {
     // background-color: antiquewhite;
-    margin: 1rem;
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: var(--border-radius-s);
+    position: relative;
     width: 70%;
     margin: 2rem auto;
-    padding: 1rem;
-    position: relative;
+    padding: 3rem 2rem 2rem;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: var(--border-radius-s);
     span {
       display: inline-block;
       font-size: var(--font-size-m);
@@ -119,7 +118,7 @@
       transform: translateX(-50%);
     }
     button {
-      margin: 0rem 2rem;
+      // margin: 0rem 2rem;
       padding: 14px 18px;
       border: none;
       border-radius: var(--border-radius-m);
