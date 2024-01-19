@@ -83,7 +83,10 @@ export default function QuizSetting() {
                 </button>
               </div>
             </div>
-            <button className="btn-m" onClick={handleMoveQuiz}>
+            <button
+              className={`btn-m ${styles.quizBtn}`}
+              onClick={handleMoveQuiz}
+            >
               퀴즈 풀기
             </button>
           </section>
