@@ -109,6 +109,15 @@
       padding: 0.5rem;
     }
     select {
+      padding: 10px 1rem;
+      border: 1px solid rgb(204, 204, 204);
+      border-radius: var(--border-radius-m);
+      cursor: pointer;
+      option {
+        padding: 3rem 0;
+        border-radius: 1rem;
+        color: #9025fb;
+      }
     }
     // 각 name
     .settingName {
