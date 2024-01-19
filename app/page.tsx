@@ -9,9 +9,9 @@ export default function Home() {
         <section className={styles.carousel}>
           <Carousel></Carousel>
         </section>
-        <section className={styles.section}>1</section>
-        <section className={styles.section}>2</section>
-        <section className={styles.section}>3</section>
+        <section className={styles.section}></section>
+        <section className={styles.section}></section>
+        <section className={styles.section}></section>
       </main>
       <footer className={styles.footer}>footer</footer>
     </>
