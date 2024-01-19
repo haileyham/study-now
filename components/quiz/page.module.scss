@@ -87,11 +87,13 @@
 .quizSetting {
   text-align: center;
   padding-top: 2rem;
+  // 문제풀기 btn
   .quizBtn {
     margin-top: 1rem;
     padding: 1rem 3rem;
     font-size: var(--font-size-xl);
   }
+  // 각 div
   .quizSettingNum {
     // background-color: antiquewhite;
     position: relative;
@@ -106,6 +108,9 @@
       font-size: var(--font-size-m);
       padding: 0.5rem;
     }
+    select {
+    }
+    // 각 name
     .settingName {
       width: 5rem;
       border-radius: var(--border-radius-m);
@@ -117,6 +122,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
+    // +,- button
     button {
       margin: 0rem 1rem;
       padding: 1rem 1.5rem;
