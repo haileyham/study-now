@@ -9,7 +9,7 @@ interface QuizTypeSelectProps {
 
 const QuizTypeSelect: React.FC<QuizTypeSelectProps> = ({ onChange }) => {
   return (
-    <div className={styles.quizType}>
+    <div className={styles.quizSettingNum}>
       <label className={styles.settingName} htmlFor="quizType">
         문제유형
       </label>
