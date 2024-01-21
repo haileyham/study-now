@@ -39,7 +39,7 @@ const QuizComponent: React.FC<QuizProps> = ({
   const [userAnswers, setUserAnswers] = useState(
     Array(quizData.length).fill(''),
   );
-  const [resetTime, setResetTime] = useState(10);
+  const [resetTime, setResetTime] = useState(timerDuration);
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -60,7 +60,7 @@ const QuizComponent: React.FC<QuizProps> = ({
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
       localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
-      setResetTime(10);
+      setResetTime(timerDuration);
     } else {
       localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
       router.push('/quiz/results');
