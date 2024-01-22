@@ -60,7 +60,12 @@ const QuizComponent: React.FC<QuizProps> = ({
   useEffect(() => {
     console.log('useEffect쓰자마자 questionNum', questionNum);
     let a = new Array(questionNum);
-    console.log('테스트용 이렇게해도 Array 안만들어지나보자', a);
+    let b = new Array(Number(questionNum));
+    console.log('테스트용1 이렇게해도 Array 안만들어지나보자', a);
+    console.log(
+      '테스트용2 테스트1 a가.. 숫자 값이 그대로 들어가 Number해주기',
+      b,
+    );
     setUserAnswers((prevUserAnswers) => {
       if (prevUserAnswers.length !== questionNum) {
         let a = questionNum;
@@ -109,7 +114,6 @@ const QuizComponent: React.FC<QuizProps> = ({
               <Timer
                 resetTime={resetTime}
                 onReset={() => setResetTime((prevTime) => prevTime - 1)}
-                test={userAnswers}
               ></Timer>
             </div>
             <div className={styles.check}>
