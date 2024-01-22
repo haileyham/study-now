@@ -66,6 +66,12 @@ const QuizComponent: React.FC<QuizProps> = ({
       '테스트용2 테스트1 a가.. 숫자 값이 그대로 들어가 Number해주기',
       b,
     );
+    let c = Array.from({ length: questionNum }, () => '');
+    console.log('c', c);
+    let d = Array(questionNum).fill('');
+    console.log('d', d);
+    let e = Array.from({ length: questionNum });
+    console.log('e', e);
     setUserAnswers((prevUserAnswers) => {
       if (prevUserAnswers.length !== questionNum) {
         let a = questionNum;
