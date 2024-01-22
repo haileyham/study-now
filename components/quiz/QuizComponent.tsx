@@ -114,9 +114,11 @@ const QuizComponent: React.FC<QuizProps> = ({
             <input
               type="text"
               value={
-                resetTime == 0
+                resetTime === 0
                   ? '시간 경과 : 추가 답변 입력 불가'
-                  : userAnswers[currentQuestion]
+                  : userAnswers && userAnswers[currentQuestion] !== undefined
+                  ? userAnswers[currentQuestion]
+                  : ''
               }
               onChange={handleInputChange}
               disabled={resetTime <= 0}
