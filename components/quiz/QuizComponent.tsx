@@ -1,5 +1,5 @@
 'use client';
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Timer from './Timer';
@@ -51,8 +51,26 @@ const QuizComponent: React.FC<QuizProps> = ({
 
   const [input, setInput] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState(Array(questionNum).fill(''));
+  const [userAnswers, setUserAnswers] = useState(Array().fill(''));
+  console.log('초기 userAnswers:', userAnswers);
+  console.log('초기 questionNum:', questionNum);
   const [resetTime, setResetTime] = useState(timerDuration);
+
+  console.log(questionNum);
+  useEffect(() => {
+    console.log('useEffect쓰자마자 questionNum', questionNum);
+    let a = new Array(questionNum);
+    console.log('테스트용 이렇게해도 Array 안만들어지나보자', a);
+    setUserAnswers((prevUserAnswers) => {
+      if (prevUserAnswers.length !== questionNum) {
+        let a = questionNum;
+        const newArray = Array(a).fill('');
+        console.log('Array채우고서 newArray출력', newArray);
+        return newArray;
+      }
+      return prevUserAnswers;
+    });
+  }, [questionNum]);
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -91,6 +109,7 @@ const QuizComponent: React.FC<QuizProps> = ({
               <Timer
                 resetTime={resetTime}
                 onReset={() => setResetTime((prevTime) => prevTime - 1)}
+                test={userAnswers}
               ></Timer>
             </div>
             <div className={styles.check}>
