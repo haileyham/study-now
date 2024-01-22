@@ -32,13 +32,26 @@ const QuizComponent: React.FC<QuizProps> = ({
       question: '블라블라큐큐큐',
       answer: 'hello hi',
     },
+    {
+      id: 4,
+      question: '블라블라큐큐큐4',
+      answer: 'hello hi',
+    },
+    {
+      id: 5,
+      question: '블라블라큐큐큐5',
+      answer: 'hello hi',
+    },
+    {
+      id: 6,
+      question: '블라블라큐큐큐6',
+      answer: 'hello hi',
+    },
   ];
 
   const [input, setInput] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState(
-    Array(quizData.length).fill(''),
-  );
+  const [userAnswers, setUserAnswers] = useState(Array(questionNum).fill(''));
   const [resetTime, setResetTime] = useState(timerDuration);
 
   const handleInputChange = (
@@ -56,7 +69,7 @@ const QuizComponent: React.FC<QuizProps> = ({
   const handleNextButtonClick = () => {
     // localStorage.setItem('answer', answer);
     // 추후 문제 갯수에 따라서 조정예정
-    if (currentQuestion < quizData.length - 1) {
+    if (currentQuestion < questionNum - 1) {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
       localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
