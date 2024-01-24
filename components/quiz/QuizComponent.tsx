@@ -131,7 +131,9 @@ const QuizComponent: React.FC<QuizProps> = ({
             </div>
           </section>
           <section className={styles.quiz}>
-            <p>{quizData[currentQuestion].question}</p>
+            <div className={styles.questionBox}>
+              <p>{quizData[currentQuestion].question}</p>
+            </div>
             <span
               className={
                 userAnswers[currentQuestion]

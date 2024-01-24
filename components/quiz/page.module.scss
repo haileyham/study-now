@@ -31,12 +31,18 @@
 
 .quiz {
   text-align: center;
-  margin-top: 1rem;
-  p {
-    font-size: 1.2rem;
-    font-weight: bolder;
-    padding: 2rem 2rem 0rem;
-    height: 15rem;
+  margin-top: 2rem;
+  .questionBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+    margin-bottom: 1rem;
+    padding: 0rem 1rem;
+    p {
+      font-size: 1.2rem;
+      font-weight: bolder;
+    }
   }
   .answerEmpty {
     display: inline-block;
