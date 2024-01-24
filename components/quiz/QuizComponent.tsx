@@ -19,7 +19,8 @@ const QuizComponent: React.FC<QuizProps> = ({
   const quizData = [
     {
       id: 1,
-      question: '블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q.',
+      question:
+        '블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q',
       answer: 'hello',
     },
     {
@@ -140,29 +141,31 @@ const QuizComponent: React.FC<QuizProps> = ({
             >
               {userAnswers[currentQuestion]}
             </span>
-            <input
-              type="text"
-              value={
-                resetTime === 0
-                  ? '시간 경과 : 추가 답변 입력 불가'
-                  : userAnswers && userAnswers[currentQuestion] !== undefined
-                  ? userAnswers[currentQuestion]
-                  : ''
-              }
-              onChange={handleInputChange}
-              disabled={resetTime <= 0}
-            />
-            <button
-              className={
-                userAnswers[currentQuestion] || resetTime == 0
-                  ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
-                  : `btn-s ${styles.nextBtn}`
-              }
-              onClick={handleNextButtonClick}
-            >
-              {/* 추후예정) 갯수에 따라서 Results 로 바꾸기 */}
-              Next ▶
-            </button>
+            <div className={styles.answerBox}>
+              <input
+                type="text"
+                value={
+                  resetTime === 0
+                    ? '시간 경과 : 추가 답변 입력 불가'
+                    : userAnswers && userAnswers[currentQuestion] !== undefined
+                    ? userAnswers[currentQuestion]
+                    : ''
+                }
+                onChange={handleInputChange}
+                disabled={resetTime <= 0}
+              />
+              <button
+                className={
+                  userAnswers[currentQuestion] || resetTime == 0
+                    ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
+                    : `btn-s ${styles.nextBtn}`
+                }
+                onClick={handleNextButtonClick}
+              >
+                {/* 추후예정) 갯수에 따라서 Results 로 바꾸기 */}
+                Next ▶
+              </button>
+            </div>
           </section>
         </main>
       </div>
