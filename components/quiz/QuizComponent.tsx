@@ -52,37 +52,10 @@ const QuizComponent: React.FC<QuizProps> = ({
 
   const [input, setInput] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState(Array().fill(''));
-  console.log('초기 userAnswers:', userAnswers);
-  console.log('초기 questionNum:', questionNum);
+  const [userAnswers, setUserAnswers] = useState(
+    Array(Number(questionNum)).fill(''),
+  );
   const [resetTime, setResetTime] = useState(timerDuration);
-
-  console.log(questionNum);
-  useEffect(() => {
-    console.log('useEffect쓰자마자 questionNum', questionNum);
-    let a = new Array(questionNum);
-    let b = new Array(Number(questionNum));
-    console.log('테스트용1 이렇게해도 Array 안만들어지나보자', a);
-    console.log(
-      '테스트용2 테스트1 a가.. 숫자 값이 그대로 들어가 Number해주기',
-      b,
-    );
-    let c = Array.from({ length: questionNum }, () => '');
-    console.log('c', c);
-    let d = Array(questionNum).fill('');
-    console.log('d', d);
-    let e = Array.from({ length: questionNum });
-    console.log('e', e);
-    setUserAnswers((prevUserAnswers) => {
-      if (prevUserAnswers.length !== questionNum) {
-        let a = questionNum;
-        const newArray = Array(a).fill('');
-        console.log('Array채우고서 newArray출력', newArray);
-        return newArray;
-      }
-      return prevUserAnswers;
-    });
-  }, [questionNum]);
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
