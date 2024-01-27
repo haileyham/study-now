@@ -60,8 +60,6 @@ const QuizComponent: React.FC<QuizProps> = ({
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    // setInput(e.target.value);
-    // 추후예정) 데이터에 문제별 num 부여하고 그에따라 저장? 혹은 마지막페이지에서..고민중
     if (resetTime > 0) {
       const updatedUserAnswers = [...userAnswers];
       updatedUserAnswers[currentQuestion] = e.target.value;
@@ -70,8 +68,6 @@ const QuizComponent: React.FC<QuizProps> = ({
   };
 
   const handleNextButtonClick = () => {
-    // localStorage.setItem('answer', answer);
-    // 추후 문제 갯수에 따라서 조정예정
     if (currentQuestion < questionNum - 1) {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
@@ -137,7 +133,6 @@ const QuizComponent: React.FC<QuizProps> = ({
                 }
                 onClick={handleNextButtonClick}
               >
-                {/* 추후예정) 갯수에 따라서 Results 로 바꾸기 */}
                 Next ▶
               </button>
             </div>
