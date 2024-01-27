@@ -133,7 +133,7 @@ const QuizComponent: React.FC<QuizProps> = ({
                 }
                 onClick={handleNextButtonClick}
               >
-                Next ▶
+                {questionNum - 1 === currentQuestion ? 'Results ▶' : 'Next ▶'}
               </button>
             </div>
           </section>
