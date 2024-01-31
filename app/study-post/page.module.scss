@@ -109,11 +109,11 @@
     font-size: var(--font-size-s);
     color: var(--color-content-s);
     margin-top: 0.7rem;
-    gap: 8px;
     .info1,
     .info2,
     .info3,
     .info4 {
+      margin-right: 4px;
       padding: 0px 5px;
       border: 1px solid rgb(227, 227, 227);
       border-radius: var(--border-radius-m);
@@ -137,6 +137,7 @@
       .info2,
       .info3,
       .info4 {
+        margin: 0;
         padding: 3px 5px;
       }
       & > span:last-of-type {
