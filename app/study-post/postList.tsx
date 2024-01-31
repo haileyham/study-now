@@ -46,9 +46,6 @@ const PostList: React.FC<PostListProps> = ({ result }) => {
                   {post.location && (
                     <span className={styles.info2}>{post.location}</span>
                   )}
-                  {post.time && (
-                    <span className={styles.info3}>{post.time}</span>
-                  )}
                   {post.type && (
                     <span className={styles.info4}>{post.type}</span>
                   )}
