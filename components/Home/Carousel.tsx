@@ -16,11 +16,11 @@ const Carousel: React.FC = () => {
   ];
 
   const nextSlide = () => {
-    setCurrentImage((prev) => prev + 1);
+    setCurrentImage((prev) => (prev + 1) % images.length);
   };
 
   const prevSlide = () => {
-    setCurrentImage((prev) => prev - 1);
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
