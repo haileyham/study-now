@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
-import Carousel from '@/components/Carousel';
+import Carousel from '@/components/Home/Carousel';
 
 export default function Home() {
   return (
