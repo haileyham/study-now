@@ -26,13 +26,19 @@ const Carousel: React.FC = () => {
   return (
     <>
       <div className={styles.carousel}>
-        <button onClick={prevSlide} className={styles.prevBtn}>
-          ◀
-        </button>
-        <img src={images[currentImage]} alt="" className={styles.image} />
-        <button onClick={nextSlide} className={styles.nextBtn}>
-          ▶
-        </button>
+        <div
+          className={styles.background}
+          style={{ backgroundImage: `url(${images[currentImage]})` }}
+        />
+        <div className={styles.content}>
+          <button onClick={prevSlide} className={styles.prevBtn}>
+            ◀
+          </button>
+          <img src={images[currentImage]} alt="" className={styles.image} />
+          <button onClick={nextSlide} className={styles.nextBtn}>
+            ▶
+          </button>
+        </div>
       </div>
     </>
     // <div
