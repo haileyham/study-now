@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './page.module.scss';
 
@@ -22,6 +22,13 @@ const Carousel: React.FC = () => {
   const prevSlide = () => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  useEffect(() => {
+    const changeImg = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => clearInterval(changeImg);
+  }, [currentImage, images.length]);
 
   return (
     <>
