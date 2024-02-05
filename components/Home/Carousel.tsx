@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './page.module.scss';
 
 import Character from '../public/studyingCharacter1.png';
+import Link from 'next/link';
 
 const Carousel: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -23,6 +24,18 @@ const Carousel: React.FC = () => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  useEffect(() => {
+    const changeImg = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => clearInterval(changeImg);
+  }, [currentImage, images.length]);
+
+  const transformStyle = {
+    transform: `translateX(${-currentImage * 33.3}%)`,
+    transition: 'transform 0.5s ease-in-out',
+  };
+
   return (
     <>
       <div className={styles.carousel}>
@@ -34,7 +47,15 @@ const Carousel: React.FC = () => {
           <button onClick={prevSlide} className={styles.prevBtn}>
             ◀
           </button>
-          <img src={images[currentImage]} alt="" className={styles.image} />
+          <div className={styles.imageContainer} style={transformStyle}>
+            {images.map((img, i) => {
+              return (
+                <Link key={i} href="/study-post">
+                  <img src={img} alt="" className={styles.image} />
+                </Link>
+              );
+            })}
+          </div>
           <button onClick={nextSlide} className={styles.nextBtn}>
             ▶
           </button>
