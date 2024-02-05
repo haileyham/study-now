@@ -31,6 +31,11 @@ const Carousel: React.FC = () => {
     return () => clearInterval(changeImg);
   }, [currentImage, images.length]);
 
+  const transformStyle = {
+    transform: `translateX(${-currentImage * 33.3}%)`,
+    transition: 'transform 0.5s ease-in-out',
+  };
+
   return (
     <>
       <div className={styles.carousel}>
@@ -42,11 +47,11 @@ const Carousel: React.FC = () => {
           <button onClick={prevSlide} className={styles.prevBtn}>
             ◀
           </button>
-          <div>
+          <div className={styles.imageContainer} style={transformStyle}>
             {images.map((img, i) => {
               return (
-                <Link href="/study-post">
-                  <img key={i} src={img} alt="" className={styles.image} />
+                <Link key={i} href="/study-post">
+                  <img src={img} alt="" className={styles.image} />
                 </Link>
               );
             })}
