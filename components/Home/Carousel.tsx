@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 
 import Character from '../public/studyingCharacter1.png';
+import Link from 'next/link';
 
 const Carousel: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -41,7 +42,15 @@ const Carousel: React.FC = () => {
           <button onClick={prevSlide} className={styles.prevBtn}>
             ◀
           </button>
-          <img src={images[currentImage]} alt="" className={styles.image} />
+          <div>
+            {images.map((img, i) => {
+              return (
+                <Link href="/study-post">
+                  <img key={i} src={img} alt="" className={styles.image} />
+                </Link>
+              );
+            })}
+          </div>
           <button onClick={nextSlide} className={styles.nextBtn}>
             ▶
           </button>
