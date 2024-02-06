@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
 import Link from 'next/link';
-import { LoginBtn, LogoutBtn } from '@/components/Home/LoginOutBtn';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
@@ -32,27 +31,6 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <header className="headerMain">
-          <div className="myContainer">
-            {/* {session ? (
-              <>
-                <div>
-                  <span>{session?.user?.name}</span>
-                  <LogoutBtn></LogoutBtn>
-                </div>
-              </>
-            ) : (
-              <>
-                <div>
-                  <span>로그인하세요!</span>
-                  <LoginBtn></LoginBtn>
-                </div>
-              </>
-            )} */}
-            {/* 임시 */}
-            <LoginBtn></LoginBtn>
-            <LogoutBtn></LogoutBtn>
-            <div>🌛</div>
-          </div>
           <ul className="navContainer">
             <Link href="/">
               <img src="" alt="logo" />
