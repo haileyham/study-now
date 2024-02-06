@@ -21,6 +21,8 @@ const Carousel: React.FC = () => {
     '문제를 풀고 지식 UP!',
   ];
 
+  const imgLink = ['/my-page', '/quiz', '/study-post', '/quiz'];
+
   const nextSlide = () => {
     setCurrentImage((prev) => (prev + 1) % images.length);
   };
@@ -52,7 +54,7 @@ const Carousel: React.FC = () => {
           <div className={styles.imageContainer} style={transformStyle}>
             {images.map((img, i) => {
               return (
-                <Link key={i} href="/study-post">
+                <Link key={i} href={imgLink[i]}>
                   <img src={img} alt="" className={styles.image} />
                   <h2>{imgText[i]}</h2>
                 </Link>
