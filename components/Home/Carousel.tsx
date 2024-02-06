@@ -11,12 +11,14 @@ const Carousel: React.FC = () => {
     'https://images.unsplash.com/photo-1579353977828-2a4eab540b9a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     'https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     'https://images.unsplash.com/photo-1600716051809-e997e11a5d52?q=80&w=1150&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?q=80&w=2083&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   ];
 
   const imgText = [
     'StudyNow에 지금 바로 함께 하세요!',
     '지금 바로 퀴즈를 풀고 지식을 테스트해 보세요!',
     '스터디 메이트와 함께 공부해요!',
+    '문제를 풀고 지식 UP!',
   ];
 
   const nextSlide = () => {
@@ -35,7 +37,7 @@ const Carousel: React.FC = () => {
   }, [currentImage, images.length]);
 
   const transformStyle = {
-    transform: `translateX(${-currentImage * 33.3}%)`,
+    transform: `translateX(${-currentImage * 25}%)`,
     transition: 'transform 0.5s ease-in-out',
   };
 
