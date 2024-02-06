@@ -13,6 +13,12 @@ const Carousel: React.FC = () => {
     'https://images.unsplash.com/photo-1600716051809-e997e11a5d52?q=80&w=1150&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   ];
 
+  const imgText = [
+    'StudyNow에 지금 바로 함께 하세요!',
+    '지금 바로 퀴즈를 풀고 지식을 테스트해 보세요!',
+    '스터디 메이트와 함께 공부해요!',
+  ];
+
   const nextSlide = () => {
     setCurrentImage((prev) => (prev + 1) % images.length);
   };
@@ -46,7 +52,7 @@ const Carousel: React.FC = () => {
               return (
                 <Link key={i} href="/study-post">
                   <img src={img} alt="" className={styles.image} />
-                  <h2>지금 바로 함께 하세요!</h2>
+                  <h2>{imgText[i]}</h2>
                 </Link>
               );
             })}
