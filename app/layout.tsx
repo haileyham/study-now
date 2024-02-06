@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
 import Link from 'next/link';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,8 +23,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // let session = (await getServerSession(authOptions)) as Session;
-  // console.log(session);
   return (
     <html lang="en">
       <body className={inter.className}>
