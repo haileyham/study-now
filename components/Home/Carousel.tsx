@@ -1,10 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import styles from './page.module.scss';
-
-import Character from '../public/studyingCharacter1.png';
 import Link from 'next/link';
 
 const Carousel: React.FC = () => {
@@ -44,18 +41,19 @@ const Carousel: React.FC = () => {
           style={{ backgroundImage: `url(${images[currentImage]})` }}
         />
         <div className={styles.content}>
-          <button onClick={prevSlide} className={styles.prevBtn}>
-            ◀
-          </button>
           <div className={styles.imageContainer} style={transformStyle}>
             {images.map((img, i) => {
               return (
                 <Link key={i} href="/study-post">
                   <img src={img} alt="" className={styles.image} />
+                  <h2>지금 바로 함께 하세요!</h2>
                 </Link>
               );
             })}
           </div>
+          <button onClick={prevSlide} className={styles.prevBtn}>
+            ◀
+          </button>
           <button onClick={nextSlide} className={styles.nextBtn}>
             ▶
           </button>
