@@ -179,7 +179,7 @@ main {
   }
   .headerMain {
     max-width: var(--max-width);
-    height: 13rem;
+    height: 10rem;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -205,7 +205,20 @@ main {
   .container {
     margin: 0 auto 150px;
   }
+  .myContainer {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--max-width);
+    height: 3rem;
+    display: flex;
+    padding: 0 5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
   .headerMain {
-    margin: auto;
+    margin: 2rem auto 0;
   }
 }
