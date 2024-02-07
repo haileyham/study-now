@@ -90,7 +90,6 @@ export default function QuizSetting() {
               퀴즈 풀기
             </button>
           </section>
-          <section></section>
         </main>
       </div>
     </>
