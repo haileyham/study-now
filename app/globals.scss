@@ -161,6 +161,19 @@ main {
     background: none;
     color: gray;
   }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  a {
+    font-size: 14px;
+    color: gray;
+  }
+  img {
+    width: 25px;
+    border-radius: 50%;
+  }
 }
 
 .navContainer {

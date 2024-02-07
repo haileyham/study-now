@@ -2,36 +2,42 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 import Carousel from '@/components/Home/Carousel';
 import { LoginBtn, LogoutBtn } from '@/components/Home/LoginOutBtn';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import Link from 'next/link';
 
-export default function Home() {
+export default async function Home() {
+  const session: any = await getServerSession(authOptions);
+  console.log(session);
+
   return (
     <>
       <main>
         <div className="myContainer">
-          {/* {session ? (
-              <>
-                <div>
-                  <span>{session?.user?.name}</span>
-                  <LogoutBtn></LogoutBtn>
-                </div>
-              </>
-            ) : (
-              <>
-                <div>
-                  <span>로그인하세요!</span>
-                  <LoginBtn></LoginBtn>
-                </div>
-              </>
-            )} */}
-          {/* 임시 */}
-          <LoginBtn></LoginBtn>
-          <LogoutBtn></LogoutBtn>
-          <div>🌛</div>
+          {session ? (
+            <div>
+              <img src={session.user.image} alt={session.user.name} />
+              <Link href="/my-page">{session.user.name}님</Link>
+              <LogoutBtn></LogoutBtn>
+            </div>
+          ) : (
+            <div>
+              <LoginBtn></LoginBtn>
+            </div>
+          )}
+          {/* <div>🌛</div> */}
         </div>
         <section className={styles.carousel}>
           <Carousel></Carousel>
         </section>
-        <section className={styles.section}></section>
+        <section className={`${styles.section} ${styles.cardContainer}`}>
+          <div className={styles.card}>
+            <span>Quiz를 통한 실력 체크</span>
+          </div>
+          <div className={styles.card}>
+            <span>Study를 통해 공부 협업 UP</span>
+          </div>
+        </section>
         <section className={styles.section}></section>
         <section className={styles.section}></section>
       </main>
