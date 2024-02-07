@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './page.module.scss';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
-import { LoginBtn } from '@/components/Home/LoginOutBtn';
+import { LoginBtn, LogoutBtn } from '@/components/Home/LoginOutBtn';
 
 export default async function MyPage() {
   const session: any = await getServerSession(authOptions);
@@ -22,6 +22,7 @@ export default async function MyPage() {
               <span>
                 <p>&#128393;</p>
               </span>
+              <LogoutBtn></LogoutBtn>
             </section>
             <section className={styles.myActive}>
               <div>
