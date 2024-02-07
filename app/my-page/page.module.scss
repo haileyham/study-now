@@ -58,6 +58,14 @@
         }
       }
     }
+    //logout btn
+    button {
+      margin: 1rem;
+      background-color: rgba(244, 240, 255, 0.504);
+      &:hover {
+        background-color: rgba(116, 116, 116, 0.504);
+      }
+    }
   }
   .myActive {
     padding: 1rem;
