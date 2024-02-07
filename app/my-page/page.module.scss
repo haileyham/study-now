@@ -11,11 +11,11 @@
     border-radius: var(--border-radius-s);
   }
   .profile {
-    height: 9rem;
+    height: 12rem;
     margin-top: 7rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     position: relative;
     div {
@@ -58,6 +58,14 @@
         }
       }
     }
+    //logout btn
+    button {
+      margin: 1rem;
+      background-color: rgba(244, 240, 255, 0.504);
+      &:hover {
+        background-color: rgba(116, 116, 116, 0.504);
+      }
+    }
   }
   .myActive {
     padding: 1rem;
@@ -82,6 +90,34 @@
         flex: 1;
         font-size: var(--font-size-s);
         text-align: end;
+      }
+    }
+  }
+}
+
+// 로그인 이전
+.loginPrompt {
+  height: calc(100vh - 5rem);
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius-s);
+  background-color: rgb(244, 240, 255);
+  div {
+    width: 100%;
+    padding: 10rem 0;
+    text-align: center;
+    border-radius: var(--border-radius-s);
+    background-color: #fff;
+    p {
+      font-size: var(--font-size-xl);
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      background-color: rgb(217, 203, 255);
+      font-size: var(--font-size-m);
+      &:hover {
+        background-color: rgb(195, 174, 255);
       }
     }
   }
@@ -142,5 +178,9 @@
       margin: 0; //초기화
       padding: 2rem;
     }
+  }
+
+  .loginPrompt {
+    height: 80vh;
   }
 }
