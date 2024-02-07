@@ -87,6 +87,34 @@
   }
 }
 
+// 로그인 이전
+.loginPrompt {
+  height: calc(100vh - 5rem);
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius-s);
+  background-color: rgb(244, 240, 255);
+  div {
+    width: 100%;
+    padding: 10rem 0;
+    text-align: center;
+    border-radius: var(--border-radius-s);
+    background-color: #fff;
+    p {
+      font-size: var(--font-size-xl);
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      background-color: rgb(217, 203, 255);
+      font-size: var(--font-size-m);
+      &:hover {
+        background-color: rgb(195, 174, 255);
+      }
+    }
+  }
+}
+
 /* 테블릿 화면 스타일 */
 @media (min-width: 768px) {
 }
@@ -142,5 +170,9 @@
       margin: 0; //초기화
       padding: 2rem;
     }
+  }
+
+  .loginPrompt {
+    height: 80vh;
   }
 }
