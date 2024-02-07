@@ -3,10 +3,10 @@
   border: 10px solid rgb(240, 225, 249);
   border-radius: var(--border-radius-s);
   position: relative;
+  height: calc(100vh - 5rem);
+  overflow: auto;
   section {
-    // background-color: yellow;
   }
-  height: calc(100vh - 8rem);
 }
 
 .quizInfo {
@@ -109,7 +109,7 @@
   padding-top: 2rem;
   // 문제풀기 btn
   .quizBtn {
-    margin-top: 1rem;
+    margin: 1rem auto 5rem;
     padding: 1rem 3rem;
     font-size: var(--font-size-xl);
   }
@@ -183,7 +183,7 @@
   .main {
     width: 70%;
     margin: auto;
-    height: 43rem;
+    height: 45rem;
   }
   .quizSettingNum {
     margin: 2rem auto;
