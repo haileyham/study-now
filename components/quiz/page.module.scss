@@ -166,6 +166,49 @@
   }
 }
 
+//quiz results page
+.mainResults {
+  height: calc(100vh - 5rem);
+  overflow: auto;
+  padding: 1rem;
+  h2 {
+    font-size: 30px;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgb(249, 240, 255);
+    border-radius: var(--border-radius-m);
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  li {
+    padding: 1rem;
+    border: 1px solid rgb(242, 226, 252);
+    border-radius: var(--border-radius-m);
+    box-shadow: 2px 2px 3px 0 rgb(242, 226, 252);
+  }
+  strong {
+    display: inline-block;
+    margin: 10px 0;
+  }
+  //q&a
+  p {
+    position: relative;
+    margin-top: 1rem;
+    padding: 2.5rem 0 1.5rem 0;
+    //badge
+    span {
+      position: absolute;
+      top: 0;
+      padding: 5px 10px;
+      border-radius: var(--border-radius-m);
+      background: rgb(242, 226, 252);
+    }
+  }
+}
+
 /* 태블릿 화면 스타일 */
 @media (min-width: 768px) {
   .quizInfo {
