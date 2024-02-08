@@ -71,20 +71,18 @@ const QuizComponent: React.FC<QuizProps> = ({
     if (currentQuestion < questionNum - 1) {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
-      localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
       setResetTime(timerDuration);
     } else {
-      localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
-      localStorage.setItem(
-        'userQuiz',
-        JSON.stringify(
-          quizData
-            .slice(0, questionNum)
-            .map((questionObj) => questionObj.question),
-        ),
-      );
       router.push('/quiz/results');
     }
+
+    const userQuiz = {
+      question: quizData
+        .slice(0, questionNum)
+        .map((question) => question.question),
+      userAnswer: userAnswers,
+    };
+    localStorage.setItem('userQuiz', JSON.stringify(userQuiz));
   };
 
   return (
