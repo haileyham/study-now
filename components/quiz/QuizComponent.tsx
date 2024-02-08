@@ -119,8 +119,8 @@ const QuizComponent: React.FC<QuizProps> = ({
               {userAnswers[currentQuestion]}
             </span>
             <div className={styles.answerBox}>
-              <input
-                type="text"
+              <textarea
+                // type="text"
                 value={
                   resetTime === 0
                     ? '시간 경과 : 추가 답변 입력 불가'
