@@ -71,12 +71,18 @@ const QuizComponent: React.FC<QuizProps> = ({
     if (currentQuestion < questionNum - 1) {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
-      localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
       setResetTime(timerDuration);
     } else {
-      localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
       router.push('/quiz/results');
     }
+
+    const userQuiz = {
+      question: quizData
+        .slice(0, questionNum)
+        .map((question) => question.question),
+      userAnswer: userAnswers,
+    };
+    localStorage.setItem('userQuiz', JSON.stringify(userQuiz));
   };
 
   return (
@@ -113,8 +119,8 @@ const QuizComponent: React.FC<QuizProps> = ({
               {userAnswers[currentQuestion]}
             </span>
             <div className={styles.answerBox}>
-              <input
-                type="text"
+              <textarea
+                // type="text"
                 value={
                   resetTime === 0
                     ? '시간 경과 : 추가 답변 입력 불가'
