@@ -63,9 +63,8 @@
   .answer {
     background-color: rgb(240, 225, 249);
     color: black;
-    // white-space: nowrap;
     overflow-y: scroll;
-    text-overflow: ellipsis;
+    white-space: pre-wrap;
   }
 
   .answerBox {
@@ -74,7 +73,7 @@
     width: 100%;
   }
 
-  input {
+  textarea {
     width: 90%;
     margin: 2rem auto;
     padding: 0.5rem 1rem;
@@ -198,6 +197,8 @@
     position: relative;
     margin-top: 1rem;
     padding: 2.5rem 0 1.5rem 0;
+    white-space: pre-wrap;
+
     //badge
     span {
       position: absolute;
