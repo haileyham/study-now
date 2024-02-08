@@ -75,6 +75,14 @@ const QuizComponent: React.FC<QuizProps> = ({
       setResetTime(timerDuration);
     } else {
       localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+      localStorage.setItem(
+        'userQuiz',
+        JSON.stringify(
+          quizData
+            .slice(0, questionNum)
+            .map((questionObj) => questionObj.question),
+        ),
+      );
       router.push('/quiz/results');
     }
   };
