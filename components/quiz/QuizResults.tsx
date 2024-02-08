@@ -29,8 +29,15 @@ export default function QuizResults() {
               const userAnswer = userQuiz.userAnswer[index];
               return (
                 <li key={index}>
-                  <strong>{`Q. ${index + 1}: ${question}`}</strong>
-                  <p>{`답변 : ${userAnswer}`}</p>
+                  <strong>{`Quiz. ${index + 1}`}</strong>
+                  <p>
+                    <span>질문</span>
+                    {question}
+                  </p>
+                  <p>
+                    <span>답변</span>
+                    {userAnswer}
+                  </p>
                 </li>
               );
             })}
