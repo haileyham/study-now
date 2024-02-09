@@ -6,24 +6,24 @@ import { useRouter } from 'next/navigation';
 import QuizTypeSelect from './QuizTypeSelect';
 
 export default function QuizSetting() {
-  const [questionNum, setQuestionNum] = useState(10);
+  const [questionNum, setQuestionNum] = useState(5);
   const [timerDuration, setTimerDuration] = useState(10);
   const [quizType, setQuizType] = useState('프론트엔드');
   const router = useRouter();
 
   const handleIncrease = (name: string) => {
     if (name === 'questionNum') {
-      setQuestionNum((prev) => prev + 5);
+      setQuestionNum((prev) => Math.min(prev + 5, 50));
     } else if (name === 'timerDuration') {
-      setTimerDuration((prev) => prev + 5);
+      setTimerDuration((prev) => Math.min(prev + 5, 100));
     }
   };
 
   const handleDecrease = (name: string) => {
     if (name === 'questionNum') {
-      setQuestionNum((prev) => prev - 5);
+      setQuestionNum((prev) => Math.max(5, prev - 5));
     } else if (name === 'timerDuration') {
-      setTimerDuration((prev) => prev - 5);
+      setTimerDuration((prev) => Math.max(5, prev - 5));
     }
   };
 
