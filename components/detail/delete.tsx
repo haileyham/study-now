@@ -29,7 +29,7 @@ const DeleteBtn: React.FC<DeleteEditBtnProps> = ({ postId }) => {
   return (
     <>
       <Modal
-        modalBtn={`글삭제`}
+        modalBtn={`글 삭제`}
         modalBtnStyle={styles.deleteEditBtn}
         message={`정말 삭제하시겠습니까?`}
         onFunction={handleDelete}

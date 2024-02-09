@@ -14,7 +14,7 @@ const EditBtn: React.FC<DeleteEditBtnProps> = ({ postId }) => {
 
   return (
     <Modal
-      modalBtn={`글수정`}
+      modalBtn={`글 수정`}
       modalBtnStyle={styles.deleteEditBtn}
       message={`정말 수정하시겠습니까?`}
       onFunction={handleEdit}
