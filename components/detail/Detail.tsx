@@ -13,6 +13,13 @@ const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
     console.error('Study post not found');
   }
 
+  const editDelBtnContent = (
+    <>
+      <EditBtn></EditBtn>
+      <DeleteBtn></DeleteBtn>
+    </>
+  );
+
   if (result) {
     return (
       <>
@@ -45,7 +52,7 @@ const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
                 </div>
                 <div className={styles.divMainHeader}>
                   <h2>{result.title}</h2>
-                  <Toggle id={id}></Toggle>
+                  <Toggle id={id} childTsxContent={editDelBtnContent}></Toggle>
                 </div>
                 <div className={styles.divMainHeader}>
                   <img src="" alt="profile" />
