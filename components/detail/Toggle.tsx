@@ -5,10 +5,9 @@ import { EditBtn } from './Edit';
 import { DeleteBtn } from './delete';
 
 type ToggleProps = {
-  id?: Object | String | undefined;
   childTsxContent?: React.ReactNode;
 };
-const Toggle: React.FC<ToggleProps> = ({ id, childTsxContent }) => {
+const Toggle: React.FC<ToggleProps> = ({ childTsxContent }) => {
   const [toggle, setToggle] = useState(false);
 
   const toggleState = () => {

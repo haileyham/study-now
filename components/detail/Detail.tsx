@@ -15,8 +15,8 @@ const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
 
   const editDelBtnContent = (
     <>
-      <EditBtn></EditBtn>
-      <DeleteBtn></DeleteBtn>
+      <EditBtn postId={id}></EditBtn>
+      <DeleteBtn postId={id}></DeleteBtn>
     </>
   );
 
@@ -52,7 +52,7 @@ const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
                 </div>
                 <div className={styles.divMainHeader}>
                   <h2>{result.title}</h2>
-                  <Toggle id={id} childTsxContent={editDelBtnContent}></Toggle>
+                  <Toggle childTsxContent={editDelBtnContent}></Toggle>
                 </div>
                 <div className={styles.divMainHeader}>
                   <img src="" alt="profile" />
