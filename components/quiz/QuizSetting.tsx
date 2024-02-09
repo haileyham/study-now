@@ -21,9 +21,9 @@ export default function QuizSetting() {
 
   const handleDecrease = (name: string) => {
     if (name === 'questionNum') {
-      setQuestionNum((prev) => prev - 5);
+      setQuestionNum((prev) => Math.max(5, prev - 5));
     } else if (name === 'timerDuration') {
-      setTimerDuration((prev) => prev - 5);
+      setTimerDuration((prev) => Math.max(5, prev - 5));
     }
   };
 
