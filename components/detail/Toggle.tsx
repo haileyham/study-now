@@ -5,23 +5,23 @@ import { EditBtn } from './Edit';
 import { DeleteBtn } from './delete';
 
 type ToggleProps = {
-  id?: Object | String;
+  id?: Object | String | undefined;
+  childTsxContent?: React.ReactNode;
 };
-
-const Toggle: React.FC<ToggleProps> = ({ id }) => {
+const Toggle: React.FC<ToggleProps> = ({ id, childTsxContent }) => {
   const [toggle, setToggle] = useState(false);
-  const toggleTest = () => {
+
+  const toggleState = () => {
     setToggle(!toggle);
   };
 
   return (
     <div className={styles.toggleBox}>
-      <button className={styles.toggle} onClick={toggleTest}>
+      <button className={styles.toggle} onClick={toggleState}>
         :
       </button>
       <div className={`${styles.btnBox} ${toggle ? styles.showBtnBox : ''}`}>
-        <EditBtn postId={id}></EditBtn>
-        <DeleteBtn postId={id}></DeleteBtn>
+        {childTsxContent}
       </div>
     </div>
   );
