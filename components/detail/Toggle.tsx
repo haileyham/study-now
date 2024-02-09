@@ -16,10 +16,23 @@ const Toggle: React.FC<ToggleProps> = ({ childTsxContent }) => {
 
   return (
     <div className={styles.toggleBox}>
-      <button className={styles.toggle} onClick={toggleState}>
-        :
+      <button
+        className={
+          toggle
+            ? `${styles.toggleOnBtn} ${styles.toggleBtn}`
+            : `${styles.toggleBtn}`
+        }
+        onClick={toggleState}
+      >
+        <span className={toggle ? `${styles.toggleOn}` : ''}></span>
+        <span className={toggle ? `${styles.toggleOn}` : ''}></span>
+        <span className={toggle ? `${styles.toggleOn}` : ''}></span>
       </button>
-      <div className={`${styles.btnBox} ${toggle ? styles.showBtnBox : ''}`}>
+      <div
+        className={`${styles.toggleContentBox} ${
+          toggle ? styles.showToggleContentBox : ''
+        }`}
+      >
         {childTsxContent}
       </div>
     </div>
