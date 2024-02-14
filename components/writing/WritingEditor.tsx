@@ -3,6 +3,7 @@ import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
+import Header from '../detail/Header';
 
 const WritingEditor: React.FC<WritingEditorProps> = ({
   result,
@@ -66,15 +67,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     <>
       <div className={`container ${styles.container} `}>
         <main>
-          <section className={styles.writeHeader}>
-            <Modal
-              modalBtn={'◀'}
-              modalBtnStyle={styles.backBtn}
-              message={'정말 나가겠습니까?'}
-              onFunction={handleConfirm}
-            ></Modal>
-            <h1>스터디 모집</h1>
-          </section>
+          <Header title={`스터디 모집`}></Header>
           <section className={styles.writeCheck}>
             <div className={styles.studyStatus}>
               <span>Status</span>
