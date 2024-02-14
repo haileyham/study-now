@@ -3,7 +3,7 @@ import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
-import Header from '../detail/Header';
+import Header from '../common/Header';
 
 const WritingEditor: React.FC<WritingEditorProps> = ({
   result,

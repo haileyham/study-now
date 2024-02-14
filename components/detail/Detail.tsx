@@ -4,7 +4,7 @@ import { EditBtn } from '@/components/detail/Edit';
 import { DeleteBtn } from '@/components/detail/delete';
 import { getDate } from '@/components/common/time';
 import Toggle from './Toggle';
-import Header from './Header';
+import Header from '../common/Header';
 
 const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
   let id;

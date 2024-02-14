@@ -1,0 +1,25 @@
+//글작성 페이지 헤더
+.writeHeader {
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  h1 {
+    text-align: center;
+    font-size: var(--font-header-l);
+  }
+  button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--border-radius-s);
+    background-color: rgb(243, 237, 255);
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(163, 122, 253);
+      color: #fff;
+    }
+  }
+  .backBtn {
+    position: absolute;
+    left: 0;
+  }
+}
