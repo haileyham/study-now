@@ -4,6 +4,7 @@ import { EditBtn } from '@/components/detail/Edit';
 import { DeleteBtn } from '@/components/detail/delete';
 import { getDate } from '@/components/common/time';
 import Toggle from './Toggle';
+import Header from './Header';
 
 const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
   let id;
@@ -28,6 +29,7 @@ const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
             <h1 className="a11y-hidden">스터디 모집 상세 페이지</h1>
           </header>
           <main className={styles.main}>
+            <Header title={`스터디 모집`}></Header>
             <section>
               <header className={styles.mainHeader}>
                 <div className={styles.postInfo}>
