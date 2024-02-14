@@ -78,7 +78,7 @@ $backColor: rgba(215, 196, 255, 0.179);
     padding: 10px;
     color: var(--color-content-m);
     font-size: $mainContent;
-    min-height: 8rem;
+    min-height: 16rem;
     white-space: pre-wrap;
   }
   &::before {
@@ -105,7 +105,7 @@ $backColor: rgba(215, 196, 255, 0.179);
     padding: 0.8rem 0.3rem 0rem 0.3rem;
     border-radius: var(--border-radius-s);
     flex-grow: 1;
-    // flex-basis: 100px;
+    flex-basis: 45%;
     text-align: center;
     box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
     background-color: #fff;
@@ -246,4 +246,9 @@ $backColor: rgba(215, 196, 255, 0.179);
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
+  .postInfo {
+    div {
+      flex-basis: auto;
+    }
+  }
 }
