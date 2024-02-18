@@ -1,13 +1,14 @@
 .studyMain {
   margin: auto;
   max-width: 800px;
-  padding: 2rem;
+  padding: 2rem 1rem;
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius-s);
 }
 
 .studyHeader {
   display: flex;
+  padding-left: 1rem;
   align-items: center;
   justify-content: space-between;
   h1 {
