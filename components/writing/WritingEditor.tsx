@@ -59,10 +59,6 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     }
   };
 
-  const handleConfirm = () => {
-    router.back();
-  };
-
   return (
     <>
       <div className={`container ${styles.container} `}>
@@ -180,12 +176,14 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
               onChange={handleChange}
               defaultValue={result?.content}
             />
-            <Modal
-              modalBtn={`${writingEdit.modalBtnText}`}
-              modalBtnStyle={styles.writeEditBtn}
-              message={`${writingEdit.modalMessage}`}
-              onFunction={handleSubmit}
-            ></Modal>
+            <div className={styles.submitBtn}>
+              <Modal
+                modalBtn={`${writingEdit.modalBtnText}`}
+                modalBtnStyle={styles.writeEditBtn}
+                message={`${writingEdit.modalMessage}`}
+                onFunction={handleSubmit}
+              ></Modal>
+            </div>
           </section>
         </main>
       </div>

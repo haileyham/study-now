@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './page.module.scss';
-import Link from 'next/link';
 import { connectDB } from '@/util/database';
 import PostList from './postList';
 import WriteBtn from '@/components/writing/WriteBtn';
