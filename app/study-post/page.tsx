@@ -26,9 +26,6 @@ export default async function StudyPost() {
               <p>스터디 멤버를 구하세요!</p>
             </div>
             <WriteBtn></WriteBtn>
-            {/* <Link href="/study-post/write">
-              <span className="btn-s">글쓰기</span>
-            </Link> */}
           </header>
           <section className={styles.studySection}>
             <PostList result={result}></PostList>
