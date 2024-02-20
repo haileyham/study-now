@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './page.module.scss';
-import Link from 'next/link';
 import { connectDB } from '@/util/database';
 import PostList from './postList';
+import WriteBtn from '@/components/writing/WriteBtn';
 
 // export const revalidate = 60;
 export const dynamic = 'force-dynamic';
@@ -24,9 +24,7 @@ export default async function StudyPost() {
               <h1>StudyList</h1>
               <p>스터디 멤버를 구하세요!</p>
             </div>
-            <Link href="/study-post/write">
-              <span className="btn-s">글쓰기</span>
-            </Link>
+            <WriteBtn></WriteBtn>
           </header>
           <section className={styles.studySection}>
             <PostList result={result}></PostList>
