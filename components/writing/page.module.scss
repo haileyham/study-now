@@ -20,14 +20,18 @@
     }
   }
   textarea {
-    height: 40vh;
+    min-height: 35vh;
+  }
+  .submitBtn {
+    width: 90%;
+    margin: 3rem auto 0rem;
   }
   .writeEditBtn {
+    width: 100%;
     padding: 1rem;
     border: none;
     border-radius: var(--border-radius-s);
     background-color: rgb(243, 237, 255);
-    width: 100%;
     cursor: pointer;
     &:hover {
       background-color: rgb(231, 216, 255);
