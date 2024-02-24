@@ -148,9 +148,18 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
                 onChange={handleChange}
               />
             </div>
-            <div className={styles.studyTime}>
+            {/* <div className={styles.studyTime}>
               <span>Time</span>
               <input type="time" name="time" onChange={handleChange} />
+            </div> */}
+            <div className={styles.studyTime}>
+              <span>Contact</span>
+              <input
+                type="text"
+                name="time"
+                placeholder="ex) https://open.kakao.com/"
+                onChange={handleChange}
+              />
             </div>
             <div className={styles.studyType}>
               <span>Type</span>
