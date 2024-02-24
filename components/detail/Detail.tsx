@@ -51,6 +51,10 @@ const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
                     <span>종류</span>
                     <p>{result.type ? result.type : '-'}</p>
                   </div>
+                  <div>
+                    <span>연락처</span>
+                    <p>{result.contact ? result.contact : '-'}</p>
+                  </div>
                 </div>
                 <div className={styles.divMainHeader}>
                   <h2>{result.title}</h2>
