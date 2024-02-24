@@ -48,6 +48,11 @@
   border-radius: var(--border-radius-s);
   // background-color: rgb(248, 246, 255);
   border: 1px solid rgb(227, 225, 254);
+  .studyContact {
+    input {
+      width: 90%;
+    }
+  }
   div {
     position: relative;
     padding: 1rem 0.5rem 0.5rem 0.5rem;
@@ -59,7 +64,7 @@
     input {
       width: 140px;
       margin: 0 5px;
-      padding: 0 0.5rem;
+      padding: 0.5rem;
       font-size: var(--font-size-s);
       &[type='checkbox'] {
         position: absolute;
@@ -123,7 +128,6 @@
       background-color: #fff;
       input {
         width: 90%;
-        padding: 0.5rem;
       }
       label {
         font-size: var(--font-size-m);
