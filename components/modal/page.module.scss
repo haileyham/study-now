@@ -26,17 +26,17 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  width: 200px;
-  height: 100px;
-  padding-top: 2.3rem;
+  width: 250px;
+  height: 150px;
+  padding-top: 4rem;
   border-radius: 1rem;
   background-color: white;
   gap: 10px;
   button {
-    padding: 3px 0.5rem;
+    padding: 10px 1rem;
     background-color: rgb(243, 237, 255);
     border: none;
-    border-radius: var(--border-radius-s);
+    border-radius: var(--border-radius-m);
     cursor: pointer;
     &:hover {
       background-color: rgb(211, 188, 255);
@@ -44,7 +44,8 @@
   }
   p {
     position: absolute;
-    top: 30px;
+    top: 50px;
+    font-size: var(--font-size-m);
     color: rgb(41, 41, 41);
     cursor: default;
   }
