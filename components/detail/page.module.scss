@@ -111,13 +111,13 @@ $backColor: rgba(215, 196, 255, 0.179);
     background-color: #fff;
   }
   p {
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-m);
     margin: 0;
     padding: 7px 5px 3px 5px;
     background-color: #fff;
     border: 1.5px solid rgba(255, 255, 255, 0.968);
     border-radius: var(--border-radius-s);
-    color: rgb(53, 53, 53);
+    color: rgb(130, 130, 130);
   }
   span {
     position: absolute;
@@ -126,10 +126,10 @@ $backColor: rgba(215, 196, 255, 0.179);
     left: 50%;
     transform: translateX(-50%);
     padding: 0 0.5rem;
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-m);
     border-radius: var(--border-radius-s);
     background-color: rgb(244, 240, 252);
-    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    // box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
   }
 }
 
