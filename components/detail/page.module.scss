@@ -47,6 +47,7 @@ $backColor: rgba(215, 196, 255, 0.179);
     max-height: 40px;
     overflow: hidden;
     display: -webkit-box;
+    font-size: var(--font-header-l);
     -webkit-line-clamp: 2; /* 표시할 최대 라인 수 */
     -webkit-box-orient: vertical;
   }
@@ -68,6 +69,7 @@ $backColor: rgba(215, 196, 255, 0.179);
     .date {
       flex: 1;
       text-align: right;
+      font-size: var(--font-size-m);
     }
   }
 }
