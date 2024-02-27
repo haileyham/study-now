@@ -146,6 +146,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
                 name="location"
                 placeholder="ex) 강남"
                 onChange={handleChange}
+                defaultValue={result?.location}
               />
             </div>
             {/* <div className={styles.studyTime}>
@@ -159,6 +160,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
                 placeholder="ex) 프론트엔드 면접"
                 name="type"
                 onChange={handleChange}
+                defaultValue={result?.type}
               />
             </div>
             <div className={styles.studyContact}>
@@ -168,6 +170,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
                 name="contact"
                 placeholder="ex) https://open.kakao.com/"
                 onChange={handleChange}
+                defaultValue={result?.contact}
               />
             </div>
           </section>
