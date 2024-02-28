@@ -1,0 +1,146 @@
+.studyList {
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+  border-radius: var(--border-radius-m);
+  position: relative;
+  background-color: #fff;
+  &:hover {
+    background-color: rgba(231, 231, 231, 0.378);
+  }
+  .date {
+    position: absolute;
+    right: 13px;
+    top: 15px;
+    font-size: var(--font-size-ss);
+    color: var(--color-content-s);
+  }
+  // .statusDD {
+  //   background-color: rgba(167, 167, 167, 0.463);
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0px;
+  //   width: 10px;
+  //   height: 100%;
+  //   border-radius: 5px 0px 0px 5px;
+  // }
+  // .statusRR {
+  //   background-color: rgba(131, 210, 255, 0.398);
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0px;
+  //   width: 10px;
+  //   height: 100%;
+  //   border-radius: 5px 0px 0px 5px;
+  // }
+  %badge-common-style {
+    font-size: var(--font-size-ss);
+    font-weight: 900;
+    color: white;
+    padding: 2px 5px;
+    border-radius: var(--border-radius-m);
+  }
+  .statusR {
+    @extend %badge-common-style;
+    background: rgb(131, 210, 255);
+  }
+  .statusD {
+    @extend %badge-common-style;
+    background: rgb(182, 182, 182);
+  }
+  // .info1 {
+  //   @extend %badge-common-style;
+  //   background: rgba(213, 204, 253, 0.49);
+  //   color: rgb(123, 94, 255);
+  // }
+  // .info2 {
+  //   @extend %badge-common-style;
+  //   background: rgba(161, 254, 178, 0.546);
+  //   color: rgb(20, 97, 34);
+  // }
+  // .info3 {
+  //   @extend %badge-common-style;
+  //   background: rgba(210, 254, 106, 0.529);
+  //   color: rgb(93, 97, 20);
+  // }
+  // .info4 {
+  //   @extend %badge-common-style;
+  //   background: rgba(254, 161, 198, 0.494);
+  //   color: rgb(97, 20, 78);
+  // }
+  h2 {
+    font-size: var(--font-header-m);
+    margin-top: 10px;
+    margin-bottom: 0.7rem;
+  }
+  p {
+    font-size: var(--font-size-m);
+    color: var(--color-content-m);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .postInfo {
+    font-size: var(--font-size-s);
+    color: var(--color-content-s);
+    margin-top: 0.7rem;
+    .info1,
+    .info2,
+    .info3,
+    .info4 {
+      margin-right: 4px;
+      padding: 0px 5px;
+      border: 1px solid rgb(227, 227, 227);
+      border-radius: var(--border-radius-m);
+    }
+    & > span:last-of-type {
+      margin-top: 7px;
+      display: block;
+      text-align: right;
+    }
+  }
+}
+
+/* 태블릿 화면 스타일 */
+@media (min-width: 768px) {
+  .studyList {
+    .postInfo {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      .info1,
+      .info2,
+      .info3,
+      .info4 {
+        margin: 0;
+        padding: 3px 5px;
+      }
+      & > span:last-of-type {
+        flex: 1;
+        text-align: right;
+      }
+    }
+  }
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 1024px) {
+  .studyList {
+    padding: 1rem 2rem;
+    .status {
+      position: absolute;
+      top: 22px;
+      padding: 4px 7px;
+    }
+    .date {
+      top: 20px;
+      right: 30px;
+    }
+  }
+
+  .studyHeader {
+    a > span {
+      padding: 0.3rem 0.7rem;
+    }
+  }
+}
