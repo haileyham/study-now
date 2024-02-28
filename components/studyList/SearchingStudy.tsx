@@ -1,7 +1,8 @@
 'use client';
+import PostList from '@/app/study-post/postList';
 import React, { ChangeEvent, useState } from 'react';
 
-const SearchingStudy: React.FC<PostListProps> = ({ result }) => {
+const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
   const [searchType, setSearchType] = useState('title');
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState<Post[]>(result);
@@ -60,12 +61,10 @@ const SearchingStudy: React.FC<PostListProps> = ({ result }) => {
       />
       <button onClick={handleSearching}>검색</button>
       <ul>
-        {filteredData.map((post, index) => (
-          <li key={index}>{post[searchType.toLowerCase()]}</li>
-        ))}
+        <PostList filteredData={filteredData}></PostList>
       </ul>
     </>
   );
 };
 
-export default SearchingStudy;
+export default SearchingStudyPostList;
