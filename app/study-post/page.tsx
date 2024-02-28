@@ -3,6 +3,7 @@ import styles from './page.module.scss';
 import { connectDB } from '@/util/database';
 import PostList from './postList';
 import WriteBtn from '@/components/writing/WriteBtn';
+import SearchingStudy from '@/components/studyList/SearchingStudy';
 
 // export const revalidate = 60;
 export const dynamic = 'force-dynamic';
@@ -27,6 +28,7 @@ export default async function StudyPost() {
             <WriteBtn></WriteBtn>
           </header>
           <section className={styles.studySection}>
+            <SearchingStudy result={result}></SearchingStudy>
             <PostList result={result}></PostList>
           </section>
         </main>
