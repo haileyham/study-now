@@ -4,6 +4,7 @@ import React, { ChangeEvent, useState } from 'react';
 const SearchingStudy: React.FC<PostListProps> = ({ result }) => {
   const [searchType, setSearchType] = useState('글 제목');
   const [search, setSearch] = useState('');
+  const [filteredData, setFilteredData] = useState<Post[]>(result);
 
   const filterData = (searchValue: string, searchType: string) => {
     if (!searchValue.trim()) {
@@ -28,16 +29,15 @@ const SearchingStudy: React.FC<PostListProps> = ({ result }) => {
     });
   };
 
-  const handleSearching = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+  const handleSearching = () => {
+    const newData = filterData(search, searchType);
+    setFilteredData(newData);
+    console.log(searchType);
   };
 
   const handleSearchTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSearchType(e.target.value);
   };
-
-  const filteredData = filterData(search, searchType);
-  console.log(filteredData);
 
   return (
     <>
@@ -53,7 +53,11 @@ const SearchingStudy: React.FC<PostListProps> = ({ result }) => {
         <option value="mode">온오프</option>
         <option value="type">종류</option>
       </select>
-      <input type="text" value={search} onChange={handleSearching} />
+      <input
+        type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
       <button onClick={handleSearching}>검색</button>
       <ul>
         {filteredData.map((post, index) => (
