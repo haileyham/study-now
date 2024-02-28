@@ -101,6 +101,28 @@
   }
 }
 
+/* 검색창 */
+.searchingBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  select {
+    flex-basis: 5rem;
+    text-align: center;
+    border-radius: var(--border-radius-m);
+    border: 1px solid rgb(240, 225, 249);
+    color: rgb(116, 116, 116);
+  }
+  input {
+    padding: 5px;
+    flex: 1;
+  }
+  button {
+    background-color: rgb(194, 194, 194);
+    flex-basis: 4rem;
+  }
+}
+
 /* 태블릿 화면 스타일 */
 @media (min-width: 768px) {
   .studyList {
