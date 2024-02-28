@@ -2,7 +2,7 @@
 import React, { ChangeEvent, useState } from 'react';
 
 const SearchingStudy: React.FC<PostListProps> = ({ result }) => {
-  const [searchType, setSearchType] = useState('글 제목');
+  const [searchType, setSearchType] = useState('title');
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState<Post[]>(result);
 
