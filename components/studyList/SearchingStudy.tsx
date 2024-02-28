@@ -1,0 +1,67 @@
+'use client';
+import React, { ChangeEvent, useState } from 'react';
+
+const SearchingStudy: React.FC<PostListProps> = ({ result }) => {
+  const [searchType, setSearchType] = useState('글 제목');
+  const [search, setSearch] = useState('');
+
+  const filterData = (searchValue: string, searchType: string) => {
+    if (!searchValue.trim()) {
+      return result;
+    }
+
+    return result.filter((post) => {
+      switch (searchType) {
+        case 'title':
+          return post.title.includes(searchValue);
+        case 'content':
+          return post.content.includes(searchValue);
+        case 'location':
+          return post.location.includes(searchValue);
+        case 'mode':
+          return post.mode.includes(searchValue);
+        case 'type':
+          return post.type.includes(searchValue);
+        default:
+          return false;
+      }
+    });
+  };
+
+  const handleSearching = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSearchTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSearchType(e.target.value);
+  };
+
+  const filteredData = filterData(search, searchType);
+  console.log(filteredData);
+
+  return (
+    <>
+      <select
+        name="검색유형"
+        id="검색유형"
+        value={searchType}
+        onChange={handleSearchTypeChange}
+      >
+        <option value="title">글 제목</option>
+        <option value="content">글 내용</option>
+        <option value="location">장소</option>
+        <option value="mode">온오프</option>
+        <option value="type">종류</option>
+      </select>
+      <input type="text" value={search} onChange={handleSearching} />
+      <button onClick={handleSearching}>검색</button>
+      <ul>
+        {filteredData.map((post, index) => (
+          <li key={index}>{post[searchType.toLowerCase()]}</li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
+export default SearchingStudy;
