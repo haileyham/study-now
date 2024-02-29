@@ -1,6 +1,7 @@
 'use client';
-import PostList from '@/app/study-post/postList';
+import PostList from '@/components/studyList/postList';
 import React, { ChangeEvent, useState } from 'react';
+import styles from './page.module.scss';
 
 const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
   const [searchType, setSearchType] = useState('title');
@@ -33,7 +34,6 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
   const handleSearching = () => {
     const newData = filterData(search, searchType);
     setFilteredData(newData);
-    console.log(searchType);
   };
 
   const handleSearchTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -42,24 +42,28 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
 
   return (
     <>
-      <select
-        name="검색유형"
-        id="검색유형"
-        value={searchType}
-        onChange={handleSearchTypeChange}
-      >
-        <option value="title">글 제목</option>
-        <option value="content">글 내용</option>
-        <option value="location">장소</option>
-        <option value="mode">온오프</option>
-        <option value="type">종류</option>
-      </select>
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <button onClick={handleSearching}>검색</button>
+      <div className={styles.searchingBox}>
+        <select
+          name="검색유형"
+          id="검색유형"
+          value={searchType}
+          onChange={handleSearchTypeChange}
+        >
+          <option value="title">글 제목</option>
+          <option value="content">글 내용</option>
+          <option value="location">장소</option>
+          <option value="mode">온오프</option>
+          <option value="type">종류</option>
+        </select>
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button onClick={handleSearching} className="btn-m">
+          검색
+        </button>
+      </div>
       <ul>
         <PostList filteredData={filteredData}></PostList>
       </ul>
