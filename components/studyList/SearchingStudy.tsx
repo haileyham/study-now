@@ -40,6 +40,10 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
     setSearchType(e.target.value);
   };
 
+  const handleAll = () => {
+    setFilteredData(result);
+  };
+
   return (
     <>
       <div className={styles.searchingBox}>
@@ -63,6 +67,11 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
         <button onClick={handleSearching} className="btn-m">
           검색
         </button>
+      </div>
+      <div className={styles.optionBox}>
+        <button onClick={handleAll}>전체</button>
+        <button>모집중</button>
+        <button>모집완료</button>
       </div>
       <ul>
         <PostList filteredData={filteredData}></PostList>
