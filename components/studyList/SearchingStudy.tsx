@@ -69,7 +69,12 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
         </button>
       </div>
       <div className={styles.optionBox}>
-        <button onClick={handleAll}>전체</button>
+        <button
+          onClick={handleAll}
+          className={filteredData === result ? styles.activeBtn : ''}
+        >
+          전체
+        </button>
         <button>모집중</button>
         <button>모집완료</button>
       </div>
