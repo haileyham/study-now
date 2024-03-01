@@ -7,6 +7,7 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
   const [searchType, setSearchType] = useState('title');
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState<Post[]>(result);
+  const [activeAllBtn, setActiveAllBtn] = useState(true);
 
   const filterData = (searchValue: string, searchType: string) => {
     if (!searchValue.trim()) {
@@ -44,11 +45,13 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
 
   const handleAll = () => {
     setFilteredData(result);
+    setActiveAllBtn(true);
   };
 
   const handleRecruiting = () => {
     const newData = filterData('recruiting', 'status');
     setFilteredData(newData);
+    setActiveAllBtn(false);
   };
 
   const handleRecruiting2 = () => {
@@ -90,7 +93,9 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
         <button
           onClick={handleRecruiting}
           className={
-            filteredData[0].status === 'recruiting' ? styles.activeBtn : ''
+            !activeAllBtn && filteredData[0].status === 'recruiting'
+              ? styles.activeBtn
+              : ''
           }
         >
           모집중
