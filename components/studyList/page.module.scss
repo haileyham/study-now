@@ -143,6 +143,11 @@
       color: black;
     }
   }
+  .activeBtn {
+    border-radius: var(--border-radius-l);
+    background-color: rgb(208, 208, 208);
+    color: black;
+  }
   span {
     border-left: 1px solid #bdbdbd;
   }
