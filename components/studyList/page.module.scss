@@ -6,7 +6,7 @@
   position: relative;
   background-color: #fff;
   &:hover {
-    background-color: rgba(231, 231, 231, 0.378);
+    background-color: rgb(248, 248, 248);
   }
   .date {
     position: absolute;
@@ -107,20 +107,44 @@
   justify-content: space-between;
   gap: 10px;
   select {
-    flex-basis: 5rem;
+    flex-basis: 3rem;
     text-align: center;
     border-radius: var(--border-radius-m);
     border: 1px solid rgb(240, 225, 249);
     color: rgb(116, 116, 116);
   }
   input {
-    border-radius: var(--border-radius-m);
     padding: 5px;
     flex: 1;
+    border-radius: var(--border-radius-m);
+    font-size: var(--font-size-m);
   }
   button {
     background-color: rgb(194, 194, 194);
-    flex-basis: 4rem;
+    flex-basis: 3rem;
+  }
+}
+
+/*옵션창*/
+.optionBox {
+  margin: 20px 0px -30px;
+  padding: 0px 0px 0px;
+  background-color: rgb(236, 236, 236);
+  border-radius: var(--border-radius-l);
+  button {
+    margin: 0px 0rem;
+    padding: 10px 20px 20px;
+    color: #929292;
+    border: none;
+    border-radius: var(--border-radius-l);
+    cursor: pointer;
+    background-color: inherit;
+    &:hover {
+      color: black;
+    }
+  }
+  span {
+    border-left: 1px solid #bdbdbd;
   }
 }
 
