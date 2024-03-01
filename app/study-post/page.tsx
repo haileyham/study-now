@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './page.module.scss';
 import { connectDB } from '@/util/database';
-import PostList from './postList';
 import WriteBtn from '@/components/writing/WriteBtn';
+import SearchingStudyPostList from '@/components/studyList/SearchingStudy';
 
 // export const revalidate = 60;
 export const dynamic = 'force-dynamic';
@@ -27,7 +27,7 @@ export default async function StudyPost() {
             <WriteBtn></WriteBtn>
           </header>
           <section className={styles.studySection}>
-            <PostList result={result}></PostList>
+            <SearchingStudyPostList result={result}></SearchingStudyPostList>
           </section>
         </main>
       </div>
