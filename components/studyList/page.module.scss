@@ -153,6 +153,24 @@
   }
 }
 
+/* 검색 결과 없을 경우 */
+.none {
+  div {
+    margin-top: 1rem;
+    position: relative;
+    height: calc(100vh - 20rem);
+    padding: 50% 0;
+    border-radius: var(--border-radius-m);
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    text-align: center;
+    span {
+      display: block;
+      margin: 1rem;
+    }
+  }
+}
+
 /* 태블릿 화면 스타일 */
 @media (min-width: 768px) {
   .studyList {
