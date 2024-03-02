@@ -47,6 +47,7 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
   const handleAll = () => {
     setFilteredData(result);
     setActiveAllBtn(true);
+    setSearch('');
   };
 
   const handleRecruiting = (status: string) => {
