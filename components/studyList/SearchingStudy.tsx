@@ -48,15 +48,10 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
     setActiveAllBtn(true);
   };
 
-  const handleRecruiting = () => {
-    const newData = filterData('recruiting', 'status');
+  const handleRecruiting = (status: string) => {
+    const newData = filterData(status, 'status');
     setFilteredData(newData);
     setActiveAllBtn(false);
-  };
-
-  const handleRecruiting2 = () => {
-    const newData = filterData('done', 'status');
-    setFilteredData(newData);
   };
 
   return (
@@ -91,7 +86,7 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
           전체
         </button>
         <button
-          onClick={handleRecruiting}
+          onClick={() => handleRecruiting('recruiting')}
           className={
             !activeAllBtn && filteredData[0].status === 'recruiting'
               ? styles.activeBtn
@@ -101,7 +96,7 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
           모집중
         </button>
         <button
-          onClick={handleRecruiting2}
+          onClick={() => handleRecruiting('done')}
           className={filteredData[0].status === 'done' ? styles.activeBtn : ''}
         >
           모집완료
