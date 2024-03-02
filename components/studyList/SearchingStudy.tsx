@@ -116,7 +116,12 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
           <PostList filteredData={filteredData}></PostList>
         ) : (
           <div className={styles.none}>
-            <div>검색 결과가 없습니다.</div>
+            <div>
+              <p>
+                <span>'{search}'</span>
+                검색 결과가 없습니다.
+              </p>
+            </div>
           </div>
         )}
       </ul>
