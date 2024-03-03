@@ -8,6 +8,7 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState<Post[]>(result);
   const [activeAllBtn, setActiveAllBtn] = useState(true);
+  console.log(filteredData);
 
   const filterData = (searchValue: string, searchType: string) => {
     if (!searchValue.trim()) {
@@ -46,17 +47,13 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
   const handleAll = () => {
     setFilteredData(result);
     setActiveAllBtn(true);
+    setSearch('');
   };
 
-  const handleRecruiting = () => {
-    const newData = filterData('recruiting', 'status');
+  const handleRecruiting = (status: string) => {
+    const newData = filterData(status, 'status');
     setFilteredData(newData);
     setActiveAllBtn(false);
-  };
-
-  const handleRecruiting2 = () => {
-    const newData = filterData('done', 'status');
-    setFilteredData(newData);
   };
 
   return (
@@ -91,24 +88,43 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
           전체
         </button>
         <button
-          onClick={handleRecruiting}
+          onClick={() => handleRecruiting('recruiting')}
           className={
-            !activeAllBtn && filteredData[0].status === 'recruiting'
-              ? styles.activeBtn
+            filteredData.length > 0
+              ? !activeAllBtn && filteredData[0].status === 'recruiting'
+                ? styles.activeBtn
+                : ''
               : ''
           }
         >
           모집중
         </button>
         <button
-          onClick={handleRecruiting2}
-          className={filteredData[0].status === 'done' ? styles.activeBtn : ''}
+          onClick={() => handleRecruiting('done')}
+          className={
+            filteredData.length > 0
+              ? filteredData[0].status === 'done'
+                ? styles.activeBtn
+                : ''
+              : ''
+          }
         >
           모집완료
         </button>
       </div>
       <ul>
-        <PostList filteredData={filteredData}></PostList>
+        {filteredData.length > 0 ? (
+          <PostList filteredData={filteredData}></PostList>
+        ) : (
+          <div className={styles.none}>
+            <div>
+              <p>
+                <span>'{search}'</span>
+                검색 결과가 없습니다.
+              </p>
+            </div>
+          </div>
+        )}
       </ul>
     </>
   );

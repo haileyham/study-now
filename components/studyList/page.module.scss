@@ -129,7 +129,7 @@
 .optionBox {
   margin: 20px 0px -30px;
   padding: 0px 0px 0px;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(238, 238, 238);
   border-radius: var(--border-radius-l);
   button {
     margin: 0px 0rem;
@@ -145,11 +145,29 @@
   }
   .activeBtn {
     border-radius: var(--border-radius-l);
-    background-color: rgb(208, 208, 208);
+    background-color: rgb(226, 226, 226);
     color: black;
   }
   span {
     border-left: 1px solid #bdbdbd;
+  }
+}
+
+/* 검색 결과 없을 경우 */
+.none {
+  div {
+    margin-top: 1rem;
+    position: relative;
+    height: calc(100vh - 20rem);
+    padding: 50% 0;
+    border-radius: var(--border-radius-m);
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    text-align: center;
+    span {
+      display: block;
+      margin: 1rem;
+    }
   }
 }
 
