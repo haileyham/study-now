@@ -11,13 +11,13 @@ const result = {
   message: '',
 };
 
-export const validationPostStudy = (
+export const validationPostStudy: any = (
   title: string,
   content: string,
   status: string,
-  mode: string,
   type: string,
-  location: string,
+  // mode: string,
+  // location: string,
 ) => {
   const lenTitle = title?.length;
   const lenContent = content?.length;
@@ -47,4 +47,7 @@ export const validationPostStudy = (
     result.message = FAIL_NULL_TYPE;
     return result;
   }
+
+  result.state = true;
+  return result;
 };
