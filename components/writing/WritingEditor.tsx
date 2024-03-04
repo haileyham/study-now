@@ -4,6 +4,7 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
 import Header from '../common/Header';
+import { validationPostStudy } from '@/lib/utils/validation';
 
 const WritingEditor: React.FC<WritingEditorProps> = ({
   result,
@@ -37,6 +38,17 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
 
   const handleSubmit = async () => {
     try {
+      const vaildWritingEditor = validationPostStudy(
+        studyWrite.title,
+        studyWrite.content,
+        studyWrite.status,
+        studyWrite.type,
+      );
+      if (!vaildWritingEditor.state) {
+        console.log(vaildWritingEditor);
+        return false;
+      }
+
       const response = await fetch(`${writingEdit.api}`, {
         method: 'POST',
         headers: {
