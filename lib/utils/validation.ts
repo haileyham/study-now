@@ -1,5 +1,8 @@
 import {
+  FAIL_LENGTH_CONTACT,
+  FAIL_LENGTH_LOCATION,
   FAIL_LENGTH_TITLE,
+  FAIL_LENGTH_TYPE,
   FAIL_NULL_CONTENT,
   FAIL_NULL_STATUS,
   FAIL_NULL_TITLE,
@@ -16,13 +19,14 @@ export const validationPostStudy: any = (
   content: string,
   status: string,
   type: string,
-  // mode: string,
-  // location: string,
+  location: string,
+  contact: string,
 ) => {
   const lenTitle = title?.length;
   const lenContent = content?.length;
-  const lenStatus = status;
-  const lenType = type;
+  const lenType = type?.length;
+  const lenLocation = location?.length;
+  const lenContact = contact?.length;
 
   if (!lenTitle || !title) {
     result.state = false;
@@ -36,7 +40,7 @@ export const validationPostStudy: any = (
     return result;
   }
 
-  if (!lenStatus || !status) {
+  if (!status) {
     result.state = false;
     result.message = FAIL_NULL_STATUS;
     return result;
@@ -45,6 +49,30 @@ export const validationPostStudy: any = (
   if (!lenType || !type) {
     result.state = false;
     result.message = FAIL_NULL_TYPE;
+    return result;
+  }
+
+  if (lenTitle < 2 || 15 < lenTitle) {
+    result.state = false;
+    result.message = FAIL_LENGTH_TITLE;
+    return result;
+  }
+
+  if (15 < lenType) {
+    result.state = false;
+    result.message = FAIL_LENGTH_TYPE;
+    return result;
+  }
+
+  if (10 < lenLocation) {
+    result.state = false;
+    result.message = FAIL_LENGTH_LOCATION;
+    return result;
+  }
+
+  if (30 < lenContact) {
+    result.state = false;
+    result.message = FAIL_LENGTH_CONTACT;
     return result;
   }
 
