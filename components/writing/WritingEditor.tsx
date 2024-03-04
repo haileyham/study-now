@@ -43,6 +43,8 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
         studyWrite.content,
         studyWrite.status,
         studyWrite.type,
+        studyWrite.location,
+        studyWrite.contact,
       );
       if (!vaildWritingEditor.state) {
         console.log(vaildWritingEditor);
