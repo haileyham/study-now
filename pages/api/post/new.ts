@@ -1,4 +1,4 @@
-import { connectDB } from '@/util/database';
+import { connectDB } from '@/lib/utils/database';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(

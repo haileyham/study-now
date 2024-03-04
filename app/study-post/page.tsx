@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './page.module.scss';
-import { connectDB } from '@/util/database';
+import { connectDB } from '@/lib/utils/database';
 import WriteBtn from '@/components/writing/WriteBtn';
 import SearchingStudyPostList from '@/components/studyList/SearchingStudy';
 

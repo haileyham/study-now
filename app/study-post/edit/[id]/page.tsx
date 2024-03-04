@@ -1,5 +1,5 @@
 import WritingEditor from '@/components/writing/WritingEditor';
-import { connectDB } from '@/util/database';
+import { connectDB } from '@/lib/utils/database';
 import { ObjectId } from 'mongodb';
 import React from 'react';
 
