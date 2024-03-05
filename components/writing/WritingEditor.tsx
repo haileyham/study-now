@@ -4,6 +4,7 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
 import Header from '../common/Header';
+import { validate } from './validateWritingEdit';
 
 const WritingEditor: React.FC<WritingEditorProps> = ({
   result,
@@ -32,8 +33,6 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     const { name, value } = e.target;
     setStudyWrite({ ...studyWrite, [name]: value });
   };
-  // console.log(studyWrite);
-  // console.log(result);
 
   const handleSubmit = async () => {
     try {
@@ -57,6 +56,22 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     } catch (error) {
       console.error('Error', error);
     }
+  };
+
+  type Valid = {
+    [key: string]: string;
+  };
+
+  const [validationFailed, setValidationFailed] = useState<Valid>({});
+
+  const validation = () => {
+    const result = validate(studyWrite);
+    setValidationFailed(result);
+  };
+
+  const handleCancel = () => {
+    setValidationFailed({});
+    return false;
   };
 
   return (
@@ -188,13 +203,22 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
               onChange={handleChange}
               defaultValue={result?.content}
             />
-            <div className={styles.submitBtn}>
-              <Modal
-                modalBtn={`${writingEdit.modalBtnText}`}
-                modalBtnStyle={styles.writeEditBtn}
-                message={`${writingEdit.modalMessage}`}
-                onFunction={handleSubmit}
-              ></Modal>
+            <div className={styles.submitBtn} onClick={validation}>
+              {validationFailed.success === 'success' ? (
+                <Modal
+                  modalBtn={`${writingEdit.modalBtnText}`}
+                  modalBtnStyle={styles.writeEditBtn}
+                  message={`${writingEdit.modalMessage}`}
+                  onFunction={handleSubmit}
+                ></Modal>
+              ) : (
+                <Modal
+                  modalBtn={`${writingEdit.modalBtnText}`}
+                  modalBtnStyle={styles.writeEditBtn}
+                  message={`${validationFailed.message}`}
+                  onFunction={handleCancel}
+                ></Modal>
+              )}
             </div>
           </section>
         </main>

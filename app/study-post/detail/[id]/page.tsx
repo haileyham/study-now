@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectDB } from '@/util/database';
+import { connectDB } from '@/lib/utils/database';
 import { ObjectId } from 'mongodb';
 import { Detail } from '@/components/detail/Detail';
 
