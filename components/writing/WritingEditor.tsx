@@ -33,24 +33,9 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     const { name, value } = e.target;
     setStudyWrite({ ...studyWrite, [name]: value });
   };
-  // console.log(studyWrite);
-  // console.log(result);
 
   const handleSubmit = async () => {
     try {
-      const vaildWritingEditor = validationPostStudy(
-        studyWrite.title,
-        studyWrite.content,
-        studyWrite.status,
-        studyWrite.type,
-        studyWrite.location,
-        studyWrite.contact,
-      );
-      if (!vaildWritingEditor.state) {
-        console.log(vaildWritingEditor);
-        return false;
-      }
-
       const response = await fetch(`${writingEdit.api}`, {
         method: 'POST',
         headers: {
@@ -71,6 +56,30 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     } catch (error) {
       console.error('Error', error);
     }
+  };
+
+  const [test, setTest] = useState('');
+  console.log(test);
+  const vaildation = () => {
+    const vaildWritingEditor = validationPostStudy(
+      studyWrite.title,
+      studyWrite.content,
+      studyWrite.status,
+      studyWrite.type,
+      studyWrite.location,
+      studyWrite.contact,
+    );
+    if (!vaildWritingEditor.state) {
+      console.log(vaildWritingEditor);
+      setTest(vaildWritingEditor.test);
+      return false;
+    }
+
+    setTest('good');
+  };
+
+  const handleCancel = () => {
+    return false;
   };
 
   return (
@@ -195,6 +204,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
               placeholder="글제목"
               onChange={handleChange}
               defaultValue={result?.title}
+              className={test === 'title' ? styles.test : styles.none}
             />
             <textarea
               name="content"
@@ -202,13 +212,22 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
               onChange={handleChange}
               defaultValue={result?.content}
             />
-            <div className={styles.submitBtn}>
-              <Modal
-                modalBtn={`${writingEdit.modalBtnText}`}
-                modalBtnStyle={styles.writeEditBtn}
-                message={`${writingEdit.modalMessage}`}
-                onFunction={handleSubmit}
-              ></Modal>
+            <div className={styles.submitBtn} onClick={vaildation}>
+              {test === 'good' ? (
+                <Modal
+                  modalBtn={`${writingEdit.modalBtnText}`}
+                  modalBtnStyle={styles.writeEditBtn}
+                  message={`${writingEdit.modalMessage}`}
+                  onFunction={handleSubmit}
+                ></Modal>
+              ) : (
+                <Modal
+                  modalBtn={`${writingEdit.modalBtnText}`}
+                  modalBtnStyle={styles.writeEditBtn}
+                  message={`입력안된부분이있음`}
+                  onFunction={handleCancel}
+                ></Modal>
+              )}
             </div>
           </section>
         </main>
