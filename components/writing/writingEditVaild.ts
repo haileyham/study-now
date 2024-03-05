@@ -1,6 +1,10 @@
 import { validationPostStudy } from '@/lib/utils/validation';
 
-export const validate = (studyWrite) => {
+type ValidationResult = { [key: string]: string };
+
+type ValidateResult = ValidationResult | { success: string };
+
+export const validate = (studyWrite: StudyWriteState): ValidateResult => {
   const validWritingEditor = validationPostStudy(
     studyWrite.title,
     studyWrite.content,
