@@ -4,7 +4,7 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
 import Header from '../common/Header';
-import { validationPostStudy } from '@/lib/utils/validation';
+import { validate } from './WritingEditVaild';
 
 const WritingEditor: React.FC<WritingEditorProps> = ({
   result,
@@ -62,27 +62,15 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     [key: string]: string;
   };
 
-  const [validationFailed, setVaildationFailed] = useState<Valid>({});
+  const [validationFailed, setValidationFailed] = useState<Valid>({});
 
   const validation = () => {
-    const validWritingEditor = validationPostStudy(
-      studyWrite.title,
-      studyWrite.content,
-      studyWrite.status,
-      studyWrite.type,
-      studyWrite.location,
-      studyWrite.contact,
-    );
-    if (!validWritingEditor.state) {
-      setVaildationFailed(validWritingEditor);
-      return false;
-    }
-
-    setVaildationFailed({ success: 'success' });
+    const result = validate(studyWrite);
+    setValidationFailed(result);
   };
 
   const handleCancel = () => {
-    setVaildationFailed({});
+    setValidationFailed({});
     return false;
   };
 
