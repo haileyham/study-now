@@ -4,7 +4,7 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
 import Header from '../common/Header';
-import { validate } from './WritingEditVaild';
+import { validate } from './validateWritingEdit';
 
 const WritingEditor: React.FC<WritingEditorProps> = ({
   result,
