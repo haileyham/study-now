@@ -58,10 +58,14 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     }
   };
 
-  const [test, setTest] = useState('');
-  console.log(test);
-  const vaildation = () => {
-    const vaildWritingEditor = validationPostStudy(
+  type Valid = {
+    [key: string]: string;
+  };
+
+  const [validationFailed, setVaildationFailed] = useState<Valid>({});
+
+  const validation = () => {
+    const validWritingEditor = validationPostStudy(
       studyWrite.title,
       studyWrite.content,
       studyWrite.status,
@@ -69,13 +73,12 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
       studyWrite.location,
       studyWrite.contact,
     );
-    if (!vaildWritingEditor.state) {
-      console.log(vaildWritingEditor);
-      setTest(vaildWritingEditor.test);
+    if (!validWritingEditor.state) {
+      setVaildationFailed(validWritingEditor);
       return false;
     }
 
-    setTest('good');
+    setVaildationFailed({ success: 'success' });
   };
 
   const handleCancel = () => {
@@ -204,7 +207,6 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
               placeholder="글제목"
               onChange={handleChange}
               defaultValue={result?.title}
-              className={test === 'title' ? styles.test : styles.none}
             />
             <textarea
               name="content"
@@ -212,8 +214,8 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
               onChange={handleChange}
               defaultValue={result?.content}
             />
-            <div className={styles.submitBtn} onClick={vaildation}>
-              {test === 'good' ? (
+            <div className={styles.submitBtn} onClick={validation}>
+              {validationFailed.success === 'success' ? (
                 <Modal
                   modalBtn={`${writingEdit.modalBtnText}`}
                   modalBtnStyle={styles.writeEditBtn}
@@ -224,7 +226,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
                 <Modal
                   modalBtn={`${writingEdit.modalBtnText}`}
                   modalBtnStyle={styles.writeEditBtn}
-                  message={`입력안된부분이있음`}
+                  message={`${validationFailed.message}`}
                   onFunction={handleCancel}
                 ></Modal>
               )}
