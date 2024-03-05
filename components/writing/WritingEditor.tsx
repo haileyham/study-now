@@ -82,6 +82,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
   };
 
   const handleCancel = () => {
+    setVaildationFailed({});
     return false;
   };
 
