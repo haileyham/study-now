@@ -237,12 +237,30 @@ main {
     position: relative;
     box-shadow: none;
     li {
+      position: relative;
+      ::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        top: 2.1rem;
+        left: 50%;
+        border-bottom: 2px solid rgb(217, 207, 255);
+        transform: translateX(-50%);
+        transition: width 0.5s;
+      }
+      &:hover ::after {
+        width: 60%;
+      }
       a {
         display: inline-block;
         font-size: 1.1rem;
       }
       img {
         display: none;
+      }
+      .logo {
+        display: block;
       }
     }
   }
