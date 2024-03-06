@@ -195,6 +195,20 @@ main {
   box-shadow: 0 0 10px 1px rgb(220, 220, 220);
   z-index: 99;
   font-size: 16px;
+  li {
+    flex: 1;
+    text-align: center;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+    }
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
 }
 
 /* 태블릿 화면 스타일 */
