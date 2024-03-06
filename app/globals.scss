@@ -235,12 +235,16 @@ main {
     max-width: var(--max-width);
     margin: 1rem auto 0;
     position: relative;
-    display: flex;
-    height: 4rem;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-    background-color: inherit;
+    box-shadow: none;
+    li {
+      a {
+        display: inline-block;
+        font-size: 1.1rem;
+      }
+      img {
+        display: none;
+      }
+    }
   }
   // main login
   .myContainer {
