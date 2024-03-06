@@ -190,7 +190,8 @@ main {
   justify-content: space-around;
   align-items: center;
   background-color: #fff;
-  border-radius: var(--border-radius-l);
+  border-top-left-radius: var(--border-radius-l);
+  border-top-right-radius: var(--border-radius-l);
   box-shadow: 0 0 10px 1px rgb(220, 220, 220);
   z-index: 99;
   font-size: 16px;
