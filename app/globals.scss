@@ -203,6 +203,9 @@ main {
       flex-direction: column;
       align-items: center;
       font-size: 12px;
+      &:focus {
+        color: rgb(200, 155, 254);
+      }
     }
     img {
       width: 35px;
