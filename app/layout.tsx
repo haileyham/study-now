@@ -28,20 +28,34 @@ export default async function RootLayout({
       <body className={inter.className}>
         <header className="headerMain">
           <ul className="navContainer">
-            <Link href="/">
-              <img src="" alt="logo" />
-            </Link>
             <li>
-              <Link href="/quiz">퀴즈</Link>
+              <Link href="/">
+                <img src="" alt="logo" />
+              </Link>
             </li>
             <li>
-              <Link href="/study-post">스터디</Link>
+              <Link href="/quiz">
+                <img src="/images/icons/quiz.svg" alt="quiz-page" />
+                퀴즈
+              </Link>
             </li>
             <li>
-              <Link href="/job-openings">채용정보</Link>
+              <Link href="/study-post">
+                <img src="/images/icons/study.svg" alt="study-post-page" />
+                스터디
+              </Link>
             </li>
             <li>
-              <Link href="/my-page">MyPage</Link>
+              <Link href="/job-openings">
+                <img src="/images/icons/job.svg" alt="job-openings-page" />
+                채용정보
+              </Link>
+            </li>
+            <li>
+              <Link href="/my-page">
+                <img src="/images/icons/profile.svg" alt="my-page" />
+                MyPage
+              </Link>
             </li>
           </ul>
         </header>

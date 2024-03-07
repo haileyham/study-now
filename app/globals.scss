@@ -190,8 +190,28 @@ main {
   justify-content: space-around;
   align-items: center;
   background-color: #fff;
+  border-top-left-radius: var(--border-radius-l);
+  border-top-right-radius: var(--border-radius-l);
+  box-shadow: 0 0 10px 1px rgb(220, 220, 220);
   z-index: 99;
   font-size: 16px;
+  li {
+    flex: 1;
+    text-align: center;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      &:focus {
+        color: rgb(200, 155, 254);
+      }
+    }
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
 }
 
 /* 태블릿 화면 스타일 */
@@ -215,12 +235,35 @@ main {
     max-width: var(--max-width);
     margin: 1rem auto 0;
     position: relative;
-    display: flex;
-    height: 4rem;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
+    box-shadow: none;
     background-color: inherit;
+    li {
+      position: relative;
+      ::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        top: 2.1rem;
+        left: 50%;
+        border-bottom: 2px solid rgb(217, 207, 255);
+        transform: translateX(-50%);
+        transition: width 0.5s;
+      }
+      &:hover ::after {
+        width: 60%;
+      }
+      a {
+        display: inline-block;
+        font-size: 1.1rem;
+      }
+      img {
+        display: none;
+      }
+      .logo {
+        display: block;
+      }
+    }
   }
   // main login
   .myContainer {
