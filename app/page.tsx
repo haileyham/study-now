@@ -8,7 +8,6 @@ import Link from 'next/link';
 
 export default async function Home() {
   const session: any = await getServerSession(authOptions);
-  console.log(session);
 
   return (
     <>
@@ -18,7 +17,7 @@ export default async function Home() {
             <div>
               <img src={session.user.image} alt={session.user.name} />
               <Link href="/my-page">{session.user.name}님</Link>
-              <LogoutBtn></LogoutBtn>
+              {/* <LogoutBtn></LogoutBtn> */}
             </div>
           ) : (
             <div>
