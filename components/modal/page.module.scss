@@ -49,6 +49,17 @@
     color: rgb(41, 41, 41);
     cursor: default;
   }
+  span {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.3rem 1rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: red;
+    border-radius: 50%;
+    transition: transform 0.5;
+  }
 }
 
 .modalContent .closeBtn {
