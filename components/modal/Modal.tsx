@@ -28,9 +28,7 @@ const Modal: React.FC<ModalProps> = ({
   };
 
   const handleConfirm = () => {
-    onFunction();
     setActive(false);
-
     const result = onFunction();
     if (typeof result !== 'undefined') {
       setModal(result);
