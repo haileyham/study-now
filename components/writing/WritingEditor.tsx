@@ -217,7 +217,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
                   modalBtnStyle={styles.writeEditBtn}
                   message={`${validationFailed.message}`}
                   onFunction={handleCancel}
-                  mark={`true`}
+                  mark={`!`}
                 ></Modal>
               )}
             </div>

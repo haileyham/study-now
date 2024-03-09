@@ -59,7 +59,7 @@ const Modal: React.FC<ModalProps> = ({
         {modal ? (
           <div className={styles.modal} onClick={closeModal}>
             <div className={styles.modalContent} onClick={closeOnClick}>
-              {alert ? <span>!</span> : ''}
+              {alert ? <span>{mark}</span> : ''}
               <p>{message}</p>
               <button onClick={handleConfirm}>확인</button>
               <button onClick={closeModal}>닫기</button>
