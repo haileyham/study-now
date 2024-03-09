@@ -5,6 +5,7 @@ import { LoginBtn, LogoutBtn } from '@/components/Home/LoginOutBtn';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import Link from 'next/link';
+import Footer from '@/components/Home/Footer';
 
 export default async function Home() {
   const session: any = await getServerSession(authOptions);
@@ -40,7 +41,9 @@ export default async function Home() {
         <section className={styles.section}></section>
         <section className={styles.section}></section>
       </main>
-      <footer className={styles.footer}>footer</footer>
+      <footer className={styles.footer}>
+        <Footer></Footer>
+      </footer>
     </>
   );
 }
