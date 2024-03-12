@@ -1,7 +1,7 @@
 'use client';
 import styles from './page.module.scss';
 import jobOpeningAPI from '@/lib/apis/api-utils';
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import JobSearching from './JobSearching';
 
 interface JobAPI {
@@ -10,6 +10,7 @@ interface JobAPI {
 
 export default function JobOpeningsList() {
   const [testData, setTestData] = useState<any>([]);
+  const [searching, setSearching] = useState<String>('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,9 +24,13 @@ export default function JobOpeningsList() {
     fetchData();
   }, []);
 
+  function handleInput(e: ChangeEvent<HTMLInputElement>) {
+    setSearching(e.target.value);
+  }
+
   return (
     <>
-      <JobSearching></JobSearching>
+      <JobSearching onFunction={handleInput}></JobSearching>
       <section className={styles.jobListSection}>
         <ul>
           {testData.length > 0

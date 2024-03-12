@@ -1,13 +1,17 @@
 import styles from './page.module.scss';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
-export default function JobSearching() {
+interface JobSearchingProps {
+  onFunction?: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
+const JobSearching: React.FC<JobSearchingProps> = ({ onFunction }) => {
   return (
     <section className={styles.jobSearchSection}>
       <h2 className="a11y-hidden">채용정보</h2>
       <div className={styles.searchbox}>
         <span>◎</span>
-        <input type="text" />
+        <input type="text" onChange={onFunction} />
         <span className={styles.searchClose}>Ⅹ</span>
         <ul>
           <li className={styles.searchSelected}>
@@ -24,4 +28,6 @@ export default function JobSearching() {
       <div>{/* <button>무엇을</button> */}</div>
     </section>
   );
-}
+};
+
+export default JobSearching;
