@@ -34,7 +34,7 @@ export default function JobOpeningsList() {
                   <li key={i}>
                     <div className={styles.imgBox}>
                       <img
-                        src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
+                        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="채용회사이미지"
                       />
                     </div>
