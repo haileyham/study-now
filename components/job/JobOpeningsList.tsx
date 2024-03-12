@@ -40,8 +40,7 @@ export default function JobOpeningsList() {
                     </div>
                     <h2>{item.CMPNY_NM}</h2>
                     <p>{item.BSNS_SUMRY_CN}</p>
-                    <p>{item.WORK_PARAR_BASS_ADRES_CN}</p>
-                    <p>{item.RCEPT_CLOS_NM}</p>
+                    <span>서울</span>
                   </li>
                 );
               })
