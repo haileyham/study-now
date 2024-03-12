@@ -4,6 +4,10 @@ import jobOpeningAPI from '@/lib/apis/api-utils';
 import React, { useEffect, useState } from 'react';
 import JobSearching from './JobSearching';
 
+interface JobAPI {
+  [key: string]: string;
+}
+
 export default function JobOpeningsList() {
   const [testData, setTestData] = useState<any>([]);
 
@@ -24,61 +28,24 @@ export default function JobOpeningsList() {
       <JobSearching></JobSearching>
       <section className={styles.jobListSection}>
         <ul>
-          <li>
-            <div className={styles.imgBox}>
-              <img
-                src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
-                alt="채용회사이미지"
-              />
-            </div>
-            <p>제목이다</p>
-            <p>내용이다</p>
-            <p>기한이다</p>
-          </li>
-          <li>
-            <div className={styles.imgBox}>
-              <img
-                src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
-                alt="채용회사이미지"
-              />
-            </div>
-            <p>제목이다</p>
-            <p>내용이다</p>
-            <p>기한이다</p>
-          </li>
-          <li>
-            <div className={styles.imgBox}>
-              <img
-                src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
-                alt="채용회사이미지"
-              />
-            </div>
-            <p>제목이다</p>
-            <p>내용이다</p>
-            <p>기한이다</p>
-          </li>
-          <li>
-            <div className={styles.imgBox}>
-              <img
-                src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
-                alt="채용회사이미지"
-              />
-            </div>
-            <p>제목이다</p>
-            <p>내용이다</p>
-            <p>기한이다</p>
-          </li>
-          <li>
-            <div className={styles.imgBox}>
-              <img
-                src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
-                alt="채용회사이미지"
-              />
-            </div>
-            <p>제목이다</p>
-            <p>내용이다</p>
-            <p>기한이다</p>
-          </li>
+          {testData.length > 0
+            ? testData.map((item: JobAPI, i: number) => {
+                return (
+                  <li key={i}>
+                    <div className={styles.imgBox}>
+                      <img
+                        src="http://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg"
+                        alt="채용회사이미지"
+                      />
+                    </div>
+                    <h2>{item.CMPNY_NM}</h2>
+                    <p>{item.BSNS_SUMRY_CN}</p>
+                    <p>{item.WORK_PARAR_BASS_ADRES_CN}</p>
+                    <p>{item.RCEPT_CLOS_NM}</p>
+                  </li>
+                );
+              })
+            : 'no'}
         </ul>
       </section>
     </>
