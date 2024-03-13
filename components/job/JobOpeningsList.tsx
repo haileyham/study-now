@@ -10,14 +10,14 @@ interface JobAPI {
 }
 
 export default function JobOpeningsList() {
-  const [testData, setTestData] = useState<any>([]);
+  const [jobOpeningList, setjobOpeningList] = useState<any>([]);
   const [searching, setSearching] = useState<string>('서울');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await jobOpeningAPI({ location: searching });
-        setTestData(data.GetJobInfo.row);
+        setjobOpeningList(data.GetJobInfo.row);
       } catch (error) {
         console.error('Error', error);
       }
@@ -31,11 +31,14 @@ export default function JobOpeningsList() {
 
   return (
     <>
-      <JobSearching onFunction={handleInput}></JobSearching>
+      <JobSearching
+        onFunction={handleInput}
+        result={jobOpeningList}
+      ></JobSearching>
       <section className={styles.jobListSection}>
         <ul>
-          {testData.length > 0
-            ? testData.map((item: JobAPI, i: number) => {
+          {jobOpeningList.length > 0
+            ? jobOpeningList.map((item: JobAPI, i: number) => {
                 const match = extractDistrict(item.WORK_PARAR_BASS_ADRES_CN);
                 return (
                   <li key={i}>
