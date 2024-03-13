@@ -4,6 +4,7 @@ import jobOpeningAPI from '@/lib/apis/api-utils';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import JobSearching from './JobSearching';
 import extractDistrict from './extractDistrict';
+import JobOpeningSite from './jobOpeningSite';
 
 interface JobAPI {
   [key: string]: string;
@@ -69,9 +70,10 @@ export default function JobOpeningsList() {
                   </li>
                 );
               })
-            : 'no'}
+            : ''}
         </ul>
       </section>
+      <JobOpeningSite></JobOpeningSite>
     </>
   );
 }
