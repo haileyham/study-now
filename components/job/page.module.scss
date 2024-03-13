@@ -16,13 +16,25 @@
 
 .searchbox {
   padding: 0.5rem;
-  position: relative;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  .searchIp {
+    position: relative;
+    width: 100%;
+  }
+  .searchingBtn {
+    flex-basis: 3rem;
+    padding: 0.5rem 0;
+  }
   span {
     position: absolute;
-    top: 0.9rem;
+    top: 0.4rem;
     left: 1rem;
     font-weight: bolder;
     color: rgb(157, 157, 254);
+    font-size: 1rem;
   }
   .searchClose {
     left: auto; //위에서 left 준 것 풀기
@@ -173,9 +185,6 @@
   .searchbox {
     max-width: 40rem;
     margin: auto;
-    span {
-      top: 0.8rem;
-    }
   }
 
   .jobOpeningLogo {
