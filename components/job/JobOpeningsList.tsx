@@ -10,19 +10,19 @@ interface JobAPI {
 
 export default function JobOpeningsList() {
   const [testData, setTestData] = useState<any>([]);
-  const [searching, setSearching] = useState<String>('');
+  const [searching, setSearching] = useState<String>('강남');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await jobOpeningAPI();
+        const data = await jobOpeningAPI({ location: searching });
         setTestData(data.GetJobInfo.row);
       } catch (error) {
         console.error('Error', error);
       }
     };
     fetchData();
-  }, []);
+  }, [searching]);
 
   function handleInput(e: ChangeEvent<HTMLInputElement>) {
     setSearching(e.target.value);
