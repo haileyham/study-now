@@ -67,15 +67,28 @@
     box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
     z-index: 2;
   }
+  .none {
+    display: none;
+  }
   li {
     margin: 5px auto;
     border-radius: var(--border-radius-s);
     padding: 0 0.5rem;
+    background-color: rgba(243, 233, 251, 0.56);
   }
-  li:hover,
-  .searchSelected {
+  li:hover {
     background-color: rgba(231, 202, 255, 0.56);
     cursor: pointer;
+  }
+  .none {
+    display: none;
+  }
+  p {
+    color: rgb(102, 102, 102);
+  }
+  p:first-child {
+    color: rgb(46, 46, 46);
+    font-weight: 700;
   }
 }
 

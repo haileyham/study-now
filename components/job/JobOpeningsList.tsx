@@ -46,6 +46,9 @@ export default function JobOpeningsList() {
         onFunction={handleInput}
         result={!activeBtn && searching.length ? jobOpeningList : []}
         onBtn={handleBtn}
+        // onReset={() => {
+        //   setSearching('');
+        // }}
       ></JobSearching>
       <section className={styles.jobListSection}>
         <ul>

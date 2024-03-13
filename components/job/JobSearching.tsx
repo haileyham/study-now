@@ -1,3 +1,4 @@
+// 'use client';
 import SearchingBtn from '../common/SearchingBtn';
 import extractDistrict from './extractDistrict';
 import styles from './page.module.scss';
@@ -7,6 +8,7 @@ interface JobSearchingProps {
   onFunction?: (e: ChangeEvent<HTMLInputElement>) => void;
   result?: any;
   onBtn?: () => void;
+  // onReset: () => void;
 }
 
 interface JobAPI {
@@ -17,6 +19,7 @@ const JobSearching: React.FC<JobSearchingProps> = ({
   onFunction,
   result,
   onBtn,
+  // onReset,
 }) => {
   return (
     <section className={styles.jobSearchSection}>
@@ -24,12 +27,14 @@ const JobSearching: React.FC<JobSearchingProps> = ({
       <div className={styles.searchbox}>
         <div className={styles.searchIp}>
           <input type="text" onChange={onFunction} />
-          <span className={styles.searchClose}>Ⅹ</span>
-          <ul>
+          {/* <span className={styles.searchClose} onClick={onReset}>
+            Ⅹ
+          </span> */}
+          <ul className={result.length > 1 ? '' : styles.none}>
             {result?.map((company: JobAPI, i: number) => {
               const match = extractDistrict(company.WORK_PARAR_BASS_ADRES_CN);
               return (
-                <li className={styles.searchSelected} key={i}>
+                <li key={i}>
                   <p>{company.CMPNY_NM}</p>
                   <p>{match}</p>
                 </li>
