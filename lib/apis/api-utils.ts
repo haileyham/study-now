@@ -1,4 +1,10 @@
-export default async function jobOpeningAPI({ location }) {
+interface JobOpeningAPIOptions {
+  location: string;
+}
+
+export default async function jobOpeningAPI({
+  location,
+}: JobOpeningAPIOptions) {
   const apiKey = process.env.NEXT_PUBLIC_SEOUL; //추후 변경예정  dynamic 배포제한 때문에 일단 public으로 함ㅠㅠ
   try {
     const response = await fetch(
