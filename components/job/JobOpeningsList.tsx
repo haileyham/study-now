@@ -3,6 +3,7 @@ import styles from './page.module.scss';
 import jobOpeningAPI from '@/lib/apis/api-utils';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import JobSearching from './JobSearching';
+import extractDistrict from './extractDistrict';
 
 interface JobAPI {
   [key: string]: string;
@@ -10,7 +11,7 @@ interface JobAPI {
 
 export default function JobOpeningsList() {
   const [testData, setTestData] = useState<any>([]);
-  const [searching, setSearching] = useState<String>('강남');
+  const [searching, setSearching] = useState<string>('서울');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,6 +36,7 @@ export default function JobOpeningsList() {
         <ul>
           {testData.length > 0
             ? testData.map((item: JobAPI, i: number) => {
+                const match = extractDistrict(item.WORK_PARAR_BASS_ADRES_CN);
                 return (
                   <li key={i}>
                     <div className={styles.imgBox}>
@@ -45,7 +47,8 @@ export default function JobOpeningsList() {
                     </div>
                     <h2>{item.CMPNY_NM}</h2>
                     <p>{item.BSNS_SUMRY_CN}</p>
-                    <span>서울</span>
+                    {/* <span>{item.WORK_PARAR_BASS_ADRES_CN}</span> */}
+                    <span>{match}</span>
                   </li>
                 );
               })
