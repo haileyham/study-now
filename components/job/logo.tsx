@@ -15,33 +15,27 @@ export default function SiteLogo() {
       <div className={styles.logoContainer1}>
         {jobOpeningSite.map((site, i) => {
           return (
-            <>
-              <div className={styles.imgBox} key={i}>
-                <img src={site.img} alt={site.alt} />
-              </div>
-            </>
+            <div className={styles.imgBox} key={i}>
+              <img src={site.img} alt={site.alt} />
+            </div>
           );
         })}
       </div>
       <div className={styles.logoContainer2}>
         {jobOpeningSite.map((site, i) => {
           return (
-            <>
-              <div className={styles.imgBox} key={i}>
-                <img src={site.img} alt={site.alt} />
-              </div>
-            </>
+            <div className={styles.imgBox} key={i}>
+              <img src={site.img} alt={site.alt} />
+            </div>
           );
         })}
       </div>
       <div className={styles.logoContainer3}>
         {jobOpeningSite.map((site, i) => {
           return (
-            <>
-              <div className={styles.imgBox} key={i}>
-                <img src={site.img} alt={site.alt} />
-              </div>
-            </>
+            <div className={styles.imgBox} key={i}>
+              <img src={site.img} alt={site.alt} />
+            </div>
           );
         })}
       </div>
