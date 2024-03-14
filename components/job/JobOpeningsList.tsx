@@ -4,7 +4,7 @@ import jobOpeningAPI from '@/lib/apis/api-utils';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import JobSearching from './JobSearching';
 import extractDistrict from './extractDistrict';
-import JobOpeningSite from './jobOpeningSite';
+import JobOpeningSite from './JobOpeningSite';
 
 interface JobAPI {
   [key: string]: string;
