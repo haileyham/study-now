@@ -5,6 +5,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import JobSearching from './JobSearching';
 import extractDistrict from './extractDistrict';
 import JobOpeningSite from './JobOpeningSite';
+import getImageSource from './getImageSource';
 
 interface JobAPI {
   [key: string]: string;
@@ -40,6 +41,7 @@ export default function JobOpeningsList() {
     setActiveBtn(true);
     setSearchResult(jobOpeningList);
   }
+  console.log(searchResult);
 
   return (
     <>
@@ -56,16 +58,19 @@ export default function JobOpeningsList() {
           {searchResult.length > 0
             ? searchResult.map((item: JobAPI, i: number) => {
                 const match = extractDistrict(item.WORK_PARAR_BASS_ADRES_CN);
+                const image = getImageSource(item.RCRIT_JSSFC_CMMN_CODE_SE);
                 return (
                   <li key={i}>
                     <div className={styles.imgBox}>
                       <img
-                        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        src={`/images/company/${image}.jpg`}
                         alt="채용회사이미지"
                       />
                     </div>
                     <h2>{item.CMPNY_NM}</h2>
                     <p>{item.BSNS_SUMRY_CN}</p>
+                    <p>{item.JOBCODE_NM}</p>
+                    <p>{item.RCRIT_JSSFC_CMMN_CODE_SE}</p>
                     <span>{match}</span>
                   </li>
                 );
