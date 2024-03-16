@@ -70,7 +70,6 @@ export default function JobOpeningsList() {
                     <h2>{item.CMPNY_NM}</h2>
                     <p>{item.BSNS_SUMRY_CN}</p>
                     <p>{item.JOBCODE_NM}</p>
-                    <p>{item.RCRIT_JSSFC_CMMN_CODE_SE}</p>
                     <span>{match}</span>
                   </li>
                 );
