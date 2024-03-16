@@ -1,5 +1,4 @@
 .main {
-  margin: 1rem;
   background-color: #fff;
   position: relative;
   z-index: 3;
@@ -17,13 +16,25 @@
 
 .searchbox {
   padding: 0.5rem;
-  position: relative;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  .searchIp {
+    position: relative;
+    width: 100%;
+  }
+  .searchingBtn {
+    flex-basis: 3rem;
+    padding: 0.5rem 0;
+  }
   span {
     position: absolute;
-    top: 0.9rem;
+    top: 0.4rem;
     left: 1rem;
     font-weight: bolder;
     color: rgb(157, 157, 254);
+    font-size: 1rem;
   }
   .searchClose {
     left: auto; //위에서 left 준 것 풀기
@@ -50,21 +61,36 @@
     position: absolute;
     border-radius: var(--border-radius-l);
     width: calc(100% - 1.3rem);
+    height: 20rem;
+    overflow: auto;
     top: 50px;
     left: 10px;
     padding: 0.5rem 1rem;
     box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
     z-index: 2;
   }
+  .none {
+    display: none;
+  }
   li {
     margin: 5px auto;
     border-radius: var(--border-radius-s);
     padding: 0 0.5rem;
+    background-color: rgba(243, 233, 251, 0.56);
   }
-  li:hover,
-  .searchSelected {
+  li:hover {
     background-color: rgba(231, 202, 255, 0.56);
     cursor: pointer;
+  }
+  .none {
+    display: none;
+  }
+  p {
+    color: rgb(102, 102, 102);
+  }
+  p:first-child {
+    color: rgb(46, 46, 46);
+    font-weight: 700;
   }
 }
 
@@ -85,11 +111,13 @@
     overflow: hidden;
   }
   li {
+    position: relative;
     max-width: calc(50% - 10px); // gap만큼 뺌 / gap말고 margin으로 변경
     margin: 5px;
     flex: 1 1 40%;
-    padding: 0.5rem;
+    padding: 0.5rem 0rem 2.5rem;
     box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    text-align: left;
     cursor: pointer;
     img {
       width: 100%;
@@ -102,6 +130,31 @@
     }
     &:hover img {
       transform: scale(1.2);
+    }
+    h2,
+    p {
+      padding: 0.5rem 0.5rem 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    h2 {
+      font-size: var(--font-size-m);
+    }
+    span {
+      position: absolute;
+      left: 0.5rem;
+      bottom: 0.5rem;
+      padding: 0.2rem;
+      font-size: var(--font-size-s);
+      border-radius: var(--border-radius-m);
+      background-color: rgb(245, 245, 245);
+    }
+  }
+  .siteList {
+    padding: 0.5rem;
+    p {
+      text-align: center;
     }
   }
 }
@@ -147,20 +200,17 @@
 /* 태블릿 화면 스타일 */
 @media (min-width: 768px) {
   .main {
-    margin: 7rem 4rem;
+    margin: 7rem auto;
   }
 
   .searchbox {
     max-width: 40rem;
     margin: auto;
-    span {
-      top: 0.8rem;
-    }
   }
 
   .jobOpeningLogo {
     position: fixed;
-    top: 12rem;
+    top: 0rem;
     // margin: 10px;
     display: flex;
     // overflow: hidden;
@@ -175,10 +225,30 @@
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
+  .main {
+    margin: 10rem auto;
+  }
+  .jobOpeningLogo {
+    position: fixed;
+    top: 8rem;
+    // margin: 10px;
+    display: flex;
+    // overflow: hidden;
+    z-index: 0;
+    .imgBox {
+      width: 150px;
+      height: 100px;
+      margin-left: 10px;
+    }
+  }
+
   .jobListSection {
     li {
       max-width: calc(25% - 10px);
       flex: 1 1 20%;
+      h2 {
+        font-size: var(--font-size-l);
+      }
     }
   }
 }

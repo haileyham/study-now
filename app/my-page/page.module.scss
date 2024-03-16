@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(244, 240, 255);
-  height: 85vh;
+  height: calc(100vh - 5rem);
   section {
     margin: 0.5rem 1rem;
     padding: 0.5rem 1rem;
@@ -11,11 +11,11 @@
     border-radius: var(--border-radius-s);
   }
   .profile {
-    height: 9rem;
+    height: 12rem;
     margin-top: 7rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     position: relative;
     div {
@@ -58,6 +58,14 @@
         }
       }
     }
+    //logout btn
+    button {
+      margin: 1rem;
+      background-color: rgba(244, 240, 255, 0.504);
+      &:hover {
+        background-color: rgba(116, 116, 116, 0.504);
+      }
+    }
   }
   .myActive {
     padding: 1rem;
@@ -87,6 +95,34 @@
   }
 }
 
+// 로그인 이전
+.loginPrompt {
+  height: calc(100vh - 5rem);
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius-s);
+  background-color: rgb(244, 240, 255);
+  div {
+    width: 100%;
+    padding: 10rem 0;
+    text-align: center;
+    border-radius: var(--border-radius-s);
+    background-color: #fff;
+    p {
+      font-size: var(--font-size-xl);
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      background-color: rgb(217, 203, 255);
+      font-size: var(--font-size-m);
+      &:hover {
+        background-color: rgb(195, 174, 255);
+      }
+    }
+  }
+}
+
 /* 테블릿 화면 스타일 */
 @media (min-width: 768px) {
 }
@@ -95,6 +131,7 @@
 // flex에서 grid로 변경
 @media (min-width: 1024px) {
   .main {
+    height: 80vh;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -141,5 +178,9 @@
       margin: 0; //초기화
       padding: 2rem;
     }
+  }
+
+  .loginPrompt {
+    height: 80vh;
   }
 }

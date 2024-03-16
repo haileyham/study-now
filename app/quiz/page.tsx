@@ -1,10 +1,10 @@
 import React from 'react';
-import QuizComponent from '@/components/quiz/QuizComponent';
+import QuizSetting from '@/components/quiz/QuizSetting';
 
 export default function Quiz() {
   return (
     <>
-      <QuizComponent></QuizComponent>
+      <QuizSetting></QuizSetting>
     </>
   );
 }

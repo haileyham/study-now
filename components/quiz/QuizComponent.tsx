@@ -1,16 +1,26 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Timer from './Timer';
 
-export default function QuizComponent() {
-  let router = useRouter();
+interface QuizProps {
+  questionNum: number;
+  timerDuration: number;
+  quizType: string;
+}
 
+const QuizComponent: React.FC<QuizProps> = ({
+  questionNum,
+  timerDuration,
+  quizType,
+}) => {
+  let router = useRouter();
   const quizData = [
     {
       id: 1,
-      question: '블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q. 블라블라Q.',
+      question:
+        '블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q',
       answer: 'hello',
     },
     {
@@ -23,18 +33,33 @@ export default function QuizComponent() {
       question: '블라블라큐큐큐',
       answer: 'hello hi',
     },
+    {
+      id: 4,
+      question: '블라블라큐큐큐4',
+      answer: 'hello hi',
+    },
+    {
+      id: 5,
+      question: '블라블라큐큐큐5',
+      answer: 'hello hi',
+    },
+    {
+      id: 6,
+      question: '블라블라큐큐큐6',
+      answer: 'hello hi',
+    },
   ];
 
   const [input, setInput] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState(
-    Array(quizData.length).fill(''),
+    Array(Number(questionNum)).fill(''),
   );
-  const [resetTime, setResetTime] = useState(10);
+  const [resetTime, setResetTime] = useState(timerDuration);
 
-  const handleInputChange = (e: any) => {
-    // setInput(e.target.value);
-    // 추후예정) 데이터에 문제별 num 부여하고 그에따라 저장? 혹은 마지막페이지에서..고민중
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     if (resetTime > 0) {
       const updatedUserAnswers = [...userAnswers];
       updatedUserAnswers[currentQuestion] = e.target.value;
@@ -43,17 +68,21 @@ export default function QuizComponent() {
   };
 
   const handleNextButtonClick = () => {
-    // localStorage.setItem('answer', answer);
-    // 추후 문제 갯수에 따라서 조정예정
-    if (currentQuestion < quizData.length - 1) {
+    if (currentQuestion < questionNum - 1) {
       setCurrentQuestion((prevQuestion) => prevQuestion + 1);
       setInput('');
-      localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
-      setResetTime(10);
+      setResetTime(timerDuration);
     } else {
-      localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
       router.push('/quiz/results');
     }
+
+    const userQuiz = {
+      question: quizData
+        .slice(0, questionNum)
+        .map((question) => question.question),
+      userAnswer: userAnswers,
+    };
+    localStorage.setItem('userQuiz', JSON.stringify(userQuiz));
   };
 
   return (
@@ -77,7 +106,9 @@ export default function QuizComponent() {
             </div>
           </section>
           <section className={styles.quiz}>
-            <p>{quizData[currentQuestion].question}</p>
+            <div className={styles.questionBox}>
+              <p>{quizData[currentQuestion].question}</p>
+            </div>
             <span
               className={
                 userAnswers[currentQuestion]
@@ -87,30 +118,35 @@ export default function QuizComponent() {
             >
               {userAnswers[currentQuestion]}
             </span>
-            <input
-              type="text"
-              value={
-                resetTime == 0
-                  ? '시간 경과 : 추가 답변 입력 불가'
-                  : userAnswers[currentQuestion]
-              }
-              onChange={handleInputChange}
-              disabled={resetTime <= 0}
-            />
-            <button
-              className={
-                userAnswers[currentQuestion] || resetTime == 0
-                  ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
-                  : `btn-s ${styles.nextBtn}`
-              }
-              onClick={handleNextButtonClick}
-            >
-              {/* 추후예정) 갯수에 따라서 Results 로 바꾸기 */}
-              Next ▶
-            </button>
+            <div className={styles.answerBox}>
+              <textarea
+                // type="text"
+                value={
+                  resetTime === 0
+                    ? '시간 경과 : 추가 답변 입력 불가'
+                    : userAnswers && userAnswers[currentQuestion] !== undefined
+                    ? userAnswers[currentQuestion]
+                    : ''
+                }
+                onChange={handleInputChange}
+                disabled={resetTime <= 0}
+              />
+              <button
+                className={
+                  userAnswers[currentQuestion] || resetTime == 0
+                    ? `btn-s ${styles.nextBtn} ${styles.nextBtnActive}`
+                    : `btn-s ${styles.nextBtn}`
+                }
+                onClick={handleNextButtonClick}
+              >
+                {questionNum - 1 === currentQuestion ? 'Results ▶' : 'Next ▶'}
+              </button>
+            </div>
           </section>
         </main>
       </div>
     </>
   );
-}
+};
+
+export default QuizComponent;

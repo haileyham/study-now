@@ -3,6 +3,8 @@ import React, { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Modal from '../modal/Modal';
+import Header from '../common/Header';
+import { validate } from './validateWritingEdit';
 
 const WritingEditor: React.FC<WritingEditorProps> = ({
   result,
@@ -16,7 +18,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     status: result?.status || '',
     mode: result?.mode || '',
     location: result?.location || '',
-    time: result?.time || '',
+    contact: result?.contact || '',
     type: result?.type || '',
     title: result?.title || '',
     content: result?.content || '',
@@ -31,8 +33,6 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     const { name, value } = e.target;
     setStudyWrite({ ...studyWrite, [name]: value });
   };
-  // console.log(studyWrite);
-  // console.log(result);
 
   const handleSubmit = async () => {
     try {
@@ -58,23 +58,27 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
     }
   };
 
-  const handleConfirm = () => {
-    router.back();
+  type Valid = {
+    [key: string]: string;
+  };
+
+  const [validationFailed, setValidationFailed] = useState<Valid>({});
+
+  const validation = () => {
+    const result = validate(studyWrite);
+    setValidationFailed(result);
+  };
+
+  const handleCancel = () => {
+    setValidationFailed({});
+    return false;
   };
 
   return (
     <>
       <div className={`container ${styles.container} `}>
         <main>
-          <section className={styles.writeHeader}>
-            <Modal
-              modalBtn={'◀'}
-              modalBtnStyle={styles.backBtn}
-              message={'정말 나가겠습니까?'}
-              onFunction={handleConfirm}
-            ></Modal>
-            <h1>스터디 모집</h1>
-          </section>
+          <Header title={`스터디 모집`}></Header>
           <section className={styles.writeCheck}>
             <div className={styles.studyStatus}>
               <span>Status</span>
@@ -157,12 +161,13 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
                 name="location"
                 placeholder="ex) 강남"
                 onChange={handleChange}
+                defaultValue={result?.location}
               />
             </div>
-            <div className={styles.studyTime}>
+            {/* <div className={styles.studyTime}>
               <span>Time</span>
               <input type="time" name="time" onChange={handleChange} />
-            </div>
+            </div> */}
             <div className={styles.studyType}>
               <span>Type</span>
               <input
@@ -170,6 +175,17 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
                 placeholder="ex) 프론트엔드 면접"
                 name="type"
                 onChange={handleChange}
+                defaultValue={result?.type}
+              />
+            </div>
+            <div className={styles.studyContact}>
+              <span>Contact</span>
+              <input
+                type="text"
+                name="contact"
+                placeholder="ex) https://open.kakao.com/"
+                onChange={handleChange}
+                defaultValue={result?.contact}
               />
             </div>
           </section>
@@ -187,12 +203,24 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
               onChange={handleChange}
               defaultValue={result?.content}
             />
-            <Modal
-              modalBtn={`${writingEdit.modalBtnText}`}
-              modalBtnStyle={styles.writeEditBtn}
-              message={`${writingEdit.modalMessage}`}
-              onFunction={handleSubmit}
-            ></Modal>
+            <div className={styles.submitBtn} onClick={validation}>
+              {validationFailed.success === 'success' ? (
+                <Modal
+                  modalBtn={`${writingEdit.modalBtnText}`}
+                  modalBtnStyle={styles.writeEditBtn}
+                  message={`${writingEdit.modalMessage}`}
+                  onFunction={handleSubmit}
+                ></Modal>
+              ) : (
+                <Modal
+                  modalBtn={`${writingEdit.modalBtnText}`}
+                  modalBtnStyle={styles.writeEditBtn}
+                  message={`${validationFailed.message}`}
+                  onFunction={handleCancel}
+                  mark={`!`}
+                ></Modal>
+              )}
+            </div>
           </section>
         </main>
       </div>

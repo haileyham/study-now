@@ -1,4 +1,4 @@
-import { connectDB } from '@/util/database';
+import { connectDB } from '@/lib/utils/database';
 import { ObjectId } from 'mongodb';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -14,7 +14,7 @@ export default async function handler(
       status: req.body.study.status,
       mode: req.body.study.mode,
       location: req.body.study.location,
-      time: req.body.study.time,
+      contact: req.body.study.contact,
       date: req.body.study.date,
       type: req.body.study.type,
     };

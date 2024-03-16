@@ -13,7 +13,7 @@ interface Post {
   status: string;
   mode: string;
   location: string;
-  time: string;
+  contact: string;
   date: string;
   type: string;
 }
@@ -37,7 +37,7 @@ interface StudyDetailComponent {
     status: string;
     mode: string;
     location: string;
-    time: string;
+    contact: string;
     date: Date;
     type: string;
   };
@@ -52,6 +52,7 @@ type ModalProps = {
   modalBtnStyle: string;
   message: string;
   onFunction: () => void;
+  mark?: string;
 };
 
 //toLocaleDateString method option객체
@@ -79,7 +80,7 @@ interface WritingEditor {
   status: string;
   mode: string;
   location: string;
-  time: string;
+  contact: string;
   date: string;
   type: string;
 }

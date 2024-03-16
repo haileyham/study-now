@@ -1,14 +1,18 @@
 //delete / edit
 .deleteEditBtn {
+  width: 100%;
   margin: 0;
   padding: 7px 5px;
-  color: var(--color-content-s);
-  background-color: #fff;
   font-size: var(--font-size-ss);
+  color: var(--color-content-s);
   border: none;
+  border-radius: var(--border-radius-s);
+  background-color: #fff;
   cursor: pointer;
   &:hover {
     font-weight: bolder;
+    color: #fff;
+    background-color: rgb(210, 198, 254);
   }
 }
 
@@ -43,6 +47,7 @@ $backColor: rgba(215, 196, 255, 0.179);
     max-height: 40px;
     overflow: hidden;
     display: -webkit-box;
+    font-size: var(--font-header-l);
     -webkit-line-clamp: 2; /* 표시할 최대 라인 수 */
     -webkit-box-orient: vertical;
   }
@@ -64,14 +69,8 @@ $backColor: rgba(215, 196, 255, 0.179);
     .date {
       flex: 1;
       text-align: right;
+      font-size: var(--font-size-m);
     }
-  }
-  .detailEditDel {
-    margin: 0;
-    padding: 0;
-    height: 0;
-    display: flex;
-    align-items: center;
   }
 }
 
@@ -81,7 +80,7 @@ $backColor: rgba(215, 196, 255, 0.179);
     padding: 10px;
     color: var(--color-content-m);
     font-size: $mainContent;
-    min-height: 8rem;
+    min-height: 16rem;
     white-space: pre-wrap;
   }
   &::before {
@@ -105,22 +104,22 @@ $backColor: rgba(215, 196, 255, 0.179);
   div {
     position: relative;
     margin: 5px;
-    padding: 0.8rem 0.3rem 0rem 0.3rem;
+    padding: 1.5rem 0.3rem 0rem 0.3rem;
     border-radius: var(--border-radius-s);
     flex-grow: 1;
-    // flex-basis: 100px;
+    flex-basis: 45%;
     text-align: center;
     box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
     background-color: #fff;
   }
   p {
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-m);
     margin: 0;
     padding: 7px 5px 3px 5px;
     background-color: #fff;
     border: 1.5px solid rgba(255, 255, 255, 0.968);
     border-radius: var(--border-radius-s);
-    color: rgb(53, 53, 53);
+    color: rgb(130, 130, 130);
   }
   span {
     position: absolute;
@@ -128,11 +127,11 @@ $backColor: rgba(215, 196, 255, 0.179);
     top: 0rem;
     left: 50%;
     transform: translateX(-50%);
-    padding: 0 0.5rem;
-    font-size: var(--font-size-s);
+    padding: 5px 0;
+    font-size: var(--font-size-m);
     border-radius: var(--border-radius-s);
     background-color: rgb(244, 240, 252);
-    box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
+    // box-shadow: 0 0 5px rgba(216, 216, 216, 0.898);
   }
 }
 
@@ -174,6 +173,55 @@ $backColor: rgba(215, 196, 255, 0.179);
   }
 }
 
+// mobile 버전 글수정,삭제 버튼 토글박스
+.toggleBox {
+  position: relative;
+}
+
+.toggleBtn {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  span {
+    display: inline-block;
+    width: 1rem;
+    height: 2px;
+    background-color: var(--color-content-s);
+  }
+  // span (on toggle)
+  .toggleOn {
+    width: 2px;
+    height: 1rem;
+  }
+}
+.toggleOnBtn {
+  flex-direction: row;
+}
+
+.toggleContentBox {
+  width: 5rem;
+  // padding: 10px;
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid var(--color-content-s);
+  border-radius: var(--border-radius-s);
+}
+.showToggleContentBox {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  flex-direction: column;
+}
+
 /* 데스크탑 화면 스타일 */
 @media (min-width: 768px) {
   .container {
@@ -200,4 +248,9 @@ $backColor: rgba(215, 196, 255, 0.179);
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
+  .postInfo {
+    div {
+      flex-basis: auto;
+    }
+  }
 }

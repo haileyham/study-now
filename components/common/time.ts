@@ -33,5 +33,5 @@ export function getDate(postDateTime: Date): string {
     month: 'long',
     day: 'numeric',
   };
-  return postDate.toLocaleDateString(undefined, options);
+  return postDate.toLocaleDateString('ko-KR', options);
 }

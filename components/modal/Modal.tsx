@@ -8,6 +8,7 @@ const Modal: React.FC<ModalProps> = ({
   modalBtnStyle,
   message,
   onFunction,
+  mark,
 }) => {
   const [modal, setModal] = useState(false);
   const [active, setActive] = useState(false);
@@ -28,8 +29,11 @@ const Modal: React.FC<ModalProps> = ({
   };
 
   const handleConfirm = () => {
-    onFunction();
     setActive(false);
+    const result = onFunction();
+    if (typeof result !== 'undefined') {
+      setModal(result);
+    }
   };
 
   const modalOrder = () => {
@@ -51,6 +55,7 @@ const Modal: React.FC<ModalProps> = ({
         {modal ? (
           <div className={styles.modal} onClick={closeModal}>
             <div className={styles.modalContent} onClick={closeOnClick}>
+              {mark ? <span>{mark}</span> : ''}
               <p>{message}</p>
               <button onClick={handleConfirm}>확인</button>
               <button onClick={closeModal}>닫기</button>

@@ -2,9 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
 import Link from 'next/link';
-import { LoginBtn, LogoutBtn } from '@/components/LoginOutBtn';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,48 +23,39 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // let session = (await getServerSession(authOptions)) as Session;
-  // console.log(session);
   return (
     <html lang="en">
       <body className={inter.className}>
         <header className="headerMain">
-          <div className="myContainer">
-            {/* {session ? (
-              <>
-                <div>
-                  <span>{session?.user?.name}</span>
-                  <LogoutBtn></LogoutBtn>
-                </div>
-              </>
-            ) : (
-              <>
-                <div>
-                  <span>로그인하세요!</span>
-                  <LoginBtn></LoginBtn>
-                </div>
-              </>
-            )} */}
-            {/* 임시 */}
-            <LoginBtn></LoginBtn>
-            <LogoutBtn></LogoutBtn>
-            <div>🌛</div>
-          </div>
           <ul className="navContainer">
-            <Link href="/">
-              <img src="" alt="logo" />
-            </Link>
             <li>
-              <Link href="/quiz">퀴즈</Link>
+              <Link href="/">
+                <img src="" alt="logo" />
+              </Link>
             </li>
             <li>
-              <Link href="/study-post">스터디</Link>
+              <Link href="/quiz">
+                <img src="/images/icons/quiz.svg" alt="quiz-page" />
+                퀴즈
+              </Link>
             </li>
             <li>
-              <Link href="/job-openings">채용정보</Link>
+              <Link href="/study-post">
+                <img src="/images/icons/study.svg" alt="study-post-page" />
+                스터디
+              </Link>
             </li>
             <li>
-              <Link href="/my-page">MyPage</Link>
+              <Link href="/job-openings">
+                <img src="/images/icons/job.svg" alt="job-openings-page" />
+                채용정보
+              </Link>
+            </li>
+            <li>
+              <Link href="/my-page">
+                <img src="/images/icons/profile.svg" alt="my-page" />
+                MyPage
+              </Link>
             </li>
           </ul>
         </header>

@@ -3,12 +3,16 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 import getTimesAgo from '@/components/common/time';
 
-const PostList: React.FC<PostListProps> = ({ result }) => {
+interface PostListProps2 {
+  filteredData: Post[];
+}
+
+const PostList: React.FC<PostListProps2> = ({ filteredData }) => {
   function parseDate(dateString: string): number {
     return new Date(dateString).getTime();
   }
 
-  const sortedResult = result
+  const sortedResult = filteredData
     .slice()
     .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
@@ -45,9 +49,6 @@ const PostList: React.FC<PostListProps> = ({ result }) => {
                   )}
                   {post.location && (
                     <span className={styles.info2}>{post.location}</span>
-                  )}
-                  {post.time && (
-                    <span className={styles.info3}>{post.time}</span>
                   )}
                   {post.type && (
                     <span className={styles.info4}>{post.type}</span>
