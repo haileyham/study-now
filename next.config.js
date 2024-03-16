@@ -2,10 +2,17 @@
 const nextConfig = {}
 
 module.exports = {
-  rewrites: () => [
-    {
-      source: "/job-openings",
-      destination: "http://study-now-pink.vercel.app/job-openings",
-    },
-  ],
-};
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "upgrade-insecure-requests",
+          },
+        ],
+      },
+    ]
+  },
+}
