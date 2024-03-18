@@ -50,12 +50,12 @@ const Carousel: React.FC = () => {
     );
   };
 
-  // useEffect(() => {
-  //   const changeImg = setInterval(() => {
-  //     nextSlide();
-  //   }, 3000);
-  //   return () => clearInterval(changeImg);
-  // }, [currentImage, carouselData.length]);
+  useEffect(() => {
+    const changeImg = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => clearInterval(changeImg);
+  }, [currentImage, carouselData.length]);
 
   const transformStyle = {
     transform: `translateX(${-currentImage * 20}%)`,
