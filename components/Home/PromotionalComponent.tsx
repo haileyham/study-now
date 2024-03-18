@@ -17,11 +17,19 @@ const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
   style,
 }) => {
   return (
-    <div className={`${styles.promotionalSection} ${style}`}>
-      <h2>{title}</h2>
-      <p>{text}</p>
+    <div
+      className={
+        title === 'Study Mate'
+          ? `${styles.promotionalSection} ${style} ${styles.promotionalSectionEven}`
+          : `${styles.promotionalSection} ${style}`
+      }
+    >
       <img src={imageUrl} alt={title} />
-      <p>{content}</p>
+      <div>
+        <h2>{title}</h2>
+        <h3>{text}</h3>
+        <p>{content}</p>
+      </div>
     </div>
   );
 };

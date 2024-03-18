@@ -97,6 +97,19 @@
   img {
     width: 15rem;
   }
+  div {
+    h2 {
+      color: rgb(161, 161, 161);
+      margin: 0.5rem auto;
+    }
+    h3 {
+      margin: 0.7rem auto;
+    }
+    p {
+      color: gray;
+      font-size: var(--font-size-m);
+    }
+  }
 }
 
 //footer
@@ -133,6 +146,28 @@
         left: auto;
         transform: none;
       }
+    }
+  }
+  //section_promotional
+  .promotionalSection {
+    height: 100%;
+    padding: 0 5rem;
+    gap: 10rem;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    img {
+      width: 15rem;
+    }
+    div {
+      flex: 1;
+    }
+  }
+  .promotionalSectionEven {
+    text-align: right;
+
+    img {
+      order: 2;
     }
   }
 }
