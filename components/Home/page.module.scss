@@ -98,6 +98,9 @@
     opacity: 1;
   }
   .imageContainer {
+    .box:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
     .box {
       display: flex;
       justify-content: space-around;
