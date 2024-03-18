@@ -84,6 +84,21 @@
   right: 10px;
 }
 
+//section_promotional
+.promotionalSection {
+  display: flex;
+  height: 100%;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  object-fit: cover;
+  img {
+    width: 15rem;
+  }
+}
+
 //footer
 .container {
   width: 100%;
