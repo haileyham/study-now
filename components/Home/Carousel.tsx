@@ -75,7 +75,8 @@ const Carousel: React.FC = () => {
           <div className={styles.imageContainer} style={transformStyle}>
             {carouselData.map((data, i) => {
               return (
-                <div key={i}>
+                <div key={i} className={styles.box}>
+                  <h2>{data.text}</h2>
                   <Link href={data.link}>
                     <img
                       src={data.img}
@@ -83,7 +84,6 @@ const Carousel: React.FC = () => {
                       className={styles.image}
                     />
                   </Link>
-                  <h2>{data.text}</h2>
                 </div>
               );
             })}
