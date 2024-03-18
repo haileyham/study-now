@@ -52,6 +52,7 @@ type ModalProps = {
   modalBtnStyle: string;
   message: string;
   onFunction: () => void;
+  mark?: string;
 };
 
 //toLocaleDateString method option객체
