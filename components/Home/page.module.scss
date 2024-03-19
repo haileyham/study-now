@@ -88,7 +88,6 @@
 .card {
   width: calc(50% - 0.5rem);
   height: 200px;
-  background: url(/images/company/kindergarden.jpg) center/cover no-repeat;
   // box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius-m);
   a {
@@ -122,15 +121,6 @@
     a {
       background-color: #ffffff82;
     }
-  }
-  &:nth-child(2) {
-    background: url(/images/company/officeJob.jpg) center/cover no-repeat;
-  }
-  &:nth-child(3) {
-    background: url(/images/company/building.jpg) center/cover no-repeat;
-  }
-  &:nth-child(4) {
-    background: url(/images/company/3.jpg) center/cover no-repeat;
   }
 }
 
