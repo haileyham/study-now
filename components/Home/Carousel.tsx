@@ -9,24 +9,34 @@ const Carousel: React.FC = () => {
 
   const carouselData = [
     {
-      img: 'https://images.unsplash.com/photo-1579353977828-2a4eab540b9a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      img: '/images/character/catLaptop.png',
       text: 'StudyNow에 지금 바로 함께 하세요!',
       link: '/my-page',
+      color: 'to right, #ffaf02, rgb(255, 234, 76)',
     },
     {
-      img: 'https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      text: '지금 바로 퀴즈를 풀고 지식을 테스트해 보세요!',
+      img: '/images/character/catPhone.png',
+      text: '퀴즈를 풀고 지식을 테스트해 보세요!',
       link: '/quiz',
+      color: 'to right, #c99fff , #9f32ff',
     },
     {
-      img: 'https://images.unsplash.com/photo-1600716051809-e997e11a5d52?q=80&w=1150&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      text: '스터디 메이트와 함께 공부해요!',
+      img: '/images/character/dogsQuiz.png',
+      text: '스터디를 모집하고 함께 공부해요!',
       link: '/study-post',
+      color: 'to right, #ff728c, rgb(255, 151, 217)',
     },
     {
-      img: 'https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?q=80&w=2083&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      img: '/images/character/polarbear.png',
+      text: '채용 정보까지 한눈에!',
+      link: '/job-openings',
+      color: 'to right, #71e756, #17a701',
+    },
+    {
+      img: '/images/character/blue.png',
       text: '문제를 풀고 지식 UP!',
       link: '/quiz',
+      color: 'to right, #4a72ff, rgb(96, 231, 255)',
     },
   ];
 
@@ -48,7 +58,7 @@ const Carousel: React.FC = () => {
   }, [currentImage, carouselData.length]);
 
   const transformStyle = {
-    transform: `translateX(${-currentImage * 25}%)`,
+    transform: `translateX(${-currentImage * 20}%)`,
     transition: 'transform 0.5s ease-in-out',
   };
 
@@ -57,20 +67,24 @@ const Carousel: React.FC = () => {
       <div className={styles.carousel}>
         <div
           className={styles.background}
-          style={{ backgroundImage: `url(${carouselData[currentImage].img})` }}
+          style={{
+            background: `linear-gradient(${carouselData[currentImage].color})`,
+          }}
         />
         <div className={styles.content}>
           <div className={styles.imageContainer} style={transformStyle}>
             {carouselData.map((data, i) => {
               return (
-                <Link key={i} href={data.link}>
-                  <img
-                    src={data.img}
-                    alt={data.text}
-                    className={styles.image}
-                  />
+                <div key={i} className={styles.box}>
                   <h2>{data.text}</h2>
-                </Link>
+                  <Link href={data.link}>
+                    <img
+                      src={data.img}
+                      alt={data.text}
+                      className={styles.image}
+                    />
+                  </Link>
+                </div>
               );
             })}
           </div>
