@@ -21,7 +21,12 @@ export default function CardComponent({
 }: CardComponentProps) {
   return (
     <>
-      <div className={styles.card}>
+      <div
+        className={styles.card}
+        style={{
+          background: `url(${style}) center/cover no-repeat`,
+        }}
+      >
         <Link href={url}>
           <div>
             <h2>{title}</h2>
