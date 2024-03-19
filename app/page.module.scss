@@ -3,7 +3,7 @@
   max-width: var(--max-width);
   margin: auto;
   height: 400px;
-  box-shadow: 0 0 10px pink;
+  // box-shadow: 0 0 10px pink;
 }
 
 .carousel {
@@ -13,25 +13,40 @@
   text-align: center;
 }
 
+.sectionFull {
+  width: 100%;
+  height: 600px;
+  margin: 7rem auto;
+  background: linear-gradient(to bottom, rgb(93, 61, 255), rgb(150, 121, 255));
+}
+
 .cardContainer {
+  height: 450px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
   margin: 5rem auto;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 .card {
-  width: 100%;
+  width: calc(50% - 0.5rem);
   height: 200px;
-
-  background-color: pink;
+  background-color: rgb(255, 238, 241);
   border-radius: var(--border-radius-s);
 }
 
 .footer {
   height: 10rem;
-  box-shadow: 0 0 10px rgb(56, 56, 57);
 }
 
-.jobSection {
+// .jobSection {
+// }
+
+// 테블릿 화면 스타일
+@media (min-width: 768px) {
+  .cardContainer {
+    padding: 0;
+  }
 }

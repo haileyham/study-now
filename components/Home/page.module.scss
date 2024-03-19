@@ -87,6 +87,7 @@
 //section_promotional
 .promotionalSection {
   display: flex;
+  margin-top: 4rem;
   height: 100%;
   padding: 1rem;
   flex-direction: column;
@@ -157,7 +158,7 @@
     align-items: center;
     text-align: left;
     img {
-      width: 15rem;
+      width: 20rem;
     }
     div {
       flex: 1;
