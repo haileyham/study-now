@@ -8,10 +8,13 @@ import Link from 'next/link';
 import Footer from '@/components/Home/Footer';
 import PromotionalComponent from '@/components/Home/PromotionalComponent';
 import getPromotionalContent from '@/components/Home/getPromotionalContent';
+import CardComponent from '@/components/Home/CardComponent';
+import getCardContetn from '@/components/Home/getCardContetn';
 
 export default async function Home() {
   const session: any = await getServerSession(authOptions);
   const promotional = getPromotionalContent();
+  const contentCards = getCardContetn();
 
   return (
     <>
@@ -34,18 +37,17 @@ export default async function Home() {
           <Carousel></Carousel>
         </section>
         <section className={`${styles.section} ${styles.cardContainer}`}>
-          <div className={styles.card}>
-            <span>인기 Quiz</span>
-          </div>
-          <div className={styles.card}>
-            <span>인기 스터디 모집글</span>
-          </div>
-          <div className={styles.card}>
-            <span>채용 정보</span>
-          </div>
-          <div className={styles.card}>
-            <span>인기 공고</span>
-          </div>
+          {contentCards.map((item, i) => {
+            return (
+              <CardComponent
+                key={i}
+                imageUrl={item.imageUrl}
+                title={item.title}
+                content={item.content}
+                style={item.style}
+              ></CardComponent>
+            );
+          })}
         </section>
         {promotional.map((item, i) => {
           return (
