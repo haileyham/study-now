@@ -43,8 +43,10 @@ export default async function Home() {
                 key={i}
                 imageUrl={item.imageUrl}
                 title={item.title}
-                content={item.content}
+                url={item.url}
                 style={item.style}
+                content1={item.content1}
+                content2={item.content2}
               ></CardComponent>
             );
           })}
