@@ -84,6 +84,56 @@
   right: 10px;
 }
 
+//section_card
+.card {
+  width: calc(50% - 0.5rem);
+  height: 200px;
+  background: url(/images/company/kindergarden.jpg) center/cover no-repeat;
+  // box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-m);
+  a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    background: #181818a4;
+    border-radius: var(--border-radius-m);
+  }
+  div {
+    flex: 1;
+    h2 {
+      font-size: 1rem;
+      text-align: center;
+      padding-top: 50%;
+    }
+    p {
+      display: none;
+    }
+  }
+  // img {
+  //   width: 70%;
+  //   align-self: end;
+  // }
+  &:hover {
+    // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 4px rgba(0, 0, 0, 0.2);
+    a {
+      background-color: #ffffff82;
+    }
+  }
+  &:nth-child(2) {
+    background: url(/images/company/officeJob.jpg) center/cover no-repeat;
+  }
+  &:nth-child(3) {
+    background: url(/images/company/building.jpg) center/cover no-repeat;
+  }
+  &:nth-child(4) {
+    background: url(/images/company/3.jpg) center/cover no-repeat;
+  }
+}
+
 //section_promotional
 .promotionalSection {
   display: flex;
@@ -148,6 +198,48 @@
         transform: none;
       }
     }
+  }
+  //card
+  .card {
+    a {
+      flex-direction: row;
+      justify-content: space-between;
+      background: #18181844;
+    }
+    div {
+      padding: 2rem;
+      background: #181818b6;
+      border-radius: var(--border-radius-m);
+      h2 {
+        padding: 0;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+      p {
+        display: block;
+        // border: 1px solid rgb(197, 197, 197);
+        border-radius: var(--border-radius-m);
+        margin-top: 0.5rem;
+        padding: 5px 0.5rem;
+        // background-color: #ffffff;
+        &::before {
+          content: 'HOT';
+          width: 1rem;
+          font-size: 0.6rem;
+          padding: 3px 0.3rem;
+          margin-right: 5px;
+          font-weight: 900;
+          color: rgb(29, 25, 25);
+          border-radius: var(--border-radius-l);
+          background-color: rgb(255, 131, 131);
+        }
+      }
+    }
+    // img {
+    //   width: 10rem;
+    //   align-self: auto;
+    // }
   }
   //section_promotional
   .promotionalSection {
