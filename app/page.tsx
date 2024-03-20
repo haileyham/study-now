@@ -38,29 +38,13 @@ export default async function Home() {
         </section>
         <section className={`${styles.section} ${styles.cardContainer}`}>
           {contentCards.map((item, i) => {
-            return (
-              <CardComponent
-                key={i}
-                imageUrl={item.imageUrl}
-                title={item.title}
-                url={item.url}
-                style={item.style}
-                content1={item.content1}
-                content2={item.content2}
-              ></CardComponent>
-            );
+            return <CardComponent key={i} {...item}></CardComponent>;
           })}
         </section>
         {promotional.map((item, i) => {
           return (
             <section className={styles.section} key={i}>
-              <PromotionalComponent
-                imageUrl={item.imageUrl}
-                title={item.title}
-                text={item.text}
-                content={item.content}
-                style={item.style}
-              ></PromotionalComponent>
+              <PromotionalComponent {...item}></PromotionalComponent>
             </section>
           );
         })}
