@@ -9,12 +9,12 @@ import Footer from '@/components/Home/Footer';
 import PromotionalComponent from '@/components/Home/PromotionalComponent';
 import getPromotionalContent from '@/components/Home/getPromotionalContent';
 import CardComponent from '@/components/Home/CardComponent';
-import getCardContetn from '@/components/Home/getCardContetn';
+import getCardContent from '@/components/Home/getCardContent';
 
 export default async function Home() {
   const session: any = await getServerSession(authOptions);
   const promotional = getPromotionalContent();
-  const contentCards = getCardContetn();
+  const contentCards = getCardContent();
 
   return (
     <>

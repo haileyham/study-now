@@ -1,6 +1,6 @@
 import styles from './page.module.scss';
 
-export default function getCardContetn() {
+export default function getCardContent() {
   return [
     {
       imageUrl: '/images/character/catBook.png',
