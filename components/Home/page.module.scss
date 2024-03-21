@@ -153,6 +153,35 @@
   }
 }
 
+// Features Section
+.FeaturesContainer {
+  display: flex;
+  height: 100%;
+  padding: 5rem 0;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  h2 {
+    font-size: 2rem;
+  }
+  div {
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    color: #d6d6d6;
+    p {
+      font-size: var(--font-size-m);
+    }
+    img {
+      width: 70%;
+    }
+  }
+}
+
 //footer
 .container {
   width: 100%;
@@ -248,9 +277,28 @@
   }
   .promotionalSectionEven {
     text-align: right;
-
     img {
       order: 2;
+    }
+  }
+
+  // Features Section
+  .FeaturesContainer {
+    padding: 8rem 0;
+    h2 {
+      font-size: 5rem;
+    }
+    div {
+      flex-direction: row;
+      gap: 5rem;
+      text-align: left;
+      p {
+        flex: 0 0 500px;
+        font-size: 1.2rem;
+        &:nth-child(1) {
+          text-align: right;
+        }
+      }
     }
   }
 }
