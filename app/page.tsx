@@ -42,6 +42,24 @@ export default async function Home() {
             return <CardComponent key={i} {...item}></CardComponent>;
           })}
         </section>
+        <section className={`${styles.section} ${styles.test}`}>
+          <div>
+            <img src="/images/character/blue.png" alt="" />
+            <p>문의</p>
+          </div>
+          <div>
+            <img src="/images/character/rabbitBook.png" alt="" />
+            <p>학습</p>
+          </div>
+          <div>
+            <img src="/images/character/catBook.png" alt="" />
+            <p>상담</p>
+          </div>
+          <div>
+            <img src="/images/character/rabbitBook.png" alt="" />
+            <p>연락</p>
+          </div>
+        </section>
         {promotional.map((item, i) => {
           return (
             <section className={styles.section} key={i}>
