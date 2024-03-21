@@ -38,6 +38,9 @@
 
 // 테블릿 화면 스타일
 @media (min-width: 768px) {
+  .sectionFull {
+    height: 1000px;
+  }
   .cardContainer {
     margin: 5rem auto;
     gap: 0;

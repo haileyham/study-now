@@ -281,23 +281,24 @@
 }
 
 // Features Section
-// .FeaturesContainer {
-//   h2 {
-//     font-size: 3rem;
-//   }
-//   div {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-evenly;
-//     gap: 5rem;
-//     p {
-//       flex: 0 0 300px;
-//       &:nth-child(1) {
-//         text-align: right;
-//       }
-//     }
-//   }
-// }
+.FeaturesContainer {
+  padding: 8rem 0;
+  h2 {
+    font-size: 5rem;
+  }
+  div {
+    flex-direction: row;
+    gap: 5rem;
+    text-align: left;
+    p {
+      flex: 0 0 500px;
+      font-size: 1.2rem;
+      &:nth-child(1) {
+        text-align: right;
+      }
+    }
+  }
+}
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
