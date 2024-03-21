@@ -10,6 +10,7 @@ import PromotionalComponent from '@/components/Home/PromotionalComponent';
 import getPromotionalContent from '@/components/Home/getPromotionalContent';
 import CardComponent from '@/components/Home/CardComponent';
 import getCardContent from '@/components/Home/getCardContent';
+import FeaturesComponent from '@/components/Home/FeaturesComponent';
 
 export default async function Home() {
   const session: any = await getServerSession(authOptions);
@@ -48,7 +49,9 @@ export default async function Home() {
             </section>
           );
         })}
-        <section className={styles.sectionFull}></section>
+        <section className={styles.sectionFull}>
+          <FeaturesComponent />
+        </section>
         <section className={styles.section}></section>
       </main>
       <footer className={styles.footer}>
