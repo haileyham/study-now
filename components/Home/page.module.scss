@@ -173,6 +173,9 @@
     align-items: center;
     text-align: center;
     color: #d6d6d6;
+    p {
+      font-size: var(--font-size-m);
+    }
     img {
       width: 70%;
     }
@@ -278,23 +281,23 @@
       order: 2;
     }
   }
-}
 
-// Features Section
-.FeaturesContainer {
-  padding: 8rem 0;
-  h2 {
-    font-size: 5rem;
-  }
-  div {
-    flex-direction: row;
-    gap: 5rem;
-    text-align: left;
-    p {
-      flex: 0 0 500px;
-      font-size: 1.2rem;
-      &:nth-child(1) {
-        text-align: right;
+  // Features Section
+  .FeaturesContainer {
+    padding: 8rem 0;
+    h2 {
+      font-size: 5rem;
+    }
+    div {
+      flex-direction: row;
+      gap: 5rem;
+      text-align: left;
+      p {
+        flex: 0 0 500px;
+        font-size: 1.2rem;
+        &:nth-child(1) {
+          text-align: right;
+        }
       }
     }
   }
