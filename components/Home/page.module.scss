@@ -116,11 +116,9 @@
   //   width: 70%;
   //   align-self: end;
   // }
-  &:hover {
+  &:active {
     // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 4px rgba(0, 0, 0, 0.2);
-    a {
-      background-color: #ffffff82;
-    }
+    transform: scale(0.95);
   }
 }
 
@@ -253,6 +251,12 @@
           border-radius: var(--border-radius-l);
           background-color: rgb(255, 131, 131);
         }
+      }
+    }
+    &:hover {
+      transform: none;
+      a {
+        background-color: #ffffff82;
       }
     }
     // img {
