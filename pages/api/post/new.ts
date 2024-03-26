@@ -8,7 +8,6 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   let session: any = await getServerSession(req, res, authOptions);
-  console.log(session?.user.email);
   if (session) {
     if (req.method === 'POST') {
       if (
@@ -21,7 +20,7 @@ export default async function handler(
       }
       try {
         let save = {
-          author: req.body.study.author,
+          author: session.user.email,
           title: req.body.study.title,
           content: req.body.study.content,
           status: req.body.study.status,
