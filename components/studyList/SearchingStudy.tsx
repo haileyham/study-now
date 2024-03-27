@@ -8,7 +8,7 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState<Post[]>(result);
   const [activeAllBtn, setActiveAllBtn] = useState(true);
-  console.log(filteredData);
+  // console.log(filteredData);
 
   const filterData = (searchValue: string, searchType: string) => {
     if (!searchValue.trim()) {
@@ -55,6 +55,7 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
     setFilteredData(newData);
     setActiveAllBtn(false);
   };
+  console.log(activeAllBtn);
 
   return (
     <>
@@ -103,7 +104,7 @@ const SearchingStudyPostList: React.FC<PostListProps> = ({ result }) => {
           onClick={() => handleRecruiting('done')}
           className={
             filteredData.length > 0
-              ? filteredData[0].status === 'done'
+              ? !activeAllBtn && filteredData[0].status === 'done'
                 ? styles.activeBtn
                 : ''
               : ''

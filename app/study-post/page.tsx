@@ -3,6 +3,8 @@ import styles from './page.module.scss';
 import { connectDB } from '@/lib/utils/database';
 import WriteBtn from '@/components/writing/WriteBtn';
 import SearchingStudyPostList from '@/components/studyList/SearchingStudy';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 // export const revalidate = 60;
 export const dynamic = 'force-dynamic';
@@ -14,6 +16,7 @@ export default async function StudyPost() {
     post._id = post._id.toString();
     return post;
   });
+  let session = await getServerSession(authOptions);
 
   return (
     <>
@@ -24,7 +27,7 @@ export default async function StudyPost() {
               <h1>StudyList</h1>
               <p>스터디 멤버를 구하세요!</p>
             </div>
-            <WriteBtn></WriteBtn>
+            <WriteBtn session={session}></WriteBtn>
           </header>
           <section className={styles.studySection}>
             <SearchingStudyPostList result={result}></SearchingStudyPostList>
