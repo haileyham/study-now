@@ -8,11 +8,32 @@ export default function SignUp() {
     email: '',
     pw: '',
   });
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setSignUpInfo({ ...signUpInfo, [name]: value });
   };
   console.log(signUpInfo);
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/api/auth/signUp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ info: signUpInfo }),
+      });
+      if (response.ok) {
+        console.log('회원가입 성공적');
+      } else {
+        const errorRes = await response.json();
+        console.error('Error:', errorRes);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   return (
     <>
@@ -37,10 +58,12 @@ export default function SignUp() {
             <input
               type="password"
               placeholder="password"
-              name="password"
+              name="pw"
               onChange={handleChange}
             />
-            <button className="btn-m">Sign Up</button>
+            <button className="btn-m" onClick={handleSubmit}>
+              Sign Up
+            </button>
           </div>
         </section>
       </main>
