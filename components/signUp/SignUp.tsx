@@ -1,8 +1,10 @@
 'use client';
 import { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
+import { useRouter } from 'next/navigation';
 
 export default function SignUp() {
+  const router = useRouter();
   const [signUpInfo, setSignUpInfo] = useState({
     name: '',
     email: '',
@@ -13,7 +15,6 @@ export default function SignUp() {
     const { name, value } = e.target;
     setSignUpInfo({ ...signUpInfo, [name]: value });
   };
-  console.log(signUpInfo);
 
   const handleSubmit = async () => {
     try {
@@ -26,6 +27,7 @@ export default function SignUp() {
       });
       if (response.ok) {
         console.log('회원가입 성공적');
+        router.push('/');
       } else {
         const errorRes = await response.json();
         console.error('Error:', errorRes);
