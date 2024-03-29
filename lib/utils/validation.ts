@@ -90,3 +90,51 @@ export const validationPostStudy = (
   result.state = true;
   return result;
 };
+
+export const validationSignUp = (
+  name: string,
+  email: string,
+  pw: string,
+): vaildReturnType => {
+  const lenName = name?.length;
+  const lenEmail = email?.length;
+  const lenPw = pw?.length;
+
+  if (!lenName || !name) {
+    result.state = false;
+    result.message = FAIL_NULL_NAME;
+    return result;
+  }
+
+  if (!email) {
+    result.state = false;
+    result.message = FAIL_NULL_EMAIL;
+    return result;
+  }
+
+  if (!lenPw || !pw) {
+    result.state = false;
+    result.message = FAIL_NULL_PASSWORD;
+    return result;
+  }
+
+  if (lenName < 2 || 10 < lenName) {
+    result.state = false;
+    result.message = FAIL_LENGTH_NAME;
+    return result;
+  }
+
+  if (lenName < 3 || 10 < lenEmail) {
+    result.state = false;
+    result.message = FAIL_LENGTH_EMAIL;
+    return result;
+  }
+
+  if (lenName < 6 || 16 < lenPw) {
+    result.state = false;
+    result.message = FAIL_LENGTH_PASSWORD;
+    return result;
+  }
+  result.state = true;
+  return result;
+};
