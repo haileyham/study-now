@@ -11,8 +11,9 @@ type ValidationResult = { state: boolean; message?: string };
 type ValidateResult = ValidationResult | { success: string };
 
 export const validateSignUp = (info: SignUpInfo): ValidateResult => {
+  console.log(info);
   const validRegistration = validationSignUp(info.name, info.email, info.pw);
-  if (!validRegistration) {
+  if (!validRegistration.state) {
     return validRegistration;
   }
 
