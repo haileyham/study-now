@@ -1,9 +1,15 @@
 import {
   FAIL_LENGTH_CONTACT,
+  FAIL_LENGTH_EMAIL,
   FAIL_LENGTH_LOCATION,
+  FAIL_LENGTH_NAME,
+  FAIL_LENGTH_PASSWORD,
   FAIL_LENGTH_TITLE,
   FAIL_LENGTH_TYPE,
   FAIL_NULL_CONTENT,
+  FAIL_NULL_EMAIL,
+  FAIL_NULL_NAME,
+  FAIL_NULL_PASSWORD,
   FAIL_NULL_STATUS,
   FAIL_NULL_TITLE,
   FAIL_NULL_TYPE,
@@ -14,14 +20,19 @@ const result = {
   message: '',
 };
 
-export const validationPostStudy: any = (
+type vaildReturnType = {
+  state: boolean;
+  message: string;
+};
+
+export const validationPostStudy = (
   title: string,
   content: string,
   status: string,
   type: string,
   location: string,
   contact: string,
-) => {
+): vaildReturnType => {
   const lenTitle = title?.length;
   const lenContent = content?.length;
   const lenType = type?.length;

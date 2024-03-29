@@ -59,7 +59,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
   };
 
   type Valid = {
-    [key: string]: string;
+    [key: string]: string | boolean;
   };
 
   const [validationFailed, setValidationFailed] = useState<Valid>({});
