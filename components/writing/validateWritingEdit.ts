@@ -1,6 +1,6 @@
 import { validationPostStudy } from '@/lib/utils/validation';
 
-type ValidationResult = { [key: string]: string };
+type ValidationResult = { state: boolean; message?: string };
 
 type ValidateResult = ValidationResult | { success: string };
 

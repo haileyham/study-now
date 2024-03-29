@@ -1,19 +1,38 @@
 'use client';
 import { ChangeEvent, useState } from 'react';
 import styles from './page.module.scss';
+import { useRouter } from 'next/navigation';
+import { validateSignUp } from './validateSignUp';
+import Modal from '../modal/Modal';
+
+type Valid = {
+  [key: string]: string | boolean;
+};
 
 export default function SignUp() {
+  const router = useRouter();
   const [signUpInfo, setSignUpInfo] = useState({
     name: '',
     email: '',
     pw: '',
   });
 
+  const [validationFailed, setValidationFailed] = useState<Valid>({});
+  console.log(validationFailed);
+  const validation = () => {
+    const result = validateSignUp(signUpInfo);
+    setValidationFailed(result);
+  };
+
+  const handleCancel = () => {
+    setValidationFailed({});
+    return false;
+  };
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setSignUpInfo({ ...signUpInfo, [name]: value });
   };
-  console.log(signUpInfo);
 
   const handleSubmit = async () => {
     try {
@@ -26,6 +45,7 @@ export default function SignUp() {
       });
       if (response.ok) {
         console.log('회원가입 성공적');
+        router.push('/');
       } else {
         const errorRes = await response.json();
         console.error('Error:', errorRes);
@@ -42,7 +62,7 @@ export default function SignUp() {
           <header>
             <h2>Sign Up</h2>
           </header>
-          <div>
+          <div className={styles.signUpInputBox}>
             <input
               type="text"
               placeholder="name"
@@ -61,9 +81,24 @@ export default function SignUp() {
               name="pw"
               onChange={handleChange}
             />
-            <button className="btn-m" onClick={handleSubmit}>
-              Sign Up
-            </button>
+            <div className={styles.submitBtn} onClick={validation}>
+              {validationFailed.success === 'success' ? (
+                <Modal
+                  modalBtn="Sign Up"
+                  modalBtnStyle={`btn-m ${styles.submitBtn}`}
+                  message="회원가입을 하시겠습니까?"
+                  onFunction={handleSubmit}
+                ></Modal>
+              ) : (
+                <Modal
+                  modalBtn="Sign Up"
+                  modalBtnStyle={`btn-m ${styles.submitBtn}`}
+                  message={`${validationFailed.message}`}
+                  onFunction={handleCancel}
+                  mark={`!`}
+                ></Modal>
+              )}
+            </div>
           </div>
         </section>
       </main>
