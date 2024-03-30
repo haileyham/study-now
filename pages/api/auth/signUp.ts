@@ -23,7 +23,7 @@ export default async function handler(
         pw: req.body.info.pw,
       };
       const hash = await bcrypt.hash(req.body.info.pw, 10);
-      req.body.info.pw = hash;
+      userInfo.pw = hash;
       const db = (await connectDB).db('study_platform');
       await db.collection('user_cred').insertOne(userInfo);
       return res.status(201).json('정상 요청');
