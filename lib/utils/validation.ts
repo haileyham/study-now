@@ -14,9 +14,11 @@ import {
   FAIL_NULL_TITLE,
   FAIL_NULL_TYPE,
   FAIL_REGEX_EMAIL,
-  FAIL_REGEX_PASSWORD,
+  FAIL_REGEX_LOW_PASSWORD,
+  FAIL_REGEX_NUM_PASSWORD,
+  FAIL_REGEX_UPP_PASSWORD,
 } from './constant/message';
-import { emailRegex, pwRegex } from './regex';
+import { emailRegex, pwLowRegex, pwNumRegex, pwUppRegex } from './regex';
 
 const result = {
   state: false,
@@ -145,9 +147,21 @@ export const validationSignUp = (
     return result;
   }
 
-  if (!pwRegex.test(pw)) {
+  if (!pwNumRegex.test(pw)) {
     result.state = false;
-    result.message = FAIL_REGEX_PASSWORD;
+    result.message = FAIL_REGEX_NUM_PASSWORD;
+    return result;
+  }
+
+  if (!pwLowRegex.test(pw)) {
+    result.state = false;
+    result.message = FAIL_REGEX_LOW_PASSWORD;
+    return result;
+  }
+
+  if (!pwUppRegex.test(pw)) {
+    result.state = false;
+    result.message = FAIL_REGEX_UPP_PASSWORD;
     return result;
   }
 
