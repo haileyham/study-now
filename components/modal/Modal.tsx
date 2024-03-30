@@ -57,8 +57,10 @@ const Modal: React.FC<ModalProps> = ({
             <div className={styles.modalContent} onClick={closeOnClick}>
               {mark ? <span>{mark}</span> : ''}
               <p>{message}</p>
-              <button onClick={handleConfirm}>확인</button>
-              <button onClick={closeModal}>닫기</button>
+              <div>
+                <button onClick={handleConfirm}>확인</button>
+                <button onClick={closeModal}>닫기</button>
+              </div>
             </div>
           </div>
         ) : null}
