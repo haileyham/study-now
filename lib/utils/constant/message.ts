@@ -19,5 +19,6 @@ export const FAIL_NULL_EMAIL = '이메일을 입력해 주세요!';
 export const FAIL_NULL_PASSWORD = '비밀번호를 입력해 주세요!';
 
 export const FAIL_REGEX_EMAIL = '올바른 이메일 형식이 아닙니다!';
-export const FAIL_REGEX_PASSWORD =
-  '비밀번호는 하나 이상의 문자 및 숫자가 포함되어야 합니다!';
+export const FAIL_REGEX_NUM_PASSWORD = `비밀번호는 하나 이상의 '숫자'가 포함되어야 합니다.`;
+export const FAIL_REGEX_LOW_PASSWORD = `비밀번호는 하나 이상의 '소문자'가 포함되어야 합니다.`;
+export const FAIL_REGEX_UPP_PASSWORD = `비밀번호는 하나 이상의 '대문자'가 포함되어야 합니다.`;
