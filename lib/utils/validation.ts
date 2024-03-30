@@ -124,13 +124,13 @@ export const validationSignUp = (
     return result;
   }
 
-  if (lenName < 3 || 10 < lenEmail) {
+  if (lenEmail < 3 || 10 < lenEmail) {
     result.state = false;
     result.message = FAIL_LENGTH_EMAIL;
     return result;
   }
 
-  if (lenName < 6 || 16 < lenPw) {
+  if (lenPw < 6 || 16 < lenPw) {
     result.state = false;
     result.message = FAIL_LENGTH_PASSWORD;
     return result;
