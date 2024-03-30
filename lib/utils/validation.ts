@@ -13,7 +13,10 @@ import {
   FAIL_NULL_STATUS,
   FAIL_NULL_TITLE,
   FAIL_NULL_TYPE,
+  FAIL_REGEX_EMAIL,
+  FAIL_REGEX_PASSWORD,
 } from './constant/message';
+import { emailRegex, pwRegex } from './regex';
 
 const result = {
   state: false,
@@ -124,7 +127,7 @@ export const validationSignUp = (
     return result;
   }
 
-  if (lenEmail < 3 || 10 < lenEmail) {
+  if (21 < lenEmail) {
     result.state = false;
     result.message = FAIL_LENGTH_EMAIL;
     return result;
@@ -135,6 +138,19 @@ export const validationSignUp = (
     result.message = FAIL_LENGTH_PASSWORD;
     return result;
   }
+
+  if (!emailRegex.test(email)) {
+    result.state = false;
+    result.message = FAIL_REGEX_EMAIL;
+    return result;
+  }
+
+  if (!pwRegex.test(pw)) {
+    result.state = false;
+    result.message = FAIL_REGEX_PASSWORD;
+    return result;
+  }
+
   result.state = true;
   return result;
 };
