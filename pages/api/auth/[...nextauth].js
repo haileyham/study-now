@@ -4,6 +4,7 @@ import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import KakaoProvider from "next-auth/providers/kakao";
 import CredentialsProvider from "next-auth/providers/credentials";
+import bcrypt from 'bcrypt';
 
 export const authOptions = {
   providers: [
