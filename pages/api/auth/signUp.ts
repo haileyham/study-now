@@ -20,10 +20,10 @@ export default async function handler(
       let userInfo = {
         name: req.body.info.name,
         email: req.body.info.email,
-        pw: req.body.info.pw,
+        password: req.body.info.pw,
       };
       const hash = await bcrypt.hash(req.body.info.pw, 10);
-      userInfo.pw = hash;
+      userInfo.password = hash;
       const db = (await connectDB).db('study_platform');
       await db.collection('user_cred').insertOne(userInfo);
       return res.status(201).json('정상 요청');
