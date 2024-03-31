@@ -7,7 +7,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  let session: any = await getServerSession(req, res, authOptions);
+  let session: any = await getServerSession(req, res, authOptions as any);
   if (session) {
     if (req.method === 'POST') {
       if (

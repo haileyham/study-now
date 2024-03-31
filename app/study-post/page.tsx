@@ -16,7 +16,7 @@ export default async function StudyPost() {
     post._id = post._id.toString();
     return post;
   });
-  let session = await getServerSession(authOptions);
+  let session = await getServerSession(authOptions as any);
 
   return (
     <>
