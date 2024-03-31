@@ -5,7 +5,7 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { LoginBtn, LogoutBtn } from '@/components/Home/LoginOutBtn';
 
 export default async function MyPage() {
-  const session: any = await getServerSession(authOptions);
+  const session: any = await getServerSession(authOptions as any);
 
   return (
     <>

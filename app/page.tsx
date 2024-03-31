@@ -13,7 +13,7 @@ import getCardContent from '@/components/Home/getCardContent';
 import FeaturesComponent from '@/components/Home/FeaturesComponent';
 
 export default async function Home() {
-  const session: any = await getServerSession(authOptions);
+  const session: any = await getServerSession(authOptions as any);
   const promotional = getPromotionalContent();
   const contentCards = getCardContent();
 
