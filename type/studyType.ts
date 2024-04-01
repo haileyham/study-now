@@ -42,10 +42,12 @@ interface StudyDetailComponent {
     date: Date;
     type: string;
   };
+  session: any;
 }
 
 type DeleteEditBtnProps = {
   postId?: Object | string;
+  session?: any;
 };
 
 type ModalProps = {
