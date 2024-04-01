@@ -18,7 +18,6 @@ export default function SignUp() {
   });
 
   const [validationFailed, setValidationFailed] = useState<Valid>({});
-  console.log(validationFailed);
   const validation = () => {
     const result = validateSignUp(signUpInfo);
     setValidationFailed(result);
@@ -49,6 +48,7 @@ export default function SignUp() {
       } else {
         const errorRes = await response.json();
         console.error('Error:', errorRes);
+        setValidationFailed({ state: false, message: errorRes });
       }
     } catch (error) {
       console.error('Error:', error);
