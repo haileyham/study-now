@@ -5,7 +5,11 @@ import Modal from '@/components/modal/Modal';
 import styles from './page.module.scss';
 import { signIn } from 'next-auth/react';
 
-const DeleteBtn: React.FC<DeleteEditBtnProps> = ({ postId, session }) => {
+const DeleteBtn: React.FC<DeleteEditBtnProps> = ({
+  postId,
+  session,
+  author,
+}) => {
   let router = useRouter();
 
   const handleDelete = async () => {
@@ -31,15 +35,29 @@ const DeleteBtn: React.FC<DeleteEditBtnProps> = ({ postId, session }) => {
     signIn();
   };
 
+  const handleCancel = () => {
+    return false;
+  };
+
   return (
     <>
       {session ? (
-        <Modal
-          modalBtn={`글 삭제`}
-          modalBtnStyle={styles.deleteEditBtn}
-          message={`정말 삭제하시겠습니까?`}
-          onFunction={handleDelete}
-        ></Modal>
+        session.user.email === author ? (
+          <Modal
+            modalBtn={`글 삭제`}
+            modalBtnStyle={styles.deleteEditBtn}
+            message={`정말 삭제하시겠습니까?`}
+            onFunction={handleDelete}
+          ></Modal>
+        ) : (
+          <Modal
+            modalBtn={`글 삭제`}
+            modalBtnStyle={styles.deleteEditBtn}
+            message={`작성자만 접근 가능합니다`}
+            onFunction={handleCancel}
+            mark={`!`}
+          ></Modal>
+        )
       ) : (
         <Modal
           modalBtn={`글 삭제`}

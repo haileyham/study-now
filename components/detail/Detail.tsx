@@ -16,8 +16,12 @@ const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
 
   const editDelBtnContent = (
     <>
-      <EditBtn postId={id} session={session}></EditBtn>
-      <DeleteBtn postId={id} session={session}></DeleteBtn>
+      <EditBtn postId={id} session={session} author={result.author}></EditBtn>
+      <DeleteBtn
+        postId={id}
+        session={session}
+        author={result.author}
+      ></DeleteBtn>
     </>
   );
 

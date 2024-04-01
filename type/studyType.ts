@@ -48,6 +48,7 @@ interface StudyDetailComponent {
 type DeleteEditBtnProps = {
   postId?: Object | string;
   session?: any;
+  author: string;
 };
 
 type ModalProps = {
