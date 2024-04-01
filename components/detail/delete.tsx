@@ -3,8 +3,9 @@
 import { useRouter } from 'next/navigation';
 import Modal from '@/components/modal/Modal';
 import styles from './page.module.scss';
+import { signIn } from 'next-auth/react';
 
-const DeleteBtn: React.FC<DeleteEditBtnProps> = ({ postId }) => {
+const DeleteBtn: React.FC<DeleteEditBtnProps> = ({ postId, session }) => {
   let router = useRouter();
 
   const handleDelete = async () => {
@@ -26,14 +27,28 @@ const DeleteBtn: React.FC<DeleteEditBtnProps> = ({ postId }) => {
     }
   };
 
+  const handleLogin = () => {
+    signIn();
+  };
+
   return (
     <>
-      <Modal
-        modalBtn={`글 삭제`}
-        modalBtnStyle={styles.deleteEditBtn}
-        message={`정말 삭제하시겠습니까?`}
-        onFunction={handleDelete}
-      ></Modal>
+      {session ? (
+        <Modal
+          modalBtn={`글 삭제`}
+          modalBtnStyle={styles.deleteEditBtn}
+          message={`정말 삭제하시겠습니까?`}
+          onFunction={handleDelete}
+        ></Modal>
+      ) : (
+        <Modal
+          modalBtn={`글 삭제`}
+          modalBtnStyle={styles.deleteEditBtn}
+          message={`로그인 필요`}
+          onFunction={handleLogin}
+          mark={`!`}
+        ></Modal>
+      )}
     </>
   );
 };
