@@ -8,6 +8,7 @@ type StudyWriteState = {
 interface Post {
   _id: Object;
   author: string;
+  authorName: string;
   title: string;
   content: string;
   status: string;

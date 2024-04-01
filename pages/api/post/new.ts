@@ -21,6 +21,7 @@ export default async function handler(
       try {
         let save = {
           author: session.user.email,
+          authorName: session.user.name,
           title: req.body.study.title,
           content: req.body.study.content,
           status: req.body.study.status,
