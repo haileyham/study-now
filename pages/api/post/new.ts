@@ -23,6 +23,7 @@ export default async function handler(
         let save = {
           author: session.user.email,
           authorName: session.user.name,
+          authorImage: session.user.image,
           title: req.body.study.title,
           content: req.body.study.content,
           status: req.body.study.status,
