@@ -65,8 +65,8 @@ const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
                   <Toggle childTsxContent={editDelBtnContent}></Toggle>
                 </div>
                 <div className={styles.divMainHeader}>
-                  <img src="" alt="profile" />
-                  <p>author</p>
+                  <img src={result.authorImage} alt="profile" />
+                  <p>{result.authorName}</p>
                   <p className={styles.date}>{getDate(result.date)}</p>
                 </div>
               </header>

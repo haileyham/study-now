@@ -33,6 +33,8 @@ interface StudyDetailComponent {
   result: {
     _id: string | Object;
     author: string;
+    authorName: string;
+    authorImage: string;
     title: string;
     content: string;
     status: string;
