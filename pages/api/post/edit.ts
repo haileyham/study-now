@@ -27,7 +27,10 @@ export default async function handler(
     }
 
     if (session) {
-      if (findPost.author === session.user.email) {
+      if (
+        findPost.author === session.user.email ||
+        session.user.role === 'admin'
+      ) {
         try {
           let editData = {
             author: req.body.study.author,

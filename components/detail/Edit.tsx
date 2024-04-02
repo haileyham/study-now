@@ -24,7 +24,7 @@ const EditBtn: React.FC<DeleteEditBtnProps> = ({ postId, session, author }) => {
   return (
     <>
       {session ? (
-        session.user.email === author ? (
+        session.user.email === author || session.user.role === 'admin' ? (
           <Modal
             modalBtn={`글 수정`}
             modalBtnStyle={styles.deleteEditBtn}
