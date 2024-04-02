@@ -31,6 +31,7 @@ export default async function handler(
           email: req.body.info.email,
           password: req.body.info.pw,
           image: '/images/character/catBook.png',
+          role: 'normal',
         };
         const hash = await bcrypt.hash(req.body.info.pw, 10);
         userInfo.password = hash;
