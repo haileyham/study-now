@@ -8,7 +8,7 @@ export default function getCardContent() {
       url: 'https://study-now-pink.vercel.app/quiz/play?ty=%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C&q=5&t=10',
       content1: '프론트엔드 기술 면접',
       content2: '개발자 면접',
-      style: '/images/company/1.jpg',
+      style: '/images/company/officeJob.jpg',
     },
     {
       imageUrl: '/images/character/rabbitBook.png',

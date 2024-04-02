@@ -25,7 +25,6 @@ export default async function Home() {
             <div>
               <img src={session.user.image} alt={session.user.name} />
               <Link href="/my-page">{session.user.name}님</Link>
-              {/* <LogoutBtn></LogoutBtn> */}
             </div>
           ) : (
             <div>
