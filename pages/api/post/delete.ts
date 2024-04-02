@@ -16,7 +16,10 @@ export default async function handler(
       .collection('study_posts')
       .findOne({ _id: new ObjectId(postId) });
     if (session) {
-      if (findPost.author === session.user.email) {
+      if (
+        findPost.author === session.user.email ||
+        session.user.role === 'admin'
+      ) {
         const result = await db
           .collection('study_posts')
           .deleteOne({ _id: new ObjectId(postId) });
