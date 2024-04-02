@@ -10,13 +10,14 @@ export default async function handler(
   let session: any = await getServerSession(req, res, authOptions as any);
   if (session) {
     if (req.method === 'POST') {
-      if (
-        // req.body.study.author == '' || //임시 주석처리
-        req.body.study.title == '' ||
-        req.body.study.content == '' ||
-        req.body.study.status == ''
-      ) {
-        return res.status(400).json('빈칸안됑');
+      if (req.body.study.title == '') {
+        return res.status(400).json('제목을 입력해 주세요');
+      }
+      if (req.body.study.content == '') {
+        return res.status(400).json('내용을 입력해 주세요');
+      }
+      if (req.body.study.status == '') {
+        return res.status(400).json('모집상태를 입력해 주세요');
       }
       try {
         let save = {

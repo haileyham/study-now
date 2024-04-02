@@ -16,6 +16,16 @@ export default async function handler(
       .findOne({ _id: new ObjectId(req.body.study._id) });
     console.log(findPost);
 
+    if (req.body.study.title == '') {
+      return res.status(400).json('제목을 입력해 주세요');
+    }
+    if (req.body.study.content == '') {
+      return res.status(400).json('내용을 입력해 주세요');
+    }
+    if (req.body.study.status == '') {
+      return res.status(400).json('모집상태를 입력해 주세요');
+    }
+
     if (session) {
       if (findPost.author === session.user.email) {
         try {
