@@ -52,6 +52,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
       } else {
         const errorRes = await response.json();
         console.error('Error:', errorRes);
+        setValidationFailed({ state: false, message: errorRes });
       }
     } catch (error) {
       console.error('Error', error);

@@ -8,6 +8,7 @@ type StudyWriteState = {
 interface Post {
   _id: Object;
   author: string;
+  authorName: string;
   title: string;
   content: string;
   status: string;
@@ -32,6 +33,8 @@ interface StudyDetailComponent {
   result: {
     _id: string | Object;
     author: string;
+    authorName: string;
+    authorImage: string;
     title: string;
     content: string;
     status: string;
@@ -41,10 +44,13 @@ interface StudyDetailComponent {
     date: Date;
     type: string;
   };
+  session: any;
 }
 
 type DeleteEditBtnProps = {
   postId?: Object | string;
+  session?: any;
+  author: string;
 };
 
 type ModalProps = {

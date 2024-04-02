@@ -54,7 +54,7 @@ const PostList: React.FC<PostListProps2> = ({ filteredData }) => {
                     <span className={styles.info4}>{post.type}</span>
                   )}
 
-                  <span>작성자 : Zoe</span>
+                  <span>{post.authorName}</span>
                   {/* <span>♡ 1</span> */}
                   {/* <span>♧ 2</span> */}
                 </div>

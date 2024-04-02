@@ -6,7 +6,7 @@ import { getDate } from '@/components/common/time';
 import Toggle from './Toggle';
 import Header from '../common/Header';
 
-const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
+const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
   let id;
   if (result) {
     id = result._id.toString();
@@ -16,8 +16,12 @@ const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
 
   const editDelBtnContent = (
     <>
-      <EditBtn postId={id}></EditBtn>
-      <DeleteBtn postId={id}></DeleteBtn>
+      <EditBtn postId={id} session={session} author={result.author}></EditBtn>
+      <DeleteBtn
+        postId={id}
+        session={session}
+        author={result.author}
+      ></DeleteBtn>
     </>
   );
 
@@ -61,8 +65,8 @@ const Detail: React.FC<StudyDetailComponent> = ({ result }) => {
                   <Toggle childTsxContent={editDelBtnContent}></Toggle>
                 </div>
                 <div className={styles.divMainHeader}>
-                  <img src="" alt="profile" />
-                  <p>author</p>
+                  <img src={result.authorImage} alt="profile" />
+                  <p>{result.authorName}</p>
                   <p className={styles.date}>{getDate(result.date)}</p>
                 </div>
               </header>
