@@ -159,7 +159,7 @@ main {
   height: 3rem;
   display: flex;
   padding: 0 1rem;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   button {
     background: none;
@@ -169,14 +169,18 @@ main {
     display: flex;
     align-items: center;
     gap: 5px;
+    img {
+      width: 25px;
+      border-radius: 50%;
+    }
   }
   a {
     font-size: 14px;
     color: gray;
   }
-  img {
-    width: 25px;
-    border-radius: 50%;
+  .logo {
+    height: 100%;
+    padding: 10px 5px 5px 5px;
   }
 }
 
@@ -277,6 +281,9 @@ main {
     padding: 0 5rem;
     justify-content: end;
     align-items: center;
+    .logo {
+      display: none;
+    }
   }
   .container {
     margin: 50px auto 150px;
