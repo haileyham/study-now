@@ -30,7 +30,7 @@ export default async function RootLayout({
           <ul className="navContainer">
             <li>
               <Link href="/">
-                <img src="" alt="logo" />
+                <img src="/images/icons/studyNow.svg" alt="logo" />홈
               </Link>
             </li>
             <li>
@@ -54,7 +54,7 @@ export default async function RootLayout({
             <li>
               <Link href="/my-page">
                 <img src="/images/icons/profile.svg" alt="my-page" />
-                MyPage
+                마이페이지
               </Link>
             </li>
           </ul>
