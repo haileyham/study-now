@@ -1,3 +1,4 @@
+import Loading from '@/components/loading/Loading';
 import styles from './page.module.scss';
 import React from 'react';
 
@@ -5,14 +6,14 @@ export default function loading() {
   return (
     <div className="container">
       <main className={styles.studyMain}>
-        <section className={styles.studySection}>
-          <div className={styles.loadingContainer}>
-            <div className={styles.animationA}></div>
-            <div className={styles.animationB}></div>
-            <div className={styles.animationC}></div>
-            <div className={styles.animationA}></div>
-            <div className={styles.animationB}></div>
+        <header className={styles.studyHeader}>
+          <div>
+            <h1>StudyList</h1>
+            <p>스터디 멤버를 구하세요!</p>
           </div>
+        </header>
+        <section className={styles.studySection}>
+          <Loading></Loading>
         </section>
       </main>
     </div>
