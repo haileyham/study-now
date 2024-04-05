@@ -40,7 +40,7 @@ export default async function RootLayout({
               </Link>
             </li>
             <li>
-              <Link href="/study-post">
+              <Link href="/study-post/list">
                 <img src="/images/icons/study.svg" alt="study-post-page" />
                 스터디
               </Link>
