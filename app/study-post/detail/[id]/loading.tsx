@@ -5,8 +5,10 @@ import React from 'react';
 export default function loading() {
   return (
     <div className="container">
-      <Header title={`스터디 모집`}></Header>
-      <Loading></Loading>
+      <main style={{ maxWidth: '800px', margin: 'auto' }}>
+        <Header title={`스터디 모집`}></Header>
+        <Loading></Loading>
+      </main>
     </div>
   );
 }
