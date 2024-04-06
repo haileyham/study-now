@@ -47,7 +47,7 @@ const WritingEditor: React.FC<WritingEditorProps> = ({
         console.log('글이 성공적으로 등록되었습니다.');
         {
           router.refresh();
-          router.push('/study-post');
+          router.push('/study-post/list');
         }
       } else {
         const errorRes = await response.json();
