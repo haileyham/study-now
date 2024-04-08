@@ -21,7 +21,7 @@ const DeleteBtn: React.FC<DeleteEditBtnProps> = ({
         console.log('삭제완룡');
         {
           router.refresh();
-          router.push('/study-post');
+          router.push('/study-post/list');
         }
       } else {
         console.error('에러발생');
