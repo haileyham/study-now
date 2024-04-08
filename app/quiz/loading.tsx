@@ -1,10 +1,10 @@
-import QuizLoading from '@/components/loading/quizLoading';
+import LoadingB from '@/components/loading/LoadingB';
 import React from 'react';
 
 export default function loading() {
   return (
     <>
-      <QuizLoading></QuizLoading>
+      <LoadingB></LoadingB>
     </>
   );
 }
