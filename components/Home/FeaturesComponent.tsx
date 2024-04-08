@@ -8,7 +8,7 @@ export default function FeaturesComponent() {
         <p>
           ajlskfjsojfoajfiosjofjo
           <br />
-          asdaosdfjosjafioasfasdfasdfafasdddddddddddddd
+          asdaosdfjosjafioasfasdfasdfasdfasdf
         </p>
         <img
           src="https://grademobile.co.uk/cdn/shop/files/iphone-14-pro-5g-deep-purple_03c6911e-49fc-406d-9e75-edc63125408b.png?v=1684250236"

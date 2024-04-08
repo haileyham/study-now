@@ -285,7 +285,10 @@
       order: 2;
     }
   }
+}
 
+/* 데스크탑 화면 스타일 */
+@media (min-width: 1024px) {
   // Features Section
   .FeaturesContainer {
     padding: 8rem 0;
@@ -293,11 +296,15 @@
       font-size: 5rem;
     }
     div {
+      width: 100%;
       flex-direction: row;
-      gap: 5rem;
-      text-align: left;
+      gap: 2rem;
+      img {
+        width: 20rem;
+      }
       p {
-        flex: 0 0 500px;
+        width: 100%;
+        text-align: left;
         font-size: 1.2rem;
         &:nth-child(1) {
           text-align: right;
@@ -305,8 +312,4 @@
       }
     }
   }
-}
-
-/* 데스크탑 화면 스타일 */
-@media (min-width: 1024px) {
 }
