@@ -5,7 +5,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/job-openings',
+        source: '/job',
         destination: `http://openapi.seoul.go.kr:8088/${process.env.NEXT_PUBLIC_SEOUL}/json/GetJobInfo/1/16/%20/%20/%20/`,
       },
     ];
