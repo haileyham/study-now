@@ -7,9 +7,7 @@ export default async function jobOpeningAPI({
 }: JobOpeningAPIOptions) {
   const apiKey = process.env.NEXT_PUBLIC_SEOUL; //추후 변경예정  dynamic 배포제한 때문에 일단 public으로 함ㅠㅠ
   try {
-    const response = await fetch(
-      `http://openapi.seoul.go.kr:8088/${apiKey}/json/GetJobInfo/1/16/ / /${location} /`,
-    );
+    const response = await fetch(`/job`); //임시 mixed content 문제 때문에 ㅠ
     if (response.ok) {
       const data = await response.json();
       return data;
