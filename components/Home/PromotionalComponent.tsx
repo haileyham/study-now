@@ -1,12 +1,13 @@
+'use client';
+
 import styles from './page.module.scss';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface PromotionalComponentProps {
   imageUrl: string;
   title: string;
   text: string;
   content: string;
-  style?: string;
 }
 
 const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
@@ -14,15 +15,43 @@ const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
   title,
   text,
   content,
-  style,
 }) => {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (e: any) => {
+        e.forEach((entry: any) => {
+          if (entry.intersectionRatio > 0.33) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.33 },
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
     <div
       className={
-        title === 'Study Mate'
-          ? `${styles.promotionalSection} ${style} ${styles.promotionalSectionEven}`
-          : `${styles.promotionalSection} ${style}`
+        isVisible
+          ? title === 'Study Mate'
+            ? `${styles.promotionalSection} ${styles.promotionalSectionEven}`
+            : `${styles.promotionalSection}`
+          : `${styles.hidden}`
       }
+      ref={ref}
     >
       <img src={imageUrl} alt={title} />
       <div>
