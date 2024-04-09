@@ -1,7 +1,7 @@
 'use client';
 
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import styles from './page.module.scss';
-import React, { useEffect, useRef, useState } from 'react';
 
 interface PromotionalComponentProps {
   imageUrl: string;
@@ -16,31 +16,7 @@ const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
   text,
   content,
 }) => {
-  const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (e: any) => {
-        e.forEach((entry: any) => {
-          if (entry.intersectionRatio > 0.33) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.33 },
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
+  const { ref, isVisible } = useIntersectionObserver(0.33);
 
   return (
     <div
