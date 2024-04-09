@@ -11,6 +11,7 @@ import getPromotionalContent from '@/components/Home/getPromotionalContent';
 import CardComponent from '@/components/Home/CardComponent';
 import getCardContent from '@/components/Home/getCardContent';
 import FeaturesComponent from '@/components/Home/FeaturesComponent';
+import ContactComponent from '@/components/Home/ContactComponent';
 
 export default async function Home() {
   const session: any = await getServerSession(authOptions as any);
@@ -44,23 +45,8 @@ export default async function Home() {
             return <CardComponent key={i} {...item}></CardComponent>;
           })}
         </section>
-        <section className={`${styles.section} ${styles.test}`}>
-          <div>
-            <img src="/images/character/blue.png" alt="" />
-            <p>문의</p>
-          </div>
-          <div>
-            <img src="/images/character/rabbitBook.png" alt="" />
-            <p>학습</p>
-          </div>
-          <div>
-            <img src="/images/character/catBook.png" alt="" />
-            <p>상담</p>
-          </div>
-          <div>
-            <img src="/images/character/rabbitBook.png" alt="" />
-            <p>연락</p>
-          </div>
+        <section className={`${styles.section}`}>
+          <ContactComponent></ContactComponent>
         </section>
         {promotional.map((item, i) => {
           return (
