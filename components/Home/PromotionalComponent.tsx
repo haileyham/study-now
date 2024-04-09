@@ -8,7 +8,6 @@ interface PromotionalComponentProps {
   title: string;
   text: string;
   content: string;
-  style?: string;
 }
 
 const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
@@ -16,7 +15,6 @@ const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
   title,
   text,
   content,
-  style,
 }) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -49,8 +47,8 @@ const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
       className={
         isVisible
           ? title === 'Study Mate'
-            ? `${styles.promotionalSection} ${styles.promotionalSectionEven} ${style}`
-            : `${styles.promotionalSection} ${style}`
+            ? `${styles.promotionalSection} ${styles.promotionalSectionEven}`
+            : `${styles.promotionalSection}`
           : `${styles.hidden}`
       }
       ref={ref}
