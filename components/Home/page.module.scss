@@ -149,6 +149,15 @@
       font-size: var(--font-size-m);
     }
   }
+  opacity: 1;
+  transition: opacity 2s, transform 2s;
+}
+
+.hidden {
+  height: 100%;
+  margin-top: 4rem;
+  opacity: 0;
+  transform: translateY(5rem);
 }
 
 // Features Section
@@ -311,5 +320,9 @@
         }
       }
     }
+  }
+
+  .hidden {
+    transform: translateY(10rem);
   }
 }
