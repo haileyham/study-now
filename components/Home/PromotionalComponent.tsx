@@ -26,8 +26,6 @@ const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
       e.forEach((entry: any) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-        } else {
-          setIsVisible(false);
         }
       });
     });
