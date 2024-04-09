@@ -22,13 +22,16 @@ const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((e: any) => {
-      e.forEach((entry: any) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      });
-    });
+    const observer = new IntersectionObserver(
+      (e: any) => {
+        e.forEach((entry: any) => {
+          if (entry.intersectionRatio > 0.33) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.33 },
+    );
 
     if (ref.current) {
       observer.observe(ref.current);
