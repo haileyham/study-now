@@ -63,7 +63,7 @@ export default function JobOpeningsList() {
                   <li key={i}>
                     <div className={styles.imgBox}>
                       <img
-                        src={`/images/company/${image}.jpg`}
+                        src={`/images/company/${image}`}
                         alt="채용회사이미지"
                       />
                     </div>
