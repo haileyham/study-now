@@ -11,7 +11,7 @@ const Carousel: React.FC = () => {
     {
       img: '/images/character/catLaptop.png',
       text: 'StudyNow에 지금 바로 함께 하세요!',
-      link: '/my-page',
+      link: '/sign-up',
       color: 'to right, #ffaf02, rgb(255, 234, 76)',
     },
     {
