@@ -8,29 +8,29 @@
 const getImageSource = (code: string) => {
   switch (code) {
     case '550104':
-      return '1';
+      return '1.JPG';
     case '231100':
-      return '2';
+      return '2.jpg';
     case '561101':
     case '561100':
-      return '7';
+      return '7.JPG';
     case '550100':
-      return 'healthyCare';
+      return 'healthyCare.JPG';
     case '029400':
-      return '6';
+      return '6.JPG';
     case '531203':
     case '232902':
-      return 'kindergarden';
+      return 'kindergarden.JPG';
     case '232904':
-      return '3';
+      return '3.JPG';
     case '027200':
-      return 'officeJob';
+      return 'officeJob.jpg';
     case '232904':
-      return '7';
+      return '7.JPG';
     case '029101':
-      return 'carService';
+      return 'carService.JPG';
     default:
-      return 'office'; // Default image if code doesn't match
+      return 'office.jpg'; // Default image if code doesn't match
   }
 };
 
