@@ -16,7 +16,7 @@ const PromotionalComponent: React.FC<PromotionalComponentProps> = ({
   text,
   content,
 }) => {
-  const { ref, isVisible } = useIntersectionObserver(0.33);
+  const { ref, isVisible } = useIntersectionObserver(0.2);
 
   return (
     <div
