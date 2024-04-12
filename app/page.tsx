@@ -44,7 +44,7 @@ export default async function Home() {
             return <CardComponent key={i} {...item}></CardComponent>;
           })}
         </section>
-        <section className={`${styles.section}`}>
+        <section className={`${styles.section} ${styles.contactContainer}`}>
           <ContactComponent></ContactComponent>
         </section>
         {promotional.map((item, i) => {

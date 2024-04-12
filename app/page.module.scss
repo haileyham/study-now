@@ -19,6 +19,10 @@
   background: linear-gradient(to bottom, rgb(93, 61, 255), rgb(150, 121, 255));
 }
 
+.contactContainer {
+  height: 10rem;
+}
+
 .cardContainer {
   height: 450px;
   display: flex;
@@ -52,5 +56,12 @@
     margin: 5rem auto;
     gap: 0;
     padding: 10px 0;
+  }
+}
+
+// pc 화면 스타일
+@media (min-width: 1080px) {
+  .contactContainer {
+    height: 100%;
   }
 }
