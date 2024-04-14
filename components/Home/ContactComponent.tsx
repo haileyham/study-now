@@ -5,7 +5,7 @@ import React from 'react';
 export default function ContactComponent() {
   return (
     <div className={styles.contactContainer}>
-      <Link href="/communications/Notices">
+      <Link href="/communications/notices">
         <img src="/images/character/koala.png" alt="" />
         <p>공지</p>
       </Link>

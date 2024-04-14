@@ -12,7 +12,7 @@ export default async function layout({
         <Link href="/communications/notices">공지</Link>
         <Link href="/communications/inquiries">문의</Link>
         <Link href="/communications/news">뉴스</Link>
-        <Link href="/communications/evnets">이벤트</Link>
+        <Link href="/communications/events">이벤트</Link>
       </nav>
       {children}
     </>
