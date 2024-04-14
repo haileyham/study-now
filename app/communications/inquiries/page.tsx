@@ -1,5 +1,10 @@
+import InquiriesComponent from '@/components/communication/InquiriesComponent';
 import React from 'react';
 
 export default function page() {
-  return <div>문의 page</div>;
+  return (
+    <>
+      <InquiriesComponent></InquiriesComponent>
+    </>
+  );
 }

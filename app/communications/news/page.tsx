@@ -1,5 +1,10 @@
+import NewsComponent from '@/components/communication/NewsComponent';
 import React from 'react';
 
 export default function page() {
-  return <div>news page</div>;
+  return (
+    <>
+      <NewsComponent></NewsComponent>
+    </>
+  );
 }
