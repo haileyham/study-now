@@ -22,17 +22,33 @@
       &:last-child {
         border-bottom: none;
       }
-      p {
+      p,
+      span {
+        display: block;
         padding: 1rem;
+        font-size: 14px;
+        border-radius: var(--border-radius-m);
+      }
+      .content {
+        margin: 5px;
+        border: 1px solid rgb(240, 234, 255);
+        border-radius: var(--border-radius-m);
+        transition: opacity 1s;
+      }
+      .title {
+        background: rgb(239, 234, 255);
       }
       &:hover {
         p {
-          border-radius: var(--border-radius-m);
           background: rgb(246, 243, 255);
         }
       }
     }
   }
+}
+.none {
+  opacity: 0;
+  height: 0;
 }
 
 // 테블릿 화면 스타일

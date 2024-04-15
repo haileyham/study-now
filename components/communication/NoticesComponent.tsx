@@ -1,7 +1,12 @@
+'use client';
 import styles from './page.module.scss';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function NoticesComponent() {
+  const [toggle, setToggle] = useState(false);
+  const useToggle = () => {
+    setToggle(!toggle);
+  };
   return (
     <div className={styles.container}>
       <header>
@@ -9,8 +14,11 @@ export default function NoticesComponent() {
       </header>
       <section className={`${styles.notice} ${styles.board}`}>
         <ul>
-          <li>
-            <p>New! 채용 정보 제공</p>
+          <li onClick={useToggle}>
+            <p className={toggle ? styles.title : ''}>New! 채용 정보 제공</p>
+            <div className={toggle ? styles.content : styles.none}>
+              <span>채용정보를 제공</span>
+            </div>
           </li>
           <li>
             <p>스터디 검색 기능 추가</p>
