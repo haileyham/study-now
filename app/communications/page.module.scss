@@ -1,0 +1,56 @@
+.container {
+  max-width: 1080px;
+  margin: 1rem auto;
+}
+.navContainer {
+  padding: 1rem 1rem 0;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    li {
+      flex: 1;
+      padding: 0.5rem;
+      text-align: center;
+      border-radius: var(--border-radius-s);
+      color: rgb(108, 108, 108);
+      &:hover {
+        color: rgb(42, 42, 42);
+      }
+      &:focus-within {
+        background-color: rgb(230, 223, 255);
+        color: rgb(42, 42, 42);
+      }
+    }
+  }
+}
+
+.mainContainer {
+  min-height: calc(100vh - 10rem);
+  margin: 0 0 5rem 0;
+  overflow: auto;
+}
+
+// 테블릿 화면 스타일
+@media (min-width: 768px) {
+}
+
+// pc 화면 스타일
+@media (min-width: 1080px) {
+  .container {
+    display: flex;
+    max-width: 1200px;
+  }
+  .navContainer {
+    padding: 0;
+    ul {
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 1rem;
+      border-radius: var(--border-radius-m);
+      background: rgb(246, 243, 255);
+    }
+  }
+  .mainContainer {
+    flex: 1;
+  }
+}
