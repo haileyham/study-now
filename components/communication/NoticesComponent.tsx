@@ -2,9 +2,11 @@
 import useToggle from '@/hooks/useToggle';
 import styles from './page.module.scss';
 import React from 'react';
+import getNoticesContent from './data/getNoticesContent';
 
 export default function NoticesComponent() {
   const [toggle, setToggle] = useToggle(false);
+  const noticesContent = getNoticesContent();
 
   return (
     <div className={styles.container}>
@@ -13,21 +15,16 @@ export default function NoticesComponent() {
       </header>
       <section className={`${styles.notice} ${styles.board}`}>
         <ul>
-          <li onClick={setToggle}>
-            <p className={toggle ? styles.title : ''}>New! 채용 정보 제공</p>
-            <div className={toggle ? styles.content : styles.none}>
-              <span>채용정보를 제공</span>
-            </div>
-          </li>
-          <li>
-            <p>스터디 검색 기능 추가</p>
-          </li>
-          <li>
-            <p>퀴즈 신규 업데이트</p>
-          </li>
-          <li>
-            <p>Study Now 출시!</p>
-          </li>
+          {noticesContent.map((item, i) => {
+            return (
+              <li onClick={setToggle} key={i}>
+                <p className={toggle ? styles.title : ''}>{item.title}</p>
+                <div className={toggle ? styles.content : styles.none}>
+                  <span>{item.content}</span>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </section>
     </div>
