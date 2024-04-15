@@ -1,0 +1,44 @@
+.container {
+  padding: 1rem;
+  position: relative;
+  header {
+    h2 {
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: rgb(172, 145, 254);
+    }
+  }
+  .notice {
+    ul {
+      border: 2px solid rgb(205, 189, 255);
+      border-radius: var(--border-radius-s);
+      list-style: none;
+      padding: 0 10px;
+    }
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      &:last-child {
+        border-bottom: none;
+      }
+      p {
+        padding: 1rem;
+      }
+      &:hover {
+        p {
+          border-radius: var(--border-radius-m);
+          background: rgb(246, 243, 255);
+        }
+      }
+    }
+  }
+}
+
+// 테블릿 화면 스타일
+@media (min-width: 768px) {
+}
+
+// pc 화면 스타일
+@media (min-width: 1080px) {
+}
