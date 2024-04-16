@@ -18,7 +18,10 @@ export default function NoticesComponent() {
           {noticesContent.map((item, i) => {
             return (
               <li onClick={setToggle} key={i}>
-                <p className={toggle ? styles.title : ''}>{item.title}</p>
+                <p className={toggle ? styles.title : ''}>
+                  {item.title}
+                  {toggle ? <span>▲</span> : <span>▼</span>}
+                </p>
                 <div className={toggle ? styles.content : styles.none}>
                   <span>{item.content}</span>
                 </div>
