@@ -84,7 +84,6 @@
       padding: 1rem;
       border: 1px solid rgb(205, 189, 255);
       border-radius: var(--border-radius-m);
-      cursor: pointer;
       &:hover {
         background: #f0ecff;
       }
@@ -103,9 +102,66 @@
         font-size: var(--font-size-s);
         text-align: right;
         color: #afafaf;
+        cursor: pointer;
+        &:hover {
+          color: rgb(41, 40, 40);
+        }
       }
     }
   }
+}
+
+// inquiry
+.inquiry {
+  .inquiryText {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    strong {
+      color: #4d4d4d;
+    }
+    .title,
+    .content {
+      width: 100%;
+      position: relative;
+      margin-top: 1rem;
+      input {
+        width: 100%;
+        height: 4rem;
+        padding: 2rem 1rem 1rem;
+      }
+      textarea {
+        width: 100%;
+        height: 15rem;
+        padding: 2rem 1rem;
+      }
+      &:focus-within span {
+        color: #fff;
+        background-color: rgb(205, 189, 255);
+      }
+      span {
+        padding: 3px 10px;
+        position: absolute;
+        top: -10px;
+        left: 13px;
+        font-size: 14px;
+        border: 1px solid rgb(205, 189, 255);
+        border-radius: var(--border-radius-l);
+        background-color: #ffffff;
+        transition: background-color 0.3s ease;
+      }
+    }
+    .inquiryBtn {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 10px;
+    }
+  }
+}
+
+// event
+.event {
 }
 
 // 테블릿 화면 스타일
