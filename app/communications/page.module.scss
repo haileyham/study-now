@@ -7,6 +7,9 @@
   ul {
     display: flex;
     justify-content: space-around;
+    border-top-left-radius: var(--border-radius-m);
+    border-top-right-radius: var(--border-radius-m);
+    background: rgb(246, 243, 255);
     li {
       flex: 1;
       padding: 0.5rem;
