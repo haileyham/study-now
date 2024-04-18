@@ -13,11 +13,7 @@ export default function EventsComponent() {
       </header>
       <section className={styles.event}>
         {eventContent.map((content, i) => {
-          return (
-            <>
-              <EventItemComponent {...content} key={i}></EventItemComponent>
-            </>
-          );
+          return <EventItemComponent {...content} key={i}></EventItemComponent>;
         })}
       </section>
     </div>
