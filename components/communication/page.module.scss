@@ -1,5 +1,4 @@
 .container {
-  padding: 1rem;
   position: relative;
   header {
     h2 {
@@ -11,6 +10,7 @@
 
   // Notice
   .notice {
+    padding: 1rem;
     ul {
       border: 2px solid rgb(205, 189, 255);
       border-radius: var(--border-radius-s);
@@ -64,6 +64,7 @@
 
 //News
 .news {
+  padding: 10px;
   position: relative;
   &::after {
     content: '';
@@ -161,7 +162,76 @@
 }
 
 // event
+@mixin eventContent($color1, $color2, $colorP, $imgSize) {
+  height: 40rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  // background: linear-gradient(to bottom, $color1, $color2);
+  h3 {
+    font-size: 1.5rem;
+    color: $colorP;
+  }
+  p {
+    padding: 1rem;
+    color: $colorP;
+  }
+  img {
+    margin: 1rem 0;
+    width: $imgSize;
+  }
+}
 .event {
+  h2 {
+    padding: 10rem 0 5rem;
+    text-align: center;
+    font-size: 3rem;
+    background: linear-gradient(to bottom, #550cff, #e9dbff);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  background: linear-gradient(
+    to bottom,
+    rgb(112, 84, 248),
+    rgb(255, 120, 120),
+    rgb(205, 255, 134)
+  );
+  .contentA {
+    @include eventContent(
+      rgb(154, 134, 255),
+      rgb(229, 218, 255),
+      #e3d8ff,
+      15rem
+    );
+  }
+  .contentB {
+    @include eventContent(
+      rgb(255, 212, 212),
+      rgb(255, 143, 143),
+      #2e0001,
+      15rem
+    );
+  }
+  .contentC {
+    @include eventContent(
+      rgb(127, 225, 255),
+      rgb(255, 216, 216),
+      #0b2b00,
+      17rem
+    );
+  }
+
+  .visible {
+    opacity: 1;
+    transition: all 1s;
+  }
+  .hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 }
 
 // 테블릿 화면 스타일
@@ -170,4 +240,31 @@
 
 // pc 화면 스타일
 @media (min-width: 1080px) {
+  .event {
+    h2 {
+      padding: 10rem 0 5rem;
+      text-align: center;
+      font-size: 5rem;
+      background: linear-gradient(to bottom, #550cff, #dac2ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .contentA,
+    .contentB,
+    .contentC {
+      height: 50rem;
+      padding: 30rem 0;
+      h3 {
+        font-size: 3rem;
+      }
+      p {
+        margin: auto;
+        width: 70%;
+        font-size: 1rem;
+      }
+      img {
+        width: 50%;
+      }
+    }
+  }
 }

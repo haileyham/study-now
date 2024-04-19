@@ -12,6 +12,7 @@ export default function EventsComponent() {
         <h2>Events</h2>
       </header>
       <section className={styles.event}>
+        <h2>Study Now Event</h2>
         {eventContent.map((content, i) => {
           return <EventItemComponent {...content} key={i}></EventItemComponent>;
         })}
