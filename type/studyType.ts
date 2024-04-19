@@ -59,6 +59,7 @@ type ModalProps = {
   message: string;
   onFunction: () => void;
   mark?: string;
+  successMessage?: string;
 };
 
 //toLocaleDateString method option객체

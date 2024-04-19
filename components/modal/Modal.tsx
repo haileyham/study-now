@@ -9,9 +9,11 @@ const Modal: React.FC<ModalProps> = ({
   message,
   onFunction,
   mark,
+  successMessage,
 }) => {
   const [modal, setModal] = useState(false);
   const [active, setActive] = useState(false);
+  const [successModal, setSuccessModal] = useState(false);
 
   const openModal = () => {
     setModal(true);
@@ -21,6 +23,7 @@ const Modal: React.FC<ModalProps> = ({
     // console.log('closeModal called');
     setActive(false);
     setModal(false);
+    setSuccessModal(false);
     e.stopPropagation();
   };
 
@@ -33,6 +36,9 @@ const Modal: React.FC<ModalProps> = ({
     const result = onFunction();
     if (typeof result !== 'undefined') {
       setModal(result);
+    }
+    if (result === true) {
+      setSuccessModal(true);
     }
   };
 
@@ -64,6 +70,16 @@ const Modal: React.FC<ModalProps> = ({
             </div>
           </div>
         ) : null}
+        {successModal && (
+          <div className={styles.modal} onClick={closeModal}>
+            <div className={styles.modalContent} onClick={closeOnClick}>
+              <p>{successMessage}</p>
+              <div>
+                <button onClick={closeModal}>닫기</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
