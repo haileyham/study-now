@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(244, 240, 255);
-  height: calc(100vh - 5rem);
+  min-height: calc(100vh - 5rem);
   section {
     margin: 0.5rem 1rem;
     padding: 0.5rem 1rem;
@@ -93,11 +93,24 @@
       }
     }
   }
+  .communicationBox {
+    margin: -2rem auto 0;
+    padding: 0.5rem;
+    min-height: 15rem;
+    max-width: 35rem;
+    background: inherit;
+    a {
+      background-color: #fff;
+      p {
+        font-weight: normal;
+      }
+    }
+  }
 }
 
 // 로그인 이전
 .loginPrompt {
-  height: calc(100vh - 5rem);
+  min-height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
   border-radius: var(--border-radius-s);
@@ -137,7 +150,8 @@
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
       'header main1'
-      'header main2';
+      'header main2'
+      'header main3';
     gap: 1rem;
     .profile {
       grid-area: header;
@@ -177,6 +191,16 @@
     section {
       margin: 0; //초기화
       padding: 2rem;
+    }
+    .communicationBox {
+      grid-area: main3;
+      margin: 0;
+      max-width: none;
+      height: 12rem;
+      padding: 2rem;
+      a {
+        margin: -50% 1rem 0;
+      }
     }
   }
 
