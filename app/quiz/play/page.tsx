@@ -16,6 +16,10 @@ export default async function page(props: QuizPlayProps) {
     .collection('quiz')
     .find({ type: props.searchParams.ty })
     .toArray();
+  result.map((post: any) => {
+    post._id = post._id.toString();
+    return post;
+  });
   return (
     <>
       <QuizComponent
