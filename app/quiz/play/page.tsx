@@ -14,13 +14,12 @@ export default async function page(props: QuizPlayProps) {
   const db = (await connectDB).db('study_platform');
   const result = await db
     .collection('quiz')
-    .find({ type: '프론트엔드' })
+    .find({ type: props.searchParams.ty })
     .toArray();
-  console.log(result);
   return (
     <>
       <QuizComponent
-        quizType={props.searchParams.ty}
+        quizData={result}
         questionNum={props.searchParams.q}
         timerDuration={props.searchParams.t}
       ></QuizComponent>
