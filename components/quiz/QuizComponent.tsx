@@ -4,51 +4,28 @@ import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Timer from './Timer';
 
+type Quiz = {
+  _id: string;
+  num: string;
+  question: string;
+  answer: string;
+  type: string;
+};
+
 interface QuizProps {
   questionNum: number;
   timerDuration: number;
-  quizType: string;
+  quizData: Quiz[];
 }
 
 const QuizComponent: React.FC<QuizProps> = ({
   questionNum,
   timerDuration,
-  quizType,
+  // quizType,
+  quizData,
 }) => {
+  console.log(quizData);
   let router = useRouter();
-  const quizData = [
-    {
-      id: 1,
-      question:
-        '블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q',
-      answer: 'hello',
-    },
-    {
-      id: 2,
-      question: '블루블루 블루짱',
-      answer: 'hello world',
-    },
-    {
-      id: 3,
-      question: '블라블라큐큐큐',
-      answer: 'hello hi',
-    },
-    {
-      id: 4,
-      question: '블라블라큐큐큐4',
-      answer: 'hello hi',
-    },
-    {
-      id: 5,
-      question: '블라블라큐큐큐5',
-      answer: 'hello hi',
-    },
-    {
-      id: 6,
-      question: '블라블라큐큐큐6',
-      answer: 'hello hi',
-    },
-  ];
 
   const [input, setInput] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState(0);
