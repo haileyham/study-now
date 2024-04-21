@@ -5,6 +5,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
+  const db = (await connectDB).db('study_platform');
+  let findNum = await db.collection('quiz').findOne({ num: req.body.quiz.num });
+  if (findNum) {
+    return res.status(400).json('이미 기입된 숫자');
+  }
   try {
     let save = {
       num: req.body.quiz.num,
