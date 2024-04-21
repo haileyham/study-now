@@ -3,7 +3,7 @@ import React, { ChangeEvent, useState } from 'react';
 
 export default function page() {
   const [quiz, setQuiz] = useState({
-    num: Number,
+    num: '',
     question: '',
     answer: '',
     type: '프론트엔드',
@@ -27,7 +27,7 @@ export default function page() {
       });
       if (response.ok) {
         console.log('글이 성공적으로 등록되었습니다.');
-        setQuiz({ num: Number, question: '', answer: '', type: '프론트엔드' });
+        setQuiz({ num: '', question: '', answer: '', type: '프론트엔드' });
       } else {
         const errorRes = await response.json();
         console.error('Error:', errorRes);
