@@ -21,10 +21,8 @@ interface QuizProps {
 const QuizComponent: React.FC<QuizProps> = ({
   questionNum,
   timerDuration,
-  // quizType,
   quizData,
 }) => {
-  console.log(quizData);
   let router = useRouter();
 
   const [input, setInput] = useState('');
@@ -58,6 +56,7 @@ const QuizComponent: React.FC<QuizProps> = ({
         .slice(0, questionNum)
         .map((question) => question.question),
       userAnswer: userAnswers,
+      answer: quizData.slice(0, questionNum).map((question) => question.answer),
     };
     localStorage.setItem('userQuiz', JSON.stringify(userQuiz));
   };
