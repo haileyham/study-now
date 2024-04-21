@@ -210,6 +210,29 @@
       background: rgb(242, 226, 252);
     }
   }
+  .answerBox {
+    span {
+      cursor: pointer;
+      &:hover {
+        background: rgb(239, 214, 255);
+      }
+    }
+    div {
+      padding: 1rem;
+      border: 1px solid rgb(242, 226, 252);
+      border-radius: var(--border-radius-m);
+      transition: height 1s;
+    }
+    .answer {
+      opacity: 1;
+      height: 5rem;
+      overflow: auto;
+    }
+    .answerHidden {
+      height: 0;
+      opacity: 0;
+    }
+  }
 }
 
 /* 태블릿 화면 스타일 */
