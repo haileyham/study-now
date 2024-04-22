@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import QuizTypeSelect from './QuizTypeSelect';
+import Modal from '../modal/Modal';
 
 export default function QuizSetting() {
   const [questionNum, setQuestionNum] = useState(5);
@@ -28,6 +29,9 @@ export default function QuizSetting() {
   };
 
   const handleMoveQuiz = () => {
+    if (quizType !== '프론트엔드') {
+      return false;
+    }
     router.push(
       `/quiz/play?ty=${quizType}&q=${questionNum}&t=${timerDuration}`,
     );
@@ -83,12 +87,28 @@ export default function QuizSetting() {
                 </button>
               </div>
             </div>
-            <button
+            {/* <button
               className={`btn-m ${styles.quizBtn}`}
               onClick={handleMoveQuiz}
             >
               퀴즈 풀기
-            </button>
+            </button> */}
+            {quizType === '프론트엔드' ? (
+              <Modal
+                modalBtn={'퀴즈 풀기'}
+                modalBtnStyle={`btn-m ${styles.quizBtn}`}
+                message={'문제를 푸시겠습니까?'}
+                onFunction={handleMoveQuiz}
+              ></Modal>
+            ) : (
+              <Modal
+                modalBtn={'퀴즈 풀기'}
+                modalBtnStyle={`btn-m ${styles.quizBtn}`}
+                message={'문제 유형 업데이트 예정입니다 :)'}
+                onFunction={handleMoveQuiz}
+                mark={`!`}
+              ></Modal>
+            )}
           </section>
         </main>
       </div>
