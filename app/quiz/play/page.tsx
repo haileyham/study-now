@@ -14,7 +14,10 @@ export default async function page(props: QuizPlayProps) {
   const db = (await connectDB).db('study_platform');
   const result = await db
     .collection('quiz')
-    .find({ type: props.searchParams.ty })
+    .aggregate([
+      { $match: { type: props.searchParams.ty } },
+      { $sample: { size: Number(props.searchParams.q) } },
+    ])
     .toArray();
   result.map((post: any) => {
     post._id = post._id.toString();
