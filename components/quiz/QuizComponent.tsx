@@ -3,52 +3,28 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Timer from './Timer';
+import Header from '../common/Header';
+
+type Quiz = {
+  _id: string;
+  num: string;
+  question: string;
+  answer: string;
+  type: string;
+};
 
 interface QuizProps {
   questionNum: number;
   timerDuration: number;
-  quizType: string;
+  quizData: Quiz[];
 }
 
 const QuizComponent: React.FC<QuizProps> = ({
   questionNum,
   timerDuration,
-  quizType,
+  quizData,
 }) => {
   let router = useRouter();
-  const quizData = [
-    {
-      id: 1,
-      question:
-        '블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q블라블라Q',
-      answer: 'hello',
-    },
-    {
-      id: 2,
-      question: '블루블루 블루짱',
-      answer: 'hello world',
-    },
-    {
-      id: 3,
-      question: '블라블라큐큐큐',
-      answer: 'hello hi',
-    },
-    {
-      id: 4,
-      question: '블라블라큐큐큐4',
-      answer: 'hello hi',
-    },
-    {
-      id: 5,
-      question: '블라블라큐큐큐5',
-      answer: 'hello hi',
-    },
-    {
-      id: 6,
-      question: '블라블라큐큐큐6',
-      answer: 'hello hi',
-    },
-  ];
 
   const [input, setInput] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -81,6 +57,7 @@ const QuizComponent: React.FC<QuizProps> = ({
         .slice(0, questionNum)
         .map((question) => question.question),
       userAnswer: userAnswers,
+      answer: quizData.slice(0, questionNum).map((question) => question.answer),
     };
     localStorage.setItem('userQuiz', JSON.stringify(userQuiz));
   };
@@ -89,21 +66,22 @@ const QuizComponent: React.FC<QuizProps> = ({
     <>
       <div className="container">
         <main className={styles.main}>
+          <Header title={`Quiz : ${quizData[0].type}`}></Header>
           <section className={styles.quizInfo}>
             <div className={styles.time}>
-              <span>⏰</span>
-              <span>Time</span>
               <Timer
                 resetTime={resetTime}
                 onReset={() => setResetTime((prevTime) => prevTime - 1)}
               ></Timer>
+              <span>⏰</span>
+              <span>Time</span>
             </div>
-            <div className={styles.check}>
+            {/* <div className={styles.check}>
               <label htmlFor="save">
                 <input type="checkbox" id="save"></input>
                 다시보기
               </label>
-            </div>
+            </div> */}
           </section>
           <section className={styles.quiz}>
             <div className={styles.questionBox}>

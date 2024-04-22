@@ -3,19 +3,20 @@
   border: 10px solid rgb(240, 225, 249);
   border-radius: var(--border-radius-s);
   position: relative;
-  height: calc(100vh - 5rem);
+  min-height: calc(100vh - 5rem);
   overflow: auto;
   section {
   }
 }
 
 .quizInfo {
+  margin: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: right;
   .time {
     span {
-      margin: 2px;
+      margin: 3px;
     }
   }
   .check {
@@ -170,12 +171,18 @@
   height: calc(100vh - 5rem);
   overflow: auto;
   padding: 1rem;
+  position: relative;
   h2 {
     font-size: 30px;
     margin: 1rem 0;
     padding: 1rem;
     background-color: rgb(249, 240, 255);
     border-radius: var(--border-radius-m);
+  }
+  button {
+    position: absolute;
+    top: 3.4rem;
+    right: 2rem;
   }
   ul {
     display: flex;
@@ -210,6 +217,29 @@
       background: rgb(242, 226, 252);
     }
   }
+  .answerBox {
+    span {
+      cursor: pointer;
+      &:hover {
+        background: rgb(239, 214, 255);
+      }
+    }
+    div {
+      padding: 1rem;
+      border: 1px solid rgb(242, 226, 252);
+      border-radius: var(--border-radius-m);
+      transition: height 1s;
+    }
+    .answer {
+      opacity: 1;
+      height: 5rem;
+      overflow: auto;
+    }
+    .answerHidden {
+      height: 0;
+      opacity: 0;
+    }
+  }
 }
 
 /* 태블릿 화면 스타일 */
@@ -227,9 +257,9 @@
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
   .main {
-    width: 70%;
+    width: 80%;
     margin: auto;
-    height: 45rem;
+    min-height: 45rem;
   }
   .quizSettingNum {
     margin: 2rem auto;
