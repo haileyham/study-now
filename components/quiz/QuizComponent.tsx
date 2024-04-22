@@ -3,6 +3,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import { useRouter } from 'next/navigation';
 import Timer from './Timer';
+import Header from '../common/Header';
 
 type Quiz = {
   _id: string;
@@ -65,21 +66,22 @@ const QuizComponent: React.FC<QuizProps> = ({
     <>
       <div className="container">
         <main className={styles.main}>
+          <Header title={`Quiz : ${quizData[0].type}`}></Header>
           <section className={styles.quizInfo}>
             <div className={styles.time}>
-              <span>⏰</span>
-              <span>Time</span>
               <Timer
                 resetTime={resetTime}
                 onReset={() => setResetTime((prevTime) => prevTime - 1)}
               ></Timer>
+              <span>⏰</span>
+              <span>Time</span>
             </div>
-            <div className={styles.check}>
+            {/* <div className={styles.check}>
               <label htmlFor="save">
                 <input type="checkbox" id="save"></input>
                 다시보기
               </label>
-            </div>
+            </div> */}
           </section>
           <section className={styles.quiz}>
             <div className={styles.questionBox}>
