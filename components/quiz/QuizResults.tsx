@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import useToggle from '@/hooks/useToggle';
+import { useRouter } from 'next/navigation';
 
 interface QuizData {
   question: string[];
@@ -13,6 +14,7 @@ interface QuizData {
 export default function QuizResults() {
   const [userQuiz, setUserQuiz] = useState<QuizData | null>(null);
   const [toggle, setToggle] = useToggle(false);
+  const router = useRouter();
 
   useEffect(() => {
     const userAnswersLocal: string | null = localStorage.getItem('userQuiz');
@@ -26,6 +28,14 @@ export default function QuizResults() {
     <div className="container">
       <main className={styles.mainResults}>
         <h2>퀴즈 결과 확인</h2>
+        <button
+          onClick={() => {
+            router.push('/quiz');
+          }}
+          className="btn-m"
+        >
+          퀴즈 풀기
+        </button>
         {userQuiz && (
           <ul>
             {userQuiz.question.map((question, index) => {
