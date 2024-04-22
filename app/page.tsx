@@ -7,9 +7,9 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import Link from 'next/link';
 import Footer from '@/components/Home/Footer';
 import PromotionalComponent from '@/components/Home/PromotionalComponent';
-import getPromotionalContent from '@/components/Home/getPromotionalContent';
+import getPromotionalContent from '@/components/Home/data/getPromotionalContent';
 import CardComponent from '@/components/Home/CardComponent';
-import getCardContent from '@/components/Home/getCardContent';
+import getCardContent from '@/components/Home/data/getCardContent';
 import FeaturesComponent from '@/components/Home/FeaturesComponent';
 import ContactComponent from '@/components/Home/ContactComponent';
 
@@ -30,7 +30,9 @@ export default async function Home() {
             </div>
           ) : (
             <div>
-              <Link href="/sign-up">Sign Up</Link>
+              <Link href="/sign-up" className={styles.signUp}>
+                Sign Up
+              </Link>
               <LoginBtn></LoginBtn>
             </div>
           )}
