@@ -260,7 +260,8 @@ main {
         width: 0;
         top: 2.1rem;
         left: 50%;
-        border-bottom: 2px solid rgb(217, 207, 255);
+        border-bottom: 4px solid rgb(217, 207, 255);
+        border-radius: var(--border-radius-l);
         transform: translateX(-50%);
         transition: width 0.5s;
       }
