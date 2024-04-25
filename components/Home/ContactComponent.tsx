@@ -4,23 +4,29 @@ import React from 'react';
 
 export default function ContactComponent() {
   return (
-    <div className={styles.contactContainer}>
-      <Link href="/communications/notices">
-        <img src="/images/character/koala.png" alt="공지" />
-        <p>공지</p>
-      </Link>
-      <Link href="/communications/inquiries">
-        <img src="/images/character/dragonPhone.png" alt="문의" />
-        <p>문의</p>
-      </Link>
-      <Link href="/communications/news">
-        <img src="/images/character/pandaNews.png" alt="뉴스" />
-        <p>뉴스</p>
-      </Link>
-      <Link href="/communications/events">
-        <img src="/images/character/mouseSign.png" alt="이벤트" />
-        <p>이벤트</p>
-      </Link>
-    </div>
+    <>
+      <div className={styles.contactContainer}>
+        <div className={styles.img}>
+          <img src="/images/character/foxNews.png" alt="스터디나우" />
+        </div>
+        <div>
+          <p>Study Now</p>
+          <div className={styles.contact}>
+            <Link href="/communications/inquiries">
+              <img src="/images/icons/inquiry.svg" alt="문의" />
+              <span>고객문의</span>
+            </Link>
+            <Link href="#">
+              <img src="/images/icons/mail.svg" alt="메일" />
+              <span>메일</span>
+            </Link>
+            <Link href="https://github.com/haileyham/study-now">
+              <img src="/images/icons/news.svg" alt="개발소식" />
+              <span>개발소식</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
