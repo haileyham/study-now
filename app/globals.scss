@@ -128,7 +128,7 @@ p {
   border: none;
   border-radius: var(--border-radius-m);
   color: gray;
-  font-size: 1rem;
+  font-size: 12px;
   cursor: pointer;
   &:hover {
     color: #fff;
@@ -160,6 +160,7 @@ main {
   margin: auto;
 }
 
+//main nav
 .myContainer {
   height: 3rem;
   display: flex;
@@ -180,7 +181,6 @@ main {
     }
     a {
       margin: 0 -5px 0px;
-      font-size: 1rem;
     }
   }
   a {
