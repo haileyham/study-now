@@ -125,13 +125,19 @@
       font-size: var(--font-size-xl);
       margin-bottom: 2rem;
     }
-    button {
+    button,
+    a {
       padding: 1rem 2rem;
       background-color: rgb(217, 203, 255);
       font-size: var(--font-size-m);
+      color: #fff;
       &:hover {
         background-color: rgb(195, 174, 255);
       }
+    }
+    a {
+      margin-left: 1rem;
+      background-color: rgb(255, 203, 203);
     }
   }
 }
