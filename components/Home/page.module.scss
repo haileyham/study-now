@@ -244,8 +244,8 @@
 
 //contact
 .contactContainer {
-  height: 100%;
-  margin-top: -5rem;
+  height: 90%;
+  margin-top: -3rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -262,7 +262,7 @@
   .contact {
     margin-top: 1.5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     a {
       display: flex;
@@ -276,11 +276,11 @@
       }
     }
     img {
-      width: 3rem;
+      width: 2.7rem;
     }
     span {
       margin-top: -10px;
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 }
