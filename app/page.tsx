@@ -11,6 +11,7 @@ import getPromotionalContent from '@/components/Home/data/getPromotionalContent'
 import CardComponent from '@/components/Home/CardComponent';
 import getCardContent from '@/components/Home/data/getCardContent';
 import FeaturesComponent from '@/components/Home/FeaturesComponent';
+import CommunicationComponent from '@/components/Home/CommunicationComponent';
 import ContactComponent from '@/components/Home/ContactComponent';
 
 export default async function Home() {
@@ -46,8 +47,10 @@ export default async function Home() {
             return <CardComponent key={i} {...item}></CardComponent>;
           })}
         </section>
-        <section className={`${styles.section} ${styles.contactContainer}`}>
-          <ContactComponent></ContactComponent>
+        <section
+          className={`${styles.section} ${styles.communicationContainer}`}
+        >
+          <CommunicationComponent></CommunicationComponent>
         </section>
         {promotional.map((item, i) => {
           return (
@@ -59,7 +62,9 @@ export default async function Home() {
         <section className={styles.sectionFull}>
           <FeaturesComponent />
         </section>
-        <section className={styles.section}></section>
+        <section className={`${styles.section} ${styles.contactContainer}`}>
+          <ContactComponent></ContactComponent>
+        </section>
       </main>
       <footer className={styles.footer}>
         <Footer></Footer>

@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { LoginBtn, LogoutBtn } from '@/components/Home/LoginOutBtn';
-import ContactComponent from '@/components/Home/ContactComponent';
+import CommunicationComponent from '@/components/Home/CommunicationComponent';
 
 export default async function MyPage() {
   const session: any = await getServerSession(authOptions as any);
@@ -48,7 +48,7 @@ export default async function MyPage() {
               </div>
             </section>
             <section className={styles.communicationBox}>
-              <ContactComponent></ContactComponent>
+              <CommunicationComponent></CommunicationComponent>
             </section>
           </main>
         </div>
@@ -60,7 +60,7 @@ export default async function MyPage() {
               <LoginBtn></LoginBtn>
             </div>
           </main>
-          <ContactComponent></ContactComponent>
+          <CommunicationComponent></CommunicationComponent>
         </div>
       )}
     </>
