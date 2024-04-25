@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { LoginBtn, LogoutBtn } from '@/components/Home/LoginOutBtn';
 import CommunicationComponent from '@/components/Home/CommunicationComponent';
+import Link from 'next/link';
 
 export default async function MyPage() {
   const session: any = await getServerSession(authOptions as any);
@@ -58,6 +59,9 @@ export default async function MyPage() {
             <div>
               <p>로그인이 필요한 페이지입니다.</p>
               <LoginBtn></LoginBtn>
+              <Link href="/signUp" className="btn-m">
+                회원가입
+              </Link>
             </div>
           </main>
           <CommunicationComponent></CommunicationComponent>
