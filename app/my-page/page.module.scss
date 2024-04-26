@@ -68,29 +68,53 @@
     }
   }
   .myActive {
-    padding: 1rem;
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-    text-align: center;
+    position: relative;
+    .active {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-around;
+      gap: 10px;
+      text-align: center;
+    }
+    .myPageModal {
+      position: absolute;
+      margin: 0.5rem 1rem;
+      width: 90%;
+      padding: 1.5rem;
+      display: block;
+      // border: none;
+      background-color: inherit;
+    }
   }
   .myQuiz {
     margin-bottom: 2rem;
-    div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      padding: 1rem;
-      border-bottom: 1px solid rgba(128, 128, 128, 0.198);
-      &:nth-last-of-type(1) {
-        border-bottom: none;
+    position: relative;
+    .quiz {
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.198);
+        &:nth-last-of-type(1) {
+          border-bottom: none;
+        }
+        span {
+          flex: 1;
+          font-size: var(--font-size-s);
+          text-align: end;
+        }
       }
-      span {
-        flex: 1;
-        font-size: var(--font-size-s);
-        text-align: end;
-      }
+    }
+    .myPageModal {
+      position: absolute;
+      margin: 0.5rem 1rem;
+      width: 93%;
+      padding: 2.5rem;
+      display: block;
+      // border: none;
+      background-color: inherit;
     }
   }
   .communicationBox {
