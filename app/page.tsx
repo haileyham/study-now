@@ -23,7 +23,11 @@ export default async function Home() {
     <>
       <main>
         <div className="myContainer">
-          <img src="/images/icons/logo.svg" alt="" className="logo" />
+          <img
+            src="/images/icons/logo.svg"
+            alt="study-now-logo"
+            className="logo"
+          />
           {session ? (
             <div>
               <img src={session.user.image} alt={session.user.name} />

@@ -69,7 +69,7 @@ const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
                     src={
                       result.authorImage
                         ? result.authorImage
-                        : '/images/icons/profile.svg'
+                        : '/images/profile/profile1.svg'
                     }
                     alt="profile"
                   />
