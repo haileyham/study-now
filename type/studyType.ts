@@ -57,7 +57,7 @@ type ModalProps = {
   modalBtn: string;
   modalBtnStyle: string;
   message: string;
-  onFunction: () => void;
+  onFunction?: () => void;
   mark?: string;
   successMessage?: string;
 };
