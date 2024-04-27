@@ -18,13 +18,13 @@ export default async function MyPage() {
             <h2 className="a11y-hidden">마이페이지</h2>
             <section className={styles.profile}>
               <div>
-                <img src={session.user.image} alt="" />
+                <img src={session.user.image} alt="user-profile-img" />
               </div>
               <h3>{session.user.name}</h3>
               <p>{session.user.email}</p>
-              <span>
+              {/* <span>
                 <p>&#128393;</p>
-              </span>
+              </span> */}
               <LogoutBtn></LogoutBtn>
             </section>
             <section className={styles.myActive}>

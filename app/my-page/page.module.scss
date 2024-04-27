@@ -30,6 +30,7 @@
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
+        background-color: #fff;
       }
     }
     h3 {
@@ -67,6 +68,18 @@
       }
     }
   }
+  //modal setting
+  @mixin modalSetting($padding) {
+    position: absolute;
+    margin: 0.5rem 1rem;
+    width: 93%;
+    padding: $padding;
+    display: block;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+  //comment / post
   .myActive {
     position: relative;
     .active {
@@ -77,13 +90,7 @@
       text-align: center;
     }
     .myPageModal {
-      position: absolute;
-      margin: 0.5rem 1rem;
-      width: 90%;
-      padding: 1.5rem;
-      display: block;
-      // border: none;
-      background-color: inherit;
+      @include modalSetting(1.5rem);
     }
   }
   .myQuiz {
@@ -108,13 +115,7 @@
       }
     }
     .myPageModal {
-      position: absolute;
-      margin: 0.5rem 1rem;
-      width: 93%;
-      padding: 2.5rem;
-      display: block;
-      // border: none;
-      background-color: inherit;
+      @include modalSetting(2.5rem);
     }
   }
   .communicationBox {
