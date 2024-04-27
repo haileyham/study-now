@@ -137,7 +137,7 @@ $backColor: rgba(215, 196, 255, 0.179);
 //comment
 .commentWrapper {
   margin: 5px 0px;
-  padding: 10px;
+  padding: 10px 1rem;
   border-bottom: 1px solid rgb(237, 237, 237);
   li > p:nth-child(2) {
     //comment
@@ -149,13 +149,22 @@ $backColor: rgba(215, 196, 255, 0.179);
     margin: 10px 0;
     color: var(--color-content-s);
   }
+  li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+  li {
+    padding: 0.3rem 0;
+  }
 }
 
 .commnetInfo {
   padding: 5px 0px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
+  img {
+    width: 1rem;
+  }
   p {
     color: var(--color-content-s);
   }
