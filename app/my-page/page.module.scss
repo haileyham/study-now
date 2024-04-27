@@ -1,3 +1,15 @@
+//modal setting
+@mixin modalSetting($padding) {
+  position: absolute;
+  margin: 0.5rem 1rem;
+  width: 98%;
+  padding: $padding;
+  display: block;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
 .main {
   max-width: var(--max-width);
   display: flex;
@@ -67,17 +79,6 @@
         background-color: rgba(116, 116, 116, 0.504);
       }
     }
-  }
-  //modal setting
-  @mixin modalSetting($padding) {
-    position: absolute;
-    margin: 0.5rem 1rem;
-    width: 93%;
-    padding: $padding;
-    display: block;
-    border: none;
-    background-color: inherit;
-    cursor: pointer;
   }
   //comment / post
   .myActive {
@@ -208,6 +209,9 @@
       span {
         font-size: 30px;
       }
+      .myPageModal {
+        @include modalSetting(2rem);
+      }
     }
     .myQuiz {
       grid-area: main2;
@@ -217,6 +221,9 @@
         span {
           font-size: var(--font-size-l);
         }
+      }
+      .myPageModal {
+        @include modalSetting(3rem);
       }
     }
     section {
