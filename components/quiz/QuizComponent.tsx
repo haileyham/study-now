@@ -53,6 +53,7 @@ const QuizComponent: React.FC<QuizProps> = ({
     }
 
     const userQuiz = {
+      quizType: quizData[0].type,
       question: quizData
         .slice(0, questionNum)
         .map((question) => question.question),
