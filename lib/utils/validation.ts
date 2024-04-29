@@ -86,7 +86,7 @@ export const validationPostStudy = (
     return result;
   }
 
-  if (30 < lenContact) {
+  if (90 < lenContact) {
     result.state = false;
     result.message = FAIL_LENGTH_CONTACT;
     return result;
