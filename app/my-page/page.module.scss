@@ -16,6 +16,7 @@
   flex-direction: column;
   background-color: rgb(244, 240, 255);
   min-height: calc(100vh - 5rem);
+  border-radius: var(--border-radius-m);
   section {
     margin: 0.5rem 1rem;
     padding: 0.5rem 1rem;

@@ -162,7 +162,7 @@
 
 .jobOpeningLogo {
   position: relative;
-  // margin: 10px;
+  margin-top: 10px;
   display: flex;
   overflow: hidden;
   .logoContainer1,
@@ -232,7 +232,7 @@
   .jobOpeningLogo {
     position: fixed;
     top: 8rem;
-    // margin: 10px;
+    margin: 0px;
     display: flex;
     // overflow: hidden;
     z-index: 0;
@@ -241,6 +241,10 @@
       height: 100px;
       margin-left: 10px;
     }
+  }
+
+  .searchbox {
+    max-width: 80%;
   }
 
   .jobListSection {

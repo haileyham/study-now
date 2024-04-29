@@ -238,6 +238,7 @@ $backColor: rgba(215, 196, 255, 0.179);
   .main {
     max-width: 800px;
     margin: auto;
+    border-radius: var(--border-radius-m);
     h2 {
       //글자수 제한 하고 수정하기
       display: inline-block;
@@ -245,11 +246,6 @@ $backColor: rgba(215, 196, 255, 0.179);
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-    }
-  }
-  .mainContent {
-    .content {
-      min-height: 8rem;
     }
   }
 }
