@@ -13,7 +13,12 @@
   margin: 1rem;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: space-between;
+  .quizNum {
+    padding: 2px 5px;
+    // border: 1px solid #ddd;
+    border-radius: var(--border-radius-m);
+  }
   .time {
     span {
       margin: 3px;
