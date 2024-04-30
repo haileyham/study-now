@@ -68,7 +68,7 @@ export const validationPostStudy = (
     return result;
   }
 
-  if (lenTitle < 2 || 15 < lenTitle) {
+  if (lenTitle < 2 || 30 < lenTitle) {
     result.state = false;
     result.message = FAIL_LENGTH_TITLE;
     return result;

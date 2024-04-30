@@ -41,7 +41,7 @@ $backColor: rgba(215, 196, 255, 0.179);
   }
   h2 {
     flex: 1;
-    max-height: 40px;
+    min-height: 30px;
     overflow: hidden;
     display: -webkit-box;
     font-size: var(--font-header-l);
@@ -52,7 +52,7 @@ $backColor: rgba(215, 196, 255, 0.179);
     display: flex;
     margin: 5px;
     padding: 5px;
-    height: 30px;
+    min-height: 30px;
     justify-content: space-between;
     align-items: center;
     gap: 10px;

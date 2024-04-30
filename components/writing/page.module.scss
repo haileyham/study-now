@@ -8,6 +8,7 @@
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
+  padding: 0 1rem;
   input,
   textarea {
     padding: 10px;
@@ -136,6 +137,15 @@
     }
     span {
       top: -0.5rem;
+    }
+  }
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 1024px) {
+  .writeInput {
+    .submitBtn {
+      width: 100%;
     }
   }
 }
