@@ -6,6 +6,7 @@ import useToggle from '@/hooks/useToggle';
 import { useRouter } from 'next/navigation';
 
 interface QuizData {
+  quizType: string;
   question: string[];
   userAnswer: string[];
   answer: string[];
@@ -36,6 +37,11 @@ export default function QuizResults() {
         >
           퀴즈 풀기
         </button>
+        {userQuiz && (
+          <span className={styles.quizType}>
+            {userQuiz.quizType} (총 {userQuiz.question.length} 문제)
+          </span>
+        )}
         {userQuiz && (
           <ul>
             {userQuiz.question.map((question, index) => {

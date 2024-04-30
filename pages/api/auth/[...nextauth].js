@@ -19,7 +19,7 @@ export const authOptions = {
     CredentialsProvider({
       name: "credentials",
       credentials: {
-        email: { label: "email", type: "text", placeholder: "study-now@test.com", value: "test@test.com" },
+        email: { label: "email", type: "text", placeholder: "study-now@test.com", value: "studyNow@studynow.com" },
         password: { label: "password", type: "password", value: "test1T" },
       },
 

@@ -5,6 +5,7 @@ import { DeleteBtn } from '@/components/detail/delete';
 import { getDate } from '@/components/common/time';
 import Toggle from './Toggle';
 import Header from '../common/Header';
+import Modal from '../modal/Modal';
 
 const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
   let id;
@@ -69,7 +70,7 @@ const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
                     src={
                       result.authorImage
                         ? result.authorImage
-                        : '/images/icons/profile.svg'
+                        : '/images/profile/profile1.svg'
                     }
                     alt="profile"
                   />
@@ -86,19 +87,28 @@ const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
               <ul className={styles.commentWrapper}>
                 <li>
                   <div className={styles.commnetInfo}>
-                    <img src="" alt="profile" />
-                    <p>author</p>
+                    <img src="/images/profile/profile2.svg" alt="profile" />
+                    <p>스터디롸잇나우</p>
                   </div>
-                  <p className={styles.comment}>
-                    댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다l
-                    댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다댓글입니다l
-                  </p>
-                  <p className={styles.commentDate}>1일전</p>
+                  <p className={styles.comment}>참여 희망합니다~</p>
+                  <p className={styles.commentDate}>1일 전</p>
+                </li>
+                <li>
+                  <div className={styles.commnetInfo}>
+                    <img src="/images/profile/profile3.svg" alt="profile" />
+                    <p>hailey</p>
+                  </div>
+                  <p className={styles.comment}>응원합니다! 파이팅!</p>
+                  <p className={styles.commentDate}>1분 전</p>
                 </li>
               </ul>
               <div className={styles.commentInput}>
                 <input type="text" placeholder="댓글을 남겨주세요" />
-                <button className="btn-s">전송</button>
+                <Modal
+                  modalBtn={`전송`}
+                  modalBtnStyle={`btn-s`}
+                  message={`댓글 업데이트 예정입니다 :)`}
+                ></Modal>
               </div>
             </section>
           </main>

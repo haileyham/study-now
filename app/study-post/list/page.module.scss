@@ -2,8 +2,7 @@
   margin: auto;
   max-width: 800px;
   padding: 2rem 1rem;
-  box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius-s);
+  box-shadow: 0 0 5px 0 #ddd;
 }
 
 .studyHeader {
@@ -22,4 +21,11 @@
 //list section
 .studySection {
   margin-top: 2rem;
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 1024px) {
+  .studyMain {
+    border-radius: var(--border-radius-m);
+  }
 }

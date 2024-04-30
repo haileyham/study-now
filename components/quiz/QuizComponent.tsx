@@ -53,6 +53,7 @@ const QuizComponent: React.FC<QuizProps> = ({
     }
 
     const userQuiz = {
+      quizType: quizData[0].type,
       question: quizData
         .slice(0, questionNum)
         .map((question) => question.question),
@@ -69,13 +70,16 @@ const QuizComponent: React.FC<QuizProps> = ({
           <Header title={`Quiz : ${quizData[0].type}`}></Header>
           <section className={styles.quizInfo}>
             <div className={styles.time}>
+              <span>Time</span>
+              <span>⏰</span>
               <Timer
                 resetTime={resetTime}
                 onReset={() => setResetTime((prevTime) => prevTime - 1)}
               ></Timer>
-              <span>⏰</span>
-              <span>Time</span>
             </div>
+            <span className={styles.quizNum}>
+              {currentQuestion + 1} / {questionNum} 문제
+            </span>
             {/* <div className={styles.check}>
               <label htmlFor="save">
                 <input type="checkbox" id="save"></input>

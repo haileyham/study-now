@@ -1,7 +1,6 @@
 .main {
   margin: 0 auto;
   border: 10px solid rgb(240, 225, 249);
-  border-radius: var(--border-radius-s);
   position: relative;
   min-height: calc(100vh - 5rem);
   overflow: auto;
@@ -13,7 +12,12 @@
   margin: 1rem;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: space-between;
+  .quizNum {
+    padding: 2px 5px;
+    // border: 1px solid #ddd;
+    border-radius: var(--border-radius-m);
+  }
   .time {
     span {
       margin: 3px;
@@ -184,6 +188,16 @@
     top: 3.4rem;
     right: 2rem;
   }
+  //quizType
+  .quizType {
+    padding: 5px 1rem;
+    font-weight: 900;
+    border-radius: var(--border-radius-s);
+    background-color: rgb(249, 240, 255);
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
   ul {
     display: flex;
     flex-direction: column;
@@ -260,6 +274,7 @@
     width: 80%;
     margin: auto;
     min-height: 45rem;
+    border-radius: var(--border-radius-s);
   }
   .quizSettingNum {
     margin: 2rem auto;
@@ -275,6 +290,6 @@
     }
   }
   .mainResults {
-    height: auto;
+    min-height: 100vh;
   }
 }
