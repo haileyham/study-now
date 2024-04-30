@@ -1,7 +1,6 @@
 .main {
   margin: 0 auto;
   border: 10px solid rgb(240, 225, 249);
-  border-radius: var(--border-radius-s);
   position: relative;
   min-height: calc(100vh - 5rem);
   overflow: auto;
@@ -275,6 +274,7 @@
     width: 80%;
     margin: auto;
     min-height: 45rem;
+    border-radius: var(--border-radius-s);
   }
   .quizSettingNum {
     margin: 2rem auto;

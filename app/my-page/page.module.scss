@@ -16,7 +16,6 @@
   flex-direction: column;
   background-color: rgb(244, 240, 255);
   min-height: calc(100vh - 5rem);
-  border-radius: var(--border-radius-m);
   section {
     margin: 0.5rem 1rem;
     padding: 0.5rem 1rem;
@@ -177,9 +176,9 @@
 // flex에서 grid로 변경
 @media (min-width: 1024px) {
   .main {
-    height: 80vh;
     padding: 1rem;
     display: grid;
+    border-radius: var(--border-radius-m);
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
       'header main1'
@@ -202,8 +201,7 @@
     }
     .myActive {
       grid-area: main1;
-      padding: 2rem;
-      align-items: center;
+      padding: 2.5rem 2rem 0;
       p {
         font-size: var(--font-size-l);
       }
