@@ -14,7 +14,6 @@ export default async function handler(
     const findPost = await db
       .collection('study_posts')
       .findOne({ _id: new ObjectId(req.body.study._id) });
-    console.log(findPost);
 
     if (req.body.study.title == '') {
       return res.status(400).json('제목을 입력해 주세요');
@@ -34,6 +33,8 @@ export default async function handler(
         try {
           let editData = {
             author: req.body.study.author,
+            authorName: session.user.name,
+            authorImage: session.user.image,
             title: req.body.study.title,
             content: req.body.study.content,
             status: req.body.study.status,
