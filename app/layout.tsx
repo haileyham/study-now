@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,6 +26,17 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/images/icons/logo_apple_touch_icon.png"
+        />
+      </Head>
       <body className={inter.className}>
         <header className="headerMain">
           <ul className="navContainer">
