@@ -32,6 +32,12 @@ export default async function RootLayout({
           name="viewport"
           content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
         />
+        <meta property="og:title" content="studyWith" />
+        <meta property="og:site_name" content="studyWith" />
+        <meta
+          property="og:description"
+          content="StudyNow 스터디나우 : 스터디모집,퀴즈,채용정보까지 한번에!"
+        />
         <link
           rel="apple-touch-icon"
           href="/images/icons/logo_apple_touch_icon.png"
