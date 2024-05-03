@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
 import Link from 'next/link';
@@ -13,13 +13,14 @@ export const metadata: Metadata = {
     title: 'studyNow',
     description: '스터디모집,퀴즈,채용정보까지 한번에!',
   },
-  icons: {
-    icon: '/images/icons/logo_apple_touch_icon.png',
-    apple: '/images/icons/logo_apple_touch_icon.png',
-  },
-  viewport: {
-    userScalable: false,
-  },
+  icons: [
+    { rel: 'icon', url: '/images/icons/logo_apple_touch_icon.png' },
+    { rel: 'apple-touch-icon', url: '/images/icons/logo_apple_touch_icon.png' },
+  ],
+};
+
+export const viewport: Viewport = {
+  userScalable: false,
 };
 
 export interface User {
