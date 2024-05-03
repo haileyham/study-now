@@ -8,6 +8,18 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'StudyNow',
   description: 'StudyNow 스터디나우 : 스터디모집,퀴즈,채용정보까지 한번에!',
+  applicationName: 'StudyNow',
+  openGraph: {
+    title: 'studyNow',
+    description: '스터디모집,퀴즈,채용정보까지 한번에!',
+  },
+  icons: {
+    icon: '/images/icons/logo_apple_touch_icon.png',
+    apple: '/images/icons/logo_apple_touch_icon.png',
+  },
+  viewport: {
+    userScalable: false,
+  },
 };
 
 export interface User {
