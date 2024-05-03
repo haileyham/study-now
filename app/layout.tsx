@@ -2,13 +2,24 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.scss';
 import Link from 'next/link';
-import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'StudyNow',
   description: 'StudyNow 스터디나우 : 스터디모집,퀴즈,채용정보까지 한번에!',
+  applicationName: 'StudyNow',
+  openGraph: {
+    title: 'studyNow',
+    description: '스터디모집,퀴즈,채용정보까지 한번에!',
+  },
+  icons: {
+    icon: '/images/icons/logo_apple_touch_icon.png',
+    apple: '/images/icons/logo_apple_touch_icon.png',
+  },
+  viewport: {
+    userScalable: false,
+  },
 };
 
 export interface User {
@@ -26,23 +37,6 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta
-          name="viewport"
-          content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
-        />
-        <meta property="og:title" content="studyWith" />
-        <meta property="og:site_name" content="studyWith" />
-        <meta
-          property="og:description"
-          content="StudyNow 스터디나우 : 스터디모집,퀴즈,채용정보까지 한번에!"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/images/icons/logo_apple_touch_icon.png"
-        />
-      </Head>
       <body className={inter.className}>
         <header className="headerMain">
           <ul className="navContainer">
