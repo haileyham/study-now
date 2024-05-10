@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     description: '스터디모집,퀴즈,채용정보까지 한번에!',
   },
   icons: [
-    { rel: 'icon', url: '/images/icons/logo_apple_touch_icon.png' },
-    { rel: 'apple-touch-icon', url: '/images/icons/logo_apple_touch_icon.png' },
+    { rel: 'icon', url: '/apple-icon.png' },
+    { rel: 'apple-touch-icon', url: '/apple-icon.png' },
   ],
 };
 
