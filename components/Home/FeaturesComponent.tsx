@@ -6,20 +6,17 @@ export default function FeaturesComponent() {
       <h2>One Stop</h2>
       <div>
         <p>
-          ajlskfjsojfoajfiosjofjo
+          모바일부터
           <br />
-          asdaosdfjosjafioasfasdfasdfasdfasdf
+          테블릿, pc까지 !
         </p>
-        <img
-          src="https://grademobile.co.uk/cdn/shop/files/iphone-14-pro-5g-deep-purple_03c6911e-49fc-406d-9e75-edc63125408b.png?v=1684250236"
-          alt=""
-        />
+        <img src="/images/main/m1.png" alt="main-img" />
         <p>
-          ajlskfjsojfoajfiosjofjoasd
+          원하는 곳
           <br />
-          jaosdfjosjafioasfasdfasdfafasd
+          언제 어디서나
           <br />
-          jaosdfjosjafioasfasdfasdfafasdasdsad
+          손쉽게 이용가능합니다 !
         </p>
       </div>
     </div>
