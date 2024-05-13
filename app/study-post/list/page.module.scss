@@ -1,4 +1,5 @@
 .studyMain {
+  position: relative;
   margin: auto;
   max-width: 800px;
   padding: 2rem 1rem;
@@ -21,6 +22,15 @@
 //list section
 .studySection {
   margin-top: 2rem;
+}
+
+.advStyle {
+  position: absolute;
+  width: 7rem;
+  top: 0;
+  left: -20%;
+  text-align: center;
+  z-index: 10;
 }
 
 /* 데스크탑 화면 스타일 */

@@ -56,13 +56,13 @@ export default async function Home() {
         >
           <CommunicationComponent></CommunicationComponent>
         </section>
-        {promotional.map((item, i) => {
-          return (
-            <section className={styles.section} key={i}>
-              <PromotionalComponent {...item}></PromotionalComponent>
-            </section>
-          );
-        })}
+        <section className={styles.sectionP}>
+          {promotional.map((item, i) => {
+            return (
+              <PromotionalComponent {...item} key={i}></PromotionalComponent>
+            );
+          })}
+        </section>
         <section className={styles.sectionFull}>
           <FeaturesComponent />
         </section>

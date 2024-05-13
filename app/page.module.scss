@@ -1,9 +1,13 @@
 //home
+.sectionP {
+  max-width: var(--max-width);
+  margin: -2rem auto 3rem;
+}
+
 .section {
   max-width: var(--max-width);
   margin: auto;
   height: 400px;
-  // box-shadow: 0 0 10px pink;
 }
 
 .signUp {
@@ -74,11 +78,19 @@
     gap: 0;
     padding: 10px 0;
   }
+
+  .sectionP {
+    margin: 10rem auto;
+    height: auto;
+  }
 }
 
 // pc 화면 스타일
-@media (min-width: 1080px) {
+@media (min-width: 1024px) {
   .communicationContainer {
     height: 100%;
+  }
+  .sectionP {
+    margin-top: 10rem;
   }
 }
