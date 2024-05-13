@@ -174,7 +174,7 @@
 //section_promotional
 .promotionalSection {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 5rem;
   height: 100%;
   padding: 1rem;
   flex-direction: column;
@@ -183,7 +183,7 @@
   text-align: center;
   object-fit: cover;
   img {
-    width: 15rem;
+    width: 20rem;
   }
   div {
     h2 {
@@ -205,11 +205,11 @@
 // scrollEvent
 .hidden {
   height: 100%;
-  margin-top: 2rem;
+  margin-top: 5rem;
   opacity: 0;
   transform: translateY(5rem);
   img {
-    width: 15rem;
+    width: 20rem;
   }
 }
 
@@ -422,12 +422,12 @@
   .promotionalSection {
     height: 100%;
     padding: 0 5rem;
-    gap: 10rem;
+    gap: 1rem;
     flex-direction: row;
     align-items: center;
     text-align: left;
     img {
-      width: 20rem;
+      width: 21rem;
     }
     div {
       flex: 1;
@@ -438,6 +438,12 @@
     img {
       order: 2;
     }
+  }
+}
+// scrollEvent
+.hidden {
+  img {
+    width: 21rem;
   }
 }
 
@@ -496,6 +502,22 @@
         font-size: 1.2rem;
         font-weight: 900;
       }
+    }
+  }
+
+  //section_promotional
+  .promotionalSection {
+    height: 100%;
+    padding: 0 5rem;
+    gap: 4rem;
+    img {
+      width: 25rem;
+    }
+  }
+  // scrollEvent
+  .hidden {
+    img {
+      width: 25rem;
     }
   }
 
