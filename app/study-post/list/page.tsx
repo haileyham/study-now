@@ -5,6 +5,7 @@ import WriteBtn from '@/components/writing/WriteBtn';
 import SearchingStudyPostList from '@/components/studyList/SearchingStudy';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import Advertisement from '@/components/common/Advertisement';
 
 // export const revalidate = 60;
 export const dynamic = 'force-dynamic';
@@ -32,6 +33,7 @@ export default async function StudyPost() {
           <section className={styles.studySection}>
             <SearchingStudyPostList result={result}></SearchingStudyPostList>
           </section>
+          <Advertisement st={styles.advStyle}></Advertisement>
         </main>
       </div>
     </>
