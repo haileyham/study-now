@@ -24,6 +24,8 @@
 
 //Advertisement
 .article {
+  display: none;
+  cursor: pointer;
   aside {
     padding: 0 0 1rem 0;
     box-shadow: 0 0 5px 2px #ddd;
@@ -35,5 +37,21 @@
   img {
     width: 100%;
     border-radius: var(--border-radius-m);
+  }
+  a {
+    &:hover {
+      color: rgb(179, 159, 251);
+    }
+  }
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 768px) {
+}
+
+/* 데스크탑 화면 스타일 */
+@media (min-width: 1024px) {
+  .article {
+    display: block;
   }
 }
