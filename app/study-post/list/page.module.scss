@@ -25,17 +25,25 @@
 }
 
 .advStyle {
-  position: absolute;
-  width: 7rem;
-  top: 0;
-  left: -20%;
-  text-align: center;
-  z-index: 10;
+  width: 100%;
+  height: 4rem;
+  margin: -1rem auto 2rem;
+  border-radius: var(--border-radius-m);
 }
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
   .studyMain {
     border-radius: var(--border-radius-m);
+  }
+  .advStyle {
+    position: absolute;
+    margin: 0;
+    width: 7rem;
+    height: 100%;
+    top: 0;
+    left: -20%;
+    text-align: center;
+    z-index: 10;
   }
 }

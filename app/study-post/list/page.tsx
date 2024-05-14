@@ -23,6 +23,7 @@ export default async function StudyPost() {
     <>
       <div className="container">
         <main className={styles.studyMain}>
+          <Advertisement st={styles.advStyle}></Advertisement>
           <header className={styles.studyHeader}>
             <div>
               <h1>StudyList</h1>
@@ -33,7 +34,6 @@ export default async function StudyPost() {
           <section className={styles.studySection}>
             <SearchingStudyPostList result={result}></SearchingStudyPostList>
           </section>
-          <Advertisement st={styles.advStyle}></Advertisement>
         </main>
       </div>
     </>
