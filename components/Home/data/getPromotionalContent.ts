@@ -4,7 +4,7 @@ export default function getPromotionalContent() {
       imageUrl: '/images/main/m2.png',
       title: 'Solve The Quiz',
       text: '퀴즈를 통해 실력을 향상 시키세요!',
-      content: '언제 어디서나 mobile, pc 이용하여! 블라블라!',
+      content: '언제 어디서나 mobile, pc 이용하여, 자신의 실력을 향상시키세요!',
     },
     {
       imageUrl: '/images/main/m3.png',

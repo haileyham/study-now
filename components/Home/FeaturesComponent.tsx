@@ -3,7 +3,11 @@ import styles from './page.module.scss';
 export default function FeaturesComponent() {
   return (
     <div className={styles.FeaturesContainer}>
-      <h2>One Stop</h2>
+      <h2>
+        All Screens
+        <br />
+        One Experience
+      </h2>
       <div>
         <p>
           모바일부터

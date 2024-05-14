@@ -6,6 +6,7 @@ import JobSearching from './JobSearching';
 import extractDistrict from './extractDistrict';
 import JobOpeningSite from './JobOpeningSite';
 import getImageSource from './getImageSource';
+import LoadingB from '../loading/LoadingB';
 
 interface JobAPI {
   [key: string]: string;
@@ -55,26 +56,28 @@ export default function JobOpeningsList() {
       ></JobSearching>
       <section className={styles.jobListSection}>
         <ul>
-          {searchResult.length > 0
-            ? searchResult.map((item: JobAPI, i: number) => {
-                const match = extractDistrict(item.WORK_PARAR_BASS_ADRES_CN);
-                const image = getImageSource(item.RCRIT_JSSFC_CMMN_CODE_SE);
-                return (
-                  <li key={i}>
-                    <div className={styles.imgBox}>
-                      <img
-                        src={`/images/company/${image}`}
-                        alt="채용회사이미지"
-                      />
-                    </div>
-                    <h2>{item.CMPNY_NM}</h2>
-                    <p>{item.BSNS_SUMRY_CN}</p>
-                    <p>{item.JOBCODE_NM}</p>
-                    <span>{match}</span>
-                  </li>
-                );
-              })
-            : ''}
+          {searchResult.length > 0 ? (
+            searchResult.map((item: JobAPI, i: number) => {
+              const match = extractDistrict(item.WORK_PARAR_BASS_ADRES_CN);
+              const image = getImageSource(item.RCRIT_JSSFC_CMMN_CODE_SE);
+              return (
+                <li key={i}>
+                  <div className={styles.imgBox}>
+                    <img
+                      src={`/images/company/${image}`}
+                      alt="채용회사이미지"
+                    />
+                  </div>
+                  <h2>{item.CMPNY_NM}</h2>
+                  <p>{item.BSNS_SUMRY_CN}</p>
+                  <p>{item.JOBCODE_NM}</p>
+                  <span>{match}</span>
+                </li>
+              );
+            })
+          ) : (
+            <LoadingB />
+          )}
         </ul>
       </section>
       <JobOpeningSite></JobOpeningSite>
