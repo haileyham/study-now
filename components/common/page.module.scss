@@ -57,13 +57,15 @@
   }
 }
 
-/* 데스크탑 화면 스타일 */
+/* 테블릿 화면 스타일 */
 @media (min-width: 768px) {
 }
 
 /* 데스크탑 화면 스타일 */
 @media (min-width: 1024px) {
   .article {
+    width: 7rem;
+    position: absolute;
     cursor: pointer;
     aside {
       padding: 0 0 1rem 0;
