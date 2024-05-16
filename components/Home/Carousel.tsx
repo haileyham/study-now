@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import Link from 'next/link';
 import getCarouselData from './data/getCarouselData';
+import Image from 'next/image';
 
 const Carousel: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -48,10 +49,15 @@ const Carousel: React.FC = () => {
                   <h2>{data.text}</h2>
                   <Link href={data.link}>
                     <button className="btn-m">{data.btn}</button>
-                    <img
+                    <Image
                       src={data.img}
                       alt={data.text}
                       className={styles.image}
+                      width={300}
+                      height={300}
+                      quality={75}
+                      placeholder="blur"
+                      blurDataURL="/path/to/low-res-image.jpg"
                     />
                   </Link>
                 </div>

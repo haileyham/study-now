@@ -7,6 +7,7 @@ import extractDistrict from './extractDistrict';
 import JobOpeningSite from './JobOpeningSite';
 import getImageSource from './getImageSource';
 import LoadingB from '../loading/LoadingB';
+import Image from 'next/image';
 
 interface JobAPI {
   [key: string]: string;
@@ -63,9 +64,14 @@ export default function JobOpeningsList() {
               return (
                 <li key={i}>
                   <div className={styles.imgBox}>
-                    <img
+                    <Image
                       src={`/images/company/${image}`}
                       alt="채용회사이미지"
+                      width={200}
+                      height={100}
+                      quality={75}
+                      placeholder="blur"
+                      blurDataURL="/path/to/low-res-image.jpg"
                     />
                   </div>
                   <h2>{item.CMPNY_NM}</h2>
