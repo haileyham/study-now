@@ -6,6 +6,7 @@ import { getDate } from '@/components/common/time';
 import Toggle from './Toggle';
 import Header from '../common/Header';
 import Modal from '../modal/Modal';
+import Image from 'next/image';
 
 const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
   let id;
@@ -66,13 +67,18 @@ const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
                   <Toggle childTsxContent={editDelBtnContent}></Toggle>
                 </div>
                 <div className={styles.divMainHeader}>
-                  <img
+                  <Image
                     src={
                       result.authorImage
                         ? result.authorImage
                         : '/images/profile/profile1.svg'
                     }
                     alt="profile"
+                    width={30}
+                    height={30}
+                    quality={50}
+                    placeholder="blur"
+                    blurDataURL="/path/to/low-res-image.jpg"
                   />
                   <p>{result.authorName}</p>
                   <p className={styles.date}>{getDate(result.date)}</p>
@@ -87,7 +93,15 @@ const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
               <ul className={styles.commentWrapper}>
                 <li>
                   <div className={styles.commnetInfo}>
-                    <img src="/images/profile/profile2.svg" alt="profile" />
+                    <Image
+                      src="/images/profile/profile2.svg"
+                      alt="profile"
+                      width={30}
+                      height={20}
+                      quality={50}
+                      placeholder="blur"
+                      blurDataURL="/path/to/low-res-image.jpg"
+                    />
                     <p>스터디롸잇나우</p>
                   </div>
                   <p className={styles.comment}>참여 희망합니다~</p>
@@ -95,7 +109,15 @@ const Detail: React.FC<StudyDetailComponent> = ({ result, session }) => {
                 </li>
                 <li>
                   <div className={styles.commnetInfo}>
-                    <img src="/images/profile/profile3.svg" alt="profile" />
+                    <Image
+                      src="/images/profile/profile3.svg"
+                      alt="profile"
+                      width={30}
+                      height={20}
+                      quality={50}
+                      placeholder="blur"
+                      blurDataURL="/path/to/low-res-image.jpg"
+                    />
                     <p>hailey</p>
                   </div>
                   <p className={styles.comment}>응원합니다! 파이팅!</p>

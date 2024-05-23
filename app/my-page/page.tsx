@@ -6,6 +6,7 @@ import { LoginBtn, LogoutBtn } from '@/components/Home/LoginOutBtn';
 import CommunicationComponent from '@/components/Home/CommunicationComponent';
 import Link from 'next/link';
 import Modal from '@/components/modal/Modal';
+import Image from 'next/image';
 
 export default async function MyPage() {
   const session: any = await getServerSession(authOptions as any);
@@ -18,7 +19,15 @@ export default async function MyPage() {
             <h2 className="a11y-hidden">마이페이지</h2>
             <section className={styles.profile}>
               <div>
-                <img src={session.user.image} alt="user-profile-img" />
+                <Image
+                  src={session.user.image}
+                  alt="user-profile-img"
+                  width={100}
+                  height={100}
+                  quality={50}
+                  placeholder="blur"
+                  blurDataURL="/path/to/low-res-image.jpg"
+                />
               </div>
               <h3>{session.user.name}</h3>
               <p>{session.user.email}</p>

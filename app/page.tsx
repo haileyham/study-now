@@ -23,14 +23,27 @@ export default async function Home() {
     <>
       <main>
         <div className="myContainer">
-          <img
+          <Image
             src="/images/icons/logo.svg"
             alt="study-now-logo"
             className="logo"
+            width={100}
+            height={100}
+            quality={75}
+            placeholder="blur"
+            blurDataURL="/path/to/low-res-image.jpg"
           />
           {session ? (
             <div>
-              <img src={session.user.image} alt={session.user.name} />
+              <Image
+                src={session.user.image}
+                alt={session.user.name}
+                width={100}
+                height={100}
+                quality={75}
+                placeholder="blur"
+                blurDataURL="/path/to/low-res-image.jpg"
+              />
               <Link href="/my-page">{session.user.name}님</Link>
             </div>
           ) : (

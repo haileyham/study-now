@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './page.module.scss';
 import React from 'react';
+import Image from 'next/image';
 
 type AdvProps = {
   st: string;
@@ -14,7 +15,15 @@ const Advertisement: React.FC<AdvProps> = ({ st }) => {
       <aside>
         <Link href="https://chatting-with.vercel.app/" target="_blank">
           <div>
-            <img src="/images/icons/chatting.png" alt="광고 이미지" />
+            <Image
+              src="/images/icons/chatting.png"
+              alt="광고 이미지"
+              width={100}
+              height={100}
+              quality={75}
+              placeholder="blur"
+              blurDataURL="/path/to/low-res-image.jpg"
+            />
           </div>
           <h2>ChattingWith</h2>
           <p>

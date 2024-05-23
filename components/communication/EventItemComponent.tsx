@@ -1,10 +1,11 @@
 'use client';
 import styles from './page.module.scss';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import Image from 'next/image';
 import React from 'react';
 
 interface EventItemType {
-  image?: string;
+  image: string;
   title: string;
   content?: string;
   style?: string;
@@ -23,7 +24,17 @@ export default function EventItemComponent({
         <div ref={ref} className={isVisible ? styles.visible : styles.hidden}>
           <h3>{title}</h3>
           <p>{content}</p>
-          <img src={image} alt="eventImg" />
+          <div className={styles.imageContainer}>
+            <Image
+              src={image}
+              alt="eventImg"
+              layout="fill"
+              objectFit="cover"
+              quality={50}
+              placeholder="blur"
+              blurDataURL="/path/to/low-res-image.jpg"
+            />
+          </div>
         </div>
       </div>
     </>
