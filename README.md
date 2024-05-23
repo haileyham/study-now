@@ -1,4 +1,4 @@
-# <span id="top"><img src="https://raw.githubusercontent.com/haileyham/study-now/main/app/apple-icon.png?token=GHSAT0AAAAAACR5VXKVUSEC457NFGPNBUXWZSOY43A" alt="studyNow image" width="30" height="30"/> Study Now</span>
+# <span id="top">🤓 Study Now</span>
 
 ## 🔗 [Study Now 바로가기](https://study-now-pink.vercel.app/)
 
@@ -6,14 +6,16 @@
 💙 계정 ID : studyNow@studynow.com <br/>
 🔓 계정 PW : test1T
 
-🍭 <a href="#1">서비스 소개</a> <br/>
-🍭 <a href="#2">개요-특징 및 성과</a> <br/>
-🍭 <a href="#3">주요 기능 및 페이지</a> <br/>
-🍭 <a href="#4">트러블슈팅</a> <br/>
+---
+
+🍭 <a href="#1" >서비스 소개</a> <br/>
+🍭 <a href="#2" >개요-특징 및 성과</a> <br/>
+🍭 <a href="#3" >주요 기능 및 페이지</a> <br/>
+🍭 <a href="#4" >트러블슈팅</a> <br/>
 
 </br>
 
-# <img src="https://raw.githubusercontent.com/haileyham/study-now/main/app/apple-icon.png?token=GHSAT0AAAAAACR5VXKVUSEC457NFGPNBUXWZSOY43A" alt="studyNow image" width="30" height="30"/> Study Now
+# 🤓 Study Now
 
 ## <span id="1">📖 서비스 소개</span>
 
