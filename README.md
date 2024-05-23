@@ -1,4 +1,4 @@
-# <span id="top">📚 Study Now</span>
+# <span id="top"><img src="https://raw.githubusercontent.com/haileyham/study-now/main/app/apple-icon.png?token=GHSAT0AAAAAACR5VXKVUSEC457NFGPNBUXWZSOY43A" alt="studyNow image" width="30" height="30"/> Study Now</span>
 
 ## 🔗 [Study Now 바로가기](https://study-now-pink.vercel.app/)
 
@@ -6,9 +6,16 @@
 💙 계정 ID : studyNow@studynow.com <br/>
 🔓 계정 PW : test1T
 
-# 📙 Study Now
+🍭 <a href="#1">서비스 소개</a> <br/>
+🍭 <a href="#2">개요-특징 및 성과</a> <br/>
+🍭 <a href="#3">주요 기능 및 페이지</a> <br/>
+🍭 <a href="#4">트러블슈팅</a> <br/>
 
-## 📖 서비스 소개
+</br>
+
+# <img src="https://raw.githubusercontent.com/haileyham/study-now/main/app/apple-icon.png?token=GHSAT0AAAAAACR5VXKVUSEC457NFGPNBUXWZSOY43A" alt="studyNow image" width="30" height="30"/> Study Now
+
+## <span id="1">📖 서비스 소개</span>
 
 **studyNow** 는 공부 등 자기 계발을 위해 설계된 다기능 플랫폼입니다. 자기계발을 위한 퀴즈, 효과적인 협업을 위한 스터디그룹 모집 및 채용정보 제공, 구성원 간 원활한 소통을 위한 실시간 채팅 기능을 갖춘 종합 플랫폼입니다.
 
@@ -27,8 +34,8 @@
     - 스터디원과의 원활한 소통을 위한 실시간 채팅이 가능합니다.
       </br>
 
-4.  **최신 채용 공고에 대한 최신 정보를 유지하고 구직 과정을 간소화**
-    - 서울시 채용정보 연계를 통한 채용 정보에 대한 최신 정보 및 구직 과정을 간소화 시킬 수 있습니다.
+4.  **최신 채용 공고에 대한 최신 정보를 유지하고 구직 과정을 간소화** - 서울시 채용정보 연계를 통한 채용 정보에 대한 최신 정보 및 구직 과정을 간소화 시킬 수 있습니다.
+<p align="right"><a href="#top">TOP 🔼</a></p>
 
 ## 📖 개요
 
@@ -40,7 +47,7 @@
   - 개발기간 : 2023.11
   - 리팩토링 : 2023.12 ~ 계속
 
-### 🐣 특징 및 성과
+### <span id="2">🐣 특징 및 성과</span>
 
 이 프로젝트는 Next.js와 TypeScript 및 MongoDB를 기반으로 구축되었으며 사용자 경험 향상과 성능 최적화에 중점을 두고 있습니다. 주요 특징과 성과는 다음과 같습니다.
 
@@ -76,15 +83,15 @@
 ### ⚙ 개발 환경
 
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=black">
-  <img src="https://img.shields.io/badge/Scss-CC6699?style=for-the-badge&logo=Sass&logoColor=black">  
-  <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=Recoil&logoColor=black">
+<img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Scss-CC6699?style=for-the-badge&logo=Sass&logoColor=black"/>  
+  <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=Recoil&logoColor=black"/>
   <br/>
-    <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-  <img src="https://img.shields.io/badge/figma-f76c62?style=for-the-badge&logo=figma&logoColor=white">
-  <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+    <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/figma-f76c62?style=for-the-badge&logo=figma&logoColor=white"/>
+  <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>
 
 </br>
 
@@ -96,7 +103,7 @@
 
 <p align="right"><a href="#top">TOP 🔼</a></p>
 
-# 📖 주요 기능 및 페이지
+# <span id="3">📖 주요 기능 및 페이지</span>
 
 ## 💡 로그인 및 회원가입 페이지
 
@@ -224,7 +231,7 @@
 
 </br>
 
-# 🎃 트러블 슈팅
+# <span id="4">🎃 트러블 슈팅</span>
 
 ## 🎃 (공공데이터) 외부 API - Mixed Content
 
@@ -386,6 +393,7 @@
 ### 🔗 GIT ISSUE 정리 [vercel 국내 DNS 문제 issue 바로가기](https://github.com/haileyham/study-now/issues/132)
 
 </br>
+<p align="right"><a href="#top">TOP 🔼</a></p>
 
 # 🎪 기능 시현
 
