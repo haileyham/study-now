@@ -57,7 +57,8 @@ const Carousel: React.FC = () => {
                       height={300}
                       quality={75}
                       placeholder="blur"
-                      blurDataURL="/path/to/low-res-image.jpg"
+                      blurDataURL="/path/to/low-res-image.png"
+                      loading="lazy"
                     />
                   </Link>
                 </div>

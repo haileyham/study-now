@@ -2,7 +2,6 @@ import Link from 'next/link';
 import styles from './page.module.scss';
 import React from 'react';
 import getCommunicationData from './data/getCommunicationData';
-import Image from 'next/image';
 
 export default function CommunicationComponent() {
   const communicationData = getCommunicationData();
@@ -10,18 +9,8 @@ export default function CommunicationComponent() {
     <div className={styles.communicationContainer}>
       {communicationData.map((item, i) => {
         return (
-          <Link href={item.link}>
-            <div className={styles.imageContainerCommu}>
-              <Image
-                src={item.img}
-                alt={item.alt}
-                layout="fill"
-                objectFit="cover"
-                quality={75}
-                placeholder="blur"
-                blurDataURL="/path/to/low-res-image.jpg"
-              />
-            </div>
+          <Link href={item.link} key={i}>
+            <img src={item.img} alt={item.alt} />
             <p>{item.title}</p>
           </Link>
         );
