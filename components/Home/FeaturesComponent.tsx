@@ -14,7 +14,9 @@ export default function FeaturesComponent() {
           <br />
           테블릿, pc까지 !
         </p>
-        <img src="/images/main/m1.png" alt="main-img" />
+        <span>
+          <img src="/images/main/m1.png" alt="main-img" />
+        </span>
         <p>
           원하는 곳
           <br />
