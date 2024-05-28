@@ -29,7 +29,7 @@ export default function EventItemComponent({
               src={image}
               alt="eventImg"
               layout="fill"
-              objectFit="cover"
+              objectFit="contain"
               quality={50}
               placeholder="blur"
               blurDataURL="/path/to/low-res-image.jpg"
