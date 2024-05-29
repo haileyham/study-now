@@ -17,6 +17,8 @@
 
 # 🤓 Study Now
 
+<img src="https://private-user-images.githubusercontent.com/109202954/334666486-edd8b3a7-59e4-4f02-8187-ac1de31f0cb6.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTY5NjExODksIm5iZiI6MTcxNjk2MDg4OSwicGF0aCI6Ii8xMDkyMDI5NTQvMzM0NjY2NDg2LWVkZDhiM2E3LTU5ZTQtNGYwMi04MTg3LWFjMWRlMzFmMGNiNi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDUyOVQwNTM0NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNTI1MGY1NzQyYTUyNDA0OTM5YjRmYzViYTZmZTFhYTMzNDI5NTUyNmRjOGZkZjhiOGIwNmEzMjczNjU0OWY5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.Js8-CYK4SiOZTWSxZT_xOyCQHFaQqu8IiKyLxeQ0OfM" style="max-width:700px" alt="studyNow 이미지"/>
+
 ## <span id="1">📖 서비스 소개</span>
 
 **studyNow** 는 공부 등 자기 계발을 위해 설계된 다기능 플랫폼입니다. 자기계발을 위한 퀴즈, 효과적인 협업을 위한 스터디그룹 모집 및 채용정보 제공, 구성원 간 원활한 소통을 위한 실시간 채팅 기능을 갖춘 종합 플랫폼입니다.
@@ -36,8 +38,11 @@
     - 스터디원과의 원활한 소통을 위한 실시간 채팅이 가능합니다.
       </br>
 
-4.  **최신 채용 공고에 대한 최신 정보를 유지하고 구직 과정을 간소화** - 서울시 채용정보 연계를 통한 채용 정보에 대한 최신 정보 및 구직 과정을 간소화 시킬 수 있습니다.
-<p align="right"><a href="#top">TOP 🔼</a></p>
+4.  **최신 채용 공고에 대한 최신 정보를 유지하고 구직 과정을 간소화**
+
+    - 서울시 채용정보 연계를 통한 채용 정보에 대한 최신 정보 및 구직 과정을 간소화 시킬 수 있습니다.
+
+    <p align="right"><a href="#top">TOP 🔼</a></p>
 
 ## 📖 개요
 
@@ -59,14 +64,14 @@
 - 모듈화 및 재사용성 향상
 - mongoDB를 사용한 데이터 관리
 - API Route를 통한 serverless function
-- SSR을 통한 초기 페이지 로딩 시간 단축
+- SSR을 통한 초기 페이지 로딩 시간 단축 3ms -> 1.5ms, 50% 단축
 - SEO 검색엔진 최적화 향상
 - revalidate = 60; 이용하여 서버 부담 최소화
 
 #### 2. 사용자 경험 향상
 
 - 다양한 기기와 화면 크기에 대응하는 반응형 웹을 통한 사용자 친화적
-- 전략적 SEO 개선 및 최적화를 통해 SEO 평가 점수 100%를 달성
+- 전략적 SEO 개선 및 최적화를 통해 92점에서 -> 100점으로 약 9%개선, Lighthouse SEO 평가 점수 100 달성
 - 불필요한 쿼리를 줄이고 로딩 속도를 개선하여 전반적인 성능을 향상
 - 이미지 최적화(Image component)
 - skeleton UI 및 Loading 통해 사용자 경험 개선 및 bounce rate 최소화
@@ -84,16 +89,7 @@
 
 ### ⚙ 개발 환경
 
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/>
-<img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Scss-CC6699?style=for-the-badge&logo=Sass&logoColor=black"/>  
-  <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=Recoil&logoColor=black"/>
-  <br/>
-    <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/>
-  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-  <img src="https://img.shields.io/badge/figma-f76c62?style=for-the-badge&logo=figma&logoColor=white"/>
-  <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/><img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/><img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=black"/><img src="https://img.shields.io/badge/Scss-CC6699?style=for-the-badge&logo=Sass&logoColor=black"/><img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=Recoil&logoColor=black"/></br><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/><img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"/><img src="https://img.shields.io/badge/figma-f76c62?style=for-the-badge&logo=figma&logoColor=white"/><img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>
 
 </br>
 
@@ -226,7 +222,7 @@
 
 ### useIntersectionObserver - custom hook
 
-- 스크롤 이벤트 및 무한스크롤 적용
+- 스크롤 이벤트 및 무한스크롤 적용(main, event, 채용페이지)
 - threshold를 통해 해당 지점 작동 위치 조정
 
 <p align="right"><a href="#top">TOP 🔼</a></p>
