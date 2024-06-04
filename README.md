@@ -17,7 +17,7 @@
 
 # 🤓 Study Now
 
-<img src="https://private-user-images.githubusercontent.com/109202954/334666486-edd8b3a7-59e4-4f02-8187-ac1de31f0cb6.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTY5NjExODksIm5iZiI6MTcxNjk2MDg4OSwicGF0aCI6Ii8xMDkyMDI5NTQvMzM0NjY2NDg2LWVkZDhiM2E3LTU5ZTQtNGYwMi04MTg3LWFjMWRlMzFmMGNiNi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDUyOVQwNTM0NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNTI1MGY1NzQyYTUyNDA0OTM5YjRmYzViYTZmZTFhYTMzNDI5NTUyNmRjOGZkZjhiOGIwNmEzMjczNjU0OWY5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.Js8-CYK4SiOZTWSxZT_xOyCQHFaQqu8IiKyLxeQ0OfM" style="max-width:700px" alt="studyNow 이미지"/>
+<img src="https://raw.githubusercontent.com/haileyham/study-now/e5f174600452435c276aee9ece563a02e240be25/public/images/studyNow.jpg" style="max-width:700px" alt="studyNow 이미지"/>
 
 ## <span id="1">📖 서비스 소개</span>
 
