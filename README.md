@@ -84,6 +84,7 @@
 - Pull Request 및 코드 리뷰를 통해 코드의 품질을 높이고, 충돌을 방지하며 안정적인 개발을 진행
 - 확장성 염두한 application architecture
 - 모든 과정 문서화 및 ISSUE 관리
+- [StudyNow Logo design - figma](https://www.figma.com/design/dQvYwMLHVOaHkePSqUdqoA/studyNow-logo-design?t=2wJAzJEfiZ1O6EEf-0)
 
 </br>
 
@@ -103,14 +104,38 @@
 
 # <span id="3">📖 주요 기능 및 페이지</span>
 
-## 💡 로그인 및 회원가입 페이지
+## 💡 메인 페이지
 
-- OAuth 소셜 로그인 (깃헙, 카카오) - Session
-- 일반 로그인 및 일반 회원가입 - JWT (JSON Web Token)
+| 메인페이지(반응형웹)                                                                                 | 메인페이지                                                                                           |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| <img width="400px" src="https://github.com/haileyham/study-now/blob/main/assets/img/1.gif?raw=true"> | <img width="400px" src="https://github.com/haileyham/study-now/blob/main/assets/img/2.gif?raw=true"> |
+
+- 반응형 웹으로 사용자 편리성 향상
+- scroll event 및 해당 플랫폼 소개 design
+- 회원가입 및 로그인의 경우 main page 상단에만 표시
+
+### Nav (layout.tsx)
+
+- pc 버전의 경우 상단 / mobile, tablet 버전의 경우 하단 위치하여 사용자 편리성 증대
+
+### Carousel
+
+- 라이브러리 사용하지 않고 직접 개발 및 개선
+- background에 linear-gradient를 통한 pc 버전 전체 통일감 부여
+
+<br/>
 
 ## 💡 스터디 게시판 페이지
 
+| 스터디 게시판 페이지(반응형)                                                                         |
+| ---------------------------------------------------------------------------------------------------- |
+| <img width="500px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4.gif?raw=true"> |
+
 #### 💡 스터디 모집 게시글 목록 페이지
+
+| 모집상태 tab                                                                                           | 카테고리별 검색                                                                                        | 글쓰기 페이지 modal                                                                                    |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-1.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-2.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-3.gif?raw=true"> |
 
 - 최신순 정렬(글 작성 시 DB 함께 저장한 날짜)
 - 글 작성 날짜(최신/일/주/연월일 순으로 시간별 표시 - time)
@@ -124,6 +149,10 @@
 
 #### 💡🌼 스터디 모집 게시글 작성 페이지 & 서버 개발
 
+| 편리한 상태표시                                                                                        | 유효성검사 및 modal                                                                                    | 유효성 통과후 (modal 통일감)                                                                           |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-4.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-5.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-6.gif?raw=true"> |
+
 - 작성, 수정 공통 컴포넌트 writingEditor를 통한 코드 개선
 - 유효성 검사를 통한 필수 작성 목룍 표시 - 등록 버튼 후 modal 통해 표시
 - 유효성 통과 후, 서버 및 DB data 통신
@@ -131,6 +160,10 @@
 - 스터디 모집 상태 표시(모집상태, 온오프, 장소, 종류, 연락처 등)
 
 #### 💡🌼 스터디 모집 게시글 수정 & 서버 개발
+
+| dyanamice route                                                                                        | 게시글 수정                                                                                            | 게시글 삭제                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-7.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-8.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/4-9.gif?raw=true"> |
 
 - 작성, 수정 공통 컴포넌트 writingEditor를 통한 코드 개선
 - dyanamice route를 통한 각 게시물 별 수정 페이지 연결
@@ -153,6 +186,14 @@
 
 ## 💡 퀴즈 페이지
 
+| 퀴즈 페이지 (반응형)                                                                                 |
+| ---------------------------------------------------------------------------------------------------- |
+| <img width="500px" src="https://github.com/haileyham/study-now/blob/main/assets/img/3.gif?raw=true"> |
+
+| 퀴즈 사용자 설정                                                                                       | 퀴즈 플레이(+시간경과)                                                                                 | 퀴즈 결과 페이지                                                                                       |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/3-1.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/3-2.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/3-3.gif?raw=true"> |
+
 #### 💡 퀴즈 셋팅 페이지
 
 - 문제 유형, 문제 갯수 및 문제 시간 사용자가 직접 설정 가능하여 이용 편리성 극대
@@ -173,6 +214,10 @@
 
 ## 💡 채용 페이지
 
+| 채용페이지(반응형웹)                                                                                 | 검색(지역)                                                                                             |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| <img width="400px" src="https://github.com/haileyham/study-now/blob/main/assets/img/5.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/5-1.gif?raw=true"> |
+
 - 서울 API 데이터 활용
 - sticky를 통한 검색창 상단 고정하여 사용자 편리성 개선
 
@@ -180,32 +225,34 @@
 
 ## 💡 마이 페이지
 
+| 마이페이지(반응형웹)                                                                                 | 검색(지역)                                                                                             |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| <img width="400px" src="https://github.com/haileyham/study-now/blob/main/assets/img/6.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/6-1.gif?raw=true"> |
+
 - 사용자 별 session 정보를 통한 마이페이지 표시
 - 조건부 랜더링을 통한 로그인 이전 시, 로그인 및 회원가입 표시
 - grid를 통한 반응형 웹 개선
 
 </br>
 
-## 💡 Contact 페이지
+## 💡 로그인 및 회원가입 페이지
 
-- 공지, 문의, 뉴스, 이벤트 페이지
+| 로그인(OAuth/JWT)                                                                                      | 회원가입(+유효성)                                                                                      |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/6-1.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/6-2.gif?raw=true"> |
+
+- OAuth 소셜 로그인 (깃헙, 카카오) - Session
+- 일반 로그인 및 일반 회원가입 - JWT (JSON Web Token)
 
 </br>
 
-## 💡 메인 페이지
+## 💡 Contact 페이지
 
-- 스크롤 이벤트 및 해당 플랫폼 소개 design
-- 회원가입 및 로그인의 경우 main page 상단에만 표시
+| contact 페이지                                                                                       | modal                                                                                                |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/7.gif?raw=true"> | <img width="250px" src="https://github.com/haileyham/study-now/blob/main/assets/img/8.gif?raw=true"> |
 
-### Nav (layout.tsx)
-
-- pc 버전의 경우 상단
-- mobile, tablet 버전의 경우 하단 위치하여 사용자 편리성 증대
-
-### Carousel
-
-- 라이브러리 사용하지 않고 직접 개발 및 개선
-- background에 linear-gradient를 통한 pc 버전 전체 통일감 부여
+- 공지, 문의, 뉴스, 이벤트 페이지
 
 </br>
 
