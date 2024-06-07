@@ -439,7 +439,3 @@
 
 </br>
 <p align="right"><a href="#top">TOP 🔼</a></p>
-
-# 🎪 기능 시현
-
-<p align="right"><a href="#top">TOP 🔼</a></p>
